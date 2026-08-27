@@ -1,0 +1,20 @@
+services:
+  challenge:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: explore_and_return_challenge
+    stdin_open: true
+    tty: true
+    network_mode: host  # simplest way to get ROS2 DDS discovery working across `docker exec` sessions
+    environment:
+      - DISPLAY=${DISPLAY}
+      - ROS_DOMAIN_ID=42  # isolate from other DDS participants on the network — see Dockerfile
+    volumes:
+      # whole workspace (not just src/) so build/ and install/ persist across container restarts
+      - ../ws:/challenge/ws
+      - ../eval_runner.sh:/challenge/eval_runner.sh
+      - ../../maps:/challenge/maps
+      - ../results:/challenge/results
+      - /tmp/.X11-unix:/tmp/.X11-unix  # for RViz — run `xhost +local:docker` on the host first
+    working_dir: /challenge/ws
