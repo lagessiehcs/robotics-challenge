@@ -21,16 +21,17 @@ from .map_io import FREE, OCCUPIED, OccupancyGrid
 
 @dataclass
 class SensorModel:
-    max_range_m: float = 8.0
+    max_range_m: float = 16
     num_rays: int = 720  # 0.5 degree angular resolution
     min_quality: float = 0.5  # a wall cell only counts as "scanned" if observed at >= this quality
 
 
 def quality_at_range(range_m: float, max_range_m: float) -> float:
-    """Simple linear falloff: 1.0 at range 0, 0.0 at max_range. Replace with a
-    real sensor's accuracy curve if you have one. Works for a scalar range or
-    a numpy array of ranges alike."""
-    return np.maximum(0.0, 1.0 - range_m / max_range_m)
+    """Quadratic falloff: 1.0 at range 0, 0.0 at max_range. Depth uncertainty
+    for real range sensors (stereo, ToF) grows with range^2, so quality drops
+    off faster near max_range than a linear model would. Works for a scalar
+    range or a numpy array of ranges alike."""
+    return np.maximum(0.0, 1.0 - (range_m / max_range_m) ** 2)
 
 
 def scan_from_stop(grid: OccupancyGrid, stop_xy: tuple[float, float],
