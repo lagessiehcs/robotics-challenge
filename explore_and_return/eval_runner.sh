@@ -28,9 +28,24 @@ set -u
 
 export ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-42}"
 
+# Recursively SIGKILL a PID and everything descended from it. ros2 launch's
+# own graceful shutdown can't be trusted here (/clock stops the instant
+# /finish_exploration runs, so sim-time-dependent nodes can stall shutting
+# down), and pkill -P alone only reaches direct children — this walks the
+# whole tree so nothing (e.g. RViz) survives as an orphan.
+kill_tree() {
+  local pid="$1"
+  local child
+  for child in $(pgrep -P "$pid" 2>/dev/null || true); do
+    kill_tree "$child"
+  done
+  kill -KILL "$pid" 2>/dev/null || true
+}
+
 cleanup() {
   echo "Shutting down..."
-  kill $INFRA_PID $CANDIDATE_PID 2>/dev/null || true
+  kill_tree "$INFRA_PID"
+  kill_tree "$CANDIDATE_PID"
   wait 2>/dev/null || true
 }
 trap cleanup EXIT INT TERM
@@ -42,7 +57,7 @@ ros2 launch challenge_sim challenge.launch.py \
 INFRA_PID=$!
 
 echo "Waiting for bringup..."
-sleep 10
+sleep 30
 
 echo "Starting your explorer node..."
 ros2 run candidate_explorer explorer_node --ros-args -p use_sim_time:=true &
