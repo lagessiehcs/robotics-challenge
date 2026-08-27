@@ -8,7 +8,7 @@ stop, together, observes as much of the wall/boundary as possible, using as
 few stops and as little travel as you can.
 
 See README.md for the full brief, scoring rubric, and how to run
-`run_challenge.py` against your solution.
+`eval.py` against your solution.
 """
 from __future__ import annotations
 
