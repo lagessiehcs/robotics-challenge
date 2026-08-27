@@ -11,10 +11,11 @@ services:
       - DISPLAY=${DISPLAY}
       - ROS_DOMAIN_ID=42  # isolate from other DDS participants on the network — see Dockerfile
     volumes:
-      # whole workspace (not just src/) so build/ and install/ persist across container restarts
-      - ../ws:/challenge/ws
-      - ../eval_runner.sh:/challenge/eval_runner.sh
+      # whole challenge dir as one mount (ws/, eval_runner.sh, results/, ...) so
+      # edits/results flow straight to the host and nothing needs to pre-exist —
+      # a single-file or single-subdir bind mount breaks if its target is missing
+      # or gets replaced (e.g. an editor's atomic save unlinks + recreates it).
+      - ..:/challenge
       - ../../maps:/challenge/maps
-      - ../results:/challenge/results
       - /tmp/.X11-unix:/tmp/.X11-unix  # for RViz — run `xhost +local:docker` on the host first
     working_dir: /challenge/ws
