@@ -37,7 +37,7 @@ can keep, restructure, or delete — only that contract matters.
 
 ## Getting started
 
-The whole setup is containerized. From the root of the challenge:
+The whole setup is containerized. From the root of explore_and_return challenge:
 
 ```bash
 docker compose -f docker/docker-compose.yml up -d
