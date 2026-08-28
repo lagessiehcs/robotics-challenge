@@ -37,7 +37,7 @@ can keep, restructure, or delete — only that contract matters.
 
 ## Getting started
 
-The whole setup is containerized. From the root of the challenge:
+The whole setup is containerized. From the root of explore_and_return challenge:
 
 ```bash
 docker compose -f docker/docker-compose.yml up -d
@@ -64,7 +64,7 @@ Two terminals:
 ```bash
 # Terminal 1: the provided infrastructure
 ros2 launch challenge_sim challenge.launch.py \
-  map_yaml:=../maps/1/room.yaml seed:=1
+  map_yaml:=../maps/1/room.yaml seed:=1 rviz:=true
 
 # Terminal 2, after a few seconds for bringup:
 ros2 run candidate_explorer explorer_node
