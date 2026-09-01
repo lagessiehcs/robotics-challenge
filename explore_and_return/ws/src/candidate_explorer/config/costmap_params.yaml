@@ -18,13 +18,13 @@ local_costmap:
       rolling_window: true
       width: 5
       height: 5
-      resolution: 0.02
+      resolution: 0.01
       robot_radius: 0.2
       plugins: ["obstacle_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
-        inflation_radius: 0.1
+        cost_scaling_factor: 5.0
+        inflation_radius: 0.3
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
@@ -49,7 +49,7 @@ global_costmap:
       robot_base_frame: base_link
       use_sim_time: False
       robot_radius: 0.2
-      resolution: 0.02
+      resolution: 0.01
       track_unknown_space: true
       plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
       obstacle_layer:
@@ -70,6 +70,6 @@ global_costmap:
         map_subscribe_transient_local: True
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
-        inflation_radius: 0.1
+        cost_scaling_factor: 5.0
+        inflation_radius: 0.3
       always_send_full_costmap: True
