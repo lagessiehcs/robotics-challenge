@@ -111,6 +111,68 @@ class ExplorerNode(Node):
 
         future.add_done_callback(_on_response)
 
+    def find_nearest_frontier(self):
+        """Return the nearest frontier cell as (x, y) in map coordinates."""
+        if self.latest_map is None:
+            return None
+
+        msg = self.latest_map
+        width = msg.info.width
+        height = msg.info.height
+        resolution = msg.info.resolution
+        origin_x = msg.info.origin.position.x
+        origin_y = msg.info.origin.position.y
+        data = msg.data
+
+        # Current robot position in map frame.
+        try:
+            tf = self.tf_buffer.lookup_transform(
+                "map", "base_link", rclpy.time.Time()
+            )
+        except tf2_ros.TransformException:
+            return None
+
+        robot_x = tf.transform.translation.x
+        robot_y = tf.transform.translation.y
+
+        best = None
+        best_dist = float("inf")
+
+        for y in range(1, height - 1):
+            for x in range(1, width - 1):
+                i = y * width + x
+
+                # Frontier candidate must be known free.
+                if data[i] < 0 or data[i] > 50:
+                    continue
+
+                # 4-connected neighbors.
+                neighbors = (
+                    i - 1,
+                    i + 1,
+                    i - width,
+                    i + width,
+                )
+
+                # At least one neighboring cell must be unknown.
+                if not any(data[n] == -1 for n in neighbors):
+                    continue
+
+                wx = origin_x + (x + 0.5) * resolution
+                wy = origin_y + (y + 0.5) * resolution
+
+                distance = math.hypot(wx - robot_x, wy - robot_y)
+
+                # Ignore frontiers we're already sitting on.
+                if distance < 0.5:
+                    continue
+
+                if distance < best_dist:
+                    best_dist = distance
+                    best = (wx, wy)
+
+        return best
+
     def _tick(self) -> None:
         if self.state == "WAITING_FOR_MAP":
             if self.latest_map is not None:
@@ -122,22 +184,33 @@ class ExplorerNode(Node):
             if self._goal_in_progress:
                 return
 
-            # ============================================================
-            # TODO: replace this. Placeholder baseline: send exactly one
-            # goal, a fixed distance straight ahead in the odom frame, then
-            # declare exploration "done" regardless of actual coverage. This
-            # proves map subscription + action client + TF + finish service
-            # all work end-to-end. It does not meaningfully explore anything.
-            # ============================================================
+            frontier = self.find_nearest_frontier()
+
+            if frontier is None:
+                self.get_logger().info(
+                    "No frontiers remaining. Returning home."
+                )
+                self.state = "RETURNING"
+                return
+
+            x, y = frontier
+
             pose = PoseStamped()
-            pose.header.frame_id = "odom"
+            pose.header.frame_id = "map"
             pose.header.stamp = self.get_clock().now().to_msg()
-            pose.pose.position.x = 1.0
+            pose.pose.position.x = x
+            pose.pose.position.y = y
             pose.pose.orientation = yaw_to_quaternion(0.0)
 
+            self.get_logger().info(
+                f"Navigating to frontier ({x:.2f}, {y:.2f})"
+            )
+
             def _on_done(success: bool) -> None:
-                self.get_logger().info(f"placeholder exploration goal finished, success={success}")
-                self.state = "RETURNING"
+                self.get_logger().info(
+                    f"frontier goal finished, success={success}"
+                )
+                self.state = "EXPLORING"
 
             self.send_nav_goal(pose, _on_done)
             return

@@ -3,4 +3,5 @@ __pycache__/
 explore_and_return/ws/build/
 explore_and_return/ws/install/
 explore_and_return/ws/log/
+explore_and_return/results/
 *__init__.py
