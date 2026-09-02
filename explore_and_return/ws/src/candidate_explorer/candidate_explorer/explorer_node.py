@@ -18,6 +18,7 @@ run even though the robot itself never moves in the odom frame.
 from __future__ import annotations
 
 import math
+from collections import deque
 
 import rclpy
 import tf2_ros
@@ -189,7 +190,7 @@ class ExplorerNode(Node):
         return False
 
     def find_nearest_frontier(self):
-        """Return the nearest frontier cell as (x, y) in map coordinates."""
+        """Find the best frontier cluster and return an actual goal point."""
 
         if self.latest_map is None:
             return None
@@ -206,7 +207,7 @@ class ExplorerNode(Node):
         data = msg.data
 
         # ------------------------------------------------------------
-        # Current robot position in map frame.
+        # Current robot position.
         # ------------------------------------------------------------
 
         try:
@@ -221,23 +222,21 @@ class ExplorerNode(Node):
         robot_x = tf.transform.translation.x
         robot_y = tf.transform.translation.y
 
-        best = None
-        best_dist = float("inf")
+        # ------------------------------------------------------------
+        # 1. Find all frontier cells.
+        # ------------------------------------------------------------
 
-        # ------------------------------------------------------------
-        # Search for the nearest free cell next to unknown space.
-        # ------------------------------------------------------------
+        frontier_cells = set()
 
         for y in range(1, height - 1):
             for x in range(1, width - 1):
 
                 i = y * width + x
 
-                # Frontier candidate must be known free.
-                if data[i] < 0 or data[i] > 50:
+                # Known free cell.
+                if data[i] < 0 or data[i] > 20:
                     continue
 
-                # 4-connected neighbors.
                 neighbors = (
                     i - 1,
                     i + 1,
@@ -245,9 +244,99 @@ class ExplorerNode(Node):
                     i + width,
                 )
 
-                # At least one neighboring cell must be unknown.
+                # Must touch unknown space.
                 if not any(data[n] == -1 for n in neighbors):
                     continue
+
+                frontier_cells.add((x, y))
+
+        if not frontier_cells:
+            self.get_logger().warn(
+                "No frontier cells detected!"
+            )
+            return None
+
+        self.get_logger().info(
+            f"Detected {len(frontier_cells)} frontier cells"
+        )
+
+        # ------------------------------------------------------------
+        # 2. Cluster frontier cells.
+        # ------------------------------------------------------------
+
+        clusters = []
+        visited = set()
+
+        for start in frontier_cells:
+
+            if start in visited:
+                continue
+
+            cluster = []
+            queue = deque([start])
+            visited.add(start)
+
+            while queue:
+
+                x, y = queue.popleft()
+                cluster.append((x, y))
+
+                # 8-connected clustering.
+                for dx in (-1, 0, 1):
+                    for dy in (-1, 0, 1):
+
+                        if dx == 0 and dy == 0:
+                            continue
+
+                        neighbor = (x + dx, y + dy)
+
+                        if (
+                            neighbor in frontier_cells
+                            and neighbor not in visited
+                        ):
+                            visited.add(neighbor)
+                            queue.append(neighbor)
+
+            clusters.append(cluster)
+
+        # ------------------------------------------------------------
+        # 3. Remove tiny clusters.
+        # ------------------------------------------------------------
+
+        MIN_CLUSTER_SIZE = 0.5
+
+        clusters = [
+            cluster
+            for cluster in clusters
+            if len(cluster) >= MIN_CLUSTER_SIZE
+        ]
+
+        self.get_logger().info(
+            f"Found {len(clusters)} frontier clusters "
+            f"after filtering"
+        )
+
+        if not clusters:
+            return None
+
+        # ------------------------------------------------------------
+        # 4. Find best cluster.
+        # ------------------------------------------------------------
+
+        best_cluster = None
+        best_goal = None
+        best_score = float("inf")
+
+        for cluster in clusters:
+
+            closest_frontier = None
+            closest_distance = float("inf")
+
+            # --------------------------------------------------------
+            # Find the closest usable frontier CELL.
+            # --------------------------------------------------------
+
+            for x, y in cluster:
 
                 wx = origin_x + (x + 0.5) * resolution
                 wy = origin_y + (y + 0.5) * resolution
@@ -257,21 +346,68 @@ class ExplorerNode(Node):
                     wy - robot_y
                 )
 
-                # Ignore frontiers we're already sitting on.
+                # Don't choose a frontier we're already on.
                 if distance < 0.5:
                     continue
 
-                frontier = (wx, wy)
-
-                # Ignore frontiers that already failed.
-                if self.frontier_is_blacklisted(frontier):
+                # Ignore blacklisted frontier cells.
+                if self.frontier_is_blacklisted(
+                    (wx, wy)
+                ):
                     continue
 
-                if distance < best_dist:
-                    best_dist = distance
-                    best = frontier
+                if distance < closest_distance:
+                    closest_distance = distance
+                    closest_frontier = (wx, wy)
 
-        return best
+            # No usable cells in this cluster.
+            if closest_frontier is None:
+                continue
+
+            # --------------------------------------------------------
+            # Cluster score.
+            #
+            # Smaller distance = better
+            # Larger cluster = better
+            # --------------------------------------------------------
+
+            score = (
+                closest_distance
+                / math.sqrt(len(cluster))
+            )
+
+            self.get_logger().debug(
+                f"Cluster size={len(cluster)}, "
+                f"distance={closest_distance:.2f}m, "
+                f"score={score:.3f}"
+            )
+
+            if score < best_score:
+
+                best_score = score
+                best_cluster = cluster
+                best_goal = closest_frontier
+
+        # ------------------------------------------------------------
+        # 5. No usable cluster.
+        # ------------------------------------------------------------
+
+        if best_goal is None:
+            self.get_logger().warn(
+                "Frontier clusters exist, but none have "
+                "a usable goal point."
+            )
+            return None
+
+        self.get_logger().info(
+            f"Selected frontier cluster: "
+            f"size={len(best_cluster)}, "
+            f"goal=({best_goal[0]:.2f}, "
+            f"{best_goal[1]:.2f}), "
+            f"distance={best_score:.2f}"
+        )
+
+        return best_goal
 
     def _tick(self) -> None:
 
@@ -307,13 +443,10 @@ class ExplorerNode(Node):
             frontier = self.find_nearest_frontier()
 
             if frontier is None:
-
-                self.get_logger().info(
-                    "No usable frontiers remaining. "
-                    "Returning home."
+                self.get_logger().warn(
+                    "No usable frontier found yet. "
+                    "Waiting for map update..."
                 )
-
-                self.state = "RETURNING"
                 return
 
             x, y = frontier
