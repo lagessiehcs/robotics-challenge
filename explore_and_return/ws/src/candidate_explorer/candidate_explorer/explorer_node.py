@@ -42,6 +42,21 @@ class ExplorerNode(Node):
     def __init__(self) -> None:
         super().__init__("candidate_explorer")
 
+        self.no_frontier_since = None
+        self.no_frontier_timeout = 10.0
+
+        # Minimum passage/entrance width that the robot is willing to enter.
+        self.min_passage_width = 0.5  # metres
+
+        # Number of consecutive detections required before blacklisting.
+        self.narrow_entrance_required = 2
+        self.narrow_entrance_count = 0
+
+        # Store the active Nav2 goal handle so we can cancel it.
+        self._goal_handle = None
+
+        # Minimum distance a frontier goal must have from an obstacle.
+        self.obstacle_clearance = 0.1  # metres
         self.latest_map: OccupancyGrid | None = None
         self.map_sub = self.create_subscription(
             OccupancyGrid,
@@ -94,6 +109,112 @@ class ExplorerNode(Node):
     def _on_map(self, msg: OccupancyGrid) -> None:
         self.latest_map = msg
 
+    def get_local_passage_width(
+        self,
+        robot_x: float,
+        robot_y: float,
+        direction_yaw: float,
+    ) -> float | None:
+        """
+        Estimate the free-space width around the robot perpendicular
+        to its direction of travel.
+
+        Returns the width in metres, or None if it cannot be determined.
+        """
+
+        if self.latest_map is None:
+            return None
+
+        msg = self.latest_map
+
+        width = msg.info.width
+        height = msg.info.height
+        resolution = msg.info.resolution
+        origin_x = msg.info.origin.position.x
+        origin_y = msg.info.origin.position.y
+        data = msg.data
+
+        # Direction perpendicular to travel.
+        perp_x = -math.sin(direction_yaw)
+        perp_y = math.cos(direction_yaw)
+
+        # Search left/right until we hit an obstacle.
+        max_search = 2.0
+        step = resolution
+
+        left_distance = max_search
+        right_distance = max_search
+
+        # ------------------------------------------------------------
+        # Search left.
+        # ------------------------------------------------------------
+
+        d = 0.0
+
+        while d <= max_search:
+
+            x = robot_x + perp_x * d
+            y = robot_y + perp_y * d
+
+            mx = int((x - origin_x) / resolution)
+            my = int((y - origin_y) / resolution)
+
+            if (
+                mx < 0 or mx >= width
+                or my < 0 or my >= height
+            ):
+                left_distance = d
+                break
+
+            value = data[my * width + mx]
+
+            # Occupied.
+            if value > 20:
+                left_distance = d
+                break
+
+            # Unknown space is treated as a boundary too.
+            if value < 0:
+                left_distance = d
+                break
+
+            d += step
+
+        # ------------------------------------------------------------
+        # Search right.
+        # ------------------------------------------------------------
+
+        d = 0.0
+
+        while d <= max_search:
+
+            x = robot_x - perp_x * d
+            y = robot_y - perp_y * d
+
+            mx = int((x - origin_x) / resolution)
+            my = int((y - origin_y) / resolution)
+
+            if (
+                mx < 0 or mx >= width
+                or my < 0 or my >= height
+            ):
+                right_distance = d
+                break
+
+            value = data[my * width + mx]
+
+            if value > 20:
+                right_distance = d
+                break
+
+            if value < 0:
+                right_distance = d
+                break
+
+            d += step
+
+        return left_distance + right_distance
+
     def get_home_pose_in_map_frame(self) -> PoseStamped | None:
         try:
             t = self.tf_buffer.lookup_transform(
@@ -136,15 +257,19 @@ class ExplorerNode(Node):
 
             if not handle.accepted:
                 self.get_logger().warn("goal rejected")
+                self._goal_handle = None
                 self._goal_in_progress = False
                 on_done(False)
                 return
+
+            self._goal_handle = handle
 
             result_future = handle.get_result_async()
 
             def _on_result(fut2):
                 status = fut2.result().status
 
+                self._goal_handle = None
                 self._goal_in_progress = False
 
                 on_done(
@@ -184,8 +309,60 @@ class ExplorerNode(Node):
             )
 
             # Blacklist radius of 0.5 m.
-            if distance < 0.5:
+            if distance < 0.8:
                 return True
+
+        return False
+
+    def frontier_is_too_close_to_obstacle(
+        self,
+        x: int,
+        y: int,
+        width: int,
+        height: int,
+        resolution: float,
+        data,
+    ) -> bool:
+        """
+        Return True if the frontier cell is too close to an occupied cell.
+
+        Occupied cells are those with occupancy > 20.
+        Unknown cells are ignored here.
+        """
+
+        clearance_cells = int(
+            math.ceil(self.obstacle_clearance / resolution)
+        )
+
+        for dy in range(-clearance_cells, clearance_cells + 1):
+            for dx in range(-clearance_cells, clearance_cells + 1):
+
+                # Don't use a square clearance region; use a circle.
+                distance = math.hypot(
+                    dx * resolution,
+                    dy * resolution
+                )
+
+                if distance > self.obstacle_clearance:
+                    continue
+
+                nx = x + dx
+                ny = y + dy
+
+                # Outside map.
+                if (
+                    nx < 0
+                    or nx >= width
+                    or ny < 0
+                    or ny >= height
+                ):
+                    continue
+
+                i = ny * width + nx
+
+                # Occupied.
+                if data[i] > 20:
+                    return True
 
         return False
 
@@ -246,6 +423,20 @@ class ExplorerNode(Node):
 
                 # Must touch unknown space.
                 if not any(data[n] == -1 for n in neighbors):
+                    continue
+
+                # ------------------------------------------------------------
+                # Reject frontiers that are too close to an obstacle.
+                # ------------------------------------------------------------
+
+                if self.frontier_is_too_close_to_obstacle(
+                    x,
+                    y,
+                    width,
+                    height,
+                    resolution,
+                    data,
+                ):
                     continue
 
                 frontier_cells.add((x, y))
@@ -434,6 +625,97 @@ class ExplorerNode(Node):
 
             # Don't do anything while Nav2 is executing a goal.
             if self._goal_in_progress:
+
+                # ------------------------------------------------------------
+                # Check whether we are approaching a passage that is too narrow.
+                # ------------------------------------------------------------
+
+                if self.current_frontier is not None:
+
+                    try:
+                        tf = self.tf_buffer.lookup_transform(
+                            "map",
+                            "base_link",
+                            rclpy.time.Time()
+                        )
+                    except tf2_ros.TransformException:
+                        return
+
+                    robot_x = tf.transform.translation.x
+                    robot_y = tf.transform.translation.y
+
+                    frontier_x = self.current_frontier[0]
+                    frontier_y = self.current_frontier[1]
+
+                    direction_yaw = math.atan2(
+                        frontier_y - robot_y,
+                        frontier_x - robot_x
+                    )
+
+                    passage_width = self.get_local_passage_width(
+                        robot_x,
+                        robot_y,
+                        direction_yaw
+                    )
+
+                    if passage_width is not None:
+
+                        self.get_logger().debug(
+                            f"Estimated passage width: "
+                            f"{passage_width:.2f} m"
+                        )
+
+                        if passage_width < self.min_passage_width:
+
+                            self.narrow_entrance_count += 1
+
+                            self.get_logger().warn(
+                                f"Narrow entrance detected: "
+                                f"{passage_width:.2f} m "
+                                f"(minimum="
+                                f"{self.min_passage_width:.2f} m), "
+                                f"count="
+                                f"{self.narrow_entrance_count}"
+                            )
+
+                        else:
+                            self.narrow_entrance_count = 0
+
+                        # ----------------------------------------------------
+                        # Require multiple detections so a single bad map cell
+                        # doesn't blacklist a frontier accidentally.
+                        # ----------------------------------------------------
+
+                        if (
+                            self.narrow_entrance_count
+                            >= self.narrow_entrance_required
+                        ):
+
+                            frontier = self.current_frontier
+
+                            self.get_logger().warn(
+                                f"Blacklisting frontier "
+                                f"({frontier[0]:.2f}, "
+                                f"{frontier[1]:.2f}) because the "
+                                f"entrance is too narrow."
+                            )
+
+                            self.frontier_blacklist.append(
+                                frontier
+                            )
+
+                            self.current_frontier = None
+                            self.current_frontier_distance = float("inf")
+                            self.narrow_entrance_count = 0
+
+                            # Cancel the active Nav2 goal.
+                            if self._goal_handle is not None:
+                                cancel_future = (
+                                    self._goal_handle.cancel_goal_async()
+                                )
+
+                            return
+
                 return
 
             # --------------------------------------------------------
@@ -442,11 +724,46 @@ class ExplorerNode(Node):
 
             frontier = self.find_nearest_frontier()
 
+            if frontier is not None:
+                self.no_frontier_since = None
+
             if frontier is None:
-                self.get_logger().warn(
-                    "No usable frontier found yet. "
-                    "Waiting for map update..."
+
+                now = self.get_clock().now()
+
+                # Start the "no frontier" timer.
+                if self.no_frontier_since is None:
+                    self.no_frontier_since = now
+
+                    self.get_logger().info(
+                        "No usable frontier found. "
+                        "Continuing exploration for up to 10s."
+                    )
+
+                    return
+
+                elapsed = (
+                    now - self.no_frontier_since
+                ).nanoseconds / 1e9
+
+                # Still within the grace period.
+                if elapsed < self.no_frontier_timeout:
+                    self.get_logger().debug(
+                        f"No frontier for {elapsed:.1f}s "
+                        f"(timeout={self.no_frontier_timeout:.1f}s)"
+                    )
+                    return
+
+                # No frontier for 10 seconds.
+                self.get_logger().info(
+                    "No usable frontier found for "
+                    f"{self.no_frontier_timeout:.1f}s. "
+                    "Exploration complete; returning home."
                 )
+
+                self.state = "RETURNING"
+                self.no_frontier_since = None
+
                 return
 
             x, y = frontier
