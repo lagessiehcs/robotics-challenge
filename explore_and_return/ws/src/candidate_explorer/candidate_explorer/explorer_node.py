@@ -42,6 +42,10 @@ class ExplorerNode(Node):
     def __init__(self) -> None:
         super().__init__("candidate_explorer")
 
+        self.obstacle_distance_map = None
+        self.obstacle_distance_map_version = 0
+        self.map_version = 0
+
         self._path_check_in_progress = False
 
         self.no_frontier_since = None
@@ -117,6 +121,81 @@ class ExplorerNode(Node):
 
     def _on_map(self, msg: OccupancyGrid) -> None:
         self.latest_map = msg
+        self.map_version += 1
+
+    def build_obstacle_distance_map(self):
+        if self.latest_map is None:
+            return None
+
+        msg = self.latest_map
+
+        width = msg.info.width
+        height = msg.info.height
+        resolution = msg.info.resolution
+        data = msg.data
+
+        clearance_cells = math.ceil(
+            self.obstacle_clearance / resolution
+        )
+
+        distance = [-1] * (width * height)
+        queue = deque()
+
+        # Multi-source BFS:
+        # every occupied cell is a source with distance 0.
+        for i, value in enumerate(data):
+            if value > 20:
+                distance[i] = 0
+                queue.append(i)
+
+        while queue:
+
+            i = queue.popleft()
+            d = distance[i]
+
+            # We don't care about distances beyond the required
+            # obstacle clearance.
+            if d >= clearance_cells:
+                continue
+
+            next_d = d + 1
+
+            x = i % width
+            y = i // width
+
+            # Left
+            if x > 0:
+                n = i - 1
+
+                if distance[n] == -1:
+                    distance[n] = next_d
+                    queue.append(n)
+
+            # Right
+            if x < width - 1:
+                n = i + 1
+
+                if distance[n] == -1:
+                    distance[n] = next_d
+                    queue.append(n)
+
+            # Down
+            if y > 0:
+                n = i - width
+
+                if distance[n] == -1:
+                    distance[n] = next_d
+                    queue.append(n)
+
+            # Up
+            if y < height - 1:
+                n = i + width
+
+                if distance[n] == -1:
+                    distance[n] = next_d
+                    queue.append(n)
+
+        return distance
 
     def get_home_pose_in_map_frame(self) -> PoseStamped | None:
         try:
@@ -466,6 +545,22 @@ class ExplorerNode(Node):
         if self.latest_map is None:
             return None
 
+        if (
+            self.obstacle_distance_map is None
+            or self.obstacle_distance_map_version != self.map_version
+        ):
+            self.get_logger().debug(
+                "Rebuilding obstacle distance map..."
+            )
+
+            self.obstacle_distance_map = (
+                self.build_obstacle_distance_map()
+            )
+
+            self.obstacle_distance_map_version = self.map_version
+
+        distance_map = self.obstacle_distance_map
+
         msg = self.latest_map
 
         width = msg.info.width
@@ -523,13 +618,14 @@ class ExplorerNode(Node):
                 # Reject frontiers that are too close to an obstacle.
                 # ------------------------------------------------------------
 
-                if self.frontier_is_too_close_to_obstacle(
-                    x,
-                    y,
-                    width,
-                    height,
-                    resolution,
-                    data,
+
+                clearance_cells = math.ceil(
+                    self.obstacle_clearance / resolution
+                )
+
+                if (
+                    distance_map[i] >= 0
+                    and distance_map[i] < clearance_cells
                 ):
                     continue
 
@@ -632,7 +728,7 @@ class ExplorerNode(Node):
                 )
 
                 # Don't choose a frontier we're already on.
-                if distance < 0.5:
+                if distance <= 0.45:
                     continue
 
                 # Ignore blacklisted frontier cells.
@@ -689,7 +785,7 @@ class ExplorerNode(Node):
             f"size={len(best_cluster)}, "
             f"goal=({best_goal[0]:.2f}, "
             f"{best_goal[1]:.2f}), "
-            f"distance={best_score:.2f}"
+            f"distance={closest_distance:.2f}"
         )
 
         return best_goal
@@ -831,12 +927,12 @@ class ExplorerNode(Node):
             # Ignore frontiers that are essentially under the robot.
             # --------------------------------------------------------
 
-            if distance < 0.5:
+            if distance <= 0.45:
 
-                self.get_logger().debug(
+                self.get_logger().info(
                     f"Skipping frontier at "
                     f"({x:.2f}, {y:.2f}) because it is "
-                    f"too close to the robot."
+                    f"too close to the robot: {distance:.2f}m"
                 )
 
                 return
