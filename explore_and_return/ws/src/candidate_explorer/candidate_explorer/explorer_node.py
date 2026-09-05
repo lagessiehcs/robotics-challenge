@@ -51,8 +51,28 @@ class ExplorerNode(Node):
         self.no_frontier_since = None
         self.no_frontier_timeout = 10.0
 
+        # If frontier clusters exist but have no usable goal, first try
+        # small recovery moves before starting the no-frontier countdown.
+        self.recovery_distance = 0.3
+        self.recovery_directions = [
+            ("forward", 0.0),
+            ("forward-left", math.pi / 4.0),
+            ("left", math.pi / 2.0),
+            ("backward-left", 3.0 * math.pi / 4.0),
+            ("backward", math.pi),
+            ("backward-right", -3.0 * math.pi / 4.0),
+            ("right", -math.pi / 2.0),
+            ("forward-right", -math.pi / 4.0),
+        ]
+        self._recovery_in_progress = False
+        self._recovery_index = 0
+        self._recovery_start_yaw = None
+        self._recovery_start_x = None
+        self._recovery_start_y = None
+        self._frontier_clusters_no_usable_goal = False
+
         # Minimum passage/entrance width that the robot is willing to enter.
-        self.min_passage_width = 0.5  # metres
+        self.min_passage_width = 0.6  # metres
 
         # Number of consecutive detections required before blacklisting.
         self.narrow_entrance_required = 2
@@ -119,9 +139,160 @@ class ExplorerNode(Node):
 
         self.timer = self.create_timer(1.0, self._tick)
 
+        # ------------------------------------------------------------
+        # Coverage plateau tracking.
+        #
+        # Distinguishes "no frontiers left" (handled above via
+        # no_frontier_timeout) from "frontiers still exist but the
+        # map has stopped meaningfully growing" — the README explicitly
+        # calls out that the last few percent of coverage can cost far
+        # more than it's worth.
+        # ------------------------------------------------------------
+        self.free_cell_history = deque()        # (time_sec, free_cell_count)
+        self.coverage_plateau_window = 10.0      # look-back window, seconds
+        self.coverage_plateau_min_growth = 0.02  # need >=2% growth in that window
+        self.coverage_plateau_min_free_cells = 2000  # ignore plateau check on tiny/early maps
+
+        self.timer = self.create_timer(1.0, self._tick)
+
+        # Store the active Nav2 goal handle so we can cancel it.
+        self._goal_handle = None
+
+        # Set once we've asked Nav2 to cancel the current goal due to a
+        # narrow gap ahead, so we don't spam cancel_goal_async() every
+        # tick while waiting for that cancellation to be confirmed.
+        self._narrow_gap_cancel_pending = False
+
     def _on_map(self, msg: OccupancyGrid) -> None:
         self.latest_map = msg
         self.map_version += 1
+
+        # Track known-free-space growth over time for plateau detection.
+        free_count = sum(1 for v in msg.data if 0 <= v <= 20)
+        now_sec = self.get_clock().now().nanoseconds / 1e9
+        self.free_cell_history.append((now_sec, free_count))
+
+        # Trim history we'll never look at again.
+        cutoff = now_sec - self.coverage_plateau_window * 2
+        while (
+            self.free_cell_history
+            and self.free_cell_history[0][0] < cutoff
+        ):
+            self.free_cell_history.popleft()
+
+    def _check_for_immediate_narrow_passage(self) -> None:
+        """While actively navigating toward a frontier, watch the gap
+        immediately ahead of the robot. If it narrows below
+        min_passage_width, ask Nav2 to cancel the current goal right
+        away rather than waiting for it to push through or fail on
+        its own. The frontier gets blacklisted once the cancellation
+        is confirmed, via the existing success/failure callback in
+        _tick() (a canceled goal reports success=False there, which
+        already blacklists and resets current_frontier).
+        """
+
+        if self._narrow_gap_cancel_pending:
+            # Already asked Nav2 to cancel; wait for that to land
+            # instead of sending duplicate cancel requests every tick.
+            return
+
+        if self.latest_map is None:
+            return
+
+        try:
+            tf = self.tf_buffer.lookup_transform(
+                "map", "base_link", rclpy.time.Time()
+            )
+        except tf2_ros.TransformException:
+            return
+
+        robot_x = tf.transform.translation.x
+        robot_y = tf.transform.translation.y
+
+        q = tf.transform.rotation
+        robot_yaw = math.atan2(
+            2.0 * (q.w * q.z),
+            1.0 - 2.0 * (q.z * q.z)
+        )
+
+        # Check a short distance ahead of the robot's current position,
+        # not its own footprint — by the time the robot is already
+        # inside a narrow gap it's too late to react cleanly.
+        look_ahead = 0.3  # metres
+        ahead_x = robot_x + look_ahead * math.cos(robot_yaw)
+        ahead_y = robot_y + look_ahead * math.sin(robot_yaw)
+
+        width = self.get_cross_section_width(ahead_x, ahead_y, robot_yaw)
+
+        if width is None or width >= self.min_passage_width:
+            return
+
+        self.get_logger().warn(
+            f"Narrow gap ({width:.2f}m) detected immediately ahead "
+            "while en route to the current frontier. Cancelling the "
+            "goal now."
+        )
+
+        self._narrow_gap_cancel_pending = True
+
+        if self._goal_handle is not None:
+            self._goal_handle.cancel_goal_async()
+
+    def is_coverage_plateaued(self) -> bool:
+        """True if known free-space has grown by less than
+        coverage_plateau_min_growth over the last
+        coverage_plateau_window seconds — i.e. further exploration
+        has hit diminishing returns, even if frontiers still exist.
+        """
+
+        if len(self.free_cell_history) < 2:
+            return False
+
+        now_sec, latest_count = self.free_cell_history[-1]
+
+        if latest_count < self.coverage_plateau_min_free_cells:
+            # Map is still small; a flat-looking window here is just
+            # noise, not a real plateau.
+            return False
+
+        window_start = now_sec - self.coverage_plateau_window
+        baseline_count = None
+
+        for t, count in self.free_cell_history:
+            if t >= window_start:
+                baseline_count = count
+                break
+
+        if not baseline_count:
+            return False
+
+        growth = (latest_count - baseline_count) / baseline_count
+
+        return growth < self.coverage_plateau_min_growth
+
+    def estimate_information_gain(
+        self,
+        cluster,
+        width: int,
+        height: int,
+        data,
+    ) -> int:
+        """Rough proxy for how much unknown space this frontier cluster
+        borders, distinct from len(cluster) (which only counts boundary
+        cells, not the unknown area behind them). Counts unique unknown
+        cells adjacent to any cell in the cluster.
+        """
+
+        unknown_neighbors = set()
+
+        for x, y in cluster:
+            i = y * width + x
+
+            for n in (i - 1, i + 1, i - width, i + width):
+                if 0 <= n < len(data) and data[n] == -1:
+                    unknown_neighbors.add(n)
+
+        return len(unknown_neighbors)
 
     def build_obstacle_distance_map(self):
         if self.latest_map is None:
@@ -542,6 +713,8 @@ class ExplorerNode(Node):
     def find_nearest_frontier(self):
         """Find the best frontier cluster and return an actual goal point."""
 
+        self._frontier_clusters_no_usable_goal = False
+
         if self.latest_map is None:
             return None
 
@@ -587,6 +760,16 @@ class ExplorerNode(Node):
 
         robot_x = tf.transform.translation.x
         robot_y = tf.transform.translation.y
+
+        # Robot's current heading, used to mildly favor frontiers that
+        # continue the current direction of travel over ones that
+        # require an about-face — reduces time lost to backtracking
+        # and oscillation between opposite sides of the map.
+        q = tf.transform.rotation
+        robot_yaw = math.atan2(
+            2.0 * (q.w * q.z),
+            1.0 - 2.0 * (q.z * q.z)
+        )
 
         # ------------------------------------------------------------
         # 1. Find all frontier cells.
@@ -752,14 +935,40 @@ class ExplorerNode(Node):
             # Larger cluster = better
             # --------------------------------------------------------
 
+            gain = self.estimate_information_gain(
+                cluster, width, height, data
+            )
+
+            # Heading alignment: 1.0 when the frontier is straight
+            # ahead, up to 2.0 when it's directly behind us. Applied
+            # as a multiplier (not a hard filter) so a big enough or
+            # close enough frontier can still win even if it's behind
+            # the robot.
+            angle_to_goal = math.atan2(
+                closest_frontier[1] - robot_y,
+                closest_frontier[0] - robot_x
+            )
+
+            heading_diff = abs(
+                math.atan2(
+                    math.sin(angle_to_goal - robot_yaw),
+                    math.cos(angle_to_goal - robot_yaw)
+                )
+            )
+
+            heading_penalty = 1.0 + (heading_diff / math.pi)
+
             score = (
                 closest_distance
-                / math.sqrt(len(cluster))
+                * heading_penalty
+                / (math.sqrt(len(cluster)) * math.sqrt(1 + gain))
             )
 
             self.get_logger().debug(
                 f"Cluster size={len(cluster)}, "
+                f"gain={gain}, "
                 f"distance={closest_distance:.2f}m, "
+                f"heading_penalty={heading_penalty:.2f}, "
                 f"score={score:.3f}"
             )
 
@@ -774,6 +983,7 @@ class ExplorerNode(Node):
         # ------------------------------------------------------------
 
         if best_goal is None:
+            self._frontier_clusters_no_usable_goal = True
             self.get_logger().warn(
                 "Frontier clusters exist, but none have "
                 "a usable goal point."
@@ -789,6 +999,102 @@ class ExplorerNode(Node):
         )
 
         return best_goal
+
+    def _start_recovery_sweep(self) -> None:
+        """Try 0.3 m moves forward, left, backward, and right."""
+        if self._recovery_in_progress or self._goal_in_progress:
+            return
+
+        try:
+            tf = self.tf_buffer.lookup_transform(
+                "map", "base_link", rclpy.time.Time()
+            )
+        except tf2_ros.TransformException as exc:
+            self.get_logger().warn(
+                f"Cannot start recovery sweep; no map -> base_link TF: {exc}"
+            )
+            return
+
+        q = tf.transform.rotation
+        yaw = math.atan2(
+            2.0 * (q.w * q.z),
+            1.0 - 2.0 * (q.z * q.z)
+        )
+
+        self._recovery_start_x = tf.transform.translation.x
+        self._recovery_start_y = tf.transform.translation.y
+        self._recovery_start_yaw = yaw
+        self._recovery_index = 0
+        self._recovery_in_progress = True
+        self.no_frontier_since = None
+
+        self.get_logger().warn(
+            "Frontier clusters exist but have no usable goal. "
+            "Trying 0.3 m moves in four directions before "
+            "starting the 10s countdown."
+        )
+
+        self._send_next_recovery_move()
+
+    def _send_next_recovery_move(self) -> None:
+        """Send the next recovery goal."""
+        if not self._recovery_in_progress:
+            return
+
+        if self._recovery_index >= len(self.recovery_directions):
+            self._recovery_in_progress = False
+            self._recovery_start_x = None
+            self._recovery_start_y = None
+            self._recovery_start_yaw = None
+            self.no_frontier_since = self.get_clock().now()
+
+            self.get_logger().info(
+                f"Recovery sweep complete. Starting "
+                f"{self.no_frontier_timeout:.1f}s countdown."
+            )
+            return
+
+        name, relative_angle = self.recovery_directions[self._recovery_index]
+
+        # All four directions are relative to the pose at the start of
+        # the sweep, so they form a fixed cross around the starting pose.
+        yaw = self._recovery_start_yaw + relative_angle
+        goal_x = self._recovery_start_x + (
+            self.recovery_distance * math.cos(yaw)
+        )
+        goal_y = self._recovery_start_y + (
+            self.recovery_distance * math.sin(yaw)
+        )
+
+        pose = PoseStamped()
+        pose.header.frame_id = "map"
+        pose.header.stamp = self.get_clock().now().to_msg()
+        pose.pose.position.x = goal_x
+        pose.pose.position.y = goal_y
+        pose.pose.orientation = yaw_to_quaternion(yaw)
+
+        self.get_logger().info(
+            f"Recovery move {self._recovery_index + 1}/4: "
+            f"{name}, 0.3 m -> ({goal_x:.2f}, {goal_y:.2f})"
+        )
+
+        def _on_done(success: bool) -> None:
+            name_done = self.recovery_directions[self._recovery_index][0]
+
+            if success:
+                self.get_logger().info(
+                    f"Recovery move '{name_done}' succeeded."
+                )
+            else:
+                self.get_logger().warn(
+                    f"Recovery move '{name_done}' failed; "
+                    "trying the next direction."
+                )
+
+            self._recovery_index += 1
+            self._send_next_recovery_move()
+
+        self.send_nav_goal(pose, _on_done)
 
     def _tick(self) -> None:
 
@@ -823,6 +1129,13 @@ class ExplorerNode(Node):
             # --------------------------------------------------------
 
             if self._goal_in_progress:
+
+                # Only relevant while actively driving toward a
+                # frontier — current_frontier is None during a
+                # return-home goal, so this can't interfere with that.
+                if self.current_frontier is not None:
+                    self._check_for_immediate_narrow_passage()
+
                 return
 
             # --------------------------------------------------------
@@ -834,20 +1147,58 @@ class ExplorerNode(Node):
             if self._path_check_in_progress:
                 return
 
+            if self._recovery_in_progress:
+                return
+
             # --------------------------------------------------------
             # Find the best frontier.
             # --------------------------------------------------------
 
             frontier = self.find_nearest_frontier()
 
+
             if frontier is not None:
                 self.no_frontier_since = None
+
+            # --------------------------------------------------------
+            # Frontiers still exist, but coverage growth has plateaued.
+            #
+            # This is deliberately separate from the "no frontier
+            # found" path below: here we're choosing to stop even
+            # though there's more we technically could explore,
+            # because it isn't paying for itself.
+            # --------------------------------------------------------
+
+            if frontier is not None and self.is_coverage_plateaued():
+
+                self.get_logger().info(
+                    "Coverage growth has plateaued "
+                    f"(<{self.coverage_plateau_min_growth * 100:.0f}% "
+                    f"over {self.coverage_plateau_window:.0f}s) while "
+                    "frontiers still remain. Calling it good enough "
+                    "and returning home instead of chasing marginal "
+                    "coverage."
+                )
+
+                self.state = "RETURNING"
+                self.current_frontier = None
+                self.current_frontier_distance = float("inf")
+                self.no_frontier_since = None
+
+                return
 
             # --------------------------------------------------------
             # No frontier found.
             # --------------------------------------------------------
 
             if frontier is None:
+
+                # When the specific warning "clusters exist, but none have
+                # a usable goal point" occurs, do the four 0.3 m recovery
+                # moves first. The 10 s countdown starts only afterwards.
+                if self._frontier_clusters_no_usable_goal:
+                    self._start_recovery_sweep()
+                    return
 
                 now = self.get_clock().now()
 
@@ -1212,7 +1563,15 @@ class ExplorerNode(Node):
                         self.get_clock().now()
                     )
 
-                    self.current_frontier_distance = 0.0
+                    # Clear the completed frontier so the next tick treats
+                    # whatever find_nearest_frontier() returns as a genuinely
+                    # new goal. Leaving current_frontier set here means the
+                    # next (very likely nearby) frontier gets compared against
+                    # this already-reached point, is judged "no progress",
+                    # and gets stalled for progress_timeout then wrongly
+                    # blacklisted — on essentially every successful arrival.
+                    self.current_frontier = None
+                    self.current_frontier_distance = float("inf")
 
                     self.get_logger().info(
                         "Reached frontier. "
