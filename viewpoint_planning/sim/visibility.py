@@ -26,12 +26,64 @@ class SensorModel:
     min_quality: float = 0.5  # a wall cell only counts as "scanned" if observed at >= this quality
 
 
-def quality_at_range(range_m: float, max_range_m: float) -> float:
-    """Quadratic falloff: 1.0 at range 0, 0.0 at max_range. Depth uncertainty
-    for real range sensors (stereo, ToF) grows with range^2, so quality drops
-    off faster near max_range than a linear model would. Works for a scalar
-    range or a numpy array of ranges alike."""
-    return np.maximum(0.0, 1.0 - (range_m / max_range_m) ** 2)
+def quality_at_range(
+    range_m: float | np.ndarray,
+    max_range_m: float,
+    incidence_cosine: float | np.ndarray = 1.0,
+) -> float | np.ndarray:
+    """Combine range falloff with wall incidence.
+
+    ``incidence_cosine`` is 1 for a head-on hit and 0 for a grazing hit.
+    Grazing returns are less accurate because the beam travels nearly along
+    the wall, making the hit position more sensitive to range and map noise.
+    A 0.25 floor keeps grazing hits useful but below head-on measurements.
+    """
+    range_quality = np.maximum(0.0, 1.0 - (np.asarray(range_m) / max_range_m) ** 2)
+    incidence = np.clip(np.asarray(incidence_cosine), 0.0, 1.0)
+    incidence_quality = 0.25 + 0.75 * incidence
+    return range_quality * incidence_quality
+
+
+def _incidence_cosine(
+    grid: OccupancyGrid,
+    rows: np.ndarray,
+    cols: np.ndarray,
+    origin_row: int,
+    origin_col: int,
+) -> np.ndarray:
+    """Estimate wall incidence from the hit cell's free-space neighbors."""
+    free = grid.data == FREE
+    normal_rows = np.zeros(len(rows), dtype=np.float64)
+    normal_cols = np.zeros(len(cols), dtype=np.float64)
+    for dr in (-1, 0, 1):
+        for dc in (-1, 0, 1):
+            if dr == 0 and dc == 0:
+                continue
+            neighbor_rows = rows + dr
+            neighbor_cols = cols + dc
+            valid = (
+                (neighbor_rows >= 0) & (neighbor_rows < grid.height)
+                & (neighbor_cols >= 0) & (neighbor_cols < grid.width)
+            )
+            free_neighbor = np.zeros(len(rows), dtype=bool)
+            free_neighbor[valid] = free[
+                neighbor_rows[valid], neighbor_cols[valid]
+            ]
+            normal_rows[free_neighbor] += dr
+            normal_cols[free_neighbor] += dc
+
+    normal_length = np.hypot(normal_rows, normal_cols)
+    ray_rows = rows - origin_row
+    ray_cols = cols - origin_col
+    ray_length = np.hypot(ray_rows, ray_cols)
+    denominator = normal_length * ray_length
+    cosine = np.zeros(len(rows), dtype=np.float64)
+    valid = denominator > 0.0
+    cosine[valid] = np.abs(
+        normal_rows[valid] * ray_rows[valid]
+        + normal_cols[valid] * ray_cols[valid]
+    ) / denominator[valid]
+    return np.clip(cosine, 0.0, 1.0)
 
 
 def scan_from_stop(grid: OccupancyGrid, stop_xy: tuple[float, float],
@@ -72,9 +124,18 @@ def scan_from_stop(grid: OccupancyGrid, stop_xy: tuple[float, float],
         occ_now[active] = occ_mask[ir[active], ic[active]]
         hit_now = active & occ_now
         if hit_now.any():
-            range_px = np.hypot(ir[hit_now] - origin_row, ic[hit_now] - origin_col)
-            quality = quality_at_range(range_px * grid.resolution, sensor.max_range_m)
-            for row, col, q in zip(ir[hit_now], ic[hit_now], quality):
+            hit_rows = ir[hit_now]
+            hit_cols = ic[hit_now]
+            range_px = np.hypot(hit_rows - origin_row, hit_cols - origin_col)
+            incidence = _incidence_cosine(
+                grid, hit_rows, hit_cols, origin_row, origin_col
+            )
+            quality = quality_at_range(
+                range_px * grid.resolution,
+                sensor.max_range_m,
+                incidence,
+            )
+            for row, col, q in zip(hit_rows, hit_cols, quality):
                 cell = (int(row), int(col))
                 if q > seen.get(cell, 0.0):
                     seen[cell] = q
