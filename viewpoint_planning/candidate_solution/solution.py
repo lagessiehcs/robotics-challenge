@@ -6,30 +6,31 @@ from collections import Counter
 import numpy as np
 from scipy import ndimage
 from scipy.optimize import Bounds, LinearConstraint, milp
-from scipy.sparse import coo_matrix, eye, hstack
+from scipy.sparse import coo_matrix, eye, hstack, vstack
 
 from sim.map_io import OccupancyGrid
 from sim.pathing import multi_target_shortest_paths, traversable_mask
 from sim.visibility import (
     SensorModel,
-    is_stop_valid,
     observable_wall_cells,
     scan_from_stop,
 )
 
 ROBOT_RADIUS_M = 0.2
-CANDIDATE_SPACING_M = 0.8
-MIN_GAIN_PERCENT = 0.5
+CANDIDATE_SPACING_M = 0.125
 
 
-def _room_component(grid: OccupancyGrid) -> np.ndarray:
+def _room_component(
+    grid: OccupancyGrid, traversable: np.ndarray | None = None
+) -> np.ndarray:
     """Return an enclosed drivable component when the map has one.
 
     Free space connected to an image edge is outside space. A closed room is
     instead a component that does not touch any image edge, so border
     connectivity is a stronger inside/outside test than component size.
     """
-    traversable = traversable_mask(grid, ROBOT_RADIUS_M)
+    if traversable is None:
+        traversable = traversable_mask(grid, ROBOT_RADIUS_M)
     labels, component_count = ndimage.label(
         traversable, structure=np.ones((3, 3), dtype=np.uint8)
     )
@@ -80,7 +81,8 @@ def _candidates(grid: OccupancyGrid, room: np.ndarray) -> list[tuple[float, floa
             if not room[row, col]:
                 continue
             point = grid.pixel_to_world(row, col)
-            if is_stop_valid(grid, point, ROBOT_RADIUS_M):
+            # `room` is already the footprint-aware traversable mask.
+            if room[row, col]:
                 candidates.append(point)
     return candidates
 
@@ -89,8 +91,8 @@ def _select_stops(
     grid: OccupancyGrid,
     candidates: list[tuple[float, float]],
     sensor: SensorModel,
+    observable: set[tuple[int, int]],
 ) -> list[tuple[float, float]]:
-    observable = set(map(tuple, np.argwhere(observable_wall_cells(grid))))
     coverage: dict[tuple[float, float], set[int]] = {}
     candidate_cells: dict[tuple[float, float], set[tuple[int, int]]] = {}
     for candidate in candidates:
@@ -133,22 +135,54 @@ def _select_stops(
         (wall_candidate_matrix, -eye(len(target), format="csr")),
         format="csr",
     )
-    stop_penalty = 1.0 / (len(candidate_list) + 1)
-    objective = np.concatenate((
-        np.full(len(candidate_list), stop_penalty),
+    coverage_objective = np.concatenate((
+        np.zeros(len(candidate_list)),
         -np.ones(len(target)),
     ))
 
     try:
-        result = milp(
-            c=objective,
+        coverage_result = milp(
+            c=coverage_objective,
             integrality=np.ones(variable_count),
             bounds=Bounds(np.zeros(variable_count), np.ones(variable_count)),
             constraints=LinearConstraint(
-                constraints, np.zeros(len(target)), np.full(len(target), np.inf)
+                constraints,
+                np.zeros(len(target)),
+                np.full(len(target), np.inf),
             ),
             options={"time_limit": 30.0},
         )
+        result = coverage_result
+        if coverage_result.x is not None:
+            best_coverage = int(np.rint(coverage_result.x[len(candidate_list):].sum()))
+            coverage_floor = hstack(
+                (
+                    coo_matrix((1, len(candidate_list))),
+                    np.ones((1, len(target))),
+                ),
+                format="csr",
+            )
+            second_constraints = vstack((constraints, coverage_floor), format="csr")
+            second_lower = np.concatenate((
+                np.zeros(len(target)),
+                [best_coverage],
+            ))
+            second_upper = np.full(len(target) + 1, np.inf)
+            stop_objective = np.concatenate((
+                np.ones(len(candidate_list)),
+                np.zeros(len(target)),
+            ))
+            stop_result = milp(
+                c=stop_objective,
+                integrality=np.ones(variable_count),
+                bounds=Bounds(np.zeros(variable_count), np.ones(variable_count)),
+                constraints=LinearConstraint(
+                    second_constraints, second_lower, second_upper
+                ),
+                options={"time_limit": 30.0},
+            )
+            if stop_result.x is not None:
+                result = stop_result
     except (ImportError, RuntimeError, ValueError):
         result = None
 
@@ -161,11 +195,9 @@ def _select_stops(
         if selected:
             return selected
 
-    # Deterministic fallback if the MILP solver is unavailable or times out
-    # before producing an incumbent solution.
+    # Deterministic fallback if the MILP solver is unavailable or times out.
     selected: list[tuple[float, float]] = []
     covered: set[int] = set()
-    minimum_gain = max(1, len(target) * MIN_GAIN_PERCENT / 100.0)
     remaining = dict(coverage)
     while remaining:
         best = max(
@@ -177,7 +209,7 @@ def _select_stops(
             ),
         )
         gain = remaining[best] - covered
-        if len(gain) < minimum_gain:
+        if not gain:
             break
         selected.append(best)
         covered.update(gain)
@@ -186,11 +218,12 @@ def _select_stops(
 
 
 def _order_connected(
-    grid: OccupancyGrid, points: list[tuple[float, float]]
+    grid: OccupancyGrid,
+    points: list[tuple[float, float]],
+    traversable: np.ndarray,
 ) -> list[tuple[float, float]]:
     if len(points) < 2:
         return points
-    traversable = traversable_mask(grid, ROBOT_RADIUS_M)
     count = len(points)
     distances = [[0.0] * count for _ in range(count)]
     for start_index, start in enumerate(points):
@@ -202,42 +235,67 @@ def _order_connected(
         for goal_index, (distance, _path) in zip(goal_indices, results):
             distances[start_index][goal_index] = distance
 
-    # Deterministic nearest-neighbor initial tour.
-    unvisited = set(range(1, count))
-    tour = [0]
-    while unvisited:
-        current = tour[-1]
-        next_index = min(
-            unvisited,
-            key=lambda index: (distances[current][index], index),
+    def tour_cost(tour: list[int]) -> float:
+        return sum(
+            distances[tour[index]][tour[index + 1]]
+            for index in range(len(tour) - 1)
         )
-        tour.append(next_index)
-        unvisited.remove(next_index)
 
-    # 2-opt for an open tour: reverse each improving internal segment.
-    improved = True
-    while improved:
-        improved = False
-        for first in range(1, count - 1):
-            for last in range(first + 1, count):
-                before = tour[first - 1]
-                after = tour[last]
-                old_cost = distances[before][tour[first]]
-                new_cost = distances[before][after]
-                if last + 1 < count:
-                    old_cost += distances[tour[last]][tour[last + 1]]
-                    new_cost += distances[tour[first]][tour[last + 1]]
-                if new_cost < old_cost - 1e-9:
-                    tour[first:last + 1] = reversed(tour[first:last + 1])
-                    improved = True
+    def improve_tour(tour: list[int]) -> list[int]:
+        improved = True
+        while improved:
+            improved = False
+            for first in range(1, count - 1):
+                for last in range(first + 1, count):
+                    before = tour[first - 1]
+                    after = tour[last]
+                    old_cost = distances[before][tour[first]]
+                    new_cost = distances[before][after]
+                    if last + 1 < count:
+                        old_cost += distances[tour[last]][tour[last + 1]]
+                        new_cost += distances[tour[first]][tour[last + 1]]
+                    if new_cost < old_cost - 1e-9:
+                        tour[first:last + 1] = reversed(tour[first:last + 1])
+                        improved = True
+        return tour
 
-    return [points[index] for index in tour]
+    # Try deterministic starts. Every candidate stop remains in the tour;
+    # only visit order changes, so coverage and stop count are unaffected.
+    start_indices = sorted(
+        {0, min(range(count), key=lambda i: (points[i][0], points[i][1]))},
+        key=lambda i: i,
+    )
+    best_tour: list[int] | None = None
+    best_cost = float("inf")
+    for start in start_indices:
+        unvisited = set(range(count))
+        unvisited.remove(start)
+        tour = [start]
+        while unvisited:
+            current = tour[-1]
+            next_index = min(
+                unvisited,
+                key=lambda index: (distances[current][index], index),
+            )
+            tour.append(next_index)
+            unvisited.remove(next_index)
+        tour = improve_tour(tour)
+        cost = tour_cost(tour)
+        if cost < best_cost - 1e-9 or (
+            abs(cost - best_cost) <= 1e-9 and tuple(tour) < tuple(best_tour or [])
+        ):
+            best_tour = tour
+            best_cost = cost
+
+    return [points[index] for index in best_tour or []]
 
 
 def plan_viewpoints(grid: OccupancyGrid, sensor: SensorModel) -> list[tuple[float, float]]:
-    room = _room_component(grid)
+    traversable = traversable_mask(grid, ROBOT_RADIUS_M)
+    room = _room_component(grid, traversable)
     candidates = _candidates(grid, room)
     if not candidates:
         return []
-    stops = _select_stops(grid, candidates, sensor)
-    return _order_connected(grid, stops or [candidates[0]])
+    observable = set(map(tuple, np.argwhere(observable_wall_cells(grid))))
+    stops = _select_stops(grid, candidates, sensor, observable)
+    return _order_connected(grid, stops or [candidates[0]], traversable)
