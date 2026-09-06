@@ -4,4 +4,7 @@ explore_and_return/ws/build/
 explore_and_return/ws/install/
 explore_and_return/ws/log/
 explore_and_return/results/
+viewpoint_planning/results/
+**/.DS_Store
+
 *__init__.py
