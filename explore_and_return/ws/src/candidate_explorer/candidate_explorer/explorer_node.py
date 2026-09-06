@@ -149,7 +149,7 @@ class ExplorerNode(Node):
         # more than it's worth.
         # ------------------------------------------------------------
         self.free_cell_history = deque()        # (time_sec, free_cell_count)
-        self.coverage_plateau_window = 10.0      # look-back window, seconds
+        self.coverage_plateau_window = 30.0      # look-back window, seconds
         self.coverage_plateau_min_growth = 0.02  # need >=2% growth in that window
         self.coverage_plateau_min_free_cells = 2000  # ignore plateau check on tiny/early maps
 
