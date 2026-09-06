@@ -70,6 +70,9 @@ class ExplorerNode(Node):
         self._recovery_start_x = None
         self._recovery_start_y = None
         self._frontier_clusters_no_usable_goal = False
+        # A sweep is a single recovery attempt, not a loop.  It is reset
+        # only after a usable frontier is found again.
+        self._recovery_sweep_attempted = False
 
         # Minimum passage/entrance width that the robot is willing to enter.
         self.min_passage_width = 0.6  # metres
@@ -139,22 +142,6 @@ class ExplorerNode(Node):
 
         self.timer = self.create_timer(1.0, self._tick)
 
-        # ------------------------------------------------------------
-        # Coverage plateau tracking.
-        #
-        # Distinguishes "no frontiers left" (handled above via
-        # no_frontier_timeout) from "frontiers still exist but the
-        # map has stopped meaningfully growing" — the README explicitly
-        # calls out that the last few percent of coverage can cost far
-        # more than it's worth.
-        # ------------------------------------------------------------
-        self.free_cell_history = deque()        # (time_sec, free_cell_count)
-        self.coverage_plateau_window = 30.0      # look-back window, seconds
-        self.coverage_plateau_min_growth = 0.02  # need >=2% growth in that window
-        self.coverage_plateau_min_free_cells = 2000  # ignore plateau check on tiny/early maps
-
-        self.timer = self.create_timer(1.0, self._tick)
-
         # Store the active Nav2 goal handle so we can cancel it.
         self._goal_handle = None
 
@@ -166,19 +153,6 @@ class ExplorerNode(Node):
     def _on_map(self, msg: OccupancyGrid) -> None:
         self.latest_map = msg
         self.map_version += 1
-
-        # Track known-free-space growth over time for plateau detection.
-        free_count = sum(1 for v in msg.data if 0 <= v <= 20)
-        now_sec = self.get_clock().now().nanoseconds / 1e9
-        self.free_cell_history.append((now_sec, free_count))
-
-        # Trim history we'll never look at again.
-        cutoff = now_sec - self.coverage_plateau_window * 2
-        while (
-            self.free_cell_history
-            and self.free_cell_history[0][0] < cutoff
-        ):
-            self.free_cell_history.popleft()
 
     def _check_for_immediate_narrow_passage(self) -> None:
         """While actively navigating toward a frontier, watch the gap
@@ -237,38 +211,6 @@ class ExplorerNode(Node):
 
         if self._goal_handle is not None:
             self._goal_handle.cancel_goal_async()
-
-    def is_coverage_plateaued(self) -> bool:
-        """True if known free-space has grown by less than
-        coverage_plateau_min_growth over the last
-        coverage_plateau_window seconds — i.e. further exploration
-        has hit diminishing returns, even if frontiers still exist.
-        """
-
-        if len(self.free_cell_history) < 2:
-            return False
-
-        now_sec, latest_count = self.free_cell_history[-1]
-
-        if latest_count < self.coverage_plateau_min_free_cells:
-            # Map is still small; a flat-looking window here is just
-            # noise, not a real plateau.
-            return False
-
-        window_start = now_sec - self.coverage_plateau_window
-        baseline_count = None
-
-        for t, count in self.free_cell_history:
-            if t >= window_start:
-                baseline_count = count
-                break
-
-        if not baseline_count:
-            return False
-
-        growth = (latest_count - baseline_count) / baseline_count
-
-        return growth < self.coverage_plateau_min_growth
 
     def estimate_information_gain(
         self,
@@ -1001,7 +943,7 @@ class ExplorerNode(Node):
         return best_goal
 
     def _start_recovery_sweep(self) -> None:
-        """Try 0.3 m moves forward, left, backward, and right."""
+        """Try each of the eight 0.3 m recovery moves once."""
         if self._recovery_in_progress or self._goal_in_progress:
             return
 
@@ -1026,11 +968,12 @@ class ExplorerNode(Node):
         self._recovery_start_yaw = yaw
         self._recovery_index = 0
         self._recovery_in_progress = True
+        self._recovery_sweep_attempted = True
         self.no_frontier_since = None
 
         self.get_logger().warn(
             "Frontier clusters exist but have no usable goal. "
-            "Trying 0.3 m moves in four directions before "
+            "Trying eight 0.3 m moves before "
             "starting the 10s countdown."
         )
 
@@ -1056,8 +999,8 @@ class ExplorerNode(Node):
 
         name, relative_angle = self.recovery_directions[self._recovery_index]
 
-        # All four directions are relative to the pose at the start of
-        # the sweep, so they form a fixed cross around the starting pose.
+        # All directions are relative to the pose at the start of the
+        # sweep, so they form a fixed ring around the starting pose.
         yaw = self._recovery_start_yaw + relative_angle
         goal_x = self._recovery_start_x + (
             self.recovery_distance * math.cos(yaw)
@@ -1074,7 +1017,8 @@ class ExplorerNode(Node):
         pose.pose.orientation = yaw_to_quaternion(yaw)
 
         self.get_logger().info(
-            f"Recovery move {self._recovery_index + 1}/4: "
+            f"Recovery move {self._recovery_index + 1}/"
+            f"{len(self.recovery_directions)}: "
             f"{name}, 0.3 m -> ({goal_x:.2f}, {goal_y:.2f})"
         )
 
@@ -1159,33 +1103,7 @@ class ExplorerNode(Node):
 
             if frontier is not None:
                 self.no_frontier_since = None
-
-            # --------------------------------------------------------
-            # Frontiers still exist, but coverage growth has plateaued.
-            #
-            # This is deliberately separate from the "no frontier
-            # found" path below: here we're choosing to stop even
-            # though there's more we technically could explore,
-            # because it isn't paying for itself.
-            # --------------------------------------------------------
-
-            if frontier is not None and self.is_coverage_plateaued():
-
-                self.get_logger().info(
-                    "Coverage growth has plateaued "
-                    f"(<{self.coverage_plateau_min_growth * 100:.0f}% "
-                    f"over {self.coverage_plateau_window:.0f}s) while "
-                    "frontiers still remain. Calling it good enough "
-                    "and returning home instead of chasing marginal "
-                    "coverage."
-                )
-
-                self.state = "RETURNING"
-                self.current_frontier = None
-                self.current_frontier_distance = float("inf")
-                self.no_frontier_since = None
-
-                return
+                self._recovery_sweep_attempted = False
 
             # --------------------------------------------------------
             # No frontier found.
@@ -1193,10 +1111,14 @@ class ExplorerNode(Node):
 
             if frontier is None:
 
-                # When the specific warning "clusters exist, but none have
-                # a usable goal point" occurs, do the four 0.3 m recovery
-                # moves first. The 10 s countdown starts only afterwards.
-                if self._frontier_clusters_no_usable_goal:
+                # When clusters exist but none has a usable goal, make one
+                # eight-move recovery attempt.  Once it has completed, fall
+                # through to the 10 s no-frontier countdown rather than
+                # starting another sweep.
+                if (
+                    self._frontier_clusters_no_usable_goal
+                    and not self._recovery_sweep_attempted
+                ):
                     self._start_recovery_sweep()
                     return
 
