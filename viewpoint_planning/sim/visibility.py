@@ -13,6 +13,7 @@ head-on). That's a legitimate axis for a strong candidate to add — the hook is
 from __future__ import annotations
 
 from dataclasses import dataclass
+from functools import lru_cache
 
 import numpy as np
 
@@ -36,12 +37,19 @@ def quality_at_range(
     ``incidence_cosine`` is 1 for a head-on hit and 0 for a grazing hit.
     Grazing returns are less accurate because the beam travels nearly along
     the wall, making the hit position more sensitive to range and map noise.
-    A 0.25 floor keeps grazing hits useful but below head-on measurements.
+    A 0.75 floor keeps grazing hits useful while still penalizing them below
+    head-on measurements.
     """
     range_quality = np.maximum(0.0, 1.0 - (np.asarray(range_m) / max_range_m) ** 2)
     incidence = np.clip(np.asarray(incidence_cosine), 0.0, 1.0)
-    incidence_quality = 0.25 + 0.75 * incidence
+    incidence_quality = 0.75 + 0.25 * incidence
     return range_quality * incidence_quality
+
+
+@lru_cache(maxsize=16)
+def _ray_directions(num_rays: int) -> tuple[np.ndarray, np.ndarray]:
+    angles = 2 * np.pi * np.arange(num_rays) / num_rays
+    return -np.sin(angles), np.cos(angles)
 
 
 def _incidence_cosine(
@@ -102,9 +110,8 @@ def scan_from_stop(grid: OccupancyGrid, stop_xy: tuple[float, float],
     h, w = grid.data.shape
     occ_mask = grid.data == OCCUPIED
 
-    angles = 2 * np.pi * np.arange(sensor.num_rays) / sensor.num_rays
-    dr = -np.sin(angles)  # row decreases as world y increases (see map_io convention)
-    dc = np.cos(angles)
+    # These directions depend only on ray count, so reuse them across stops.
+    dr, dc = _ray_directions(sensor.num_rays)
     r = np.full(sensor.num_rays, float(origin_row))
     c = np.full(sensor.num_rays, float(origin_col))
     active = np.ones(sensor.num_rays, dtype=bool)
