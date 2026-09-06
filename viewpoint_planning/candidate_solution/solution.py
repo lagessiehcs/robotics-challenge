@@ -17,7 +17,7 @@ from sim.visibility import (
 )
 
 ROBOT_RADIUS_M = 0.2
-CANDIDATE_SPACING_M = 0.125
+CANDIDATE_SPACING_M = 0.05
 
 
 def _room_component(
@@ -150,7 +150,7 @@ def _select_stops(
                 np.zeros(len(target)),
                 np.full(len(target), np.inf),
             ),
-            options={"time_limit": 30.0},
+            options={"time_limit": 120.0},
         )
         result = coverage_result
         if coverage_result.x is not None:
