@@ -70,8 +70,13 @@ def load_occupancy_grid(yaml_path: str | Path) -> OccupancyGrid:
         meta = yaml.safe_load(f)
 
     image_path = yaml_path.parent / meta["image"]
-    img = Image.open(image_path).convert("L")
-    pixel = np.array(img, dtype=np.float64)
+    img = Image.open(image_path)
+    if img.mode in ("RGB", "RGBA"):
+        pixel = np.array(img.convert("L"), dtype=np.float64)
+    else:
+        pixel = np.array(img, dtype=np.float64)
+        if pixel.max(initial=0.0) > 255.0:
+            pixel *= 255.0 / 65535.0
 
     if meta.get("negate", 0):
         occ = pixel / 255.0
