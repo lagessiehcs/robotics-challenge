@@ -90,17 +90,26 @@ def _select_stops(
     candidates: list[tuple[float, float]],
     sensor: SensorModel,
 ) -> list[tuple[float, float]]:
-    target = list(map(tuple, np.argwhere(observable_wall_cells(grid))))
-    target_index = {cell: index for index, cell in enumerate(target)}
+    observable = set(map(tuple, np.argwhere(observable_wall_cells(grid))))
     coverage: dict[tuple[float, float], set[int]] = {}
+    candidate_cells: dict[tuple[float, float], set[tuple[int, int]]] = {}
     for candidate in candidates:
         observed = scan_from_stop(grid, candidate, sensor)
         cells = {
-            target_index[cell] for cell, quality in observed.items()
-            if quality >= sensor.min_quality and cell in target_index
+            cell for cell, quality in observed.items()
+            if quality >= sensor.min_quality and cell in observable
         }
         if cells:
-            coverage[candidate] = cells
+            candidate_cells[candidate] = cells
+
+    # A wall can be observable in principle yet impossible for this finite
+    # candidate set to scan at the required quality. Exclude such cells from
+    # the optimization model so the solver cannot spend effort representing
+    # impossible coverage.
+    target = sorted(set().union(*candidate_cells.values())) if candidate_cells else []
+    target_index = {cell: index for index, cell in enumerate(target)}
+    for candidate, cells in candidate_cells.items():
+        coverage[candidate] = {target_index[cell] for cell in cells}
 
     if not coverage:
         return []
