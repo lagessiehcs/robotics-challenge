@@ -123,11 +123,27 @@ reported seed, code commit, explorer/SLAM/Nav2 configuration, time scale,
 seeds, reporting both all-run results and the usable-map subset; do not omit
 corrupted-map runs from the overall success rate.
 
-Run the 10-trial-per-map evaluation in Docker from the repository root with:
+Run the 10-trial-per-map indoor evaluation in Docker from the repository root:
 
 ```bash
 docker compose -f explore_and_return/docker/docker-compose.yml run --rm challenge \
-  bash -lc 'cd /challenge && ./run_explore_and_return_evaluation.sh'
+  bash -lc 'cd /challenge && ./run_explore_and_return_evaluation.sh 10'
+```
+
+To run the unrestricted random-spawn baseline instead:
+
+```bash
+docker compose -f explore_and_return/docker/docker-compose.yml run --rm challenge \
+  bash -lc 'cd /challenge && SPAWN_MODE=random ./run_explore_and_return_evaluation.sh 10'
+```
+
+For a smaller or tuned batch, pass environment variables before the script;
+for example, this runs five trials only on Maps 1 and 3 at a 1,800-second
+simulated-time limit:
+
+```bash
+docker compose -f explore_and_return/docker/docker-compose.yml run --rm challenge \
+  bash -lc 'cd /challenge && MAP_IDS="1 3" TIME_LIMIT_S=1800 ./run_explore_and_return_evaluation.sh 5'
 ```
 
 The batch evaluator is my contribution. By default it selects reproducible
@@ -135,8 +151,8 @@ nonzero seeds whose initial location is tightly enclosed by walls in a
 simulated 360° lidar scan of `room.pgm`; it does not need a pre-made spawn
 mask. This keeps the indoor evaluation set separate at
 `explore_and_return/results/batch_random_indoor/<map>/trial_XX/`. To retain
-an unrestricted baseline, run it with `SPAWN_MODE=random`; those random-spawn
-results are written to `explore_and_return/results/batch_random/<map>/trial_XX/`.
+an unrestricted baseline, set `SPAWN_MODE=random`; those random-spawn results
+are written to `explore_and_return/results/batch_random/<map>/trial_XX/`.
 
 Each completed trial includes the simulator report, saved map, and console
 log. The launcher is resumable: it skips a trial with an existing `report.yaml`
