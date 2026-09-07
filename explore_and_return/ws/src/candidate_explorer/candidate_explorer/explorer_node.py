@@ -24,9 +24,9 @@ import rclpy
 import tf2_ros
 from action_msgs.msg import GoalStatus
 from geometry_msgs.msg import PoseStamped, Quaternion
-from nav2_msgs.action import NavigateToPose, ComputePathToPose
-from rclpy.action import ActionClient
 from nav_msgs.msg import OccupancyGrid
+from nav2_msgs.action import ComputePathToPose, NavigateToPose
+from rclpy.action import ActionClient
 from rclpy.node import Node
 from std_srvs.srv import Trigger
 
@@ -89,13 +89,9 @@ class ExplorerNode(Node):
         self._return_recovery_start_yaw = None
 
         # Minimum passage/entrance width that the robot is willing to enter.
-        self.min_passage_width = 0.5  # metres
+        self.min_passage_width = 0.55  # metres
 
-        # Number of consecutive detections required before blacklisting.
-        self.narrow_entrance_required = 2
-        self.narrow_entrance_count = 0
-
-        # Store the active Nav2 goal handle so we can cancel it.
+        # Store the active Nav2 goal handle so it can be canceled.
         self._goal_handle = None
 
         # Minimum distance a frontier goal must have from an obstacle.
@@ -108,35 +104,21 @@ class ExplorerNode(Node):
 
         self.latest_map: OccupancyGrid | None = None
         self.map_sub = self.create_subscription(
-            OccupancyGrid,
-            "/map",
-            self._on_map,
-            10
+            OccupancyGrid, "/map", self._on_map, 10
         )
 
-
         self.path_client = ActionClient(
-            self,
-            ComputePathToPose,
-            "/compute_path_to_pose"
+            self, ComputePathToPose, "/compute_path_to_pose"
         )
 
         self.nav_client = ActionClient(
-            self,
-            NavigateToPose,
-            "/navigate_to_pose"
+            self, NavigateToPose, "/navigate_to_pose"
         )
 
-        self.finish_client = self.create_client(
-            Trigger,
-            "/finish_exploration"
-        )
+        self.finish_client = self.create_client(Trigger, "/finish_exploration")
 
         self.tf_buffer = tf2_ros.Buffer()
-        self.tf_listener = tf2_ros.TransformListener(
-            self.tf_buffer,
-            self
-        )
+        self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
 
         self.state = "WAITING_FOR_MAP"
         self._goal_in_progress = False
@@ -159,20 +141,17 @@ class ExplorerNode(Node):
 
         # Reject a frontier before driving to it when Nav2's route is an
         # excessive detour compared with the direct distance.
-        self.max_frontier_path_detour_ratio = 4.0
+        self.max_frontier_path_detour_ratio = 2.5
 
         # Keep the robot moving through one region instead of letting a large
         # frontier on the opposite side of the map dominate every decision.
-        self.frontier_turnaround_weight = 3.0
+        self.frontier_turnaround_weight = 4.0
         self.frontier_gain_weight = 0.25
 
         # Frontiers that repeatedly fail or make no progress.
         self.frontier_blacklist = []
 
         self.timer = self.create_timer(1.0, self._tick)
-
-        # Store the active Nav2 goal handle so we can cancel it.
-        self._goal_handle = None
 
         # Set once we've asked Nav2 to cancel the current goal due to a
         # narrow gap ahead, so we don't spam cancel_goal_async() every
@@ -446,18 +425,20 @@ class ExplorerNode(Node):
 
     def get_home_pose_in_map_frame(self) -> PoseStamped | None:
         try:
-            t = self.tf_buffer.lookup_transform("map", "odom", rclpy.time.Time())
-        except tf2_ros.TransformException as ex:
-            self.get_logger().warn(f"no map->odom transform yet: {ex}")
+            transform = self.tf_buffer.lookup_transform(
+                "map", "odom", rclpy.time.Time()
+            )
+        except tf2_ros.TransformException as exc:
+            self.get_logger().warn(f"no map->odom transform yet: {exc}")
             return None
+
         pose = PoseStamped()
         pose.header.frame_id = "map"
         pose.header.stamp = self.get_clock().now().to_msg()
-        pose.pose.position.x = t.transform.translation.x
-        pose.pose.position.y = t.transform.translation.y
-        pose.pose.orientation = t.transform.rotation
+        pose.pose.position.x = transform.transform.translation.x
+        pose.pose.position.y = transform.transform.translation.y
+        pose.pose.orientation = transform.transform.rotation
         return pose
-
 
     def compute_global_path_async(
         self,
@@ -763,45 +744,23 @@ class ExplorerNode(Node):
         resolution: float,
         data,
     ) -> bool:
-        """
-        Return True if the frontier cell is too close to an occupied cell.
-
-        Occupied cells are those with occupancy > 20.
-        Unknown cells are ignored here.
-        """
-
-        clearance_cells = int(
-            math.ceil(self.obstacle_clearance / resolution)
-        )
+        """Return whether a frontier cell is within obstacle clearance."""
+        clearance_cells = math.ceil(self.obstacle_clearance / resolution)
 
         for dy in range(-clearance_cells, clearance_cells + 1):
             for dx in range(-clearance_cells, clearance_cells + 1):
-
-                # Don't use a square clearance region; use a circle.
-                distance = math.hypot(
-                    dx * resolution,
-                    dy * resolution
-                )
-
+                # Use a circular clearance region rather than a square one.
+                distance = math.hypot(dx * resolution, dy * resolution)
                 if distance > self.obstacle_clearance:
                     continue
 
-                nx = x + dx
-                ny = y + dy
-
-                # Outside map.
-                if (
-                    nx < 0
-                    or nx >= width
-                    or ny < 0
-                    or ny >= height
-                ):
+                neighbor_x = x + dx
+                neighbor_y = y + dy
+                if not (0 <= neighbor_x < width and 0 <= neighbor_y < height):
                     continue
 
-                i = ny * width + nx
-
-                # Occupied.
-                if data[i] > 20:
+                index = neighbor_y * width + neighbor_x
+                if data[index] > 20:
                     return True
 
         return False
@@ -963,7 +922,7 @@ class ExplorerNode(Node):
         # 3. Remove tiny clusters.
         # ------------------------------------------------------------
 
-        MIN_CLUSTER_SIZE = 0.5
+        MIN_CLUSTER_SIZE = 5
 
         clusters = [
             cluster
@@ -1104,7 +1063,7 @@ class ExplorerNode(Node):
         return best_goal
 
     def _start_recovery_sweep(self) -> None:
-        """Try each of the eight 0.3 m recovery moves once."""
+        """Try one recovery direction, then let frontier selection retry."""
         if self._recovery_in_progress or self._goal_in_progress:
             return
 
@@ -1127,15 +1086,13 @@ class ExplorerNode(Node):
         self._recovery_start_x = tf.transform.translation.x
         self._recovery_start_y = tf.transform.translation.y
         self._recovery_start_yaw = yaw
-        self._recovery_index = 0
         self._recovery_in_progress = True
-        self._recovery_sweep_attempted = True
         self.no_frontier_since = None
 
         self.get_logger().warn(
             "Frontier clusters exist but have no usable goal. "
-            "Trying eight 0.3 m moves before "
-            "starting the 10s countdown."
+            f"Trying recovery direction {self._recovery_index + 1}/"
+            f"{len(self.recovery_directions)} before checking again."
         )
 
         self._send_next_recovery_move()
@@ -1145,23 +1102,11 @@ class ExplorerNode(Node):
         if not self._recovery_in_progress:
             return
 
-        if self._recovery_index >= len(self.recovery_directions):
-            self._recovery_in_progress = False
-            self._recovery_start_x = None
-            self._recovery_start_y = None
-            self._recovery_start_yaw = None
-            self.no_frontier_since = self.get_clock().now()
-
-            self.get_logger().info(
-                f"Recovery sweep complete. Starting "
-                f"{self.no_frontier_timeout:.1f}s countdown."
-            )
-            return
-
         name, relative_angle = self.recovery_directions[self._recovery_index]
 
-        # All directions are relative to the pose at the start of the
-        # sweep, so they form a fixed ring around the starting pose.
+        # Each attempt is relative to the robot's current pose.  If it did
+        # not expose a usable frontier, the next attempt uses the next
+        # direction after frontier selection has had a chance to run.
         yaw = self._recovery_start_yaw + relative_angle
         goal_x = self._recovery_start_x + (
             self.recovery_distance * math.cos(yaw)
@@ -1193,18 +1138,33 @@ class ExplorerNode(Node):
             else:
                 self.get_logger().warn(
                     f"Recovery move '{name_done}' failed; "
-                    "trying the next direction."
+                    "checking frontiers before the next direction."
                 )
 
             self._recovery_index += 1
-            self._send_next_recovery_move()
+            self._recovery_in_progress = False
+            self._recovery_start_x = None
+            self._recovery_start_y = None
+            self._recovery_start_yaw = None
+
+            if self._recovery_index >= len(self.recovery_directions):
+                self._recovery_sweep_attempted = True
+                self.get_logger().info(
+                    "All recovery directions tried; starting the "
+                    f"{self.no_frontier_timeout:.1f}s countdown."
+                )
 
         self.send_nav_goal(pose, _on_done)
 
     def _start_return_home_recovery_sweep(self) -> None:
-        """Try eight small moves, then retry navigation to home."""
+        """Try one direction, then retry home before trying the next."""
         if self._return_recovery_in_progress or self._goal_in_progress:
             return
+
+        # After all directions have been tried, begin a new recovery cycle.
+        # Home is retried between every individual move.
+        if self._return_recovery_index >= len(self.recovery_directions):
+            self._return_recovery_index = 0
 
         try:
             tf = self.tf_buffer.lookup_transform(
@@ -1223,28 +1183,17 @@ class ExplorerNode(Node):
         self._return_recovery_start_yaw = math.atan2(
             2.0 * (q.w * q.z), 1.0 - 2.0 * (q.z * q.z)
         )
-        self._return_recovery_index = 0
         self._return_recovery_in_progress = True
 
         self.get_logger().warn(
-            "Return-home navigation made no progress. Trying eight 0.3 m "
-            "recovery moves before retrying home."
+            "Return-home navigation made no progress. Trying recovery "
+            f"direction {self._return_recovery_index + 1}/"
+            f"{len(self.recovery_directions)} before retrying home."
         )
         self._send_next_return_home_recovery_move()
 
     def _send_next_return_home_recovery_move(self) -> None:
         if not self._return_recovery_in_progress:
-            return
-
-        if self._return_recovery_index >= len(self.recovery_directions):
-            self._return_recovery_in_progress = False
-            self._return_recovery_start_x = None
-            self._return_recovery_start_y = None
-            self._return_recovery_start_yaw = None
-            self.get_logger().info(
-                "Return-home recovery sweep complete; "
-                "retrying home navigation."
-            )
             return
 
         name, relative_angle = self.recovery_directions[
@@ -1273,10 +1222,14 @@ class ExplorerNode(Node):
         def _on_done(success: bool) -> None:
             if not success:
                 self.get_logger().warn(
-                    f"Return-home recovery move '{name}' failed; trying next."
+                    f"Return-home recovery move '{name}' failed; "
+                    "retrying home before the next direction."
                 )
             self._return_recovery_index += 1
-            self._send_next_return_home_recovery_move()
+            self._return_recovery_in_progress = False
+            self._return_recovery_start_x = None
+            self._return_recovery_start_y = None
+            self._return_recovery_start_yaw = None
 
         self.send_nav_goal(pose, _on_done)
 
@@ -1366,11 +1319,6 @@ class ExplorerNode(Node):
         if self.state == "EXPLORING":
 
             # --------------------------------------------------------
-            # A navigation goal is currently running.
-            #
-            # We deliberately do NOT perform local narrow-passage
-            # detection here anymore.
-            #
             # The path was checked BEFORE NavigateToPose was sent.
             # --------------------------------------------------------
 
@@ -1406,6 +1354,7 @@ class ExplorerNode(Node):
             if frontier is not None:
                 self.no_frontier_since = None
                 self._recovery_sweep_attempted = False
+                self._recovery_index = 0
 
             # --------------------------------------------------------
             # No frontier found.
@@ -1413,10 +1362,10 @@ class ExplorerNode(Node):
 
             if frontier is None:
 
-                # When clusters exist but none has a usable goal, make one
-                # eight-move recovery attempt.  Once it has completed, fall
-                # through to the 10 s no-frontier countdown rather than
-                # starting another sweep.
+                # When clusters exist but none has a usable goal, try one
+                # recovery direction, then re-evaluate the frontiers.  Only
+                # after all eight directions have had an intervening retry
+                # do we begin the no-frontier countdown.
                 if (
                     self._frontier_clusters_no_usable_goal
                     and not self._recovery_sweep_attempted
@@ -1539,8 +1488,6 @@ class ExplorerNode(Node):
                 self.current_frontier = frontier
                 self.current_frontier_distance = distance
                 self.last_progress_time = now
-
-                self.narrow_entrance_count = 0
 
             # --------------------------------------------------------
             # SAME FRONTIER
@@ -1925,8 +1872,8 @@ class ExplorerNode(Node):
                     return
 
                 # This includes a watchdog cancellation after no progress,
-                # as well as a Nav2 failure.  In either case, exhaust the
-                # eight moves and then stay in RETURNING to try home again.
+                # as well as a Nav2 failure.  Try one recovery direction,
+                # then remain in RETURNING to retry home.
                 self._return_home_cancel_pending = False
                 self._start_return_home_recovery_sweep()
 
