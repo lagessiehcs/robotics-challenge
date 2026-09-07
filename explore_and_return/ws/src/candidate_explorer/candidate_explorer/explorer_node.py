@@ -139,9 +139,10 @@ class ExplorerNode(Node):
         # abandon the current frontier.
         self.progress_timeout = 2.0
 
-        # Reject a frontier before driving to it when Nav2's route is an
-        # excessive detour compared with the direct distance.
+        # A route beyond this ratio is still usable, but is deprioritized
+        # after its path cost has been measured.
         self.max_frontier_path_detour_ratio = 2.5
+        self.frontier_path_detours = []
 
         # Keep the robot moving through one region instead of letting a large
         # frontier on the opposite side of the map dominate every decision.
@@ -729,6 +730,27 @@ class ExplorerNode(Node):
 
         return False
 
+    def frontier_path_detour_ratio(self, frontier):
+        """Return a previously measured path/direct-distance ratio, if any."""
+        for old_frontier, ratio in self.frontier_path_detours:
+            if math.hypot(
+                frontier[0] - old_frontier[0],
+                frontier[1] - old_frontier[1],
+            ) < 0.8:
+                return ratio
+        return None
+
+    def remember_frontier_path_detour(self, frontier, ratio: float) -> None:
+        """Cache one route-cost measurement for frontier scoring."""
+        for index, (old_frontier, _) in enumerate(self.frontier_path_detours):
+            if math.hypot(
+                frontier[0] - old_frontier[0],
+                frontier[1] - old_frontier[1],
+            ) < 0.8:
+                self.frontier_path_detours[index] = (frontier, ratio)
+                return
+        self.frontier_path_detours.append((frontier, ratio))
+
     def frontier_is_too_close_to_obstacle(
         self,
         x: int,
@@ -1017,6 +1039,13 @@ class ExplorerNode(Node):
             )
 
             score = closest_distance * heading_penalty / gain_bonus
+
+            # A previously measured Nav2 detour is a better travel-cost
+            # estimate than straight-line distance.  It does not rule the
+            # frontier out; it simply lets cheaper alternatives win first.
+            cached_detour = self.frontier_path_detour_ratio(closest_frontier)
+            if cached_detour is not None:
+                score *= cached_detour
 
             self.get_logger().debug(
                 f"Cluster size={len(cluster)}, "
@@ -1685,22 +1714,26 @@ class ExplorerNode(Node):
 
                     return
 
-                if detour_ratio > self.max_frontier_path_detour_ratio:
-                    self.get_logger().warn(
-                        f"Rejecting frontier "
+                cached_detour = self.frontier_path_detour_ratio(
+                    frontier_being_checked
+                )
+                self.remember_frontier_path_detour(
+                    frontier_being_checked, detour_ratio
+                )
+
+                if (
+                    detour_ratio > self.max_frontier_path_detour_ratio
+                    and cached_detour is None
+                ):
+                    self.get_logger().info(
+                        f"Deferring frontier "
                         f"({frontier_being_checked[0]:.2f}, "
                         f"{frontier_being_checked[1]:.2f}): "
-                        f"Nav2 path is an excessive {detour_ratio:.1f}x "
-                        "detour."
+                        f"its {detour_ratio:.1f}x Nav2 detour has been "
+                        "added as a score penalty, not blacklisted."
                     )
-
-                    self.frontier_blacklist.append(
-                        frontier_being_checked
-                    )
-
                     self.current_frontier = None
                     self.current_frontier_distance = float("inf")
-
                     return
 
                 if self.path_has_narrow_passage(path):
