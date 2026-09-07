@@ -75,7 +75,7 @@ class ExplorerNode(Node):
         self._recovery_sweep_attempted = False
 
         # Minimum passage/entrance width that the robot is willing to enter.
-        self.min_passage_width = 0.6  # metres
+        self.min_passage_width = 0.5  # metres
 
         # Number of consecutive detections required before blacklisting.
         self.narrow_entrance_required = 2
@@ -85,7 +85,13 @@ class ExplorerNode(Node):
         self._goal_handle = None
 
         # Minimum distance a frontier goal must have from an obstacle.
-        self.obstacle_clearance = 0.4  # metres
+        self.obstacle_clearance = 0.5  # metres
+
+        # Navfn's configured goal tolerance is 0.5 m.  A closer frontier can
+        # produce a zero-length path and an immediate Nav2 success without
+        # moving the robot, so require a small margin beyond that tolerance.
+        self.min_frontier_goal_distance = 0.60  # metres
+
         self.latest_map: OccupancyGrid | None = None
         self.map_sub = self.create_subscription(
             OccupancyGrid,
@@ -136,6 +142,15 @@ class ExplorerNode(Node):
         # Simulated seconds without meaningful progress before we
         # abandon the current frontier.
         self.progress_timeout = 2.0
+
+        # Reject a frontier before driving to it when Nav2's route is an
+        # excessive detour compared with the direct distance.
+        self.max_frontier_path_detour_ratio = 4.0
+
+        # Keep the robot moving through one region instead of letting a large
+        # frontier on the opposite side of the map dominate every decision.
+        self.frontier_turnaround_weight = 3.0
+        self.frontier_gain_weight = 0.25
 
         # Frontiers that repeatedly fail or make no progress.
         self.frontier_blacklist = []
@@ -466,6 +481,17 @@ class ExplorerNode(Node):
                 return True
 
         return False
+
+    @staticmethod
+    def path_length(path) -> float:
+        """Return the travelled length of a Nav2 Path in metres."""
+        return sum(
+            math.hypot(
+                current.pose.position.x - previous.pose.position.x,
+                current.pose.position.y - previous.pose.position.y,
+            )
+            for previous, current in zip(path.poses, path.poses[1:])
+        )
 
     def get_cross_section_width(
         self,
@@ -831,6 +857,7 @@ class ExplorerNode(Node):
 
         best_cluster = None
         best_goal = None
+        best_distance = float("inf")
         best_score = float("inf")
 
         for cluster in clusters:
@@ -853,7 +880,7 @@ class ExplorerNode(Node):
                 )
 
                 # Don't choose a frontier we're already on.
-                if distance <= 0.45:
+                if distance <= self.min_frontier_goal_distance:
                     continue
 
                 # Ignore blacklisted frontier cells.
@@ -881,11 +908,9 @@ class ExplorerNode(Node):
                 cluster, width, height, data
             )
 
-            # Heading alignment: 1.0 when the frontier is straight
-            # ahead, up to 2.0 when it's directly behind us. Applied
-            # as a multiplier (not a hard filter) so a big enough or
-            # close enough frontier can still win even if it's behind
-            # the robot.
+            # A direction reversal is expensive: it usually means returning
+            # along already-covered space.  Penalize it strongly, while still
+            # allowing it when no forward frontier remains.
             angle_to_goal = math.atan2(
                 closest_frontier[1] - robot_y,
                 closest_frontier[0] - robot_x
@@ -898,19 +923,26 @@ class ExplorerNode(Node):
                 )
             )
 
-            heading_penalty = 1.0 + (heading_diff / math.pi)
-
-            score = (
-                closest_distance
-                * heading_penalty
-                / (math.sqrt(len(cluster)) * math.sqrt(1 + gain))
+            heading_penalty = 1.0 + (
+                self.frontier_turnaround_weight
+                * (heading_diff / math.pi) ** 2
             )
+
+            # Information gain is a bounded tie-breaker.  The old product of
+            # square roots allowed a large distant frontier to overwhelm both
+            # distance and direction, causing branch-to-branch oscillation.
+            gain_bonus = 1.0 + (
+                self.frontier_gain_weight * math.log1p(gain)
+            )
+
+            score = closest_distance * heading_penalty / gain_bonus
 
             self.get_logger().debug(
                 f"Cluster size={len(cluster)}, "
                 f"gain={gain}, "
                 f"distance={closest_distance:.2f}m, "
                 f"heading_penalty={heading_penalty:.2f}, "
+                f"gain_bonus={gain_bonus:.2f}, "
                 f"score={score:.3f}"
             )
 
@@ -919,6 +951,7 @@ class ExplorerNode(Node):
                 best_score = score
                 best_cluster = cluster
                 best_goal = closest_frontier
+                best_distance = closest_distance
 
         # ------------------------------------------------------------
         # 5. No usable cluster.
@@ -937,7 +970,7 @@ class ExplorerNode(Node):
             f"size={len(best_cluster)}, "
             f"goal=({best_goal[0]:.2f}, "
             f"{best_goal[1]:.2f}), "
-            f"distance={closest_distance:.2f}"
+            f"distance={best_distance:.2f}"
         )
 
         return best_goal
@@ -1406,6 +1439,52 @@ class ExplorerNode(Node):
                 # ----------------------------------------------------
                 # Inspect the actual Nav2 path.
                 # ----------------------------------------------------
+
+                nav_path_length = self.path_length(path)
+                direct_distance = max(distance, 0.01)
+                detour_ratio = nav_path_length / direct_distance
+
+                self.get_logger().info(
+                    f"Nav2 path to frontier is {nav_path_length:.2f}m "
+                    f"(straight-line={direct_distance:.2f}m, "
+                    f"detour={detour_ratio:.1f}x)"
+                )
+
+                if nav_path_length < 0.05:
+                    self.get_logger().warn(
+                        f"Rejecting frontier "
+                        f"({frontier_being_checked[0]:.2f}, "
+                        f"{frontier_being_checked[1]:.2f}): "
+                        "Nav2 returned a zero-length path, so it would "
+                        "not move the robot."
+                    )
+
+                    self.frontier_blacklist.append(
+                        frontier_being_checked
+                    )
+
+                    self.current_frontier = None
+                    self.current_frontier_distance = float("inf")
+
+                    return
+
+                if detour_ratio > self.max_frontier_path_detour_ratio:
+                    self.get_logger().warn(
+                        f"Rejecting frontier "
+                        f"({frontier_being_checked[0]:.2f}, "
+                        f"{frontier_being_checked[1]:.2f}): "
+                        f"Nav2 path is an excessive {detour_ratio:.1f}x "
+                        "detour."
+                    )
+
+                    self.frontier_blacklist.append(
+                        frontier_being_checked
+                    )
+
+                    self.current_frontier = None
+                    self.current_frontier_distance = float("inf")
+
+                    return
 
                 if self.path_has_narrow_passage(path):
 
