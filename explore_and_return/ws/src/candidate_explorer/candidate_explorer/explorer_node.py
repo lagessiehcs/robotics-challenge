@@ -87,8 +87,6 @@ class ExplorerNode(Node):
         self._return_recovery_start_x = None
         self._return_recovery_start_y = None
         self._return_recovery_start_yaw = None
-        self.return_home_max_failed_trials = 5
-        self._return_home_failed_trials = 0
 
         # Minimum passage/entrance width that the robot is willing to enter.
         self.min_passage_width = 0.55  # metres
@@ -233,19 +231,35 @@ class ExplorerNode(Node):
         ):
             return
 
+        self._map_correction_epoch += 1
+        self._map_settle_until_sec = (
+            self._now_sec() + self.map_correction_settle_seconds
+        )
+
         self.get_logger().warn(
             "Large map->odom correction detected "
             f"(translation={translation_change:.2f}m, "
             f"yaw={math.degrees(yaw_change):.1f}deg). "
-            "Finishing the session to avoid using a corrupted map."
+            f"Pausing frontier navigation for "
+            f"{self.map_correction_settle_seconds:.1f}s."
         )
 
-        self._map_correction_epoch += 1
+        had_frontier_goal = (
+            self._goal_in_progress
+            and self.state == "EXPLORING"
+            and self.current_frontier is not None
+        )
+
         self.current_frontier = None
         self.current_frontier_distance = float("inf")
-        if self._goal_handle is not None:
-            self._goal_handle.cancel_goal_async()
-        self.state = "FINISHING"
+
+        if had_frontier_goal:
+            self._map_correction_cancel_pending = True
+            if self._goal_handle is not None:
+                self.get_logger().info(
+                    "Canceling frontier goal planned before map correction."
+                )
+                self._goal_handle.cancel_goal_async()
 
     def _check_for_immediate_narrow_passage(self) -> None:
         """While actively navigating toward a frontier, watch the gap
@@ -1289,7 +1303,7 @@ class ExplorerNode(Node):
 
         self._check_for_map_correction()
 
-        if self.state != "FINISHING" and self._map_is_settling():
+        if self._map_is_settling():
             return
 
         # ============================================================
@@ -1847,12 +1861,6 @@ class ExplorerNode(Node):
                     f"success={success}"
                 )
 
-                # A map correction can finish the session while this action
-                # is being canceled.  Do not restart recovery from that late
-                # action result.
-                if self.state != "RETURNING":
-                    return
-
                 if success:
                     self.state = "FINISHING"
                     return
@@ -1861,20 +1869,6 @@ class ExplorerNode(Node):
                 # as well as a Nav2 failure.  Try one recovery direction,
                 # then remain in RETURNING to retry home.
                 self._return_home_cancel_pending = False
-                self._return_home_failed_trials += 1
-
-                if (
-                    self._return_home_failed_trials
-                    >= self.return_home_max_failed_trials
-                ):
-                    self.get_logger().error(
-                        f"Return-home failed "
-                        f"{self._return_home_failed_trials} times; "
-                        "finishing instead of continuing recovery."
-                    )
-                    self.state = "FINISHING"
-                    return
-
                 self._start_return_home_recovery_sweep()
 
             self.send_nav_goal(
