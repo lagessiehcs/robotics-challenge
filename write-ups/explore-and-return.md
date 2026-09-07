@@ -130,11 +130,18 @@ docker compose -f explore_and_return/docker/docker-compose.yml run --rm challeng
   bash -lc 'cd /challenge && ./run_explore_and_return_evaluation.sh'
 ```
 
-Each completed trial is copied to
-`explore_and_return/results/batch/<map>/trial_XX/` and includes the simulator
-report, saved map, and console log. The launcher is resumable: it skips a
-trial with an existing `report.yaml` and preserves an incomplete trial folder
-for inspection rather than overwriting it.
+The batch evaluator is my contribution. By default it selects reproducible
+nonzero seeds whose initial location is tightly enclosed by walls in a
+simulated 360° lidar scan of `room.pgm`; it does not need a pre-made spawn
+mask. This keeps the indoor evaluation set separate at
+`explore_and_return/results/batch_random_indoor/<map>/trial_XX/`. To retain
+an unrestricted baseline, run it with `SPAWN_MODE=random`; those random-spawn
+results are written to `explore_and_return/results/batch_random/<map>/trial_XX/`.
+
+Each completed trial includes the simulator report, saved map, and console
+log. The launcher is resumable: it skips a trial with an existing `report.yaml`
+and preserves an incomplete trial folder for inspection rather than
+overwriting it.
 
 ### What I'd Do With More Time
 

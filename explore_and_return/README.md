@@ -147,31 +147,6 @@ truth) — useful for a quick visual sanity check without RViz open.
 The report only appears once a session finishes (via `/finish_exploration`
 or the time limit) — an empty `results/` just means no session has finished yet.
 
-### Batch evaluation
-
-Run the batch evaluator from `/challenge` to evaluate each selected map and
-save a resumable directory per trial:
-
-```bash
-./run_explore_and_return_evaluation.sh 10
-```
-
-By default, it derives indoor starts directly from `room.pgm` and writes the
-results to `results/batch_random_indoor/<map_id>/trial_XX/`. It accepts only
-locations tightly enclosed by walls in a simulated initial 360° lidar scan;
-no pre-made spawn mask is read or required. Indoor spawns are selected with
-reproducible nonzero seeds, so a resumed batch uses the same start poses.
-
-To run unrestricted random spawns instead, use:
-
-```bash
-SPAWN_MODE=random ./run_explore_and_return_evaluation.sh 10
-```
-
-Those results are kept separate in `results/batch_random/<map_id>/trial_XX/`.
-The script also accepts `MAP_IDS`, `TIME_LIMIT_S`, `TIME_SCALE`, and
-`SPAWN_SEED_BASE` environment variables.
-
 ### Home is the odom frame's origin
 
 The robot's `odom` frame originates at its spawn point, exactly like a real
