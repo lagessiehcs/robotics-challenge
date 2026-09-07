@@ -74,6 +74,20 @@ class ExplorerNode(Node):
         # only after a usable frontier is found again.
         self._recovery_sweep_attempted = False
 
+        # Return-home has its own recovery loop.  A home goal can remain
+        # active while the robot is blocked, so track distance to the current
+        # (map-frame) home pose and cancel it when that distance stops falling.
+        self.return_home_progress_timeout = 1.0
+        self.return_home_progress_distance = 0.05
+        self._return_home_distance = float("inf")
+        self._return_home_last_progress_sec = None
+        self._return_home_cancel_pending = False
+        self._return_recovery_in_progress = False
+        self._return_recovery_index = 0
+        self._return_recovery_start_x = None
+        self._return_recovery_start_y = None
+        self._return_recovery_start_yaw = None
+
         # Minimum passage/entrance width that the robot is willing to enter.
         self.min_passage_width = 0.5  # metres
 
@@ -165,9 +179,114 @@ class ExplorerNode(Node):
         # tick while waiting for that cancellation to be confirmed.
         self._narrow_gap_cancel_pending = False
 
+        # A large map->odom change is a SLAM pose-graph correction.  Paths
+        # expressed in the previous map frame are no longer trustworthy, so
+        # cancel the in-flight frontier goal and wait for Nav2's costmaps to
+        # incorporate the corrected map before selecting another frontier.
+        self.map_correction_translation_threshold = 0.35  # metres
+        self.map_correction_yaw_threshold = math.radians(15.0)
+        self.map_correction_settle_seconds = 3.0
+        self._last_map_odom_pose = None
+        self._map_settle_until_sec = None
+        self._map_correction_cancel_pending = False
+        self._map_correction_epoch = 0
+
     def _on_map(self, msg: OccupancyGrid) -> None:
         self.latest_map = msg
         self.map_version += 1
+
+    def _now_sec(self) -> float:
+        return self.get_clock().now().nanoseconds / 1e9
+
+    def _map_is_settling(self) -> bool:
+        if self._map_settle_until_sec is None:
+            return False
+
+        if self._now_sec() < self._map_settle_until_sec:
+            return True
+
+        self.get_logger().info(
+            "Map/costmap stabilization window complete; replanning."
+        )
+        self._map_settle_until_sec = None
+        return False
+
+    def _check_for_map_correction(self) -> None:
+        """Detect a large SLAM map->odom correction and invalidate paths."""
+        try:
+            tf = self.tf_buffer.lookup_transform(
+                "map", "odom", rclpy.time.Time()
+            )
+        except tf2_ros.TransformException:
+            return
+
+        q = tf.transform.rotation
+        current = (
+            tf.transform.translation.x,
+            tf.transform.translation.y,
+            math.atan2(
+                2.0 * (q.w * q.z),
+                1.0 - 2.0 * (q.z * q.z),
+            ),
+        )
+
+        previous = self._last_map_odom_pose
+        self._last_map_odom_pose = current
+
+        # The first transform establishes a baseline, not a correction.
+        if previous is None:
+            return
+
+        translation_change = math.hypot(
+            current[0] - previous[0],
+            current[1] - previous[1],
+        )
+        yaw_change = abs(math.atan2(
+            math.sin(current[2] - previous[2]),
+            math.cos(current[2] - previous[2]),
+        ))
+
+        if (
+            translation_change < self.map_correction_translation_threshold
+            and yaw_change < self.map_correction_yaw_threshold
+        ):
+            return
+
+        self._map_correction_epoch += 1
+        self._map_settle_until_sec = (
+            self._now_sec() + self.map_correction_settle_seconds
+        )
+
+        self.get_logger().warn(
+            "Large map->odom correction detected "
+            f"(translation={translation_change:.2f}m, "
+            f"yaw={math.degrees(yaw_change):.1f}deg). "
+            f"Pausing frontier navigation for "
+            f"{self.map_correction_settle_seconds:.1f}s."
+        )
+
+        had_frontier_goal = (
+            self._goal_in_progress
+            and self.state == "EXPLORING"
+            and self.current_frontier is not None
+        )
+
+        # A pending ComputePath result is stale even if no navigation goal
+        # has been sent yet.
+        self.current_frontier = None
+        self.current_frontier_distance = float("inf")
+
+        # Only frontier goals are canceled.  Return-home recomputes its home
+        # pose on the next attempt and is allowed to complete independently.
+        if (
+            had_frontier_goal
+        ):
+            self._map_correction_cancel_pending = True
+            if self._goal_handle is not None:
+                self.get_logger().info(
+                    "Canceling frontier goal planned before map correction."
+                )
+                self._goal_handle.cancel_goal_async()
 
     def _check_for_immediate_narrow_passage(self) -> None:
         """While actively navigating toward a frontier, watch the gap
@@ -575,6 +694,15 @@ class ExplorerNode(Node):
                 return
 
             self._goal_handle = handle
+
+            # A map correction can occur between send_goal_async() and this
+            # response.  In that case cancel immediately rather than letting
+            # a stale frontier goal start driving after the settle window.
+            if self._map_correction_cancel_pending:
+                self.get_logger().info(
+                    "Canceling newly accepted stale frontier goal."
+                )
+                handle.cancel_goal_async()
 
             result_future = handle.get_result_async()
 
@@ -1073,6 +1201,142 @@ class ExplorerNode(Node):
 
         self.send_nav_goal(pose, _on_done)
 
+    def _start_return_home_recovery_sweep(self) -> None:
+        """Try eight small moves, then retry navigation to home."""
+        if self._return_recovery_in_progress or self._goal_in_progress:
+            return
+
+        try:
+            tf = self.tf_buffer.lookup_transform(
+                "map", "base_link", rclpy.time.Time()
+            )
+        except tf2_ros.TransformException as exc:
+            self.get_logger().warn(
+                "Cannot start return-home recovery; "
+                f"no map -> base_link TF: {exc}"
+            )
+            return
+
+        q = tf.transform.rotation
+        self._return_recovery_start_x = tf.transform.translation.x
+        self._return_recovery_start_y = tf.transform.translation.y
+        self._return_recovery_start_yaw = math.atan2(
+            2.0 * (q.w * q.z), 1.0 - 2.0 * (q.z * q.z)
+        )
+        self._return_recovery_index = 0
+        self._return_recovery_in_progress = True
+
+        self.get_logger().warn(
+            "Return-home navigation made no progress. Trying eight 0.3 m "
+            "recovery moves before retrying home."
+        )
+        self._send_next_return_home_recovery_move()
+
+    def _send_next_return_home_recovery_move(self) -> None:
+        if not self._return_recovery_in_progress:
+            return
+
+        if self._return_recovery_index >= len(self.recovery_directions):
+            self._return_recovery_in_progress = False
+            self._return_recovery_start_x = None
+            self._return_recovery_start_y = None
+            self._return_recovery_start_yaw = None
+            self.get_logger().info(
+                "Return-home recovery sweep complete; "
+                "retrying home navigation."
+            )
+            return
+
+        name, relative_angle = self.recovery_directions[
+            self._return_recovery_index
+        ]
+        yaw = self._return_recovery_start_yaw + relative_angle
+        goal_x = self._return_recovery_start_x + (
+            self.recovery_distance * math.cos(yaw)
+        )
+        goal_y = self._return_recovery_start_y + (
+            self.recovery_distance * math.sin(yaw)
+        )
+
+        pose = PoseStamped()
+        pose.header.frame_id = "map"
+        pose.header.stamp = self.get_clock().now().to_msg()
+        pose.pose.position.x = goal_x
+        pose.pose.position.y = goal_y
+        pose.pose.orientation = yaw_to_quaternion(yaw)
+
+        self.get_logger().info(
+            f"Return-home recovery move {self._return_recovery_index + 1}/"
+            f"{len(self.recovery_directions)}: {name}, 0.3 m"
+        )
+
+        def _on_done(success: bool) -> None:
+            if not success:
+                self.get_logger().warn(
+                    f"Return-home recovery move '{name}' failed; trying next."
+                )
+            self._return_recovery_index += 1
+            self._send_next_return_home_recovery_move()
+
+        self.send_nav_goal(pose, _on_done)
+
+    def _check_return_home_progress(self) -> None:
+        """Cancel a return-home goal after one second without movement."""
+        if self._return_home_cancel_pending:
+            return
+
+        home = self.get_home_pose_in_map_frame()
+        if home is None:
+            return
+
+        try:
+            tf = self.tf_buffer.lookup_transform(
+                "map", "base_link", rclpy.time.Time()
+            )
+        except tf2_ros.TransformException:
+            return
+
+        distance = math.hypot(
+            home.pose.position.x - tf.transform.translation.x,
+            home.pose.position.y - tf.transform.translation.y,
+        )
+        now = self._now_sec()
+
+        if (
+            distance
+            < self._return_home_distance - self.return_home_progress_distance
+        ):
+            self._return_home_distance = distance
+            self._return_home_last_progress_sec = now
+            self.get_logger().info(
+                f"Progress toward home: {distance:.2f} m remaining"
+            )
+            return
+
+        if self._return_home_last_progress_sec is None:
+            self._return_home_distance = distance
+            self._return_home_last_progress_sec = now
+            return
+
+        if (
+            now - self._return_home_last_progress_sec
+            < self.return_home_progress_timeout
+        ):
+            return
+
+        if self._goal_handle is None:
+            # The action goal has not been accepted yet.  Leave the watchdog
+            # armed so the next tick can cancel it once a handle exists.
+            return
+
+        self._return_home_cancel_pending = True
+        self.get_logger().warn(
+            f"No progress toward home for "
+            f"{self.return_home_progress_timeout:.1f}s; "
+            "canceling home goal for recovery."
+        )
+        self._goal_handle.cancel_goal_async()
+
     def _tick(self) -> None:
 
         # ============================================================
@@ -1088,6 +1352,11 @@ class ExplorerNode(Node):
 
                 self.state = "EXPLORING"
 
+            return
+
+        self._check_for_map_correction()
+
+        if self._map_is_settling():
             return
 
         # ============================================================
@@ -1368,6 +1637,7 @@ class ExplorerNode(Node):
             # --------------------------------------------------------
 
             frontier_being_checked = frontier
+            path_check_epoch = self._map_correction_epoch
 
             self._path_check_in_progress = True
 
@@ -1384,6 +1654,12 @@ class ExplorerNode(Node):
             def _on_path_ready(path):
 
                 self._path_check_in_progress = False
+
+                if path_check_epoch != self._map_correction_epoch:
+                    self.get_logger().debug(
+                        "Discarding path computed before map correction."
+                    )
+                    return
 
                 # ----------------------------------------------------
                 # Make sure this callback still belongs to the current
@@ -1531,6 +1807,16 @@ class ExplorerNode(Node):
                     # Failed navigation.
                     # ------------------------------------------------
 
+                    if self._map_correction_cancel_pending:
+                        self.get_logger().info(
+                            "Discarding frontier result after map correction; "
+                            "not blacklisting it."
+                        )
+                        self._map_correction_cancel_pending = False
+                        self.current_frontier = None
+                        self.current_frontier_distance = float("inf")
+                        return
+
                     if not success:
 
                         self.get_logger().warn(
@@ -1602,6 +1888,13 @@ class ExplorerNode(Node):
         if self.state == "RETURNING":
 
             if self._goal_in_progress:
+                # Recovery moves are deliberately short, independent goals;
+                # only watchdog the actual goal that is taking us home.
+                if not self._return_recovery_in_progress:
+                    self._check_return_home_progress()
+                return
+
+            if self._return_recovery_in_progress:
                 return
 
             # IMPORTANT:
@@ -1614,6 +1907,12 @@ class ExplorerNode(Node):
             if home is None:
                 return
 
+            # Home is re-derived immediately before each retry, since SLAM
+            # may have changed the map -> odom transform during recovery.
+            self._return_home_distance = float("inf")
+            self._return_home_last_progress_sec = None
+            self._return_home_cancel_pending = False
+
             def _on_done(success: bool) -> None:
 
                 self.get_logger().info(
@@ -1621,7 +1920,15 @@ class ExplorerNode(Node):
                     f"success={success}"
                 )
 
-                self.state = "FINISHING"
+                if success:
+                    self.state = "FINISHING"
+                    return
+
+                # This includes a watchdog cancellation after no progress,
+                # as well as a Nav2 failure.  In either case, exhaust the
+                # eight moves and then stay in RETURNING to try home again.
+                self._return_home_cancel_pending = False
+                self._start_return_home_recovery_sweep()
 
             self.send_nav_goal(
                 home,
