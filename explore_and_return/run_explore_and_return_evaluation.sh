@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Run the explore-and-return evaluation on every supplied map. Each trial uses
-# seed 0 (a new random spawn) and copies completed results to
-# results/explore_and_return.
+# seed 0 (a new random spawn) and copies completed results to results/batch.
 #
 # Usage: ./run_explore_and_return_evaluation.sh [trials_per_map]
 # Example: ./run_explore_and_return_evaluation.sh 10
@@ -22,10 +21,17 @@ if ! [[ "$TRIALS_PER_MAP" =~ ^[1-9][0-9]*$ ]]; then
   exit 2
 fi
 
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-EVAL_RUNNER="$REPO_DIR/explore_and_return/eval_runner.sh"
-OUTPUT_ROOT="$REPO_DIR/results/explore_and_return"
-SOURCE_RESULTS_ROOT="$REPO_DIR/explore_and_return/results"
+CHALLENGE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+EVAL_RUNNER="$CHALLENGE_DIR/eval_runner.sh"
+OUTPUT_ROOT="$CHALLENGE_DIR/results/batch"
+SOURCE_RESULTS_ROOT="$CHALLENGE_DIR/results"
+if [[ -d "$CHALLENGE_DIR/maps" ]]; then
+  MAPS_DIR="$CHALLENGE_DIR/maps"
+else
+  # On the host, maps is a sibling of explore_and_return. In Docker it is
+  # mounted at /challenge/maps, which is handled by the branch above.
+  MAPS_DIR="$CHALLENGE_DIR/../maps"
+fi
 MARKER_FILE="$(mktemp)"
 FAILED_RUNS=0
 
@@ -35,7 +41,7 @@ cleanup_marker() {
 trap cleanup_marker EXIT
 
 for map_id in $MAP_IDS; do
-  map_yaml="$REPO_DIR/maps/$map_id/room.yaml"
+  map_yaml="$MAPS_DIR/$map_id/room.yaml"
   if [[ ! -f "$map_yaml" ]]; then
     echo "Map $map_id does not exist: $map_yaml" >&2
     exit 2
