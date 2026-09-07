@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Run the explore-and-return evaluation on every supplied map. Each trial uses
-# seed 0 (a new random spawn) and writes directly to results/explore_and_return.
+# seed 0 (a new random spawn) and copies completed results to
+# results/explore_and_return.
 #
 # Usage: ./run_explore_and_return_evaluation.sh [trials_per_map]
 # Example: ./run_explore_and_return_evaluation.sh 10
@@ -24,7 +25,14 @@ fi
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EVAL_RUNNER="$REPO_DIR/explore_and_return/eval_runner.sh"
 OUTPUT_ROOT="$REPO_DIR/results/explore_and_return"
+SOURCE_RESULTS_ROOT="$REPO_DIR/explore_and_return/results"
+MARKER_FILE="$(mktemp)"
 FAILED_RUNS=0
+
+cleanup_marker() {
+  rm -f "$MARKER_FILE"
+}
+trap cleanup_marker EXIT
 
 for map_id in $MAP_IDS; do
   map_yaml="$REPO_DIR/maps/$map_id/room.yaml"
@@ -53,12 +61,24 @@ for map_id in $MAP_IDS; do
 
     mkdir -p "$trial_dir"
     echo "=== Map $map_id, $trial_name ($trial/$TRIALS_PER_MAP), seed 0 ==="
-    if RESULTS_PATH="$report_path" "$EVAL_RUNNER" "$map_yaml" 0 \
-        "$TIME_LIMIT_S" "$TIME_SCALE" |& tee "$log_path"; then
-      if [[ -f "$report_path" ]]; then
+    # eval_runner.sh owns its timestamped output path. Record a timestamp just
+    # before launch, then copy its newly completed result directory here.
+    touch "$MARKER_FILE"
+    if "$EVAL_RUNNER" "$map_yaml" 0 \
+        "$TIME_LIMIT_S" "$TIME_SCALE" 2>&1 | tee "$log_path"; then
+      mapfile -t source_reports < <(
+        find "$SOURCE_RESULTS_ROOT" -mindepth 2 -maxdepth 2 -name report.yaml \
+          -newer "$MARKER_FILE" -print | sort
+      )
+      if (( ${#source_reports[@]} == 1 )); then
+        source_dir="$(dirname "${source_reports[0]}")"
+        cp -a "$source_dir/." "$trial_dir/"
         echo "Completed: $report_path"
-      else
+      elif (( ${#source_reports[@]} == 0 )); then
         echo "Run exited without creating a report: $trial_dir" >&2
+        FAILED_RUNS=$((FAILED_RUNS + 1))
+      else
+        echo "Found multiple new reports; refusing to guess which one belongs to this trial." >&2
         FAILED_RUNS=$((FAILED_RUNS + 1))
       fi
     else
