@@ -136,5 +136,5 @@ From the repository root, run:
 ```
 
 This writes one report per map to `results/viewpoint_planning/<map>/` and
-creates `results/viewpoint_planning/summary/` with a CSV, Markdown summary,
-and a cross-map figure. Build the Docker image first as shown above.
+creates `results/viewpoint_planning/summary/` with a CSV and cross-map figure.
+Build the Docker image first as shown above.

@@ -30,9 +30,9 @@ independently. A pixel at or below `free_thresh` is free, a pixel at or above
 `occupied_thresh` is a wall, and a value between them is unknown. This avoids
 the original loose interpretation that treated every non-occupied pixel as
 free, mixing ROS gray unknown cells with valid floor space and potentially
-creating invalid candidate stops. Maps 1 and 4 are black-and-white, so this
-classification does not change their result, but it matters for partially
-known ROS maps containing unknown gray cells.
+creating invalid candidate stops. All five sample maps contain the ROS gray
+unknown value, so this distinction prevents unknown space from entering the
+candidate set in every evaluated map.
 
 ## Design Decisions & Tradeoffs
 
@@ -52,8 +52,8 @@ measurement is accurate enough.
 
 ### Performance
 
-The current planner was evaluated once on Maps 1 and 4 with the fixed 8 m
-range, 0.5 minimum-quality, and 0.2 m robot-radius settings. Every output
+The current planner was evaluated once on all five sample maps with the fixed
+8 m range, 0.5 minimum-quality, and 0.2 m robot-radius settings. Every output
 below is generated from the canonical reports in
 `results/viewpoint_planning/<map>/`; the reported tour lengths are routed
 through footprint-clear free space, not straight-line distances.
@@ -69,18 +69,25 @@ optimum.
 | Map | Coverage | Stops | Routed tour length | Planning time | Invalid stops |
 |---:|---:|---:|---:|---:|---:|
 | 1 | 69.0% | 160 | 84.54 m | 361.32 s | 0 |
+| 2 | 66.0% | 1,008 | 303.33 m | 2,744.01 s | 0 |
+| 3 | 72.1% | 1,368 | 334.93 m | 3,781.82 s | 0 |
 | 4 | 64.2% | 94 | 26.62 m | 55.85 s | 0 |
+| 5 | 73.9% | 237 | 66.44 m | 233.18 s | 0 |
 
-Across the two maps, wall-cell-weighted coverage was 67.5% (10,633 of 15,752
-observable wall cells), with no invalid stops. Map 1 needs more stops and a
-longer route because its room geometry is larger and more segmented than Map
-4.
+Across all five maps, wall-cell-weighted coverage was 68.9% (60,370 of 87,679
+observable wall cells), mean per-map coverage was 69.0%, and none of the 2,867
+stops was invalid. Map 5 achieved the highest coverage at 73.9%, while Map 4
+required the fewest stops and shortest planning time. Maps 2 and 3 required
+1,008 and 1,368 stops and took about 45.7 and 63.0 minutes respectively. These
+results expose the main scalability limitation: the dense candidate set
+creates a large optimization problem, and routed distances are then computed
+between every pair of selected stops.
 
 ![Viewpoint-planning performance by map](../results/viewpoint_planning/summary/performance_by_map.png)
 
-Run `MAP_IDS="1 4" ./run_viewpoint_planning_evaluation.sh` from the repository
-root to recreate these two reports, the summary table, and the figure. The
-Docker image must be built first with
+Run `./run_viewpoint_planning_evaluation.sh` from the repository root to
+recreate the five reports, cross-map CSV, and figure. The Docker image must be
+built first with
 `docker build -t viewpoint-planning viewpoint_planning`.
 
 ### What I'd Do With More Time

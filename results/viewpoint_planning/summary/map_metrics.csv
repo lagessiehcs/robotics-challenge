@@ -1,3 +1,6 @@
 map_id,coverage_fraction,covered_wall_cells,total_wall_cells,unreachable_wall_cells,num_stops,tour_length_m,planning_time_s,invalid_stop_count,report_path
-1,0.6904761904761905,7424,10752,11639,160,84.53638415609481,361.3155845809961,0,results/viewpoint_planning/1/coverage_report.json
-4,0.6418,3209,5000,6800,94,26.62376946552885,55.84853353200015,0,results/viewpoint_planning/4/coverage_report.json
+1,0.6904761904761905,7424,10752,11639,160,84.53638415609481,361.3155845809961,0,/Users/quan/Projects/robotics-challenge/results/viewpoint_planning/1/coverage_report.json
+2,0.6598186830664828,24891,37724,31939,1008,303.32939484769213,2744.009223264002,0,/Users/quan/Projects/robotics-challenge/results/viewpoint_planning/2/coverage_report.json
+3,0.7209904380141133,17267,23949,25679,1368,334.9260419956871,3781.821614960005,0,/Users/quan/Projects/robotics-challenge/results/viewpoint_planning/3/coverage_report.json
+4,0.6418,3209,5000,6800,94,26.62376946552885,55.84853353200015,0,/Users/quan/Projects/robotics-challenge/results/viewpoint_planning/4/coverage_report.json
+5,0.7391261946557441,7579,10254,10023,237,66.43608978357958,233.18408405699302,0,/Users/quan/Projects/robotics-challenge/results/viewpoint_planning/5/coverage_report.json
