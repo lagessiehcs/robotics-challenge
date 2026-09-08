@@ -1385,14 +1385,13 @@ class ExplorerNode(Node):
 
             if frontier is None:
 
-                # When clusters exist but none has a usable goal, try one
-                # recovery direction, then re-evaluate the frontiers.  Only
-                # after all eight directions have had an intervening retry
-                # do we begin the no-frontier countdown.
-                if (
-                    self._frontier_clusters_no_usable_goal
-                    and not self._recovery_sweep_attempted
-                ):
+                # Before treating the map as complete, try the directional
+                # recovery sweep even when no frontier cells exist yet.  A
+                # stationary robot's initial laser scan can be too sparse to
+                # form a usable frontier; moving exposes the next map area.
+                # Only after all eight directions have had an intervening
+                # retry do we begin the no-frontier countdown.
+                if not self._recovery_sweep_attempted:
                     self._start_recovery_sweep()
                     return
 
