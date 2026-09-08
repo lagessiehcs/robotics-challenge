@@ -74,19 +74,15 @@ class ExplorerNode(Node):
         # only after a usable frontier is found again.
         self._recovery_sweep_attempted = False
 
-        # Return-home has its own recovery loop.  A home goal can remain
-        # active while the robot is blocked, so track distance to the current
-        # (map-frame) home pose and cancel it when that distance stops falling.
-        self.return_home_progress_timeout = 3.0
-        self.return_home_progress_distance = 0.05
-        self._return_home_distance = float("inf")
-        self._return_home_last_progress_sec = None
-        self._return_home_cancel_pending = False
+        # Return-home uses a bounded directional recovery sweep only after
+        # Nav2 has reported failure from its own recovery tree.
         self._return_recovery_in_progress = False
         self._return_recovery_index = 0
         self._return_recovery_start_x = None
         self._return_recovery_start_y = None
         self._return_recovery_start_yaw = None
+        self._return_home_retry_after_sec = None
+        self.return_home_map_update_wait_s = 2.0
 
         # Minimum passage/entrance width that the robot is willing to enter.
         self.min_passage_width = 0.55  # metres
@@ -1184,10 +1180,13 @@ class ExplorerNode(Node):
         if self._return_recovery_in_progress or self._goal_in_progress:
             return
 
-        # After all directions have been tried, begin a new recovery cycle.
-        # Home is retried between every individual move.
         if self._return_recovery_index >= len(self.recovery_directions):
-            self._return_recovery_index = 0
+            self.get_logger().error(
+                "Return-home recovery sweep exhausted; ending the session "
+                "with the robot away from home."
+            )
+            self.state = "FINISHING"
+            return
 
         try:
             tf = self.tf_buffer.lookup_transform(
@@ -1209,7 +1208,7 @@ class ExplorerNode(Node):
         self._return_recovery_in_progress = True
 
         self.get_logger().warn(
-            "Return-home navigation made no progress. Trying recovery "
+            "Nav2 could not reach home. Trying recovery "
             f"direction {self._return_recovery_index + 1}/"
             f"{len(self.recovery_directions)} before retrying home."
         )
@@ -1253,65 +1252,13 @@ class ExplorerNode(Node):
             self._return_recovery_start_x = None
             self._return_recovery_start_y = None
             self._return_recovery_start_yaw = None
+            # Give SLAM and Nav2's global costmap time to ingest the scan
+            # gathered while making this recovery motion.
+            self._return_home_retry_after_sec = (
+                self._now_sec() + self.return_home_map_update_wait_s
+            )
 
         self.send_nav_goal(pose, _on_done)
-
-    def _check_return_home_progress(self) -> None:
-        """Cancel a return-home goal after one second without movement."""
-        if self._return_home_cancel_pending:
-            return
-
-        home = self.get_home_pose_in_map_frame()
-        if home is None:
-            return
-
-        try:
-            tf = self.tf_buffer.lookup_transform(
-                "map", "base_link", rclpy.time.Time()
-            )
-        except tf2_ros.TransformException:
-            return
-
-        distance = math.hypot(
-            home.pose.position.x - tf.transform.translation.x,
-            home.pose.position.y - tf.transform.translation.y,
-        )
-        now = self._now_sec()
-
-        if (
-            distance
-            < self._return_home_distance - self.return_home_progress_distance
-        ):
-            self._return_home_distance = distance
-            self._return_home_last_progress_sec = now
-            self.get_logger().info(
-                f"Progress toward home: {distance:.2f} m remaining"
-            )
-            return
-
-        if self._return_home_last_progress_sec is None:
-            self._return_home_distance = distance
-            self._return_home_last_progress_sec = now
-            return
-
-        if (
-            now - self._return_home_last_progress_sec
-            < self.return_home_progress_timeout
-        ):
-            return
-
-        if self._goal_handle is None:
-            # The action goal has not been accepted yet.  Leave the watchdog
-            # armed so the next tick can cancel it once a handle exists.
-            return
-
-        self._return_home_cancel_pending = True
-        self.get_logger().warn(
-            f"No progress toward home for "
-            f"{self.return_home_progress_timeout:.1f}s; "
-            "canceling home goal for recovery."
-        )
-        self._goal_handle.cancel_goal_async()
 
     def _tick(self) -> None:
 
@@ -1861,14 +1808,18 @@ class ExplorerNode(Node):
         if self.state == "RETURNING":
 
             if self._goal_in_progress:
-                # Recovery moves are deliberately short, independent goals;
-                # only watchdog the actual goal that is taking us home.
-                if not self._return_recovery_in_progress:
-                    self._check_return_home_progress()
+                # Nav2 owns the active home goal and its own recovery tree.
+                # Do not cancel it mid-spin or mid-backup: that prevents
+                # Nav2 from reporting a meaningful final result.
                 return
 
             if self._return_recovery_in_progress:
                 return
+
+            if self._return_home_retry_after_sec is not None:
+                if self._now_sec() < self._return_home_retry_after_sec:
+                    return
+                self._return_home_retry_after_sec = None
 
             # IMPORTANT:
             #
@@ -1882,9 +1833,6 @@ class ExplorerNode(Node):
 
             # Home is re-derived immediately before each retry, since SLAM
             # may have changed the map -> odom transform during recovery.
-            self._return_home_distance = float("inf")
-            self._return_home_last_progress_sec = None
-            self._return_home_cancel_pending = False
 
             def _on_done(success: bool) -> None:
 
@@ -1897,10 +1845,9 @@ class ExplorerNode(Node):
                     self.state = "FINISHING"
                     return
 
-                # This includes a watchdog cancellation after no progress,
-                # as well as a Nav2 failure.  Try one recovery direction,
-                # then remain in RETURNING to retry home.
-                self._return_home_cancel_pending = False
+                # Nav2 exhausted its own recovery tree. Try one bounded
+                # directional recovery move, then retry home after the map
+                # and costmap have had time to update.
                 self._start_return_home_recovery_sweep()
 
             self.send_nav_goal(
