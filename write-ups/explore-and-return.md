@@ -129,15 +129,10 @@ home-distance axis preserves both exact returns and multi-metre misses.
 
 ![Indoor sessions with no logged large SLAM correction](../results/explore_and_return/batch_random_indoor/summary/indoor_sessions_no_large_slam_correction.png)
 
-To recreate both figures and the accompanying CSV/Markdown summary from the
-saved indoor reports, run `python3 summarize_indoor_batch.py` from the
-repository root.
+To recreate both figures and the accompanying CSV data from the saved indoor
+reports, run `python3 summarize_indoor_batch.py` from the repository root.
 
-The second figure is not a claim that the excluded maps are definitely
-corrupted. It only filters runs whose `console.log` reports a large SLAM map
-correction, an observable localization-instability signal. The marked drop in
-return-home performance in the all-session plot makes SLAM/pose consistency the
-dominant observed limitation, rather than coverage alone.
+#### Per-map results: all indoor sessions
 
 | Map | Runs | Success | Mean coverage | Mean home distance | Mean simulated time |
 |---:|---:|---:|---:|---:|---:|
@@ -146,6 +141,16 @@ dominant observed limitation, rather than coverage alone.
 | 3 | 10 | 4/10 | 89.3% | 3.04 m | 972.0 s |
 | 4 | 10 | 9/10 | 98.2% | 0.36 m | 369.3 s |
 | 5 | 10 | 7/10 | 85.2% | 0.17 m | 765.2 s |
+
+#### Per-map results: no logged large SLAM correction
+
+| Map | Runs | Success | Mean coverage | Mean home distance | Mean simulated time |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 5 | 4/5 | 99.9% | 0.27 m | 565.2 s |
+| 2 | 6 | 2/6 | 82.0% | 0.42 m | 1147.5 s |
+| 3 | 4 | 4/4 | 99.9% | 0.22 m | 892.0 s |
+| 4 | 10 | 9/10 | 98.2% | 0.36 m | 369.3 s |
+| 5 | 8 | 5/8 | 81.8% | 0.18 m | 756.5 s |
 
 For a reproducible evaluation, include one row per run with the following
 data: map ID/path, run ID (the result-directory timestamp), requested and
