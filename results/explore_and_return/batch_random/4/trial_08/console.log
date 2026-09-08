@@ -1,0 +1,296 @@
+Launching sim + slam_toolbox + Nav2 (map: /challenge/maps/4/room.yaml, seed: 0, time_scale: 4.0x)...
+Waiting for bringup...
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-09-08-09-29-32-859938-orbstack-65877
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [sim_node-1]: process started with pid [65879]
+[INFO] [async_slam_toolbox_node-2]: process started with pid [65881]
+[INFO] [controller_server-3]: process started with pid [65883]
+[INFO] [smoother_server-4]: process started with pid [65885]
+[INFO] [planner_server-5]: process started with pid [65887]
+[INFO] [behavior_server-6]: process started with pid [65889]
+[INFO] [bt_navigator-7]: process started with pid [65891]
+[INFO] [waypoint_follower-8]: process started with pid [65893]
+[INFO] [velocity_smoother-9]: process started with pid [65895]
+[INFO] [lifecycle_manager-10]: process started with pid [65897]
+[bt_navigator-7] [INFO] [1788859772.976406932] [bt_navigator]: 
+[bt_navigator-7] 	bt_navigator lifecycle node launched. 
+[bt_navigator-7] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788859772.976484807] [bt_navigator]: Creating
+[planner_server-5] [INFO] [1788859772.984296316] [planner_server]: 
+[planner_server-5] 	planner_server lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788859772.985783326] [planner_server]: Creating
+[async_slam_toolbox_node-2] [INFO] [1788859772.986601873] [slam_toolbox]: Node using stack size 40000000
+[velocity_smoother-9] [INFO] [1788859772.988624427] [velocity_smoother]: 
+[velocity_smoother-9] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-9] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788859772.989490308] [controller_server]: 
+[controller_server-3] 	controller_server lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788859772.992127075] [controller_server]: Creating controller server
+[behavior_server-6] [INFO] [1788859772.992088616] [behavior_server]: 
+[behavior_server-6] 	behavior_server lifecycle node launched. 
+[behavior_server-6] 	Waiting on external lifecycle transitions to activate
+[behavior_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788859772.995719056] [smoother_server]: 
+[smoother_server-4] 	smoother_server lifecycle node launched. 
+[smoother_server-4] 	Waiting on external lifecycle transitions to activate
+[smoother_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788859772.997513193] [smoother_server]: Creating smoother server
+[lifecycle_manager-10] [INFO] [1788859773.000398461] [lifecycle_manager_navigation]: Creating
+[waypoint_follower-8] [INFO] [1788859773.006347500] [waypoint_follower]: 
+[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788859773.006501542] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[waypoint_follower-8] [INFO] [1788859773.006774377] [waypoint_follower]: Creating
+[planner_server-5] [INFO] [1788859773.009564020] [global_costmap.global_costmap]: 
+[planner_server-5] 	global_costmap lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788859773.010214191] [global_costmap.global_costmap]: Creating Costmap
+[controller_server-3] [INFO] [1788859773.011860243] [local_costmap.local_costmap]: 
+[controller_server-3] 	local_costmap lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788859773.012195954] [local_costmap.local_costmap]: Creating Costmap
+[async_slam_toolbox_node-2] [INFO] [1788859773.016514690] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-2] [INFO] [1788859773.016979110] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[lifecycle_manager-10] [INFO] [1788859773.021083678] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788859773.021123970] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-3] [INFO] [1788859773.021293804] [controller_server]: Configuring controller interface
+[controller_server-3] [INFO] [1788859773.021422555] [controller_server]: getting goal checker plugins..
+[controller_server-3] [INFO] [1788859773.021493347] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-3] [INFO] [1788859773.021516389] [local_costmap.local_costmap]: Configuring
+[controller_server-3] [INFO] [1788859773.024953369] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788859773.027528886] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-3] [INFO] [1788859773.029762275] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788859773.029780276] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-3] [INFO] [1788859773.030121278] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-3] [INFO] [1788859773.036382651] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-3] [INFO] [1788859773.036872155] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1788859773.037120323] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-3] [INFO] [1788859773.038191538] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-3] [INFO] [1788859773.038913543] [controller_server]: Setting transform_tolerance to 0.200000
+[controller_server-3] [INFO] [1788859773.044729538] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[controller_server-3] [INFO] [1788859773.045162333] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859773.045244958] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[controller_server-3] [INFO] [1788859773.045541127] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859773.045623336] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[controller_server-3] [INFO] [1788859773.045772212] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859773.045847629] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[controller_server-3] [INFO] [1788859773.046085714] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859773.046173256] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[controller_server-3] [INFO] [1788859773.046416591] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859773.046513883] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[controller_server-3] [INFO] [1788859773.046650551] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859773.046716093] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[controller_server-3] [INFO] [1788859773.046861594] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859773.046870261] [controller_server]: Controller Server has FollowPath  controllers available.
+[controller_server-3] [WARN] [1788859773.152237981] [controller_server.rclcpp]: failed to send response to /controller_server/change_state (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314
+[sim_node-1] [INFO] [1788859773.170799433] [challenge_sim_node]: Loaded /challenge/maps/4/room.yaml — spawned at world (4.11, 1.18); 26525 reachable free cells. time_scale=4.0x
+[async_slam_toolbox_node-2] [WARN] [1788859773.210497397] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.1 m)
+[async_slam_toolbox_node-2] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-2] Registering sensor: [Custom Described Lidar]
+Starting your explorer node...
+Running. Waiting for /challenge/results/20260908_092932/report.yaml to appear (or Ctrl-C to stop)...
+[INFO] [1788859803.194364536] [candidate_explorer]: Got first /map.
+[INFO] [1788859803.439348655] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859803.439819533] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859803.440119660] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859803.440398286] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788859803.440674913] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (0.66, 0.00)
+[ERROR] [1788859805.446991914] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859805.447410209] [candidate_explorer]: Recovery move 'forward' failed; checking frontiers before the next direction.
+[INFO] [1788859805.457027396] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859805.457576274] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859805.457853443] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859805.458192112] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788859805.458503447] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (0.57, 0.57)
+[ERROR] [1788859807.468426430] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859807.468803266] [candidate_explorer]: Recovery move 'forward-left' failed; checking frontiers before the next direction.
+[INFO] [1788859807.476957818] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859807.477445654] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859807.477726156] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859807.478011825] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 3/8 before checking again.
+[INFO] [1788859807.478253410] [candidate_explorer]: Recovery move 3/8: left, 0.8 m -> (0.00, 0.80)
+[ERROR] [1788859809.487264470] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859809.488112892] [candidate_explorer]: Recovery move 'left' failed; checking frontiers before the next direction.
+[INFO] [1788859809.497357243] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859809.497866830] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859809.498149498] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859809.498427709] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 4/8 before checking again.
+[INFO] [1788859809.498732002] [candidate_explorer]: Recovery move 4/8: backward-left, 0.8 m -> (-0.57, 0.57)
+[ERROR] [1788859811.520685812] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859811.520988273] [candidate_explorer]: Recovery move 'backward-left' failed; checking frontiers before the next direction.
+[INFO] [1788859811.528867657] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859811.529327826] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859811.529582286] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859811.529857371] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 5/8 before checking again.
+[INFO] [1788859811.530122832] [candidate_explorer]: Recovery move 5/8: backward, 0.8 m -> (-0.80, 0.00)
+[ERROR] [1788859813.559098855] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859813.559471024] [candidate_explorer]: Recovery move 'backward' failed; checking frontiers before the next direction.
+[INFO] [1788859813.567644827] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859813.568138913] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859813.568414457] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859813.568694417] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 6/8 before checking again.
+[INFO] [1788859813.568965502] [candidate_explorer]: Recovery move 6/8: backward-right, 0.8 m -> (-0.57, -0.57)
+[ERROR] [1788859815.581225960] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859815.581618921] [candidate_explorer]: Recovery move 'backward-right' failed; checking frontiers before the next direction.
+[INFO] [1788859815.590233393] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859815.591692236] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859815.591948946] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859815.592221365] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 7/8 before checking again.
+[INFO] [1788859815.592477241] [candidate_explorer]: Recovery move 7/8: right, 0.8 m -> (0.00, -0.80)
+[ERROR] [1788859817.603162898] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859817.603569734] [candidate_explorer]: Recovery move 'right' failed; checking frontiers before the next direction.
+[INFO] [1788859817.608173763] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859817.608691142] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859817.608997977] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859817.609310104] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 8/8 before checking again.
+[INFO] [1788859817.609568189] [candidate_explorer]: Recovery move 8/8: forward-right, 0.8 m -> (0.57, -0.57)
+[ERROR] [1788859819.619172797] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859819.619524341] [candidate_explorer]: Recovery move 'forward-right' failed; checking frontiers before the next direction.
+[INFO] [1788859819.619787634] [candidate_explorer]: All recovery directions tried; starting the 10.0s countdown.
+[INFO] [1788859819.627936853] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859819.628417190] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859819.628700942] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859819.628943443] [candidate_explorer]: No usable frontier found. Waiting up to 10.0s for the map to update.
+[INFO] [1788859819.698470849] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859819.699083603] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859819.699348272] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859819.949201714] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859819.949762926] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859819.950066678] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859820.198812988] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859820.199364658] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859820.199643618] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859820.446897752] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859820.447455298] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859820.447731799] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859820.698616957] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859820.699173002] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859820.699445629] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859820.948958652] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859820.949519947] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859820.949801074] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859821.202326659] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859821.202842287] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859821.203094414] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859821.448408243] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859821.448900455] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859821.449385625] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859821.698743147] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859821.699268151] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859821.699543444] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859821.948805174] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859821.949327761] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859821.949593971] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859822.199048327] [candidate_explorer]: Detected 273 frontier cells
+[INFO] [1788859822.199624664] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859822.199919583] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859822.200174293] [candidate_explorer]: No usable frontier found for 10.0s. Exploration complete; returning home.
+[ERROR] [1788859824.470580122] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859824.471238335] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859824.471583212] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 1/8 before retrying home.
+[INFO] [1788859824.471861505] [candidate_explorer]: Return-home recovery move 1/8: forward, 0.3 m
+[ERROR] [1788859826.488890578] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859826.489215955] [candidate_explorer]: Return-home recovery move 'forward' failed; retrying home before the next direction.
+[ERROR] [1788859828.527481414] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859828.527839666] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859828.528199002] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 2/8 before retrying home.
+[INFO] [1788859828.528453087] [candidate_explorer]: Return-home recovery move 2/8: forward-left, 0.3 m
+[ERROR] [1788859830.549736603] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859830.550060397] [candidate_explorer]: Return-home recovery move 'forward-left' failed; retrying home before the next direction.
+[ERROR] [1788859832.566472382] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859832.566761926] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859832.567098553] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 3/8 before retrying home.
+[INFO] [1788859832.567339721] [candidate_explorer]: Return-home recovery move 3/8: left, 0.3 m
+[ERROR] [1788859834.583358079] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859834.583824873] [candidate_explorer]: Return-home recovery move 'left' failed; retrying home before the next direction.
+[ERROR] [1788859836.611368388] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859836.611673224] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859836.612108685] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 4/8 before retrying home.
+[INFO] [1788859836.612402645] [candidate_explorer]: Return-home recovery move 4/8: backward-left, 0.3 m
+[ERROR] [1788859838.642931388] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859838.643275432] [candidate_explorer]: Return-home recovery move 'backward-left' failed; retrying home before the next direction.
+[ERROR] [1788859840.654907719] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859840.655999351] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859840.656461563] [candidate_explorer]: Cannot start return-home recovery; no map -> base_link TF: Lookup would require extrapolation into the past.  Requested time 242.650000 but the earliest data is at time 258.700000, when looking up transform from frame [base_link] to frame [map]
+[ERROR] [1788859842.669539943] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859842.669831153] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859842.670158989] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 5/8 before retrying home.
+[INFO] [1788859842.670390323] [candidate_explorer]: Return-home recovery move 5/8: backward, 0.3 m
+[ERROR] [1788859844.695703283] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859844.696042493] [candidate_explorer]: Return-home recovery move 'backward' failed; retrying home before the next direction.
+[ERROR] [1788859846.716453796] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859846.716806256] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859846.717187550] [candidate_explorer]: Cannot start return-home recovery; no map -> base_link TF: Lookup would require extrapolation into the past.  Requested time 266.950000 but the earliest data is at time 282.950000, when looking up transform from frame [base_link] to frame [map]
+[ERROR] [1788859848.738156065] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859848.738833486] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859848.739166738] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 6/8 before retrying home.
+[INFO] [1788859848.739403239] [candidate_explorer]: Return-home recovery move 6/8: backward-right, 0.3 m
+[ERROR] [1788859850.762963396] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859850.763303981] [candidate_explorer]: Return-home recovery move 'backward-right' failed; retrying home before the next direction.
+[ERROR] [1788859852.772067084] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859852.772397336] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859852.772723963] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 7/8 before retrying home.
+[INFO] [1788859852.772968881] [candidate_explorer]: Return-home recovery move 7/8: right, 0.3 m
+[ERROR] [1788859854.793107974] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859854.793423642] [candidate_explorer]: Return-home recovery move 'right' failed; retrying home before the next direction.
+[ERROR] [1788859856.814991536] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859856.815281246] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788859856.815634665] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 8/8 before retrying home.
+[INFO] [1788859856.815892666] [candidate_explorer]: Return-home recovery move 8/8: forward-right, 0.3 m
+[ERROR] [1788859858.850318393] [candidate_explorer]: /navigate_to_pose action server not available
+[WARN] [1788859858.850644811] [candidate_explorer]: Return-home recovery move 'forward-right' failed; retrying home before the next direction.
+[ERROR] [1788859860.884910120] [candidate_explorer]: /navigate_to_pose action server not available
+[INFO] [1788859860.886255962] [candidate_explorer]: return-home goal finished, success=False
+[ERROR] [1788859860.886455588] [candidate_explorer]: Return-home recovery sweep exhausted; ending the session with the robot away from home.
+[sim_node-1] [INFO] [1788859860.890781783] [challenge_sim_node]: SESSION FINISHED — wrote /challenge/results/20260908_092932/report.yaml
+[sim_node-1] collision_count: 0
+[sim_node-1] coverage_fraction: 0.3023562676720075
+[sim_node-1] distance_to_home_m: 0.0
+[sim_node-1] elapsed_time_s: 350.70000000004546
+[sim_node-1] elapsed_wall_time_s: 87.71716304001166
+[sim_node-1] map_output_yaml: /challenge/results/20260908_092932/map.yaml
+[sim_node-1] map_yaml: /challenge/maps/4/room.yaml
+[sim_node-1] min_coverage_required: 0.8
+[sim_node-1] results_path: /challenge/results/20260908_092932/report.yaml
+[sim_node-1] return_tolerance_m: 0.3
+[sim_node-1] seed: 0
+[sim_node-1] success: false
+[sim_node-1] time_scale: 4.0
+[sim_node-1] timed_out: false
+[sim_node-1] 
+[INFO] [1788859860.891593829] [candidate_explorer]: Session result: coverage=30.2% distance_to_home=0.00m elapsed_sim=350.7s elapsed_wall=87.7s collisions=0 success=False report_written_to=/challenge/results/20260908_092932/report.yaml
+
+=== REPORT ===
+collision_count: 0
+coverage_fraction: 0.3023562676720075
+distance_to_home_m: 0.0
+elapsed_time_s: 350.70000000004546
+elapsed_wall_time_s: 87.71716304001166
+map_output_yaml: /challenge/results/20260908_092932/map.yaml
+map_yaml: /challenge/maps/4/room.yaml
+min_coverage_required: 0.8
+results_path: /challenge/results/20260908_092932/report.yaml
+return_tolerance_m: 0.3
+seed: 0
+success: false
+time_scale: 4.0
+timed_out: false
+Shutting down...
+[ERROR] [sim_node-1]: process has died [pid 65879, exit code -9, cmd '/challenge/ws/install/challenge_sim/lib/challenge_sim/sim_node --ros-args -r __node:=challenge_sim_node --params-file /tmp/launch_params_01r64fbh'].
+[ERROR] [async_slam_toolbox_node-2]: process has died [pid 65881, exit code -9, cmd '/opt/ros/humble/lib/slam_toolbox/async_slam_toolbox_node --ros-args -r __node:=slam_toolbox --params-file /challenge/ws/install/challenge_sim/share/challenge_sim/config/slam_toolbox_params.yaml --params-file /tmp/launch_params_jit5cn7e'].
+[ERROR] [controller_server-3]: process has died [pid 65883, exit code -9, cmd '/opt/ros/humble/lib/nav2_controller/controller_server --ros-args --log-level info --ros-args --params-file /tmp/launch_params_v7brgq4d -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav'].
+[ERROR] [smoother_server-4]: process has died [pid 65885, exit code -9, cmd '/opt/ros/humble/lib/nav2_smoother/smoother_server --ros-args --log-level info --ros-args -r __node:=smoother_server --params-file /tmp/launch_params_v7brgq4d -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [planner_server-5]: process has died [pid 65887, exit code -9, cmd '/opt/ros/humble/lib/nav2_planner/planner_server --ros-args --log-level info --ros-args -r __node:=planner_server --params-file /tmp/launch_params_v7brgq4d -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [behavior_server-6]: process has died [pid 65889, exit code -9, cmd '/opt/ros/humble/lib/nav2_behaviors/behavior_server --ros-args --log-level info --ros-args -r __node:=behavior_server --params-file /tmp/launch_params_v7brgq4d -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [bt_navigator-7]: process has died [pid 65891, exit code -9, cmd '/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator --ros-args --log-level info --ros-args -r __node:=bt_navigator --params-file /tmp/launch_params_v7brgq4d -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [waypoint_follower-8]: process has died [pid 65893, exit code -9, cmd '/opt/ros/humble/lib/nav2_waypoint_follower/waypoint_follower --ros-args --log-level info --ros-args -r __node:=waypoint_follower --params-file /tmp/launch_params_v7brgq4d -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [velocity_smoother-9]: process has died [pid 65895, exit code -9, cmd '/opt/ros/humble/lib/nav2_velocity_smoother/velocity_smoother --ros-args --log-level info --ros-args -r __node:=velocity_smoother --params-file /tmp/launch_params_v7brgq4d -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav -r cmd_vel_smoothed:=cmd_vel'].

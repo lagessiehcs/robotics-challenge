@@ -1,0 +1,448 @@
+Launching sim + slam_toolbox + Nav2 (map: /challenge/maps/4/room.yaml, seed: 0, time_scale: 4.0x)...
+Waiting for bringup...
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-09-08-09-28-10-555625-orbstack-65520
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [sim_node-1]: process started with pid [65522]
+[INFO] [async_slam_toolbox_node-2]: process started with pid [65524]
+[INFO] [controller_server-3]: process started with pid [65526]
+[INFO] [smoother_server-4]: process started with pid [65528]
+[INFO] [planner_server-5]: process started with pid [65530]
+[INFO] [behavior_server-6]: process started with pid [65532]
+[INFO] [bt_navigator-7]: process started with pid [65534]
+[INFO] [waypoint_follower-8]: process started with pid [65536]
+[INFO] [velocity_smoother-9]: process started with pid [65538]
+[INFO] [lifecycle_manager-10]: process started with pid [65540]
+[waypoint_follower-8] [INFO] [1788859690.666862146] [waypoint_follower]: 
+[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-8] [INFO] [1788859690.667343774] [waypoint_follower]: Creating
+[controller_server-3] [INFO] [1788859690.675781662] [controller_server]: 
+[controller_server-3] 	controller_server lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788859690.679666604] [controller_server]: Creating controller server
+[async_slam_toolbox_node-2] [INFO] [1788859690.680567818] [slam_toolbox]: Node using stack size 40000000
+[behavior_server-6] [INFO] [1788859690.683968674] [behavior_server]: 
+[behavior_server-6] 	behavior_server lifecycle node launched. 
+[behavior_server-6] 	Waiting on external lifecycle transitions to activate
+[behavior_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788859690.687152361] [smoother_server]: 
+[smoother_server-4] 	smoother_server lifecycle node launched. 
+[smoother_server-4] 	Waiting on external lifecycle transitions to activate
+[smoother_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788859690.688540079] [smoother_server]: Creating smoother server
+[lifecycle_manager-10] [INFO] [1788859690.689883296] [lifecycle_manager_navigation]: Creating
+[velocity_smoother-9] [INFO] [1788859690.689884879] [velocity_smoother]: 
+[velocity_smoother-9] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-9] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788859690.695267206] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[planner_server-5] [INFO] [1788859690.696032294] [planner_server]: 
+[planner_server-5] 	planner_server lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788859690.696512631] [bt_navigator]: 
+[bt_navigator-7] 	bt_navigator lifecycle node launched. 
+[bt_navigator-7] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788859690.696586840] [bt_navigator]: Creating
+[planner_server-5] [INFO] [1788859690.697209219] [planner_server]: Creating
+[controller_server-3] [INFO] [1788859690.707050491] [local_costmap.local_costmap]: 
+[controller_server-3] 	local_costmap lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[async_slam_toolbox_node-2] [INFO] [1788859690.707480786] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-2] [INFO] [1788859690.707772788] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[controller_server-3] [INFO] [1788859690.707517078] [local_costmap.local_costmap]: Creating Costmap
+[planner_server-5] [INFO] [1788859690.711712147] [global_costmap.global_costmap]: 
+[planner_server-5] 	global_costmap lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788859690.712365568] [global_costmap.global_costmap]: Creating Costmap
+[lifecycle_manager-10] [INFO] [1788859690.713690285] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788859690.713809827] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-3] [INFO] [1788859690.857167555] [controller_server]: Configuring controller interface
+[controller_server-3] [INFO] [1788859690.857620683] [controller_server]: getting goal checker plugins..
+[controller_server-3] [INFO] [1788859690.857696100] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-3] [INFO] [1788859690.857713642] [local_costmap.local_costmap]: Configuring
+[controller_server-3] [INFO] [1788859690.860421368] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788859690.863251553] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-3] [INFO] [1788859690.865760528] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788859690.866038488] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-3] [INFO] [1788859690.866681825] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[sim_node-1] [INFO] [1788859690.867897292] [challenge_sim_node]: Loaded /challenge/maps/4/room.yaml — spawned at world (2.25, 2.26); 26525 reachable free cells. time_scale=4.0x
+[controller_server-3] [INFO] [1788859690.873768705] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-3] [INFO] [1788859690.874282208] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1788859690.874862754] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-3] [INFO] [1788859690.876060845] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-3] [INFO] [1788859690.877071852] [controller_server]: Setting transform_tolerance to 0.200000
+[controller_server-3] [INFO] [1788859690.882117260] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[controller_server-3] [INFO] [1788859690.882499304] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859690.882581221] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[controller_server-3] [INFO] [1788859690.883027432] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859690.883137808] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[controller_server-3] [INFO] [1788859690.883340018] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859690.883461643] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[controller_server-3] [INFO] [1788859690.883690312] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859690.883766312] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[controller_server-3] [INFO] [1788859690.883979813] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859690.884049106] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[controller_server-3] [INFO] [1788859690.884168523] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859690.884231773] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[controller_server-3] [INFO] [1788859690.884348607] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859690.884355358] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-10] [INFO] [1788859690.887893172] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788859690.888057632] [smoother_server]: Configuring smoother server
+[smoother_server-4] [INFO] [1788859690.894162797] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-4] [INFO] [1788859690.894791426] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-10] [INFO] [1788859690.898335907] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-5] [INFO] [1788859690.898631284] [planner_server]: Configuring
+[planner_server-5] [INFO] [1788859690.898795202] [global_costmap.global_costmap]: Configuring
+[planner_server-5] [INFO] [1788859690.902155849] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-5] [INFO] [1788859690.904347113] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-5] [INFO] [1788859690.905563204] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-5] [INFO] [1788859690.905871998] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788859690.906769379] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[async_slam_toolbox_node-2] [WARN] [1788859690.907696385] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.1 m)
+[async_slam_toolbox_node-2] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-2] Registering sensor: [Custom Described Lidar]
+[planner_server-5] [INFO] [1788859690.909715231] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788859690.909733065] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-5] [INFO] [1788859690.910031109] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-5] [INFO] [1788859690.915827355] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[planner_server-5] [INFO] [1788859690.915845563] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788859690.916428150] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-10] [INFO] [1788859690.922686941] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788859690.923024693] [behavior_server]: Configuring
+[behavior_server-6] [INFO] [1788859690.928194352] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[behavior_server-6] [INFO] [1788859690.928559105] [behavior_server]: Configuring spin
+[behavior_server-6] [INFO] [1788859690.933081134] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[behavior_server-6] [INFO] [1788859690.933411511] [behavior_server]: Configuring backup
+[behavior_server-6] [INFO] [1788859690.937384995] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[behavior_server-6] [INFO] [1788859690.937761290] [behavior_server]: Configuring drive_on_heading
+[behavior_server-6] [INFO] [1788859690.940691559] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[behavior_server-6] [INFO] [1788859690.941668065] [behavior_server]: Configuring assisted_teleop
+[behavior_server-6] [INFO] [1788859690.946698098] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-6] [INFO] [1788859690.947052100] [behavior_server]: Configuring wait
+[lifecycle_manager-10] [INFO] [1788859690.950398497] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788859690.950720208] [bt_navigator]: Configuring
+[lifecycle_manager-10] [INFO] [1788859690.990253174] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788859690.990697885] [waypoint_follower]: Configuring
+[waypoint_follower-8] [INFO] [1788859690.997717806] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-10] [INFO] [1788859690.998175642] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788859690.998327560] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-10] [INFO] [1788859691.000881202] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-3] [INFO] [1788859691.001239329] [controller_server]: Activating
+[controller_server-3] [INFO] [1788859691.001266371] [local_costmap.local_costmap]: Activating
+[controller_server-3] [INFO] [1788859691.001272954] [local_costmap.local_costmap]: Checking transform
+[controller_server-3] [INFO] [1788859691.001334330] [local_costmap.local_costmap]: start
+[controller_server-3] [INFO] [1788859691.204227863] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859691.317673645] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859691.317702729] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788859691.318204857] [smoother_server]: Activating
+[smoother_server-4] [INFO] [1788859691.318228941] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859691.422339621] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859691.422373454] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-5] [INFO] [1788859691.422563705] [planner_server]: Activating
+[planner_server-5] [INFO] [1788859691.422600289] [global_costmap.global_costmap]: Activating
+[planner_server-5] [INFO] [1788859691.422607039] [global_costmap.global_costmap]: Checking transform
+[planner_server-5] [INFO] [1788859691.422665873] [global_costmap.global_costmap]: start
+[planner_server-5] [INFO] [1788859692.426458636] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788859692.427314641] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859692.533002956] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859692.533050873] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788859692.533241916] [behavior_server]: Activating
+[behavior_server-6] [INFO] [1788859692.533260708] [behavior_server]: Activating spin
+[behavior_server-6] [INFO] [1788859692.533268416] [behavior_server]: Activating backup
+[behavior_server-6] [INFO] [1788859692.533276583] [behavior_server]: Activating drive_on_heading
+[behavior_server-6] [INFO] [1788859692.533284375] [behavior_server]: Activating assisted_teleop
+[behavior_server-6] [INFO] [1788859692.533291792] [behavior_server]: Activating wait
+[behavior_server-6] [INFO] [1788859692.533300125] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859692.636543299] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859692.636871010] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788859692.637040344] [bt_navigator]: Activating
+[bt_navigator-7] [INFO] [1788859692.666166951] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[planner_server-5] [INFO] [1788859692.710182280] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 128 X 265 at 0.015000 m/pix
+[lifecycle_manager-10] [INFO] [1788859692.778533601] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-10] [INFO] [1788859692.778567768] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788859692.778758395] [waypoint_follower]: Activating
+[waypoint_follower-8] [INFO] [1788859692.778789061] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859692.883909748] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-10] [INFO] [1788859692.883935998] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788859692.884115707] [velocity_smoother]: Activating
+[velocity_smoother-9] [INFO] [1788859692.884162708] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859692.999274584] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-10] [INFO] [1788859692.999329126] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788859692.999346168] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+Starting your explorer node...
+Running. Waiting for /challenge/results/20260908_092810/report.yaml to appear (or Ctrl-C to stop)...
+[INFO] [1788859721.368811858] [candidate_explorer]: Got first /map.
+[WARN] [1788859721.381487440] [candidate_explorer]: Cannot start recovery sweep; no map -> base_link TF: "base_link" passed to lookupTransform argument source_frame does not exist. 
+[INFO] [1788859721.631337590] [candidate_explorer]: Detected 15 frontier cells
+[INFO] [1788859721.631639800] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859721.631872218] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859721.632213971] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788859721.632534556] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (0.80, 0.00)
+[bt_navigator-7] [INFO] [1788859721.633742897] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (0.80, 0.00)
+[controller_server-3] [INFO] [1788859721.654979117] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [WARN] [1788859721.655049368] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-3] [INFO] [1788859722.707353101] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859723.426485565] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 173 X 269 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859723.755862102] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859724.755396580] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788859725.356450699] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788859725.356861119] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788859725.376522079] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788859725.376913623] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [INFO] [1788859725.422816210] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 278 X 269 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788859725.431914935] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 4.0000 Hz
+[controller_server-3] [INFO] [1788859725.446432237] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859726.499478601] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859727.423722218] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 386 X 270 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859727.550414826] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788859728.103489053] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788859728.103824972] [DWBLocalPlanner]: 1.00: BaseObstacle/Trajectory Hits Obstacle.
+[controller_server-3] [WARN] [1788859728.103889681] [controller_server]: No valid trajectories out of 419! 
+[controller_server-3] [INFO] [1788859728.551445604] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859729.426491863] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 388 X 272 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859729.598476471] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859730.599285581] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859731.424129767] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 389 X 274 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859731.648333961] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859732.647208850] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859732.899869852] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859732.935030245] [bt_navigator]: Goal succeeded
+[INFO] [1788859732.935652708] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788859733.168505957] [candidate_explorer]: Detected 536 frontier cells
+[INFO] [1788859733.169419588] [candidate_explorer]: Found 3 frontier clusters after filtering
+[INFO] [1788859733.170050550] [candidate_explorer]: Selected frontier cluster: size=457, goal=(-1.39, -2.10), distance=2.21
+[INFO] [1788859733.170385052] [candidate_explorer]: Checking global path to frontier (-1.39, -2.10), distance=2.21m
+[INFO] [1788859733.177867975] [candidate_explorer]: Nav2 path to frontier is 2.96m (straight-line=2.21m, detour=1.3x)
+[INFO] [1788859733.180918162] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.39, -2.10)
+[bt_navigator-7] [INFO] [1788859733.181608208] [bt_navigator]: Begin navigating from current location (0.14, -0.51) to (-1.39, -2.10)
+[controller_server-3] [INFO] [1788859733.204297812] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859734.256341086] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859735.258155120] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859736.305637489] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859736.507308621] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859736.544175650] [bt_navigator]: Goal succeeded
+[INFO] [1788859736.544755737] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859736.544985863] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859736.668625659] [candidate_explorer]: Detected 473 frontier cells
+[INFO] [1788859736.669266997] [candidate_explorer]: Found 5 frontier clusters after filtering
+[INFO] [1788859736.669747667] [candidate_explorer]: Selected frontier cluster: size=422, goal=(-1.73, -2.45), distance=0.60
+[INFO] [1788859736.670020835] [candidate_explorer]: Checking global path to frontier (-1.73, -2.45), distance=0.60m
+[INFO] [1788859736.673062771] [candidate_explorer]: Nav2 path to frontier is 0.75m (straight-line=0.60m, detour=1.2x)
+[INFO] [1788859736.674016528] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.73, -2.45)
+[bt_navigator-7] [INFO] [1788859736.674366821] [bt_navigator]: Begin navigating from current location (-1.20, -2.17) to (-1.73, -2.45)
+[controller_server-3] [INFO] [1788859736.697401011] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859737.150788764] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859737.187636251] [bt_navigator]: Goal succeeded
+[INFO] [1788859737.188427840] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859737.188655674] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859737.419221159] [candidate_explorer]: Detected 142 frontier cells
+[INFO] [1788859737.419523911] [candidate_explorer]: Found 8 frontier clusters after filtering
+[WARN] [1788859737.419729204] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859737.419968330] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788859737.420276082] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (-2.24, -2.75)
+[bt_navigator-7] [INFO] [1788859737.420918462] [bt_navigator]: Begin navigating from current location (-1.55, -2.36) to (-2.24, -2.75)
+[planner_server-5] [INFO] [1788859737.423677354] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 390 X 275 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859737.444110944] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859738.147566765] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859738.181554151] [bt_navigator]: Goal succeeded
+[INFO] [1788859738.182047654] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788859738.400289976] [candidate_explorer]: Detected 142 frontier cells
+[INFO] [1788859738.400626520] [candidate_explorer]: Found 8 frontier clusters after filtering
+[WARN] [1788859738.400844146] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859738.401152731] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788859738.401397733] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (-2.40, -3.21)
+[bt_navigator-7] [INFO] [1788859738.402091529] [bt_navigator]: Begin navigating from current location (-2.04, -2.50) to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859738.403461954] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788859738.403500121] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859738.403513330] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859738.425025635] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788859738.425190011] [behavior_server]: DriveOnHeading: no acceleration or deceleration limits set
+[behavior_server-6] [INFO] [1788859739.726563098] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788859739.746663895] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788859739.746709186] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859739.746717395] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859739.764009965] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788859739.764064882] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788859740.164799545] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788859740.186747436] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788859740.186784103] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859740.186789562] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859740.203673879] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788859740.203712504] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788859740.604837212] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788859740.635155865] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788859740.635196782] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859740.635203407] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788859740.652410685] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788859740.652909521] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788859741.438477537] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788859741.438512913] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859741.438525954] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859741.453703969] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788859742.755923437] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788859742.786482383] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788859742.786522092] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859742.786533134] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859742.802383069] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788859742.802425694] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788859743.205766083] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788859743.236269404] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788859743.236302155] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.40, -3.21)
+[planner_server-5] [WARN] [1788859743.236308030] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788859743.262811367] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788859743.263165203] [bt_navigator]: Goal failed
+[WARN] [1788859743.263748540] [candidate_explorer]: Recovery move 'forward-left' failed; checking frontiers before the next direction.
+[INFO] [1788859743.418490619] [candidate_explorer]: Detected 4 frontier cells
+[INFO] [1788859743.418760413] [candidate_explorer]: Found 0 frontier clusters after filtering
+[WARN] [1788859743.419028706] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 3/8 before checking again.
+[INFO] [1788859743.419280333] [candidate_explorer]: Recovery move 3/8: left, 0.8 m -> (-0.39, -1.71)
+[bt_navigator-7] [INFO] [1788859743.419917879] [bt_navigator]: Begin navigating from current location (-1.04, -2.18) to (-0.39, -1.71)
+[controller_server-3] [INFO] [1788859743.440382302] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859744.491356527] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859745.242483405] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859745.270601503] [bt_navigator]: Goal succeeded
+[INFO] [1788859745.271342633] [candidate_explorer]: Recovery move 'left' succeeded.
+[INFO] [1788859745.419699588] [candidate_explorer]: Detected 1 frontier cells
+[INFO] [1788859745.419971048] [candidate_explorer]: Found 0 frontier clusters after filtering
+[WARN] [1788859745.420244258] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 4/8 before checking again.
+[INFO] [1788859745.420466843] [candidate_explorer]: Recovery move 4/8: backward-left, 0.8 m -> (-1.13, -1.98)
+[bt_navigator-7] [INFO] [1788859745.420917429] [bt_navigator]: Begin navigating from current location (-0.33, -1.96) to (-1.13, -1.98)
+[planner_server-5] [INFO] [1788859745.423568571] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 390 X 275 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859745.441687354] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859746.494008172] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859746.594537277] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859746.624296760] [bt_navigator]: Goal succeeded
+[INFO] [1788859746.625056682] [candidate_explorer]: Recovery move 'backward-left' succeeded.
+[INFO] [1788859746.649467214] [candidate_explorer]: Detected 1 frontier cells
+[INFO] [1788859746.649723257] [candidate_explorer]: Found 0 frontier clusters after filtering
+[WARN] [1788859746.650024134] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 5/8 before checking again.
+[INFO] [1788859746.650302178] [candidate_explorer]: Recovery move 5/8: backward, 0.8 m -> (-0.16, -1.73)
+[bt_navigator-7] [INFO] [1788859746.650835598] [bt_navigator]: Begin navigating from current location (-0.95, -1.93) to (-0.16, -1.73)
+[controller_server-3] [INFO] [1788859746.671441939] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859747.723823757] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859748.723595444] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859749.128948845] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859749.164323240] [bt_navigator]: Goal succeeded
+[INFO] [1788859749.164839576] [candidate_explorer]: Recovery move 'backward' succeeded.
+[WARN] [1788859749.421315478] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859749.421638771] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 6/8 before checking again.
+[INFO] [1788859749.421929940] [candidate_explorer]: Recovery move 6/8: backward-right, 0.8 m -> (-0.49, -2.69)
+[bt_navigator-7] [INFO] [1788859749.422475235] [bt_navigator]: Begin navigating from current location (-0.23, -1.93) to (-0.49, -2.69)
+[controller_server-3] [INFO] [1788859749.445982220] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859750.497307364] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859750.699209914] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859750.735294730] [bt_navigator]: Goal succeeded
+[INFO] [1788859750.736041068] [candidate_explorer]: Recovery move 'backward-right' succeeded.
+[WARN] [1788859750.919998169] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859750.920328879] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 7/8 before checking again.
+[INFO] [1788859750.920581089] [candidate_explorer]: Recovery move 7/8: right, 0.8 m -> (-1.13, -2.09)
+[bt_navigator-7] [INFO] [1788859750.921059884] [bt_navigator]: Begin navigating from current location (-0.44, -2.49) to (-1.13, -2.09)
+[controller_server-3] [INFO] [1788859750.941632142] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859751.992291073] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859752.195902217] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859752.231712281] [bt_navigator]: Goal succeeded
+[INFO] [1788859752.232169201] [candidate_explorer]: Recovery move 'right' succeeded.
+[WARN] [1788859752.401043121] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859752.401312873] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 8/8 before checking again.
+[INFO] [1788859752.401528333] [candidate_explorer]: Recovery move 8/8: forward-right, 0.8 m -> (-1.06, -1.48)
+[bt_navigator-7] [INFO] [1788859752.402058336] [bt_navigator]: Begin navigating from current location (-1.03, -2.28) to (-1.06, -1.48)
+[controller_server-3] [INFO] [1788859752.423474724] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859753.477332218] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859754.474319679] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788859755.477457679] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788859755.477522763] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859755.493806785] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788859755.493848660] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788859756.196593435] [behavior_server]: spin completed successfully
+[controller_server-3] [INFO] [1788859756.234956848] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859757.286527036] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859758.290997003] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788859758.787474200] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788859758.787551700] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788859758.803968639] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788859758.804228057] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788859759.438066055] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 0.3922 Hz
+[controller_server-3] [INFO] [1788859759.453107277] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859760.503598332] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859761.507370795] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788859762.004684831] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788859762.004772998] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859762.022669446] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788859763.623100043] [behavior_server]: backup completed successfully
+[controller_server-3] [INFO] [1788859763.672624820] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859764.724268008] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859765.174814575] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859765.215640422] [bt_navigator]: Goal succeeded
+[INFO] [1788859765.216459093] [candidate_explorer]: Recovery move 'forward-right' succeeded.
+[INFO] [1788859765.216774637] [candidate_explorer]: All recovery directions tried; starting the 10.0s countdown.
+[WARN] [1788859765.421189162] [candidate_explorer]: No frontier cells detected!
+[INFO] [1788859765.421471330] [candidate_explorer]: No usable frontier found. Waiting up to 10.0s for the map to update.
+[WARN] [1788859765.652035356] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859765.900834458] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859766.151117528] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859766.400626635] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859766.651132664] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859766.920653483] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859767.148497700] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859767.400984617] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859767.650897643] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788859767.901276463] [candidate_explorer]: No frontier cells detected!
+[INFO] [1788859767.901507965] [candidate_explorer]: No usable frontier found for 10.0s. Exploration complete; returning home.
+[bt_navigator-7] [INFO] [1788859768.132317159] [bt_navigator]: Begin navigating from current location (-1.23, -1.97) to (0.05, -0.03)
+[controller_server-3] [INFO] [1788859768.155666226] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859769.206149907] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859770.262299998] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859771.258001451] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859772.007658903] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859772.044709391] [bt_navigator]: Goal succeeded
+[INFO] [1788859772.045507188] [candidate_explorer]: return-home goal finished, success=True
+[sim_node-1] [INFO] [1788859772.137173278] [challenge_sim_node]: SESSION FINISHED — wrote /challenge/results/20260908_092810/report.yaml
+[sim_node-1] collision_count: 0
+[sim_node-1] coverage_fraction: 0.984090480678605
+[sim_node-1] distance_to_home_m: 0.2645694561168987
+[sim_node-1] elapsed_time_s: 325.0000000000396
+[INFO] [1788859772.137824949] [candidate_explorer]: Session result: coverage=98.4% distance_to_home=0.26m elapsed_sim=325.0s elapsed_wall=81.3s collisions=0 success=True report_written_to=/challenge/results/20260908_092810/report.yaml
+[sim_node-1] elapsed_wall_time_s: 81.26581642299425
+[sim_node-1] map_output_yaml: /challenge/results/20260908_092810/map.yaml
+[sim_node-1] map_yaml: /challenge/maps/4/room.yaml
+[sim_node-1] min_coverage_required: 0.8
+[sim_node-1] results_path: /challenge/results/20260908_092810/report.yaml
+[sim_node-1] return_tolerance_m: 0.3
+[sim_node-1] seed: 0
+[sim_node-1] success: true
+[sim_node-1] time_scale: 4.0
+[sim_node-1] timed_out: false
+[sim_node-1] 
+
+=== REPORT ===
+collision_count: 0
+coverage_fraction: 0.984090480678605
+distance_to_home_m: 0.2645694561168987
+elapsed_time_s: 325.0000000000396
+elapsed_wall_time_s: 81.26581642299425
+map_output_yaml: /challenge/results/20260908_092810/map.yaml
+map_yaml: /challenge/maps/4/room.yaml
+min_coverage_required: 0.8
+results_path: /challenge/results/20260908_092810/report.yaml
+return_tolerance_m: 0.3
+seed: 0
+success: true
+time_scale: 4.0
+timed_out: false
+Shutting down...
+[ERROR] [sim_node-1]: process has died [pid 65522, exit code -9, cmd '/challenge/ws/install/challenge_sim/lib/challenge_sim/sim_node --ros-args -r __node:=challenge_sim_node --params-file /tmp/launch_params_vjfrpx01'].
+[ERROR] [async_slam_toolbox_node-2]: process has died [pid 65524, exit code -9, cmd '/opt/ros/humble/lib/slam_toolbox/async_slam_toolbox_node --ros-args -r __node:=slam_toolbox --params-file /challenge/ws/install/challenge_sim/share/challenge_sim/config/slam_toolbox_params.yaml --params-file /tmp/launch_params_7elp3o4y'].
+[ERROR] [controller_server-3]: process has died [pid 65526, exit code -9, cmd '/opt/ros/humble/lib/nav2_controller/controller_server --ros-args --log-level info --ros-args --params-file /tmp/launch_params_stgfr2f3 -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav'].
+[ERROR] [smoother_server-4]: process has died [pid 65528, exit code -9, cmd '/opt/ros/humble/lib/nav2_smoother/smoother_server --ros-args --log-level info --ros-args -r __node:=smoother_server --params-file /tmp/launch_params_stgfr2f3 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [planner_server-5]: process has died [pid 65530, exit code -9, cmd '/opt/ros/humble/lib/nav2_planner/planner_server --ros-args --log-level info --ros-args -r __node:=planner_server --params-file /tmp/launch_params_stgfr2f3 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [behavior_server-6]: process has died [pid 65532, exit code -9, cmd '/opt/ros/humble/lib/nav2_behaviors/behavior_server --ros-args --log-level info --ros-args -r __node:=behavior_server --params-file /tmp/launch_params_stgfr2f3 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [bt_navigator-7]: process has died [pid 65534, exit code -9, cmd '/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator --ros-args --log-level info --ros-args -r __node:=bt_navigator --params-file /tmp/launch_params_stgfr2f3 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [waypoint_follower-8]: process has died [pid 65536, exit code -9, cmd '/opt/ros/humble/lib/nav2_waypoint_follower/waypoint_follower --ros-args --log-level info --ros-args -r __node:=waypoint_follower --params-file /tmp/launch_params_stgfr2f3 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [velocity_smoother-9]: process has died [pid 65538, exit code -9, cmd '/opt/ros/humble/lib/nav2_velocity_smoother/velocity_smoother --ros-args --log-level info --ros-args -r __node:=velocity_smoother --params-file /tmp/launch_params_stgfr2f3 -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav -r cmd_vel_smoothed:=cmd_vel'].
+/challenge/eval_runner.sh: line 40: 65520 Killed                  ros2 launch challenge_sim challenge.launch.py map_yaml:="$MAP_YAML" seed:="$SEED" time_limit_s:="$TIME_LIMIT" time_scale:="$TIME_SCALE" results_path:="$RESULTS_PATH" rviz:="$RVIZ"

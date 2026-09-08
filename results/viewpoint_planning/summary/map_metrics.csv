@@ -1,0 +1,3 @@
+map_id,coverage_fraction,covered_wall_cells,total_wall_cells,unreachable_wall_cells,num_stops,tour_length_m,planning_time_s,invalid_stop_count,report_path
+1,0.6904761904761905,7424,10752,11639,160,84.53638415609481,361.3155845809961,0,results/viewpoint_planning/1/coverage_report.json
+4,0.6418,3209,5000,6800,94,26.62376946552885,55.84853353200015,0,results/viewpoint_planning/4/coverage_report.json

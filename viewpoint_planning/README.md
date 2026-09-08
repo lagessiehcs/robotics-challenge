@@ -55,19 +55,18 @@ only need this once. Then, for every run:
 ./eval_runner.sh --map maps/1/room.yaml
 ```
 
-This bind-mounts this repo into the container so `eval.py` runs
-your code straight off disk, and writes results back to the host — no volume
-juggling. `maps/` here is a shared sample-map directory at the root of this
-repo (sibling to `viewpoint_planning/`), auto-mounted read-only by the
-script if present; try any of `maps/1/room.yaml` through `maps/5/room.yaml`,
-each a `room.pgm` + `room.yaml` pair in the format described above.
+This bind-mounts the repository root so `eval.py` runs your code straight off
+disk and can write results back to the host — no volume juggling. `maps/` is
+the shared sample-map directory at the repository root; try any of
+`maps/1/room.yaml` through `maps/5/room.yaml`, each a `room.pgm` +
+`room.yaml` pair in the format described above.
 
 If you'd rather run outside Docker: `pip install -r requirements.txt`, then
 call `python eval.py --map maps/1/room.yaml` directly — same
 script, same scoring, just your local interpreter.
 
-Either way, this scores your solution and writes `coverage_report.png` to
-`results/<timestamp>/` — green wall segments were scanned at sufficient
+Either way, this scores your solution and writes `coverage_report.png` to the
+chosen output path (or `results/<timestamp>/` by default) — green wall segments were scanned at sufficient
 quality, red were missed or never in range, and numbered markers show your
 stops in visit order. It also writes `coverage_report.json` alongside it
 with the same metrics in machine-readable form (coverage fraction, stop
@@ -127,3 +126,15 @@ Stronger submissions might do one or more of:
 
 In [write-ups](../write-ups/) document your approach and reasoning behind it, what you'd do with more time,
 and where you expect it to break. you can also use the template located in the directory.
+
+## Reproducible five-map evaluation
+
+From the repository root, run:
+
+```bash
+./run_viewpoint_planning_evaluation.sh
+```
+
+This writes one report per map to `results/viewpoint_planning/<map>/` and
+creates `results/viewpoint_planning/summary/` with a CSV, Markdown summary,
+and a cross-map figure. Build the Docker image first as shown above.

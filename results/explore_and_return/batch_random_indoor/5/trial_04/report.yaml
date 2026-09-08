@@ -1,0 +1,14 @@
+collision_count: 1518
+coverage_fraction: 1.0
+distance_to_home_m: 0.29852217058449965
+elapsed_time_s: 609.999999999993
+elapsed_wall_time_s: 152.5191055989999
+map_output_yaml: /challenge/results/20260908_035130/map.yaml
+map_yaml: /challenge/maps/5/room.yaml
+min_coverage_required: 0.8
+results_path: /challenge/results/20260908_035130/report.yaml
+return_tolerance_m: 0.3
+seed: 5500000
+success: true
+time_scale: 4.0
+timed_out: false

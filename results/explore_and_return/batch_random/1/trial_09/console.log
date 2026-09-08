@@ -1,0 +1,1274 @@
+Launching sim + slam_toolbox + Nav2 (map: /challenge/maps/1/room.yaml, seed: 0, time_scale: 4.0x)...
+Waiting for bringup...
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-09-08-04-47-31-250667-orbstack-8572
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [sim_node-1]: process started with pid [8574]
+[INFO] [async_slam_toolbox_node-2]: process started with pid [8576]
+[INFO] [controller_server-3]: process started with pid [8578]
+[INFO] [smoother_server-4]: process started with pid [8580]
+[INFO] [planner_server-5]: process started with pid [8582]
+[INFO] [behavior_server-6]: process started with pid [8584]
+[INFO] [bt_navigator-7]: process started with pid [8586]
+[INFO] [waypoint_follower-8]: process started with pid [8588]
+[INFO] [velocity_smoother-9]: process started with pid [8590]
+[INFO] [lifecycle_manager-10]: process started with pid [8592]
+[lifecycle_manager-10] [INFO] [1788842851.367306002] [lifecycle_manager_navigation]: Creating
+[lifecycle_manager-10] [INFO] [1788842851.368483679] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[smoother_server-4] [INFO] [1788842851.371335038] [smoother_server]: 
+[smoother_server-4] 	smoother_server lifecycle node launched. 
+[smoother_server-4] 	Waiting on external lifecycle transitions to activate
+[smoother_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788842851.372600424] [smoother_server]: Creating smoother server
+[planner_server-5] [INFO] [1788842851.376074955] [planner_server]: 
+[planner_server-5] 	planner_server lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788842851.377095214] [planner_server]: Creating
+[controller_server-3] [INFO] [1788842851.379447568] [controller_server]: 
+[controller_server-3] 	controller_server lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788842851.382510512] [controller_server]: Creating controller server
+[waypoint_follower-8] [INFO] [1788842851.384909742] [waypoint_follower]: 
+[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-8] [INFO] [1788842851.385424371] [waypoint_follower]: Creating
+[behavior_server-6] [INFO] [1788842851.400152168] [behavior_server]: 
+[behavior_server-6] 	behavior_server lifecycle node launched. 
+[behavior_server-6] 	Waiting on external lifecycle transitions to activate
+[behavior_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[async_slam_toolbox_node-2] [INFO] [1788842851.402460647] [slam_toolbox]: Node using stack size 40000000
+[velocity_smoother-9] [INFO] [1788842851.404207538] [velocity_smoother]: 
+[velocity_smoother-9] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-9] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788842851.405480424] [global_costmap.global_costmap]: 
+[planner_server-5] 	global_costmap lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788842851.406099138] [global_costmap.global_costmap]: Creating Costmap
+[bt_navigator-7] [INFO] [1788842851.413850956] [bt_navigator]: 
+[bt_navigator-7] 	bt_navigator lifecycle node launched. 
+[bt_navigator-7] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788842851.414027583] [bt_navigator]: Creating
+[controller_server-3] [INFO] [1788842851.415341136] [local_costmap.local_costmap]: 
+[controller_server-3] 	local_costmap lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788842851.415785182] [local_costmap.local_costmap]: Creating Costmap
+[async_slam_toolbox_node-2] [INFO] [1788842851.442396043] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-2] [INFO] [1788842851.442575711] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[lifecycle_manager-10] [INFO] [1788842851.504461301] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788842851.504494343] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-3] [INFO] [1788842851.504678303] [controller_server]: Configuring controller interface
+[controller_server-3] [INFO] [1788842851.504868471] [controller_server]: getting goal checker plugins..
+[controller_server-3] [INFO] [1788842851.505124307] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-3] [INFO] [1788842851.505166474] [local_costmap.local_costmap]: Configuring
+[controller_server-3] [INFO] [1788842851.509312302] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788842851.513988719] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-3] [INFO] [1788842851.517171830] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788842851.517186872] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-3] [INFO] [1788842851.518152464] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-3] [INFO] [1788842851.524832856] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-3] [INFO] [1788842851.525405320] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1788842851.525745448] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-3] [INFO] [1788842851.527192294] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-3] [INFO] [1788842851.528572140] [controller_server]: Setting transform_tolerance to 0.200000
+[controller_server-3] [INFO] [1788842851.534843487] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[controller_server-3] [INFO] [1788842851.535262449] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788842851.535328449] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[controller_server-3] [INFO] [1788842851.535630077] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788842851.535716578] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[controller_server-3] [INFO] [1788842851.536012622] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788842851.536096123] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[controller_server-3] [INFO] [1788842851.536365167] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788842851.536452084] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[controller_server-3] [INFO] [1788842851.536683711] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788842851.536770462] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[controller_server-3] [INFO] [1788842851.536923088] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788842851.537011798] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[controller_server-3] [INFO] [1788842851.537191924] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788842851.537201674] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-10] [INFO] [1788842851.542309678] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788842851.542595514] [smoother_server]: Configuring smoother server
+[smoother_server-4] [INFO] [1788842851.548652817] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-4] [INFO] [1788842851.549563200] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-10] [INFO] [1788842851.554124116] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-5] [INFO] [1788842851.554455285] [planner_server]: Configuring
+[planner_server-5] [INFO] [1788842851.554479077] [global_costmap.global_costmap]: Configuring
+[planner_server-5] [INFO] [1788842851.558368612] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-5] [INFO] [1788842851.560644799] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-5] [INFO] [1788842851.561299263] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-5] [INFO] [1788842851.561313471] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788842851.561650224] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[planner_server-5] [INFO] [1788842851.564179747] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788842851.564195122] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-5] [INFO] [1788842851.565178589] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-5] [INFO] [1788842851.571906315] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[planner_server-5] [INFO] [1788842851.572132317] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788842851.572608196] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-10] [INFO] [1788842851.579094212] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788842851.579503882] [behavior_server]: Configuring
+[behavior_server-6] [INFO] [1788842851.585440768] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[behavior_server-6] [INFO] [1788842851.586013690] [behavior_server]: Configuring spin
+[behavior_server-6] [INFO] [1788842851.589880266] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[behavior_server-6] [INFO] [1788842851.590457813] [behavior_server]: Configuring backup
+[behavior_server-6] [INFO] [1788842851.594296097] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[behavior_server-6] [INFO] [1788842851.594928811] [behavior_server]: Configuring drive_on_heading
+[behavior_server-6] [INFO] [1788842851.598805137] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[behavior_server-6] [INFO] [1788842851.600417234] [behavior_server]: Configuring assisted_teleop
+[behavior_server-6] [INFO] [1788842851.606354995] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-6] [INFO] [1788842851.606994584] [behavior_server]: Configuring wait
+[lifecycle_manager-10] [INFO] [1788842851.610820035] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788842851.611079996] [bt_navigator]: Configuring
+[lifecycle_manager-10] [INFO] [1788842851.657910994] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788842851.658400415] [waypoint_follower]: Configuring
+[waypoint_follower-8] [INFO] [1788842851.668025958] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-10] [INFO] [1788842851.668770715] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788842851.668946883] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-10] [INFO] [1788842851.672603332] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-3] [INFO] [1788842851.672719292] [controller_server]: Activating
+[controller_server-3] [INFO] [1788842851.672754834] [local_costmap.local_costmap]: Activating
+[controller_server-3] [INFO] [1788842851.672763334] [local_costmap.local_costmap]: Checking transform
+[controller_server-3] [INFO] [1788842851.672777417] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[controller_server-3] [INFO] [1788842852.174674364] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[sim_node-1] [INFO] [1788842852.285420762] [challenge_sim_node]: Loaded /challenge/maps/1/room.yaml — spawned at world (1.81, -4.82); 342114 reachable free cells. time_scale=4.0x
+[async_slam_toolbox_node-2] [WARN] [1788842852.325194697] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.1 m)
+[async_slam_toolbox_node-2] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-2] Registering sensor: [Custom Described Lidar]
+[controller_server-3] [INFO] [1788842852.675439259] [local_costmap.local_costmap]: start
+[controller_server-3] [INFO] [1788842852.929486218] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788842853.034002269] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788842853.034029978] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788842853.034508065] [smoother_server]: Activating
+[smoother_server-4] [INFO] [1788842853.034540107] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788842853.141462513] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788842853.141528930] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-5] [INFO] [1788842853.141746307] [planner_server]: Activating
+[planner_server-5] [INFO] [1788842853.141774765] [global_costmap.global_costmap]: Activating
+[planner_server-5] [INFO] [1788842853.141781932] [global_costmap.global_costmap]: Checking transform
+[planner_server-5] [INFO] [1788842853.141851974] [global_costmap.global_costmap]: start
+[planner_server-5] [INFO] [1788842853.449621785] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 457 X 85 at 0.015000 m/pix
+[planner_server-5] [INFO] [1788842854.145427408] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788842854.146077247] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788842854.249313745] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788842854.249343578] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788842854.249524288] [behavior_server]: Activating
+[behavior_server-6] [INFO] [1788842854.249547080] [behavior_server]: Activating spin
+[behavior_server-6] [INFO] [1788842854.249561830] [behavior_server]: Activating backup
+[behavior_server-6] [INFO] [1788842854.249575872] [behavior_server]: Activating drive_on_heading
+[behavior_server-6] [INFO] [1788842854.249585705] [behavior_server]: Activating assisted_teleop
+[behavior_server-6] [INFO] [1788842854.249591164] [behavior_server]: Activating wait
+[behavior_server-6] [INFO] [1788842854.249601747] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788842854.363073628] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788842854.363100670] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788842854.363531048] [bt_navigator]: Activating
+[bt_navigator-7] [INFO] [1788842854.392099635] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788842854.508047662] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-10] [INFO] [1788842854.508078996] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788842854.508247580] [waypoint_follower]: Activating
+[waypoint_follower-8] [INFO] [1788842854.508306248] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788842854.623688770] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-10] [INFO] [1788842854.623719145] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788842854.623895188] [velocity_smoother]: Activating
+[velocity_smoother-9] [INFO] [1788842854.623939230] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788842854.738234326] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-10] [INFO] [1788842854.738265743] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788842854.738272035] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+Starting your explorer node...
+Running. Waiting for /challenge/results/20260908_044731/report.yaml to appear (or Ctrl-C to stop)...
+[INFO] [1788842881.560651384] [candidate_explorer]: Got first /map.
+[INFO] [1788842881.804872423] [candidate_explorer]: Detected 263 frontier cells
+[INFO] [1788842881.805441803] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788842881.805720722] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842881.806019183] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788842881.806278144] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (0.80, 0.00)
+[bt_navigator-7] [INFO] [1788842881.807583530] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (0.80, 0.00)
+[controller_server-3] [INFO] [1788842881.829372890] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [WARN] [1788842881.829454224] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-3] [INFO] [1788842882.483096015] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842882.520969184] [bt_navigator]: Goal succeeded
+[INFO] [1788842882.521594481] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788842882.552774299] [candidate_explorer]: Detected 263 frontier cells
+[INFO] [1788842882.553341638] [candidate_explorer]: Found 1 frontier clusters after filtering
+[INFO] [1788842882.553750766] [candidate_explorer]: Selected frontier cluster: size=236, goal=(0.10, 0.34), distance=0.60
+[INFO] [1788842882.554090936] [candidate_explorer]: Checking global path to frontier (0.10, 0.34), distance=0.60m
+[INFO] [1788842882.556790460] [candidate_explorer]: Nav2 path to frontier is 0.66m (straight-line=0.60m, detour=1.1x)
+[INFO] [1788842882.557562092] [candidate_explorer]: Global path accepted. Navigating to frontier (0.10, 0.34)
+[bt_navigator-7] [INFO] [1788842882.558018804] [bt_navigator]: Begin navigating from current location (0.60, 0.00) to (0.10, 0.34)
+[controller_server-3] [INFO] [1788842882.580131000] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842883.631884402] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788842884.142989680] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 459 X 85 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788842884.232380097] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842884.270723312] [bt_navigator]: Goal succeeded
+[INFO] [1788842884.271410943] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788842884.271671653] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788842884.309890284] [candidate_explorer]: Detected 759 frontier cells
+[INFO] [1788842884.311010835] [candidate_explorer]: Found 11 frontier clusters after filtering
+[INFO] [1788842884.311606632] [candidate_explorer]: Selected frontier cluster: size=421, goal=(-0.18, 0.02), distance=0.60
+[INFO] [1788842884.311933010] [candidate_explorer]: Checking global path to frontier (-0.18, 0.02), distance=0.60m
+[INFO] [1788842884.314584617] [candidate_explorer]: Nav2 path to frontier is 0.60m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788842884.315366332] [candidate_explorer]: Global path accepted. Navigating to frontier (-0.18, 0.02)
+[bt_navigator-7] [INFO] [1788842884.315729669] [bt_navigator]: Begin navigating from current location (0.29, 0.39) to (-0.18, 0.02)
+[controller_server-3] [INFO] [1788842884.339550505] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842885.390735485] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842885.643477599] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842885.676825686] [bt_navigator]: Goal succeeded
+[INFO] [1788842885.677441441] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788842885.677687444] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788842885.808837814] [candidate_explorer]: Detected 751 frontier cells
+[INFO] [1788842885.809749614] [candidate_explorer]: Found 8 frontier clusters after filtering
+[INFO] [1788842885.810359119] [candidate_explorer]: Selected frontier cluster: size=514, goal=(-0.81, 0.31), distance=0.61
+[INFO] [1788842885.810632621] [candidate_explorer]: Checking global path to frontier (-0.81, 0.31), distance=0.61m
+[INFO] [1788842885.813204394] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788842885.813840150] [candidate_explorer]: Global path accepted. Navigating to frontier (-0.81, 0.31)
+[bt_navigator-7] [INFO] [1788842885.814245862] [bt_navigator]: Begin navigating from current location (-0.21, 0.22) to (-0.81, 0.31)
+[controller_server-3] [INFO] [1788842885.837444026] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842886.889744682] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842887.092163017] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842887.125038017] [bt_navigator]: Goal succeeded
+[INFO] [1788842887.125760690] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788842887.126028234] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788842887.303501890] [candidate_explorer]: Detected 751 frontier cells
+[INFO] [1788842887.304439315] [candidate_explorer]: Found 8 frontier clusters after filtering
+[INFO] [1788842887.305258864] [candidate_explorer]: Selected frontier cluster: size=514, goal=(-1.28, 0.37), distance=0.60
+[INFO] [1788842887.305620950] [candidate_explorer]: Checking global path to frontier (-1.28, 0.37), distance=0.60m
+[INFO] [1788842887.308113139] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788842887.308821478] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.28, 0.37)
+[bt_navigator-7] [INFO] [1788842887.309229565] [bt_navigator]: Begin navigating from current location (-0.72, 0.13) to (-1.28, 0.37)
+[controller_server-3] [INFO] [1788842887.320141954] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842887.774126643] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842887.809609290] [bt_navigator]: Goal succeeded
+[INFO] [1788842887.810288296] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788842887.810531382] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788842888.060123635] [candidate_explorer]: Detected 802 frontier cells
+[INFO] [1788842888.061203603] [candidate_explorer]: Found 13 frontier clusters after filtering
+[INFO] [1788842888.061901984] [candidate_explorer]: Selected frontier cluster: size=529, goal=(-1.68, 0.26), distance=0.60
+[INFO] [1788842888.062253320] [candidate_explorer]: Checking global path to frontier (-1.68, 0.26), distance=0.60m
+[INFO] [1788842888.065026178] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788842888.065625517] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.68, 0.26)
+[bt_navigator-7] [INFO] [1788842888.065956061] [bt_navigator]: Begin navigating from current location (-1.08, 0.28) to (-1.68, 0.26)
+[controller_server-3] [INFO] [1788842888.086721495] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788842888.142094444] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 471 X 131 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788842888.539053211] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842888.576524168] [bt_navigator]: Goal succeeded
+[INFO] [1788842888.577209716] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788842888.577461760] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788842888.806553873] [candidate_explorer]: Detected 802 frontier cells
+[INFO] [1788842888.807485340] [candidate_explorer]: Found 13 frontier clusters after filtering
+[INFO] [1788842888.808132054] [candidate_explorer]: Selected frontier cluster: size=13, goal=(-2.79, 0.13), distance=1.31
+[INFO] [1788842888.808423056] [candidate_explorer]: Checking global path to frontier (-2.79, 0.13), distance=1.31m
+[planner_server-5] [WARN] [1788842888.809437024] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842888.809472066] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-2.79, 0.13)
+[planner_server-5] [WARN] [1788842888.809478149] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788842888.810428949] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788842888.810700285] [candidate_explorer]: No global path to frontier (-2.79, 0.13). Blacklisting.
+[INFO] [1788842889.057189469] [candidate_explorer]: Detected 802 frontier cells
+[INFO] [1788842889.058157852] [candidate_explorer]: Found 13 frontier clusters after filtering
+[INFO] [1788842889.058813066] [candidate_explorer]: Selected frontier cluster: size=529, goal=(-0.94, 0.08), distance=0.61
+[INFO] [1788842889.059145069] [candidate_explorer]: Checking global path to frontier (-0.94, 0.08), distance=0.61m
+[INFO] [1788842889.061916636] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788842889.062659684] [candidate_explorer]: Global path accepted. Navigating to frontier (-0.94, 0.08)
+[bt_navigator-7] [INFO] [1788842889.063040229] [bt_navigator]: Begin navigating from current location (-1.49, 0.34) to (-0.94, 0.08)
+[controller_server-3] [INFO] [1788842889.086423894] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842890.137770751] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842890.538924138] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842890.574500703] [bt_navigator]: Goal succeeded
+[INFO] [1788842890.574988833] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788842890.575206460] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788842890.813923075] [candidate_explorer]: Detected 671 frontier cells
+[INFO] [1788842890.814769582] [candidate_explorer]: Found 14 frontier clusters after filtering
+[INFO] [1788842890.815395546] [candidate_explorer]: Selected frontier cluster: size=383, goal=(-0.54, 0.05), distance=0.60
+[INFO] [1788842890.815693340] [candidate_explorer]: Checking global path to frontier (-0.54, 0.05), distance=0.60m
+[INFO] [1788842890.818636700] [candidate_explorer]: Nav2 path to frontier is 0.65m (straight-line=0.60m, detour=1.1x)
+[INFO] [1788842890.819260205] [candidate_explorer]: Global path accepted. Navigating to frontier (-0.54, 0.05)
+[bt_navigator-7] [INFO] [1788842890.819612417] [bt_navigator]: Begin navigating from current location (-1.14, 0.01) to (-0.54, 0.05)
+[controller_server-3] [INFO] [1788842890.841478360] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [WARN] [1788842891.143029324] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842891.143066949] [global_costmap.global_costmap]: Sensor origin at (-0.89, -0.02) is out of map bounds (-4.91, -0.00) to (2.15, 1.96). The costmap cannot raytrace for it.
+[controller_server-3] [INFO] [1788842891.297421150] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842891.329898396] [bt_navigator]: Goal succeeded
+[INFO] [1788842891.330575194] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788842891.330834196] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788842891.563135587] [candidate_explorer]: Detected 698 frontier cells
+[INFO] [1788842891.564035970] [candidate_explorer]: Found 8 frontier clusters after filtering
+[INFO] [1788842891.564629517] [candidate_explorer]: Selected frontier cluster: size=221, goal=(-0.11, 0.02), distance=0.61
+[INFO] [1788842891.564932020] [candidate_explorer]: Checking global path to frontier (-0.11, 0.02), distance=0.61m
+[planner_server-5] [WARN] [1788842891.565429274] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842891.565455400] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842891.565460941] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.11, 0.02)
+[planner_server-5] [WARN] [1788842891.565465941] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788842891.566647119] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788842891.566873454] [candidate_explorer]: No global path to frontier (-0.11, 0.02). Blacklisting.
+[INFO] [1788842891.808519470] [candidate_explorer]: Detected 698 frontier cells
+[INFO] [1788842891.809408269] [candidate_explorer]: Found 8 frontier clusters after filtering
+[INFO] [1788842891.810050275] [candidate_explorer]: Selected frontier cluster: size=221, goal=(0.67, 0.21), distance=1.41
+[INFO] [1788842891.810335403] [candidate_explorer]: Checking global path to frontier (0.67, 0.21), distance=1.41m
+[planner_server-5] [WARN] [1788842891.811119951] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842891.811146410] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842891.811151243] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.67, 0.21)
+[planner_server-5] [WARN] [1788842891.811156035] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788842891.812292962] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788842891.812524464] [candidate_explorer]: No global path to frontier (0.67, 0.21). Blacklisting.
+[INFO] [1788842892.058454684] [candidate_explorer]: Detected 698 frontier cells
+[INFO] [1788842892.059344567] [candidate_explorer]: Found 8 frontier clusters after filtering
+[INFO] [1788842892.059928406] [candidate_explorer]: Selected frontier cluster: size=133, goal=(-1.33, 0.02), distance=0.60
+[INFO] [1788842892.060231450] [candidate_explorer]: Checking global path to frontier (-1.33, 0.02), distance=0.60m
+[planner_server-5] [WARN] [1788842892.060732621] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842892.060755330] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842892.060760413] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.33, 0.02)
+[planner_server-5] [WARN] [1788842892.060765246] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788842892.061795089] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788842892.062038383] [candidate_explorer]: No global path to frontier (-1.33, 0.02). Blacklisting.
+[planner_server-5] [WARN] [1788842892.143967817] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842892.143993775] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 471 X 132 at 0.015000 m/pix
+[INFO] [1788842892.308170355] [candidate_explorer]: Detected 698 frontier cells
+[INFO] [1788842892.309024571] [candidate_explorer]: Found 8 frontier clusters after filtering
+[INFO] [1788842892.309515659] [candidate_explorer]: Selected frontier cluster: size=24, goal=(-3.56, 0.35), distance=2.86
+[INFO] [1788842892.309824661] [candidate_explorer]: Checking global path to frontier (-3.56, 0.35), distance=2.86m
+[INFO] [1788842892.317087517] [candidate_explorer]: Nav2 path to frontier is 3.05m (straight-line=2.86m, detour=1.1x)
+[INFO] [1788842892.319200869] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.56, 0.35)
+[bt_navigator-7] [INFO] [1788842892.319585123] [bt_navigator]: Begin navigating from current location (-0.73, -0.00) to (-3.56, 0.35)
+[controller_server-3] [INFO] [1788842892.340586059] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842893.392156834] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788842894.343431012] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788842894.343475679] [DWBLocalPlanner]: 1.00: BaseObstacle/Trajectory Hits Obstacle.
+[controller_server-3] [WARN] [1788842894.343622514] [controller_server]: No valid trajectories out of 419! 
+[planner_server-5] [WARN] [1788842894.372073349] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842894.372099641] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-3.56, 0.35)
+[planner_server-5] [WARN] [1788842894.372105516] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842894.418628762] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[controller_server-3] [INFO] [1788842894.418839638] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842894.419258892] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[bt_navigator-7] [WARN] [1788842894.420180400] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-3] [INFO] [1788842894.442028177] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-3] [INFO] [1788842894.442059261] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[planner_server-5] [WARN] [1788842895.142691510] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842895.142725552] [global_costmap.global_costmap]: Sensor origin at (-2.49, -0.04) is out of map bounds (-4.92, -0.02) to (2.14, 1.95). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842895.152956893] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842895.153216603] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842895.153348896] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-3.56, 0.35)
+[planner_server-5] [WARN] [1788842895.153473480] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842895.172345481] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788842895.172486566] [behavior_server]: DriveOnHeading: no acceleration or deceleration limits set
+[behavior_server-6] [WARN] [1788842895.172623900] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842895.172630984] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842895.172635192] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842895.201729075] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842895.201778492] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842895.603239257] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842895.624114150] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842895.624141359] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842895.624145859] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-3.56, 0.35)
+[planner_server-5] [WARN] [1788842895.624150734] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842895.640473587] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842895.640511296] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842896.043410115] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842896.061319649] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842896.061345732] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842896.061350524] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-3.56, 0.35)
+[planner_server-5] [WARN] [1788842896.061355274] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842896.081552036] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842896.081807497] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842896.143602836] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842896.143752421] [global_costmap.global_costmap]: Sensor origin at (-2.49, -0.04) is out of map bounds (-4.92, -0.02) to (2.14, 1.95). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842896.154218764] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842896.154255681] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842896.154260181] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-3.56, 0.35)
+[planner_server-5] [WARN] [1788842896.154266389] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842896.173223765] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788842897.476175392] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842897.505248858] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842897.505276900] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-3.56, 0.35)
+[planner_server-5] [WARN] [1788842897.505282942] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842897.522324426] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842897.522358010] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842897.923836817] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842897.952501154] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842897.952532488] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-3.56, 0.35)
+[planner_server-5] [WARN] [1788842897.952538155] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842897.982760631] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842897.982828256] [bt_navigator]: Goal failed
+[INFO] [1788842897.983638430] [candidate_explorer]: Frontier goal finished: success=False
+[WARN] [1788842897.983892766] [candidate_explorer]: Blacklisting failed frontier (-3.56, 0.35)
+[INFO] [1788842898.066256787] [candidate_explorer]: Detected 699 frontier cells
+[INFO] [1788842898.067122670] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842898.067594341] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842898.067882927] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788842898.068150929] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (-1.96, -0.02)
+[bt_navigator-7] [INFO] [1788842898.068614433] [bt_navigator]: Begin navigating from current location (-1.97, -0.01) to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842898.068883519] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842898.068904977] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842898.068909644] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842898.068914186] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842898.090591003] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842898.090629753] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842898.492211811] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842898.521911574] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842898.521935616] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842898.521940324] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842898.521945283] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842898.541782625] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842898.543060262] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842899.156650198] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842899.156692656] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842899.156702948] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842899.156715782] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842899.170939908] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788842900.472089769] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842900.500529271] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842900.500873066] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842900.500879941] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842900.500885066] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842900.521485373] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842900.521521457] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842900.922671719] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842900.952115272] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842900.952144522] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842900.952149981] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842900.952155772] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842900.969221340] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842900.969251757] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842901.371114734] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842901.389183394] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842901.389210061] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842901.389216020] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842901.389221186] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842901.401085166] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842901.401551504] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842902.153795794] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842902.153838294] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842902.153843919] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.96, -0.02)
+[planner_server-5] [WARN] [1788842902.153856461] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842902.181095660] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842902.181187578] [bt_navigator]: Goal failed
+[WARN] [1788842902.182195837] [candidate_explorer]: Recovery move 'forward' failed; checking frontiers before the next direction.
+[INFO] [1788842902.314839720] [candidate_explorer]: Detected 632 frontier cells
+[INFO] [1788842902.315725687] [candidate_explorer]: Found 7 frontier clusters after filtering
+[WARN] [1788842902.316194732] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842902.316523402] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788842902.316768904] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (-1.52, -0.03)
+[bt_navigator-7] [INFO] [1788842902.317386160] [bt_navigator]: Begin navigating from current location (-1.45, 0.05) to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842902.317655995] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842902.317679704] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842902.317685579] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842902.317691037] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842902.339593273] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788842903.640874427] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842903.661653445] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842903.661679070] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842903.661683611] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842903.661688612] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842903.678543719] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842903.678576469] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842904.081451372] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842904.097939477] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842904.097965685] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842904.097971227] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842904.097982144] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842904.118569368] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842904.118601910] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842904.520831057] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842904.548059673] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842904.548092173] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842904.548097090] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842904.548102465] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842904.569085734] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842904.569293236] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842905.152960741] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842905.153004824] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842905.153010783] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842905.153017741] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842905.170947108] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788842906.471143169] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842906.500556472] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842906.500594055] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842906.500599847] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842906.500605347] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842906.508246456] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842906.508277540] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842906.910608063] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842906.939455652] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842906.939481027] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842906.939485902] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.52, -0.03)
+[planner_server-5] [WARN] [1788842906.939490819] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842906.967700277] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842906.967784986] [bt_navigator]: Goal failed
+[WARN] [1788842906.968483409] [candidate_explorer]: Recovery move 'forward-left' failed; checking frontiers before the next direction.
+[INFO] [1788842907.065807188] [candidate_explorer]: Detected 595 frontier cells
+[INFO] [1788842907.066586320] [candidate_explorer]: Found 7 frontier clusters after filtering
+[WARN] [1788842907.067054074] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842907.067343452] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 3/8 before checking again.
+[INFO] [1788842907.067599121] [candidate_explorer]: Recovery move 3/8: left, 0.8 m -> (0.32, 0.44)
+[bt_navigator-7] [INFO] [1788842907.068115750] [bt_navigator]: Begin navigating from current location (-0.42, 0.13) to (0.32, 0.44)
+[controller_server-3] [INFO] [1788842907.091634417] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842908.143731946] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842908.393701578] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842908.430985450] [bt_navigator]: Goal succeeded
+[INFO] [1788842908.431493288] [candidate_explorer]: Recovery move 'left' succeeded.
+[INFO] [1788842908.565467141] [candidate_explorer]: Detected 581 frontier cells
+[INFO] [1788842908.566235815] [candidate_explorer]: Found 8 frontier clusters after filtering
+[WARN] [1788842908.566681610] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842908.566962946] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 4/8 before checking again.
+[INFO] [1788842908.567209948] [candidate_explorer]: Recovery move 4/8: backward-left, 0.8 m -> (-0.57, 0.43)
+[bt_navigator-7] [INFO] [1788842908.567759662] [bt_navigator]: Begin navigating from current location (0.21, 0.26) to (-0.57, 0.43)
+[controller_server-3] [INFO] [1788842908.588405470] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842909.639243479] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842910.142714880] [controller_server]: Reached the goal!
+[planner_server-5] [INFO] [1788842910.142720672] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 472 X 132 at 0.015000 m/pix
+[bt_navigator-7] [INFO] [1788842910.179004695] [bt_navigator]: Goal succeeded
+[INFO] [1788842910.179726867] [candidate_explorer]: Recovery move 'backward-left' succeeded.
+[INFO] [1788842910.315874735] [candidate_explorer]: Detected 510 frontier cells
+[INFO] [1788842910.316574197] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842910.316996909] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842910.317275535] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 5/8 before checking again.
+[INFO] [1788842910.317524412] [candidate_explorer]: Recovery move 5/8: backward, 0.8 m -> (0.42, 0.49)
+[bt_navigator-7] [INFO] [1788842910.318003207] [bt_navigator]: Begin navigating from current location (-0.38, 0.50) to (0.42, 0.49)
+[controller_server-3] [INFO] [1788842910.339227342] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842911.390442754] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842911.943432697] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842911.980073389] [bt_navigator]: Goal succeeded
+[INFO] [1788842911.980782935] [candidate_explorer]: Recovery move 'backward' succeeded.
+[INFO] [1788842912.062895542] [candidate_explorer]: Detected 503 frontier cells
+[INFO] [1788842912.063622255] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842912.064051549] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842912.064344884] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 6/8 before checking again.
+[INFO] [1788842912.064611094] [candidate_explorer]: Recovery move 6/8: backward-right, 0.8 m -> (-0.04, -0.03)
+[bt_navigator-7] [INFO] [1788842912.065155556] [bt_navigator]: Begin navigating from current location (0.25, 0.39) to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842912.065447933] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842912.065468891] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842912.065473183] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842912.065477600] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842912.086351483] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842912.086395275] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842912.486527660] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842912.517143438] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842912.517170314] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842912.517175147] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842912.517180147] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842912.535483222] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842912.536061267] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842913.148619007] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842913.148944051] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842913.148950842] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842913.148957801] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842913.167060541] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842913.969183531] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842913.969213698] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842913.969218865] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842913.985511802] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842913.985545927] [behavior_server]: Turning 1.57 for spin behavior.
+[planner_server-5] [INFO] [1788842914.144018938] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 472 X 144 at 0.015000 m/pix
+[behavior_server-6] [INFO] [1788842914.386417483] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842914.406737321] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842914.406767155] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842914.406771905] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842914.406776738] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842914.425479191] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842914.425522816] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842914.826736416] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842914.847475090] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842914.847499382] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842914.847504299] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842914.847509299] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842914.867479926] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842914.867712094] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842915.148627594] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842915.148660302] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842915.148665761] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842915.148672344] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842915.167452922] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842915.167541339] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842915.167546673] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842915.167550631] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842915.197381946] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842915.197410780] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842915.599375593] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842915.628328653] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842915.628355153] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842915.628360153] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.04, -0.03)
+[planner_server-5] [WARN] [1788842915.628365445] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842915.655756244] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842915.655849620] [bt_navigator]: Goal failed
+[WARN] [1788842915.656591958] [candidate_explorer]: Recovery move 'backward-right' failed; checking frontiers before the next direction.
+[INFO] [1788842915.816825521] [candidate_explorer]: Detected 496 frontier cells
+[INFO] [1788842915.817534984] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842915.817993696] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842915.818276531] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 7/8 before checking again.
+[INFO] [1788842915.818518241] [candidate_explorer]: Recovery move 7/8: right, 0.8 m -> (0.60, 0.02)
+[bt_navigator-7] [INFO] [1788842915.819039536] [bt_navigator]: Begin navigating from current location (0.20, 0.71) to (0.60, 0.02)
+[controller_server-3] [INFO] [1788842915.840774924] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842916.894856687] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842917.396302177] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842917.432147447] [bt_navigator]: Goal succeeded
+[INFO] [1788842917.432615158] [candidate_explorer]: Recovery move 'right' succeeded.
+[INFO] [1788842917.562805239] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842917.563517701] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842917.563937954] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788842917.564213081] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 8/8 before checking again.
+[INFO] [1788842917.564468457] [candidate_explorer]: Recovery move 8/8: forward-right, 0.8 m -> (0.57, -0.02)
+[bt_navigator-7] [INFO] [1788842917.564979127] [bt_navigator]: Begin navigating from current location (0.69, 0.22) to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842917.565294171] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842917.565315255] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842917.565320046] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842917.565324838] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842917.577532374] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842917.577572708] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842917.979557354] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842917.995459789] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842917.995483664] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842917.995488373] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842917.995493456] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842918.015286416] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842918.015703877] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842918.147408300] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842918.147742427] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842918.147748927] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842918.147755344] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842918.166922633] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842918.967247736] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842918.967274278] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842918.967279236] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842918.987505324] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842918.987762117] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842919.391608734] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842919.415551720] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842919.415580220] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842919.415585470] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842919.415590845] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842919.436508520] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842919.436551187] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842919.837049908] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842919.858259668] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842919.858286751] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842919.858291626] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842919.858296210] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842919.877640000] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842919.878067377] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842920.149312190] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842920.149348857] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842920.149355899] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842920.149362191] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842920.166732802] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842920.166816969] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842920.166822344] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842920.166826052] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842920.196186448] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842920.196213198] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842920.600067023] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842920.627112654] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842920.627138654] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842920.627143696] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.57, -0.02)
+[planner_server-5] [WARN] [1788842920.627148529] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842920.656289340] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842920.656614467] [bt_navigator]: Goal failed
+[WARN] [1788842920.657488931] [candidate_explorer]: Recovery move 'forward-right' failed; checking frontiers before the next direction.
+[INFO] [1788842920.657718349] [candidate_explorer]: All recovery directions tried; starting the 10.0s countdown.
+[INFO] [1788842920.815871191] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842920.816585446] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842920.817021282] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842920.817268200] [candidate_explorer]: No usable frontier found. Waiting up to 10.0s for the map to update.
+[INFO] [1788842921.060407250] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842921.061226714] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842921.061688092] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842921.305214061] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842921.305937441] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842921.306384777] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842921.566373102] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842921.567093190] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842921.567522317] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842921.806099130] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842921.806813927] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842921.807322555] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842922.057853486] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842922.058572074] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842922.058980243] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842922.307766954] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842922.308531043] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842922.308993462] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842922.555856995] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842922.556528207] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842922.556985835] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842922.807865894] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842922.808571606] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842922.808984567] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842923.058555825] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842923.059246705] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842923.059616332] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842923.306841159] [candidate_explorer]: Detected 501 frontier cells
+[INFO] [1788842923.307539621] [candidate_explorer]: Found 6 frontier clusters after filtering
+[WARN] [1788842923.307963249] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788842923.308213167] [candidate_explorer]: No usable frontier found for 10.0s. Exploration complete; returning home.
+[bt_navigator-7] [INFO] [1788842923.549636582] [bt_navigator]: Begin navigating from current location (1.00, 0.31) to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842923.550001459] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842923.550022376] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842923.550027168] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842923.550031918] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842923.570923509] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842923.570958718] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842923.972920656] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842924.003157599] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842924.003185766] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842924.003192099] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842924.003196891] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842924.021547383] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842924.022003469] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842924.153233223] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842924.153557641] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842924.153564266] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842924.153570350] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842924.170020663] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842924.170101705] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842924.170106872] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842924.170110997] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842924.200763859] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842924.200819234] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842924.603858971] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842924.630407265] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842924.630432599] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842924.630437391] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842924.630442391] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842924.652188446] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842924.652225405] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842925.053352838] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842925.082290272] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842925.082321106] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842925.082325897] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842925.082330731] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842925.100069385] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842925.100369596] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842925.152759888] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842925.152797472] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842925.152802430] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842925.152808972] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842925.172805599] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842925.172882600] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842925.172888100] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842925.172891808] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842925.182419744] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842925.182452952] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842925.584067305] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842925.610228889] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842925.610257805] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842925.610262847] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842925.610267889] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842925.639853661] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842925.639938620] [bt_navigator]: Goal failed
+[INFO] [1788842925.640772125] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788842925.641150836] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 1/8 before retrying home.
+[INFO] [1788842925.641405796] [candidate_explorer]: Return-home recovery move 1/8: forward, 0.3 m
+[bt_navigator-7] [INFO] [1788842925.641868340] [bt_navigator]: Begin navigating from current location (1.00, 0.31) to (1.17, 0.06)
+[controller_server-3] [INFO] [1788842925.662515014] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842925.819133137] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842925.852231598] [bt_navigator]: Goal succeeded
+[bt_navigator-7] [INFO] [1788842926.548938750] [bt_navigator]: Begin navigating from current location (1.05, 0.24) to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842926.549307627] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842926.549329669] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842926.549334627] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842926.549339419] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842926.570323094] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842926.570362594] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842926.971725571] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842926.992647579] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842926.992677538] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842926.992683204] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842926.992688204] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842927.009644229] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842927.010156107] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842927.152201555] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842927.152565682] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842927.152572599] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842927.152579141] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842927.169282289] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788842928.471011923] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842928.499872732] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842928.499900274] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842928.499905232] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842928.499910274] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842928.520715490] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842928.520748823] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842928.921017959] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842928.949913393] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842928.949949227] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842928.949954310] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842928.949959227] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842928.971735866] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842928.971767574] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842929.372343295] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842929.391595043] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842929.391627502] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842929.391632293] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842929.391637335] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842929.409187405] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842929.409373032] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [INFO] [1788842930.144335927] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 473 X 144 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842930.150076005] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842930.150093755] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842930.150098380] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.04)
+[planner_server-5] [WARN] [1788842930.150104297] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842930.182067126] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842930.182438378] [bt_navigator]: Goal failed
+[INFO] [1788842930.182952965] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788842930.183249091] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 2/8 before retrying home.
+[INFO] [1788842930.183463551] [candidate_explorer]: Return-home recovery move 2/8: forward-left, 0.3 m
+[bt_navigator-7] [INFO] [1788842930.183931471] [bt_navigator]: Begin navigating from current location (1.55, 0.36) to (1.39, 0.11)
+[controller_server-3] [INFO] [1788842930.205833527] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842930.711333084] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842930.747844733] [bt_navigator]: Goal succeeded
+[bt_navigator-7] [INFO] [1788842931.300670259] [bt_navigator]: Begin navigating from current location (1.45, 0.33) to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842931.300968344] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842931.300997594] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842931.301002802] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842931.301008094] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842931.324357993] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842931.324445244] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842931.324451619] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842931.324455327] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842931.341681812] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842931.341716395] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842931.743250581] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842931.761108028] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842931.761129195] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842931.761133362] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842931.761137487] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842931.783238586] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842931.783266669] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842932.184269560] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842932.212060570] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842932.212089612] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842932.212094362] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842932.212099154] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842932.231101567] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842932.231897280] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842933.152730861] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842933.152768861] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842933.152775111] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842933.152781903] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842933.153108613] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788842933.153192780] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788842933.153197988] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788842933.153201947] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842933.181456710] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842933.181493794] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842933.584214945] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842933.601641431] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842933.601664223] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842933.601668598] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842933.601673223] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842933.622258355] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842933.622287605] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842934.023141994] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842934.043784959] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842934.043808251] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842934.043813293] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842934.043818126] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842934.061217445] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842934.061435238] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842934.152591403] [planner_server]: The goal sent to the planner is off the global costmap. Planning will always fail to this goal.
+[planner_server-5] [WARN] [1788842934.152624195] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842934.152629445] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.02)
+[planner_server-5] [WARN] [1788842934.152635945] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842934.183016764] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842934.183316599] [bt_navigator]: Goal failed
+[INFO] [1788842934.184147104] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788842934.184446023] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 3/8 before retrying home.
+[INFO] [1788842934.184703650] [candidate_explorer]: Return-home recovery move 3/8: left, 0.3 m
+[bt_navigator-7] [INFO] [1788842934.185201569] [bt_navigator]: Begin navigating from current location (1.45, 0.33) to (1.65, 0.11)
+[controller_server-3] [INFO] [1788842934.207683546] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842934.761811871] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842934.798631648] [bt_navigator]: Goal succeeded
+[bt_navigator-7] [INFO] [1788842935.301080352] [bt_navigator]: Begin navigating from current location (1.42, 0.06) to (0.01, -0.02)
+[planner_server-5] [ERROR] [1788842935.301921732] [planner_server]: Failed to create a plan from potential when a legal potential was found. This shouldn't happen.
+[planner_server-5] [WARN] [1788842935.301959441] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842935.301965232] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.01, -0.02)
+[planner_server-5] [WARN] [1788842935.301970149] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842935.321947026] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788842936.623215491] [behavior_server]: backup completed successfully
+[controller_server-3] [INFO] [1788842936.664860798] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [WARN] [1788842937.671424842] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842937.671451759] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842937.671456467] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.01, -0.02)
+[planner_server-5] [WARN] [1788842937.671461550] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842937.717167925] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[controller_server-3] [INFO] [1788842937.717567511] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-3] [INFO] [1788842937.717595220] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[behavior_server-6] [INFO] [1788842937.717745637] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842937.717785388] [behavior_server]: Turning 1.57 for spin behavior.
+[bt_navigator-7] [WARN] [1788842937.717896638] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[planner_server-5] [WARN] [1788842938.142094552] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842938.142132093] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 473 X 147 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842938.142580388] [global_costmap.global_costmap]: Sensor origin at (0.39, -0.12) is out of map bounds (-4.92, -0.07) to (2.17, 2.13). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842938.420606161] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842938.448798091] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842938.448822508] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842938.448827133] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.01, -0.02)
+[planner_server-5] [WARN] [1788842938.448832383] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842938.458247193] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842938.458276276] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842938.859656044] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842938.879002917] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842938.879027584] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842938.879031959] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.01, -0.02)
+[planner_server-5] [WARN] [1788842938.879036459] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842938.899688133] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842938.899915467] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842939.143534688] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842939.143569396] [global_costmap.global_costmap]: Sensor origin at (0.39, -0.12) is out of map bounds (-4.92, -0.07) to (2.17, 2.13). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842939.151117278] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842939.151142861] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842939.151147694] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.01, -0.02)
+[planner_server-5] [WARN] [1788842939.151155278] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842939.170572027] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842940.142605642] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842940.142932602] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 473 X 152 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842940.143329938] [global_costmap.global_costmap]: Sensor origin at (0.76, -0.20) is out of map bounds (-4.92, -0.15) to (2.17, 2.12). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842940.471439614] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842940.500297964] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842940.500327423] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842940.500332465] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.01, -0.02)
+[planner_server-5] [WARN] [1788842940.500337881] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842940.519962673] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842940.520002798] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842940.920579728] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842940.940602689] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842940.940630897] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842940.940649814] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.01, -0.02)
+[planner_server-5] [WARN] [1788842940.940658522] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842940.968615659] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842940.968721118] [bt_navigator]: Goal failed
+[INFO] [1788842940.969553665] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788842940.969873875] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 4/8 before retrying home.
+[INFO] [1788842940.970136585] [candidate_explorer]: Return-home recovery move 4/8: backward-left, 0.3 m
+[bt_navigator-7] [INFO] [1788842940.970617963] [bt_navigator]: Begin navigating from current location (0.90, -0.22) to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842940.970912757] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842940.970932465] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842940.970936882] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842940.970941507] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842940.992560603] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842940.992596937] [behavior_server]: Turning -1.57 for spin behavior.
+[planner_server-5] [WARN] [1788842941.143810276] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842941.143830360] [global_costmap.global_costmap]: Sensor origin at (0.90, -0.22) is out of map bounds (-4.92, -0.15) to (2.17, 2.12). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842941.394202873] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842941.421687798] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842941.421713673] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842941.421719048] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842941.421724423] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842941.441609134] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842941.441849302] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842942.142246643] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842942.142423311] [global_costmap.global_costmap]: Sensor origin at (0.90, -0.22) is out of map bounds (-4.92, -0.15) to (2.17, 2.12). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842942.143818195] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842942.143831195] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842942.143835820] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842942.143841778] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842942.161360890] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842943.144059615] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842943.144390783] [global_costmap.global_costmap]: Sensor origin at (1.29, -0.30) is out of map bounds (-4.92, -0.15) to (2.17, 2.12). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842943.462418228] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842943.482256563] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842943.482281855] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842943.482286605] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842943.482291897] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842943.503707075] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842943.503746158] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842943.905345094] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842943.931450011] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842943.931475844] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842943.931480969] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842943.931486261] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842943.950985094] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842943.951022927] [behavior_server]: Turning -1.57 for spin behavior.
+[planner_server-5] [WARN] [1788842944.145151540] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842944.145170124] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 689 X 272 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842944.145781961] [global_costmap.global_costmap]: Sensor origin at (1.42, -0.33) is out of map bounds (-4.92, -0.28) to (5.41, 3.80). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842944.353836413] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842944.371824611] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842944.371852236] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842944.371857944] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842944.371864194] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842944.392602535] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842944.393137580] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842945.142231440] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842945.142257065] [global_costmap.global_costmap]: Sensor origin at (1.42, -0.33) is out of map bounds (-4.92, -0.28) to (5.41, 3.80). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842945.144027826] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842945.144049035] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842945.144053910] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.08, 0.01)
+[planner_server-5] [WARN] [1788842945.144060577] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842945.170998623] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842945.171111249] [bt_navigator]: Goal failed
+[WARN] [1788842945.172011588] [candidate_explorer]: Return-home recovery move 'backward-left' failed; retrying home before the next direction.
+[bt_navigator-7] [INFO] [1788842945.801184600] [bt_navigator]: Begin navigating from current location (1.42, -0.33) to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842945.801443977] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842945.801465352] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842945.801470394] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842945.801475685] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842945.821658314] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842946.142934238] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842946.143270407] [global_costmap.global_costmap]: Sensor origin at (1.54, -0.34) is out of map bounds (-4.92, -0.28) to (5.41, 3.80). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842947.123054321] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842947.143650619] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842947.143683744] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842947.143689786] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842947.143694911] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-5] [WARN] [1788842947.143657494] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842947.143728953] [global_costmap.global_costmap]: Sensor origin at (1.92, -0.40) is out of map bounds (-4.92, -0.28) to (5.41, 3.80). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842947.161520775] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842947.161559733] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842947.561721660] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842947.592569065] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842947.592593649] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842947.592598440] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842947.592603732] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842947.615709879] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842947.615738546] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842948.017870486] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842948.041571262] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842948.041608470] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842948.041613137] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842948.041618054] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842948.061500889] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842948.061936267] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842948.143852039] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842948.143885331] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 715 X 282 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842948.144579794] [global_costmap.global_costmap]: Sensor origin at (1.92, -0.40) is out of map bounds (-4.92, -0.37) to (5.80, 3.85). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842948.152658637] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842948.152682012] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842948.152688179] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842948.152694887] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842948.173889147] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842949.144226460] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842949.144248460] [global_costmap.global_costmap]: Sensor origin at (2.31, -0.45) is out of map bounds (-4.92, -0.37) to (5.80, 3.85). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842949.474261189] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842949.501702198] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842949.501736448] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842949.501741198] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842949.501746323] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842949.524479718] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842949.524523677] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842949.925346607] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842949.954980130] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842949.955004838] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842949.955010047] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, -0.01)
+[planner_server-5] [WARN] [1788842949.955057172] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842949.982406555] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842949.982502347] [bt_navigator]: Goal failed
+[INFO] [1788842949.983597271] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788842949.983870397] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 5/8 before retrying home.
+[INFO] [1788842949.984077399] [candidate_explorer]: Return-home recovery move 5/8: backward, 0.3 m
+[bt_navigator-7] [INFO] [1788842949.984473860] [bt_navigator]: Begin navigating from current location (2.45, -0.47) to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842949.984703153] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842949.984737528] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842949.984742403] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842949.984746903] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842950.006104622] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842950.006140623] [behavior_server]: Turning -1.57 for spin behavior.
+[planner_server-5] [WARN] [1788842950.144215503] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842950.144235712] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 744 X 287 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842950.144873216] [global_costmap.global_costmap]: Sensor origin at (2.45, -0.47) is out of map bounds (-4.92, -0.44) to (6.23, 3.86). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842950.408609772] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842950.436469742] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842950.436496700] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842950.436501867] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842950.436507117] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842950.454827359] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842950.455026860] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842951.144200547] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842951.144225630] [global_costmap.global_costmap]: Sensor origin at (2.45, -0.47) is out of map bounds (-4.92, -0.44) to (6.23, 3.86). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842951.146092309] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842951.146103517] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842951.146107725] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842951.146113767] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842951.156458166] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842952.146200603] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842952.146561897] [global_costmap.global_costmap]: Sensor origin at (2.85, -0.52) is out of map bounds (-4.92, -0.44) to (6.23, 3.86). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842952.458073841] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842952.486749983] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842952.486777025] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842952.486781775] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842952.486786316] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842952.506360399] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842952.506397858] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842952.908267879] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842952.926499287] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842952.926531579] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842952.926536370] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842952.926541162] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842952.946569873] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842952.946638957] [behavior_server]: Turning -1.57 for spin behavior.
+[planner_server-5] [WARN] [1788842953.145405474] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842953.145426933] [global_costmap.global_costmap]: Sensor origin at (2.98, -0.54) is out of map bounds (-4.92, -0.44) to (6.23, 3.86). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842953.347832099] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842953.366723636] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842953.366748469] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842953.366753261] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842953.366757844] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842953.387102224] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842953.387549394] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842954.146261357] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842954.146279023] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 770 X 296 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842954.147351072] [global_costmap.global_costmap]: Sensor origin at (2.98, -0.54) is out of map bounds (-4.92, -0.51) to (6.62, 3.92). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842954.159495274] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842954.159799151] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842954.159806193] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.40, -0.17)
+[planner_server-5] [WARN] [1788842954.159820401] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842954.186848949] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842954.186917658] [bt_navigator]: Goal failed
+[WARN] [1788842954.188001665] [candidate_explorer]: Return-home recovery move 'backward' failed; retrying home before the next direction.
+[bt_navigator-7] [INFO] [1788842954.800580946] [bt_navigator]: Begin navigating from current location (2.98, -0.54) to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842954.800836989] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842954.800856031] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842954.800860614] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842954.800865614] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842954.824107387] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842955.143597258] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842955.143620133] [global_costmap.global_costmap]: Sensor origin at (3.10, -0.55) is out of map bounds (-4.92, -0.51) to (6.62, 3.92). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842956.124436804] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842956.145508897] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842956.145956775] [global_costmap.global_costmap]: Sensor origin at (3.49, -0.60) is out of map bounds (-4.92, -0.51) to (6.62, 3.92). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842956.151062183] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842956.151086724] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842956.151091808] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842956.151096891] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842956.173658618] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842956.173693994] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842956.574754218] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842956.591807993] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842956.591831410] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842956.591835702] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842956.591840202] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842956.612306790] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842956.612348916] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842957.016209533] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842957.041272193] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842957.041302901] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842957.041307026] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842957.041311068] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842957.061428029] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842957.061660948] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842957.144079806] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842957.144116348] [global_costmap.global_costmap]: Sensor origin at (3.49, -0.60) is out of map bounds (-4.92, -0.51) to (6.62, 3.92). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842957.153076489] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842957.153097239] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842957.153101947] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842957.153108114] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842957.153344907] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842958.142029545] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842958.142047504] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 800 X 304 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842958.142763758] [global_costmap.global_costmap]: Sensor origin at (3.88, -0.61) is out of map bounds (-4.92, -0.58) to (7.07, 3.97). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842958.455218792] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842958.481230625] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842958.481259167] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842958.481264375] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842958.481270458] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842958.503389016] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842958.503421975] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842958.906196210] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842958.931495788] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842958.931521580] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842958.931526455] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.03, -0.01)
+[planner_server-5] [WARN] [1788842958.931531580] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788842958.961408020] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788842958.961515688] [bt_navigator]: Goal failed
+[INFO] [1788842958.962338359] [candidate_explorer]: return-home goal finished, success=False
+[WARN] [1788842958.962667695] [candidate_explorer]: Nav2 could not reach home. Trying recovery direction 6/8 before retrying home.
+[INFO] [1788842958.962912405] [candidate_explorer]: Return-home recovery move 6/8: backward-right, 0.3 m
+[bt_navigator-7] [INFO] [1788842958.963354741] [bt_navigator]: Begin navigating from current location (4.01, -0.61) to (3.75, -0.46)
+[planner_server-5] [WARN] [1788842958.963545075] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842958.963562909] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842958.963567409] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.75, -0.46)
+[planner_server-5] [WARN] [1788842958.963571867] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842958.977666291] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842958.977703541] [behavior_server]: Turning -1.57 for spin behavior.
+[planner_server-5] [WARN] [1788842959.143125804] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [WARN] [1788842959.143163346] [global_costmap.global_costmap]: Sensor origin at (4.01, -0.61) is out of map bounds (-4.92, -0.58) to (7.07, 3.97). The costmap cannot raytrace for it.
+[behavior_server-6] [INFO] [1788842959.380185066] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842959.404743472] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842959.404766889] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842959.404771597] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.75, -0.46)
+[planner_server-5] [WARN] [1788842959.404776514] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788842959.423814761] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788842959.424206096] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788842960.142686970] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842960.143083264] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 835 X 309 at 0.015000 m/pix
+[planner_server-5] [WARN] [1788842960.144218188] [global_costmap.global_costmap]: Sensor origin at (4.01, -0.61) is out of map bounds (-4.92, -0.60) to (7.60, 4.02). The costmap cannot raytrace for it.
+[planner_server-5] [WARN] [1788842960.147437292] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842960.147457375] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842960.147462917] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.75, -0.46)
+[planner_server-5] [WARN] [1788842960.147469833] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842960.166531288] [behavior_server]: Running backup
+[planner_server-5] [WARN] [1788842961.144945694] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[behavior_server-6] [INFO] [1788842961.467265333] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788842961.495092552] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842961.495121677] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842961.495126552] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.75, -0.46)
+[planner_server-5] [WARN] [1788842961.495131719] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842961.514813844] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842961.514845136] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788842961.916007944] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788842961.933840683] [planner_server]: Cannot create a plan: the robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?
+[planner_server-5] [WARN] [1788842961.933868267] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788842961.933872767] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.75, -0.46)
+[planner_server-5] [WARN] [1788842961.933877558] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788842961.956186992] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788842961.956223076] [behavior_server]: Turning -1.57 for spin behavior.
+[planner_server-5] [WARN] [1788842962.142226387] [nav2_costmap_2d]: Robot is out of bounds of the costmap!
+[planner_server-5] [INFO] [1788842962.142251804] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 864 X 313 at 0.015000 m/pix
+[behavior_server-6] [INFO] [1788842962.356610046] [behavior_server]: spin completed successfully
+[controller_server-3] [INFO] [1788842962.405259564] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842963.109050594] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842963.144034734] [bt_navigator]: Goal succeeded
+[bt_navigator-7] [INFO] [1788842963.800196168] [bt_navigator]: Begin navigating from current location (3.97, -0.49) to (0.04, -0.01)
+[controller_server-3] [INFO] [1788842963.823753360] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788842964.877465079] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842965.874005392] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842966.928330324] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842967.925173555] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788842968.326235613] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788842968.361373878] [bt_navigator]: Goal succeeded
+[INFO] [1788842968.362227842] [candidate_explorer]: return-home goal finished, success=True
+[sim_node-1] [INFO] [1788842968.555621867] [challenge_sim_node]: SESSION FINISHED — wrote /challenge/results/20260908_044731/report.yaml
+[sim_node-1] collision_count: 0
+[sim_node-1] coverage_fraction: 0.6249963462471574
+[sim_node-1] distance_to_home_m: 0.24206898854084327
+[sim_node-1] elapsed_time_s: 465.00000000007145
+[sim_node-1] elapsed_wall_time_s: 116.26596316101495
+[sim_node-1] map_output_yaml: /challenge/results/20260908_044731/map.yaml
+[sim_node-1] map_yaml: /challenge/maps/1/room.yaml
+[sim_node-1] min_coverage_required: 0.8
+[sim_node-1] results_path: /challenge/results/20260908_044731/report.yaml
+[sim_node-1] return_tolerance_m: 0.3
+[sim_node-1] seed: 0
+[sim_node-1] success: false
+[sim_node-1] time_scale: 4.0
+[sim_node-1] timed_out: false
+[sim_node-1] 
+[INFO] [1788842968.556729124] [candidate_explorer]: Session result: coverage=62.5% distance_to_home=0.24m elapsed_sim=465.0s elapsed_wall=116.3s collisions=0 success=False report_written_to=/challenge/results/20260908_044731/report.yaml
+
+=== REPORT ===
+collision_count: 0
+coverage_fraction: 0.6249963462471574
+distance_to_home_m: 0.24206898854084327
+elapsed_time_s: 465.00000000007145
+elapsed_wall_time_s: 116.26596316101495
+map_output_yaml: /challenge/results/20260908_044731/map.yaml
+map_yaml: /challenge/maps/1/room.yaml
+min_coverage_required: 0.8
+results_path: /challenge/results/20260908_044731/report.yaml
+return_tolerance_m: 0.3
+seed: 0
+success: false
+time_scale: 4.0
+timed_out: false
+Shutting down...
+[ERROR] [sim_node-1]: process has died [pid 8574, exit code -9, cmd '/challenge/ws/install/challenge_sim/lib/challenge_sim/sim_node --ros-args -r __node:=challenge_sim_node --params-file /tmp/launch_params__ytcim6p'].
+[ERROR] [async_slam_toolbox_node-2]: process has died [pid 8576, exit code -9, cmd '/opt/ros/humble/lib/slam_toolbox/async_slam_toolbox_node --ros-args -r __node:=slam_toolbox --params-file /challenge/ws/install/challenge_sim/share/challenge_sim/config/slam_toolbox_params.yaml --params-file /tmp/launch_params_bmvmobgh'].
+[ERROR] [controller_server-3]: process has died [pid 8578, exit code -9, cmd '/opt/ros/humble/lib/nav2_controller/controller_server --ros-args --log-level info --ros-args --params-file /tmp/launch_params_n36rh94x -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav'].
+[ERROR] [smoother_server-4]: process has died [pid 8580, exit code -9, cmd '/opt/ros/humble/lib/nav2_smoother/smoother_server --ros-args --log-level info --ros-args -r __node:=smoother_server --params-file /tmp/launch_params_n36rh94x -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [planner_server-5]: process has died [pid 8582, exit code -9, cmd '/opt/ros/humble/lib/nav2_planner/planner_server --ros-args --log-level info --ros-args -r __node:=planner_server --params-file /tmp/launch_params_n36rh94x -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [behavior_server-6]: process has died [pid 8584, exit code -9, cmd '/opt/ros/humble/lib/nav2_behaviors/behavior_server --ros-args --log-level info --ros-args -r __node:=behavior_server --params-file /tmp/launch_params_n36rh94x -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [bt_navigator-7]: process has died [pid 8586, exit code -9, cmd '/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator --ros-args --log-level info --ros-args -r __node:=bt_navigator --params-file /tmp/launch_params_n36rh94x -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [waypoint_follower-8]: process has died [pid 8588, exit code -9, cmd '/opt/ros/humble/lib/nav2_waypoint_follower/waypoint_follower --ros-args --log-level info --ros-args -r __node:=waypoint_follower --params-file /tmp/launch_params_n36rh94x -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [velocity_smoother-9]: process has died [pid 8590, exit code -9, cmd '/opt/ros/humble/lib/nav2_velocity_smoother/velocity_smoother --ros-args --log-level info --ros-args -r __node:=velocity_smoother --params-file /tmp/launch_params_n36rh94x -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav -r cmd_vel_smoothed:=cmd_vel'].
+/challenge/eval_runner.sh: line 40:  8572 Killed                  ros2 launch challenge_sim challenge.launch.py map_yaml:="$MAP_YAML" seed:="$SEED" time_limit_s:="$TIME_LIMIT" time_scale:="$TIME_SCALE" results_path:="$RESULTS_PATH" rviz:="$RVIZ"

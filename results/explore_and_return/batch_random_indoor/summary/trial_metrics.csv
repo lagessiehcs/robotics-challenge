@@ -1,0 +1,51 @@
+map_id,trial_id,seed,coverage_fraction,distance_to_home_m,elapsed_time_s,elapsed_wall_time_s,collision_count,success,timed_out,large_map_correction_count,largest_map_correction_m,largest_map_correction_deg,outcome,report_path
+1,1,1200000,1.0,0.29757857973173707,538.0000000000584,134.51923480498954,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/1/trial_01/report.yaml
+1,2,1300002,1.0,0.15007832095329005,538.0000000000584,134.51725737200468,666,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/1/trial_02/report.yaml
+1,3,1400000,1.0,2.2762993473196715,690.9999999999193,172.76673790399218,0,False,False,7,2.46,11.8,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/1/trial_03/report.yaml
+1,4,1500004,1.0,5.209372657089757,675.9999999999329,169.01973759799148,0,False,False,6,2.03,11.5,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/1/trial_04/report.yaml
+1,5,1600000,0.9948570170699006,0.25015394449971656,470.0000000000726,117.51791826999397,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/1/trial_05/report.yaml
+1,6,1700000,1.0,0.20751936193258563,757.9999999998583,191.21003122700495,6304,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/1/trial_06/report.yaml
+1,7,1800013,0.9261171479458086,0.19760476958627465,477.0000000000742,119.2778099529969,0,True,False,2,1.88,13.0,Success,results/explore_and_return/batch_random_indoor/1/trial_07/report.yaml
+1,8,1900000,1.0,8.383657759828086,726.9999999998865,181.7681311040069,0,False,False,7,2.48,9.2,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/1/trial_08/report.yaml
+1,9,2000000,1.0,11.265885040423344,799.9999999998201,200.02672319399426,700,False,False,15,2.12,10.5,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/1/trial_09/report.yaml
+1,10,2100000,1.0,0.4275148526626359,522.000000000073,130.52933118402143,0,False,False,0,0.0,0.0,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/1/trial_10/report.yaml
+2,1,2200000,0.7878005423444258,0.48238486343255466,1116.9999999995318,279.2809907089977,2,False,False,0,0.0,0.0,Both thresholds missed,results/explore_and_return/batch_random_indoor/2/trial_01/report.yaml
+2,2,2300003,0.9997531057242438,1.0895907389199566,1556.0499999991325,389.0345413069881,2205,False,False,0,0.0,0.0,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/2/trial_02/report.yaml
+2,3,2400000,0.44537352465503594,0.22834547053729815,242.00000000002078,60.518848386011086,0,False,False,0,0.0,0.0,"Coverage miss, home pass",results/explore_and_return/batch_random_indoor/2/trial_03/report.yaml
+2,4,2500000,0.7610865817076031,14.21781981673594,1743.0499999989624,435.7850402639888,24655,False,False,13,2.05,8.3,Both thresholds missed,results/explore_and_return/batch_random_indoor/2/trial_04/report.yaml
+2,5,2600002,0.7031219781169373,0.2948746195468567,1088.9999999995573,272.29667278399575,6822,False,False,0,0.0,0.0,"Coverage miss, home pass",results/explore_and_return/batch_random_indoor/2/trial_05/report.yaml
+2,6,2700002,0.5907645081248791,4.652141624467307,907.9999999997219,227.0189772869926,1625,False,False,3,2.2,6.5,Both thresholds missed,results/explore_and_return/batch_random_indoor/2/trial_06/report.yaml
+2,7,2800000,0.9219114554829047,17.712601757425336,1101.9999999995455,275.51877036501537,276,False,False,2,1.76,4.3,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/2/trial_07/report.yaml
+2,8,2900001,0.9678872845333081,21.060636188695433,1300.0499999993654,325.03424604499014,886,False,False,3,0.64,4.8,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/2/trial_08/report.yaml
+2,9,3000001,0.9972059797793588,0.29167256640744477,1632.0499999990634,408.0369072900212,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/2/trial_09/report.yaml
+2,10,3100000,0.9874824602191599,0.1525973854120887,1249.0499999994117,312.28442679700674,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/2/trial_10/report.yaml
+3,1,3200000,0.9973946456367239,0.17571102362263474,1611.0499999990825,402.79878199499217,2450,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/3/trial_01/report.yaml
+3,2,3300000,1.0,0.24374006442494797,371.0000000000501,92.79724444900057,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/3/trial_02/report.yaml
+3,3,3400004,0.8030215463359781,6.386782156223849,1252.049999999409,313.0323017149931,1690,False,False,6,1.66,7.6,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/3/trial_03/report.yaml
+3,4,3500000,0.7555601511881044,7.897787203572236,943.9999999996892,236.01864025800023,19,False,False,9,1.41,11.1,Both thresholds missed,results/explore_and_return/batch_random_indoor/3/trial_04/report.yaml
+3,5,3600000,0.9971638381984463,0.275911853720837,1348.0499999993217,337.02897892400506,1822,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/3/trial_05/report.yaml
+3,6,3700001,0.974227118212184,2.442445991037054,753.999999999862,188.52159765400575,0,False,False,9,2.27,6.3,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/3/trial_06/report.yaml
+3,7,3800000,0.8126914547700511,1.2935384820751181,1108.999999999539,277.27224360598484,0,False,False,3,2.33,9.8,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/3/trial_07/report.yaml
+3,8,3900000,1.0,0.20167172213176807,238.00000000001987,59.51797432501917,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/3/trial_08/report.yaml
+3,9,4000000,0.754548291378696,3.3618928604288465,780.9999999998374,195.27033672502148,0,False,False,1,2.14,0.6,Both thresholds missed,results/explore_and_return/batch_random_indoor/3/trial_09/report.yaml
+3,10,4100000,0.8323433232947485,8.073470104379906,1312.0499999993544,328.0304455650039,20666,False,False,8,1.43,10.6,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/3/trial_10/report.yaml
+4,1,4200000,0.9676908576814326,0.23634085220157947,265.000000000026,66.29213583801175,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_01/report.yaml
+4,2,4300000,1.0,0.22542047537339607,211.00000000001373,52.77349272900028,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_02/report.yaml
+4,3,4400000,1.0,0.201478390085847,211.00000000001373,52.76346749899676,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_03/report.yaml
+4,4,4500000,0.965014137606032,1.6770416725850783,686.9999999999229,171.79935347798164,8564,False,False,0,0.0,0.0,"Coverage pass, return miss",results/explore_and_return/batch_random_indoor/4/trial_04/report.yaml
+4,5,4600000,0.9655796418473138,0.18834463457636574,371.0000000000501,92.80247982201399,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_05/report.yaml
+4,6,4700000,0.970292177191329,0.2222032004730641,425.00000000006236,106.27662016599788,3949,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_06/report.yaml
+4,7,4800000,0.9996229971724788,0.22576604375904943,381.00000000005235,95.27519118299824,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_07/report.yaml
+4,8,4900000,0.9902356267672008,0.18840887940562445,347.0000000000446,86.77425959301763,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_08/report.yaml
+4,9,5000001,0.9641470311027333,0.2289387401800567,601.0000000000011,150.3016967170115,4706,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_09/report.yaml
+4,10,5100000,1.0,0.21066169172957608,194.00000000000986,48.51201270800084,0,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/4/trial_10/report.yaml
+5,1,5200003,0.9644744238336144,0.2639406061495527,2088.0499999988306,522.0329141500115,66587,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/5/trial_01/report.yaml
+5,2,5300000,0.9084265930808932,0.25413361273841123,489.0000000000769,122.26730850100284,2204,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/5/trial_02/report.yaml
+5,3,5400007,0.9909959630027083,0.1422706129576384,718.9999999998938,179.7681498489983,95,True,False,1,1.13,2.9,Success,results/explore_and_return/batch_random_indoor/5/trial_03/report.yaml
+5,4,5500000,1.0,0.29852217058449965,609.999999999993,152.5191055989999,1518,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/5/trial_04/report.yaml
+5,5,5600005,0.9829935101435945,0.15505071346774757,880.9999999997465,220.2666863320046,4327,True,False,1,0.57,4.4,Success,results/explore_and_return/batch_random_indoor/5/trial_05/report.yaml
+5,6,5700003,1.0,0.13682470976523306,772.9999999998447,193.26724758101045,4763,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/5/trial_06/report.yaml
+5,7,5800003,1.0,0.11655462547328066,683.9999999999256,171.01846398599446,2933,True,False,0,0.0,0.0,Success,results/explore_and_return/batch_random_indoor/5/trial_07/report.yaml
+5,8,5900003,0.7442792171291328,0.13994441096850024,493.0000000000778,123.60383661100059,2238,False,False,0,0.0,0.0,"Coverage miss, home pass",results/explore_and_return/batch_random_indoor/5/trial_08/report.yaml
+5,9,6000002,0.33658737579436143,0.0,324.0000000000394,81.01578530299594,0,False,False,0,0.0,0.0,"Coverage miss, home pass",results/explore_and_return/batch_random_indoor/5/trial_09/report.yaml
+5,10,6100000,0.592334815269048,0.23973831782508806,591.0000000000102,147.76780029799556,1507,False,False,0,0.0,0.0,"Coverage miss, home pass",results/explore_and_return/batch_random_indoor/5/trial_10/report.yaml

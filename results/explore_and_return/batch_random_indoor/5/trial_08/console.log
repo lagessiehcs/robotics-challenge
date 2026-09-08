@@ -1,0 +1,1591 @@
+Launching sim + slam_toolbox + Nav2 (map: /challenge/maps/5/room.yaml, seed: 5900003, time_scale: 4.0x)...
+Waiting for bringup...
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-09-08-04-03-54-979614-orbstack-37697
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [sim_node-1]: process started with pid [37699]
+[INFO] [async_slam_toolbox_node-2]: process started with pid [37701]
+[INFO] [controller_server-3]: process started with pid [37703]
+[INFO] [smoother_server-4]: process started with pid [37705]
+[INFO] [planner_server-5]: process started with pid [37707]
+[INFO] [behavior_server-6]: process started with pid [37709]
+[INFO] [bt_navigator-7]: process started with pid [37711]
+[INFO] [waypoint_follower-8]: process started with pid [37713]
+[INFO] [velocity_smoother-9]: process started with pid [37715]
+[INFO] [lifecycle_manager-10]: process started with pid [37717]
+[waypoint_follower-8] [INFO] [1788840235.102718140] [waypoint_follower]: 
+[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-8] [INFO] [1788840235.103193895] [waypoint_follower]: Creating
+[smoother_server-4] [INFO] [1788840235.108935788] [smoother_server]: 
+[smoother_server-4] 	smoother_server lifecycle node launched. 
+[smoother_server-4] 	Waiting on external lifecycle transitions to activate
+[smoother_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788840235.110301636] [smoother_server]: Creating smoother server
+[planner_server-5] [INFO] [1788840235.111559774] [planner_server]: 
+[planner_server-5] 	planner_server lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[velocity_smoother-9] [INFO] [1788840235.112161947] [velocity_smoother]: 
+[velocity_smoother-9] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-9] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788840235.113389501] [planner_server]: Creating
+[lifecycle_manager-10] [INFO] [1788840235.114325886] [lifecycle_manager_navigation]: Creating
+[async_slam_toolbox_node-2] [INFO] [1788840235.114881767] [slam_toolbox]: Node using stack size 40000000
+[controller_server-3] [INFO] [1788840235.116402449] [controller_server]: 
+[controller_server-3] 	controller_server lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788840235.118728098] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[controller_server-3] [INFO] [1788840235.118855350] [controller_server]: Creating controller server
+[behavior_server-6] [INFO] [1788840235.120065904] [behavior_server]: 
+[behavior_server-6] 	behavior_server lifecycle node launched. 
+[behavior_server-6] 	Waiting on external lifecycle transitions to activate
+[behavior_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788840235.125121123] [bt_navigator]: 
+[bt_navigator-7] 	bt_navigator lifecycle node launched. 
+[bt_navigator-7] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788840235.125201207] [bt_navigator]: Creating
+[controller_server-3] [INFO] [1788840235.135087227] [local_costmap.local_costmap]: 
+[controller_server-3] 	local_costmap lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788840235.135550648] [local_costmap.local_costmap]: Creating Costmap
+[planner_server-5] [INFO] [1788840235.139384896] [global_costmap.global_costmap]: 
+[planner_server-5] 	global_costmap lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788840235.139719858] [global_costmap.global_costmap]: Creating Costmap
+[lifecycle_manager-10] [INFO] [1788840235.141716837] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788840235.141743671] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-3] [INFO] [1788840235.142129133] [controller_server]: Configuring controller interface
+[controller_server-3] [INFO] [1788840235.142519679] [controller_server]: getting goal checker plugins..
+[controller_server-3] [INFO] [1788840235.142774765] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-3] [INFO] [1788840235.142796307] [local_costmap.local_costmap]: Configuring
+[controller_server-3] [INFO] [1788840235.147066059] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[async_slam_toolbox_node-2] [INFO] [1788840235.148348948] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-2] [INFO] [1788840235.148466657] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[controller_server-3] [INFO] [1788840235.150091716] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-3] [INFO] [1788840235.152965079] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788840235.152993371] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-3] [INFO] [1788840235.154242509] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-3] [INFO] [1788840235.160654076] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-3] [INFO] [1788840235.161113372] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1788840235.161568668] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-3] [INFO] [1788840235.163062726] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-3] [INFO] [1788840235.164308780] [controller_server]: Setting transform_tolerance to 0.200000
+[controller_server-3] [INFO] [1788840235.170997141] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[controller_server-3] [INFO] [1788840235.171621023] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788840235.171772774] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[controller_server-3] [INFO] [1788840235.172464282] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788840235.172645992] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[controller_server-3] [INFO] [1788840235.172849911] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788840235.172951453] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[controller_server-3] [INFO] [1788840235.173243248] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788840235.173340332] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[controller_server-3] [INFO] [1788840235.173688794] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788840235.173793087] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[controller_server-3] [INFO] [1788840235.174011131] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788840235.174122132] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[controller_server-3] [INFO] [1788840235.174318634] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788840235.174325968] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-10] [INFO] [1788840235.179023516] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788840235.179312478] [smoother_server]: Configuring smoother server
+[smoother_server-4] [INFO] [1788840235.189038537] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-4] [INFO] [1788840235.190180424] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-10] [INFO] [1788840235.196649241] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-5] [INFO] [1788840235.197121788] [planner_server]: Configuring
+[planner_server-5] [INFO] [1788840235.197155705] [global_costmap.global_costmap]: Configuring
+[planner_server-5] [INFO] [1788840235.201134538] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-5] [INFO] [1788840235.203277560] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-5] [INFO] [1788840235.204098443] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-5] [INFO] [1788840235.204112652] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788840235.204541740] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[planner_server-5] [INFO] [1788840235.206780971] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788840235.206794471] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-5] [INFO] [1788840235.207417603] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-5] [INFO] [1788840235.214185048] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[planner_server-5] [INFO] [1788840235.214205090] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788840235.214638011] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-10] [INFO] [1788840235.220561489] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788840235.220713241] [behavior_server]: Configuring
+[behavior_server-6] [INFO] [1788840235.226088838] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[behavior_server-6] [INFO] [1788840235.226636928] [behavior_server]: Configuring spin
+[behavior_server-6] [INFO] [1788840235.231154058] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[behavior_server-6] [INFO] [1788840235.231676938] [behavior_server]: Configuring backup
+[behavior_server-6] [INFO] [1788840235.233476624] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[behavior_server-6] [INFO] [1788840235.234274924] [behavior_server]: Configuring drive_on_heading
+[behavior_server-6] [INFO] [1788840235.238180006] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[behavior_server-6] [INFO] [1788840235.239868440] [behavior_server]: Configuring assisted_teleop
+[behavior_server-6] [INFO] [1788840235.245743459] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-6] [INFO] [1788840235.246791720] [behavior_server]: Configuring wait
+[lifecycle_manager-10] [INFO] [1788840235.250918596] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788840235.251176182] [bt_navigator]: Configuring
+[lifecycle_manager-10] [INFO] [1788840235.301988127] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788840235.302613717] [waypoint_follower]: Configuring
+[waypoint_follower-8] [INFO] [1788840235.312802781] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-10] [INFO] [1788840235.314120669] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788840235.314362172] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-10] [INFO] [1788840235.317548747] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-3] [INFO] [1788840235.317672581] [controller_server]: Activating
+[controller_server-3] [INFO] [1788840235.317704832] [local_costmap.local_costmap]: Activating
+[controller_server-3] [INFO] [1788840235.317713998] [local_costmap.local_costmap]: Checking transform
+[controller_server-3] [INFO] [1788840235.317730499] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[sim_node-1] [INFO] [1788840235.497055444] [challenge_sim_node]: Loaded /challenge/maps/5/room.yaml — spawned at world (-0.07, -2.57); 97845 reachable free cells. time_scale=4.0x
+[async_slam_toolbox_node-2] [WARN] [1788840235.537450364] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.1 m)
+[async_slam_toolbox_node-2] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-2] Registering sensor: [Custom Described Lidar]
+[controller_server-3] [INFO] [1788840235.824593846] [local_costmap.local_costmap]: start
+[controller_server-3] [INFO] [1788840236.078470275] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788840236.184426667] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788840236.184473626] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788840236.184741753] [smoother_server]: Activating
+[smoother_server-4] [INFO] [1788840236.184780421] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788840236.290609770] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788840236.290678395] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-5] [INFO] [1788840236.290894648] [planner_server]: Activating
+[planner_server-5] [INFO] [1788840236.290934940] [global_costmap.global_costmap]: Activating
+[planner_server-5] [INFO] [1788840236.290944732] [global_costmap.global_costmap]: Checking transform
+[planner_server-5] [INFO] [1788840236.291043983] [global_costmap.global_costmap]: start
+[planner_server-5] [INFO] [1788840237.158968247] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 172 X 219 at 0.015000 m/pix
+[planner_server-5] [INFO] [1788840237.342648030] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788840237.343348412] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788840237.458392523] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788840237.458426107] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788840237.458617026] [behavior_server]: Activating
+[behavior_server-6] [INFO] [1788840237.458646109] [behavior_server]: Activating spin
+[behavior_server-6] [INFO] [1788840237.458660735] [behavior_server]: Activating backup
+[behavior_server-6] [INFO] [1788840237.458667818] [behavior_server]: Activating drive_on_heading
+[behavior_server-6] [INFO] [1788840237.458681318] [behavior_server]: Activating assisted_teleop
+[behavior_server-6] [INFO] [1788840237.458693152] [behavior_server]: Activating wait
+[behavior_server-6] [INFO] [1788840237.458707152] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788840237.573667637] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788840237.573695929] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788840237.573906265] [bt_navigator]: Activating
+[bt_navigator-7] [INFO] [1788840237.603624907] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788840237.707045356] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-10] [INFO] [1788840237.707072315] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788840237.707277233] [waypoint_follower]: Activating
+[waypoint_follower-8] [INFO] [1788840237.707318150] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788840237.810890601] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-10] [INFO] [1788840237.810920476] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788840237.811179062] [velocity_smoother]: Activating
+[velocity_smoother-9] [INFO] [1788840237.811233313] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788840237.927350477] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-10] [INFO] [1788840237.927396395] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788840237.927405061] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+Starting your explorer node...
+Running. Waiting for /challenge/results/20260908_040354/report.yaml to appear (or Ctrl-C to stop)...
+[INFO] [1788840266.413184292] [candidate_explorer]: Got first /map.
+[INFO] [1788840266.605051535] [candidate_explorer]: Detected 112 frontier cells
+[INFO] [1788840266.606225214] [candidate_explorer]: Found 3 frontier clusters after filtering
+[WARN] [1788840266.606478716] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840266.606761136] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788840266.607052014] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (0.80, 0.00)
+[bt_navigator-7] [INFO] [1788840266.608008482] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (0.80, 0.00)
+[controller_server-3] [INFO] [1788840266.632181483] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [WARN] [1788840266.632222025] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-3] [INFO] [1788840267.683093690] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840268.685077638] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788840269.189159957] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788840269.189254083] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840269.210567137] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840269.211253686] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840269.294584677] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 3.3333 Hz
+[controller_server-3] [INFO] [1788840269.309021035] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840270.361847220] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840271.411274994] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788840271.816388535] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788840271.816443911] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840271.828460285] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788840271.828582495] [behavior_server]: DriveOnHeading: no acceleration or deceleration limits set
+[planner_server-5] [INFO] [1788840273.298749931] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 172 X 220 at 0.015000 m/pix
+[behavior_server-6] [INFO] [1788840273.330163049] [behavior_server]: backup completed successfully
+[controller_server-3] [INFO] [1788840273.371304060] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840274.422486811] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788840275.293492899] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 264 X 261 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788840275.422502697] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840275.773983431] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840275.808524039] [bt_navigator]: Goal succeeded
+[INFO] [1788840275.809625926] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788840275.869177128] [candidate_explorer]: Detected 1115 frontier cells
+[INFO] [1788840275.870369765] [candidate_explorer]: Found 29 frontier clusters after filtering
+[INFO] [1788840275.871187440] [candidate_explorer]: Selected frontier cluster: size=133, goal=(1.51, -0.11), distance=0.74
+[INFO] [1788840275.871552277] [candidate_explorer]: Checking global path to frontier (1.51, -0.11), distance=0.74m
+[INFO] [1788840275.875083981] [candidate_explorer]: Nav2 path to frontier is 0.76m (straight-line=0.74m, detour=1.0x)
+[INFO] [1788840275.875989532] [candidate_explorer]: Global path accepted. Navigating to frontier (1.51, -0.11)
+[bt_navigator-7] [INFO] [1788840275.876383911] [bt_navigator]: Begin navigating from current location (0.80, -0.32) to (1.51, -0.11)
+[controller_server-3] [INFO] [1788840275.897331503] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840276.501133983] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840276.539151503] [bt_navigator]: Goal succeeded
+[INFO] [1788840276.539866219] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840276.540173097] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840276.608343721] [candidate_explorer]: Detected 1115 frontier cells
+[INFO] [1788840276.609632818] [candidate_explorer]: Found 29 frontier clusters after filtering
+[INFO] [1788840276.610423701] [candidate_explorer]: Selected frontier cluster: size=133, goal=(1.90, -0.23), distance=0.60
+[INFO] [1788840276.610747080] [candidate_explorer]: Checking global path to frontier (1.90, -0.23), distance=0.60m
+[INFO] [1788840276.613778153] [candidate_explorer]: Nav2 path to frontier is 0.70m (straight-line=0.60m, detour=1.2x)
+[INFO] [1788840276.614810622] [candidate_explorer]: Global path accepted. Navigating to frontier (1.90, -0.23)
+[bt_navigator-7] [INFO] [1788840276.615215043] [bt_navigator]: Begin navigating from current location (1.30, -0.18) to (1.90, -0.23)
+[controller_server-3] [INFO] [1788840276.636362304] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840277.088984713] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840277.127538905] [bt_navigator]: Goal succeeded
+[INFO] [1788840277.128075453] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840277.128297580] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[planner_server-5] [INFO] [1788840277.293420462] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 321 X 610 at 0.015000 m/pix
+[INFO] [1788840277.380963746] [candidate_explorer]: Detected 1076 frontier cells
+[INFO] [1788840277.382548262] [candidate_explorer]: Found 20 frontier clusters after filtering
+[INFO] [1788840277.383401063] [candidate_explorer]: Selected frontier cluster: size=109, goal=(2.12, -0.57), distance=0.60
+[INFO] [1788840277.383734275] [candidate_explorer]: Checking global path to frontier (2.12, -0.57), distance=0.60m
+[INFO] [1788840277.386861807] [candidate_explorer]: Nav2 path to frontier is 0.68m (straight-line=0.60m, detour=1.1x)
+[INFO] [1788840277.387801775] [candidate_explorer]: Global path accepted. Navigating to frontier (2.12, -0.57)
+[bt_navigator-7] [INFO] [1788840277.388224696] [bt_navigator]: Begin navigating from current location (1.69, -0.16) to (2.12, -0.57)
+[controller_server-3] [INFO] [1788840277.410481427] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840277.862690166] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840277.901135940] [bt_navigator]: Goal succeeded
+[INFO] [1788840277.901866073] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840277.902136867] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840278.115751711] [candidate_explorer]: Detected 1076 frontier cells
+[INFO] [1788840278.117139850] [candidate_explorer]: Found 20 frontier clusters after filtering
+[INFO] [1788840278.117925108] [candidate_explorer]: Selected frontier cluster: size=600, goal=(1.97, 0.19), distance=0.60
+[INFO] [1788840278.118278362] [candidate_explorer]: Checking global path to frontier (1.97, 0.19), distance=0.60m
+[INFO] [1788840278.122020401] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.60m, detour=1.1x)
+[INFO] [1788840278.122945077] [candidate_explorer]: Global path accepted. Navigating to frontier (1.97, 0.19)
+[bt_navigator-7] [INFO] [1788840278.123378623] [bt_navigator]: Begin navigating from current location (2.06, -0.40) to (1.97, 0.19)
+[controller_server-3] [INFO] [1788840278.145951149] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840279.197516613] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788840279.291317337] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 321 X 642 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788840279.798970776] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840279.833998223] [bt_navigator]: Goal succeeded
+[INFO] [1788840279.834731106] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840279.834992734] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840279.887396570] [candidate_explorer]: Detected 1961 frontier cells
+[INFO] [1788840279.890089764] [candidate_explorer]: Found 102 frontier clusters after filtering
+[INFO] [1788840279.891337610] [candidate_explorer]: Selected frontier cluster: size=5, goal=(1.79, 0.80), distance=0.80
+[INFO] [1788840279.891719698] [candidate_explorer]: Checking global path to frontier (1.79, 0.80), distance=0.80m
+[INFO] [1788840279.901618926] [candidate_explorer]: Nav2 path to frontier is 0.83m (straight-line=0.80m, detour=1.0x)
+[INFO] [1788840279.902611603] [candidate_explorer]: Global path accepted. Navigating to frontier (1.79, 0.80)
+[bt_navigator-7] [INFO] [1788840279.903088274] [bt_navigator]: Begin navigating from current location (1.85, 0.00) to (1.79, 0.80)
+[controller_server-3] [INFO] [1788840279.924559414] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840280.579356298] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840280.613580737] [bt_navigator]: Goal succeeded
+[INFO] [1788840280.614229202] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840280.614490913] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840280.868309257] [candidate_explorer]: Detected 1961 frontier cells
+[INFO] [1788840280.870226361] [candidate_explorer]: Found 102 frontier clusters after filtering
+[INFO] [1788840280.871500874] [candidate_explorer]: Selected frontier cluster: size=17, goal=(1.55, 1.43), distance=0.88
+[INFO] [1788840280.871900211] [candidate_explorer]: Checking global path to frontier (1.55, 1.43), distance=0.88m
+[INFO] [1788840280.876340549] [candidate_explorer]: Nav2 path to frontier is 0.95m (straight-line=0.88m, detour=1.1x)
+[INFO] [1788840280.877488394] [candidate_explorer]: Global path accepted. Navigating to frontier (1.55, 1.43)
+[bt_navigator-7] [INFO] [1788840280.877903982] [bt_navigator]: Begin navigating from current location (1.81, 0.59) to (1.55, 1.43)
+[controller_server-3] [INFO] [1788840280.898672948] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840281.604413111] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840281.641352328] [bt_navigator]: Goal succeeded
+[INFO] [1788840281.642021210] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840281.642286796] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840281.892656813] [candidate_explorer]: Detected 2627 frontier cells
+[INFO] [1788840281.895851513] [candidate_explorer]: Found 135 frontier clusters after filtering
+[INFO] [1788840281.897514322] [candidate_explorer]: Selected frontier cluster: size=43, goal=(1.37, 1.78), distance=0.61
+[INFO] [1788840281.897957451] [candidate_explorer]: Checking global path to frontier (1.37, 1.78), distance=0.61m
+[INFO] [1788840281.901371154] [candidate_explorer]: Nav2 path to frontier is 0.68m (straight-line=0.61m, detour=1.1x)
+[INFO] [1788840281.902184579] [candidate_explorer]: Global path accepted. Navigating to frontier (1.37, 1.78)
+[bt_navigator-7] [INFO] [1788840281.902539707] [bt_navigator]: Begin navigating from current location (1.68, 1.25) to (1.37, 1.78)
+[controller_server-3] [INFO] [1788840281.923441383] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840282.379021073] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840282.413819809] [bt_navigator]: Goal succeeded
+[INFO] [1788840282.414539692] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840282.414775361] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840282.619512196] [candidate_explorer]: Detected 2627 frontier cells
+[INFO] [1788840282.622174265] [candidate_explorer]: Found 135 frontier clusters after filtering
+[INFO] [1788840282.623821240] [candidate_explorer]: Selected frontier cluster: size=15, goal=(1.24, 2.15), distance=0.61
+[INFO] [1788840282.624237203] [candidate_explorer]: Checking global path to frontier (1.24, 2.15), distance=0.61m
+[INFO] [1788840282.627337527] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788840282.628237703] [candidate_explorer]: Global path accepted. Navigating to frontier (1.24, 2.15)
+[bt_navigator-7] [INFO] [1788840282.628577581] [bt_navigator]: Begin navigating from current location (1.51, 1.61) to (1.24, 2.15)
+[controller_server-3] [INFO] [1788840282.649467882] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840283.103072259] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840283.142288917] [bt_navigator]: Goal succeeded
+[INFO] [1788840283.142906632] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840283.143157551] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[planner_server-5] [INFO] [1788840283.291886846] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 402 X 642 at 0.015000 m/pix
+[INFO] [1788840283.399886509] [candidate_explorer]: Detected 4562 frontier cells
+[INFO] [1788840283.404446806] [candidate_explorer]: Found 73 frontier clusters after filtering
+[INFO] [1788840283.407093000] [candidate_explorer]: Selected frontier cluster: size=1813, goal=(0.94, 2.41), distance=0.60
+[INFO] [1788840283.407585381] [candidate_explorer]: Checking global path to frontier (0.94, 2.41), distance=0.60m
+[INFO] [1788840283.412098052] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788840283.413135896] [candidate_explorer]: Global path accepted. Navigating to frontier (0.94, 2.41)
+[bt_navigator-7] [INFO] [1788840283.413631693] [bt_navigator]: Begin navigating from current location (1.33, 1.95) to (0.94, 2.41)
+[controller_server-3] [INFO] [1788840283.436308762] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840283.896014912] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840283.927573156] [bt_navigator]: Goal succeeded
+[INFO] [1788840283.928031703] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840283.928287497] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840284.123726735] [candidate_explorer]: Detected 4562 frontier cells
+[INFO] [1788840284.127847361] [candidate_explorer]: Found 73 frontier clusters after filtering
+[INFO] [1788840284.130431930] [candidate_explorer]: Selected frontier cluster: size=14, goal=(0.80, 2.78), distance=0.60
+[INFO] [1788840284.130920435] [candidate_explorer]: Checking global path to frontier (0.80, 2.78), distance=0.60m
+[planner_server-5] [ERROR] [1788840284.132496201] [planner_server]: Failed to create a plan from potential when a legal potential was found. This shouldn't happen.
+[planner_server-5] [WARN] [1788840284.132537452] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840284.132544327] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.80, 2.78)
+[planner_server-5] [WARN] [1788840284.132556827] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840284.133320793] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840284.133540504] [candidate_explorer]: No global path to frontier (0.80, 2.78). Blacklisting.
+[INFO] [1788840284.374096502] [candidate_explorer]: Detected 4562 frontier cells
+[INFO] [1788840284.378421214] [candidate_explorer]: Found 73 frontier clusters after filtering
+[INFO] [1788840284.381335494] [candidate_explorer]: Selected frontier cluster: size=1813, goal=(1.61, 2.62), distance=0.60
+[INFO] [1788840284.381824124] [candidate_explorer]: Checking global path to frontier (1.61, 2.62), distance=0.60m
+[INFO] [1788840284.385482662] [candidate_explorer]: Nav2 path to frontier is 0.71m (straight-line=0.60m, detour=1.2x)
+[INFO] [1788840284.386590090] [candidate_explorer]: Global path accepted. Navigating to frontier (1.61, 2.62)
+[bt_navigator-7] [INFO] [1788840284.387064720] [bt_navigator]: Begin navigating from current location (1.12, 2.27) to (1.61, 2.62)
+[controller_server-3] [INFO] [1788840284.408689403] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788840285.294496145] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 421 X 643 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788840285.459306273] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840286.111069792] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840286.147880091] [bt_navigator]: Goal succeeded
+[INFO] [1788840286.148909560] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840286.149164855] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840286.414949824] [candidate_explorer]: Detected 4033 frontier cells
+[INFO] [1788840286.419217576] [candidate_explorer]: Found 58 frontier clusters after filtering
+[INFO] [1788840286.421814728] [candidate_explorer]: Selected frontier cluster: size=442, goal=(1.49, 3.55), distance=0.84
+[INFO] [1788840286.422353900] [candidate_explorer]: Checking global path to frontier (1.49, 3.55), distance=0.84m
+[INFO] [1788840286.426335108] [candidate_explorer]: Nav2 path to frontier is 0.85m (straight-line=0.84m, detour=1.0x)
+[INFO] [1788840286.427444328] [candidate_explorer]: Global path accepted. Navigating to frontier (1.49, 3.55)
+[bt_navigator-7] [INFO] [1788840286.427822582] [bt_navigator]: Begin navigating from current location (1.45, 2.71) to (1.49, 3.55)
+[controller_server-3] [INFO] [1788840286.450042855] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788840287.292096392] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 422 X 646 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788840287.502176116] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840287.654034859] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840287.688270923] [bt_navigator]: Goal succeeded
+[INFO] [1788840287.688720845] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840287.688933555] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840287.920196790] [candidate_explorer]: Detected 4435 frontier cells
+[INFO] [1788840287.924830922] [candidate_explorer]: Found 116 frontier clusters after filtering
+[INFO] [1788840287.927866120] [candidate_explorer]: Selected frontier cluster: size=8, goal=(1.86, 3.95), distance=0.63
+[INFO] [1788840287.928369625] [candidate_explorer]: Checking global path to frontier (1.86, 3.95), distance=0.63m
+[INFO] [1788840287.931977205] [candidate_explorer]: Nav2 path to frontier is 0.77m (straight-line=0.63m, detour=1.2x)
+[INFO] [1788840287.932913881] [candidate_explorer]: Global path accepted. Navigating to frontier (1.86, 3.95)
+[bt_navigator-7] [INFO] [1788840287.933313718] [bt_navigator]: Begin navigating from current location (1.61, 3.37) to (1.86, 3.95)
+[controller_server-3] [INFO] [1788840287.955158195] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840288.459098929] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840288.495083178] [bt_navigator]: Goal succeeded
+[INFO] [1788840288.496791279] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840288.497031032] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840288.630648586] [candidate_explorer]: Detected 4435 frontier cells
+[INFO] [1788840288.634787796] [candidate_explorer]: Found 116 frontier clusters after filtering
+[INFO] [1788840288.638018204] [candidate_explorer]: Selected frontier cluster: size=26, goal=(2.10, 4.34), distance=0.67
+[INFO] [1788840288.638571043] [candidate_explorer]: Checking global path to frontier (2.10, 4.34), distance=0.67m
+[INFO] [1788840288.642121038] [candidate_explorer]: Nav2 path to frontier is 0.74m (straight-line=0.67m, detour=1.1x)
+[INFO] [1788840288.643056215] [candidate_explorer]: Global path accepted. Navigating to frontier (2.10, 4.34)
+[bt_navigator-7] [INFO] [1788840288.643396968] [bt_navigator]: Begin navigating from current location (1.69, 3.81) to (2.10, 4.34)
+[controller_server-3] [INFO] [1788840288.663750013] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840289.217638182] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840289.255131322] [bt_navigator]: Goal succeeded
+[INFO] [1788840289.255930497] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840289.256164249] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840289.420738667] [candidate_explorer]: Detected 4504 frontier cells
+[INFO] [1788840289.425487091] [candidate_explorer]: Found 97 frontier clusters after filtering
+[INFO] [1788840289.428445414] [candidate_explorer]: Selected frontier cluster: size=70, goal=(2.54, 3.46), distance=0.92
+[INFO] [1788840289.428910627] [candidate_explorer]: Checking global path to frontier (2.54, 3.46), distance=0.92m
+[INFO] [1788840289.432894585] [candidate_explorer]: Nav2 path to frontier is 0.98m (straight-line=0.92m, detour=1.1x)
+[INFO] [1788840289.434081472] [candidate_explorer]: Global path accepted. Navigating to frontier (2.54, 3.46)
+[bt_navigator-7] [INFO] [1788840289.434400725] [bt_navigator]: Begin navigating from current location (1.95, 4.17) to (2.54, 3.46)
+[controller_server-3] [INFO] [1788840289.458053804] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840290.511294535] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788840291.292738568] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 422 X 648 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788840291.510948584] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840291.760392050] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840291.794809699] [bt_navigator]: Goal succeeded
+[INFO] [1788840291.795570124] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788840291.795837543] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788840291.923010031] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840291.927616287] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840291.930562234] [candidate_explorer]: Selected frontier cluster: size=34, goal=(2.64, 3.32), distance=0.61
+[INFO] [1788840291.931084906] [candidate_explorer]: Checking global path to frontier (2.64, 3.32), distance=0.61m
+[INFO] [1788840291.933445514] [candidate_explorer]: Nav2 path to frontier is 0.00m (straight-line=0.61m, detour=0.0x)
+[WARN] [1788840291.933669891] [candidate_explorer]: Rejecting frontier (2.64, 3.32): Nav2 returned a zero-length path, so it would not move the robot.
+[INFO] [1788840292.132808835] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840292.137227131] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840292.140498665] [candidate_explorer]: Selected frontier cluster: size=304, goal=(2.66, 2.51), distance=1.27
+[INFO] [1788840292.141013587] [candidate_explorer]: Checking global path to frontier (2.66, 2.51), distance=1.27m
+[planner_server-5] [WARN] [1788840292.142309975] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840292.142336684] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.66, 2.51)
+[planner_server-5] [WARN] [1788840292.142344100] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840292.143291277] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840292.143492487] [candidate_explorer]: No global path to frontier (2.66, 2.51). Blacklisting.
+[INFO] [1788840292.383052225] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840292.387416062] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840292.391104476] [candidate_explorer]: Selected frontier cluster: size=1201, goal=(2.36, -1.25), distance=4.93
+[INFO] [1788840292.391648231] [candidate_explorer]: Checking global path to frontier (2.36, -1.25), distance=4.93m
+[planner_server-5] [WARN] [1788840292.392961287] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840292.392992162] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.36, -1.25)
+[planner_server-5] [WARN] [1788840292.392998079] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840292.393898005] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840292.394119257] [candidate_explorer]: No global path to frontier (2.36, -1.25). Blacklisting.
+[INFO] [1788840292.633099197] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840292.637341575] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840292.641157364] [candidate_explorer]: Selected frontier cluster: size=764, goal=(0.08, 2.15), distance=2.57
+[INFO] [1788840292.641668120] [candidate_explorer]: Checking global path to frontier (0.08, 2.15), distance=2.57m
+[planner_server-5] [WARN] [1788840292.642893507] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840292.642918674] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.08, 2.15)
+[planner_server-5] [WARN] [1788840292.642924466] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840292.643848017] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840292.644099687] [candidate_explorer]: No global path to frontier (0.08, 2.15). Blacklisting.
+[INFO] [1788840292.883793634] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840292.888238139] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840292.892363890] [candidate_explorer]: Selected frontier cluster: size=1201, goal=(2.75, -1.96), distance=5.66
+[INFO] [1788840292.892915188] [candidate_explorer]: Checking global path to frontier (2.75, -1.96), distance=5.66m
+[planner_server-5] [WARN] [1788840292.894865458] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840292.894891791] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.75, -1.96)
+[planner_server-5] [WARN] [1788840292.894897083] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840292.895852218] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840292.896074012] [candidate_explorer]: No global path to frontier (2.75, -1.96). Blacklisting.
+[INFO] [1788840293.133882857] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840293.138041567] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840293.142237277] [candidate_explorer]: Selected frontier cluster: size=1201, goal=(2.27, -2.60), distance=6.27
+[INFO] [1788840293.142745657] [candidate_explorer]: Checking global path to frontier (2.27, -2.60), distance=6.27m
+[planner_server-5] [WARN] [1788840293.144004712] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840293.144031796] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.27, -2.60)
+[planner_server-5] [WARN] [1788840293.144037754] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840293.144954639] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840293.145179308] [candidate_explorer]: No global path to frontier (2.27, -2.60). Blacklisting.
+[INFO] [1788840293.423663367] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840293.428123830] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840293.431842285] [candidate_explorer]: Selected frontier cluster: size=764, goal=(-0.72, 2.06), distance=3.28
+[INFO] [1788840293.432344748] [candidate_explorer]: Checking global path to frontier (-0.72, 2.06), distance=3.28m
+[planner_server-5] [WARN] [1788840293.433703263] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840293.433729721] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.72, 2.06)
+[planner_server-5] [WARN] [1788840293.433735846] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840293.434711606] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840293.434908067] [candidate_explorer]: No global path to frontier (-0.72, 2.06). Blacklisting.
+[INFO] [1788840293.632472369] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840293.636921290] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840293.640595411] [candidate_explorer]: Selected frontier cluster: size=90, goal=(2.07, -3.38), distance=7.05
+[INFO] [1788840293.641088000] [candidate_explorer]: Checking global path to frontier (2.07, -3.38), distance=7.05m
+[planner_server-5] [WARN] [1788840293.642388388] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840293.642413389] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.07, -3.38)
+[planner_server-5] [WARN] [1788840293.642418555] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840293.643392107] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840293.643607526] [candidate_explorer]: No global path to frontier (2.07, -3.38). Blacklisting.
+[INFO] [1788840293.882950178] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840293.887359724] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840293.890805593] [candidate_explorer]: Selected frontier cluster: size=343, goal=(-1.50, 2.26), distance=3.91
+[INFO] [1788840293.891316974] [candidate_explorer]: Checking global path to frontier (-1.50, 2.26), distance=3.91m
+[planner_server-5] [WARN] [1788840293.892659863] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840293.892685988] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.50, 2.26)
+[planner_server-5] [WARN] [1788840293.892691530] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840293.893750791] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840293.893991251] [candidate_explorer]: No global path to frontier (-1.50, 2.26). Blacklisting.
+[INFO] [1788840294.131440301] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840294.135714387] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840294.139044463] [candidate_explorer]: Selected frontier cluster: size=38, goal=(0.30, -1.72), distance=5.70
+[INFO] [1788840294.139531802] [candidate_explorer]: Checking global path to frontier (0.30, -1.72), distance=5.70m
+[planner_server-5] [WARN] [1788840294.140802273] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840294.140829107] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.30, -1.72)
+[planner_server-5] [WARN] [1788840294.140834357] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840294.141770533] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840294.141964869] [candidate_explorer]: No global path to frontier (0.30, -1.72). Blacklisting.
+[INFO] [1788840294.383729046] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840294.388106342] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840294.391499294] [candidate_explorer]: Selected frontier cluster: size=48, goal=(-1.90, 1.57), distance=4.56
+[INFO] [1788840294.392020424] [candidate_explorer]: Checking global path to frontier (-1.90, 1.57), distance=4.56m
+[planner_server-5] [WARN] [1788840294.393272562] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840294.393298937] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.90, 1.57)
+[planner_server-5] [WARN] [1788840294.393304646] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840294.394324156] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840294.394518950] [candidate_explorer]: No global path to frontier (-1.90, 1.57). Blacklisting.
+[INFO] [1788840294.631375493] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840294.635704997] [candidate_explorer]: Found 82 frontier clusters after filtering
+[INFO] [1788840294.639006073] [candidate_explorer]: Selected frontier cluster: size=8, goal=(-0.93, 3.37), distance=3.09
+[INFO] [1788840294.639517120] [candidate_explorer]: Checking global path to frontier (-0.93, 3.37), distance=3.09m
+[planner_server-5] [WARN] [1788840294.640717424] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840294.640744924] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-0.93, 3.37)
+[planner_server-5] [WARN] [1788840294.640750507] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788840294.641783143] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788840294.642003520] [candidate_explorer]: No global path to frontier (-0.93, 3.37). Blacklisting.
+[INFO] [1788840294.884172286] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840294.888512164] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840294.891806990] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840294.892336120] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788840294.892575623] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (2.77, 3.16)
+[bt_navigator-7] [INFO] [1788840294.893166712] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840294.894226848] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840294.894250849] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840294.894256932] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840294.915133732] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840294.915204191] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840295.015564359] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840295.015592150] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840295.015599651] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840295.036266782] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840295.036313366] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840295.140530531] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840295.140557323] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840295.140562490] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840295.164770867] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840295.165273038] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840295.309335285] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840295.309367160] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840295.309374993] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840295.323624850] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840295.323718892] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840295.323726434] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840295.323730476] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840295.355486639] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840295.355520264] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840295.656856936] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840295.656885228] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840295.656891019] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840295.676714559] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840295.676750267] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840295.779330833] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840295.779356041] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840295.779361041] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840295.805851817] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840295.806091236] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840296.308500579] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840296.308534746] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840296.308541662] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840296.325464797] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840296.325544131] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840296.325550214] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840296.325554339] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840296.355266106] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840296.355296065] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840296.558235047] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840296.558268840] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840296.558274215] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840296.584635447] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840296.584666197] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840296.788425480] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840296.788454022] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840296.788459439] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840296.814831963] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840296.815083465] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840297.307949542] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840297.307993793] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840297.308001210] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840297.323634955] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840297.323964209] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840297.323978251] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840297.323983334] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840297.347207742] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840297.347325910] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840297.548673293] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840297.548703876] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840297.548709585] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840297.573816095] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840297.573848554] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840297.776201156] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840297.776228073] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840297.776232864] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840297.793348625] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840297.793574294] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840298.297207025] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840298.297240526] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840298.297247776] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840298.314336287] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840298.314416662] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840298.314422371] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840298.314426204] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840298.344225972] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840298.344251722] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840298.545095475] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840298.545122475] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840298.545127475] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840298.563484249] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840298.563531958] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840298.766142771] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840298.766161813] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840298.766166479] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840298.784430211] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840298.784893299] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840299.307799146] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840299.308179692] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840299.308189275] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840299.325663665] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840299.325740583] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840299.325746083] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840299.325749791] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840299.345560289] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840299.345585289] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840299.546410416] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840299.546440375] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840299.546446083] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840299.565482573] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840299.565516240] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840299.766217074] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840299.766241783] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840299.766246616] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840299.794851330] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840299.795365002] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840300.298866106] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840300.299202276] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 3.16)
+[planner_server-5] [WARN] [1788840300.299331903] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840300.325173046] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840300.325252797] [bt_navigator]: Goal failed
+[WARN] [1788840300.325989055] [candidate_explorer]: Recovery move 'forward' failed; checking frontiers before the next direction.
+[INFO] [1788840300.419511526] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840300.424304367] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840300.427428692] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840300.427949530] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788840300.428194450] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (2.54, 4.36)
+[bt_navigator-7] [INFO] [1788840300.428711288] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840300.429770216] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840300.429798508] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840300.429804425] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840300.452522577] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840300.452604703] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840300.452610245] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840300.452614161] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840300.481837215] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840300.481874549] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840300.784031187] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840300.784057896] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840300.784062854] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840300.810071207] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840300.810104958] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788840301.212435845] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788840301.241594648] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840301.241624815] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840301.241630731] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840301.261796024] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840301.262209112] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840301.304185673] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840301.304490551] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840301.304618885] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840301.319961128] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840301.320043379] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840301.320049296] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840301.320053004] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840301.349329433] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840301.349362225] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840301.653557051] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840301.653908222] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840301.653915638] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840301.681468924] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840301.681504425] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840301.782959645] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840301.782994729] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840301.783023729] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840301.809334169] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840301.809610964] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840302.304162725] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840302.304196309] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840302.304204184] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840302.322136037] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840302.322219538] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840302.322225163] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840302.322229246] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840302.352643854] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840302.352678437] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840302.654404863] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840302.654437946] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840302.654443322] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840302.679321747] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840302.679351830] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840302.788142293] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840302.788165085] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840302.788170002] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840302.811042406] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840302.811327326] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840303.305087204] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840303.305122705] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840303.305130038] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840303.319023849] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840303.319105391] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840303.319110641] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840303.319115475] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840303.349692126] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840303.349724793] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840303.454469422] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840303.454489006] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840303.454493881] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840303.480405692] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840303.480437192] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840303.782621622] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840303.782652373] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840303.782658039] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840303.798905000] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840303.799403046] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840304.304276082] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840304.304633669] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840304.304642461] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840304.320222581] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840304.320323248] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840304.320329790] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840304.320334582] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840304.352651876] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840304.352685335] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840304.655125642] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840304.655148143] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840304.655153434] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840304.679505646] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840304.679536146] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840304.982464126] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840304.982493001] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840304.982498043] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840305.002540751] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840305.002764878] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840305.306384823] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840305.306419365] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.54, 4.36)
+[planner_server-5] [WARN] [1788840305.306426574] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840305.330643950] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840305.330746326] [bt_navigator]: Goal failed
+[WARN] [1788840305.331567251] [candidate_explorer]: Recovery move 'forward-left' failed; checking frontiers before the next direction.
+[INFO] [1788840305.422457570] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840305.426995409] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840305.430197567] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840305.430724740] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 3/8 before checking again.
+[INFO] [1788840305.430977659] [candidate_explorer]: Recovery move 3/8: left, 0.8 m -> (1.57, 4.22)
+[bt_navigator-7] [INFO] [1788840305.431483872] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840305.432636218] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840305.432656426] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840305.432661801] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840305.451779333] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840305.451857626] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840305.451863334] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840305.451867376] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840305.473231931] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840305.473263640] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840305.574647943] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840305.574674401] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840305.574679360] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840305.592035165] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840305.592062290] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840305.693318634] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840305.693340342] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840305.693345259] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840305.711824701] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840305.712044911] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840306.303906850] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840306.303940392] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840306.303947809] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840306.315528387] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840306.315855266] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840306.315863099] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840306.315867516] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840306.331903391] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840306.331936350] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840306.633472606] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840306.633493982] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840306.633498607] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840306.652258718] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840306.652293218] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840306.954136728] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840306.954164354] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840306.954170229] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840306.973384470] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840306.973607389] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840307.305368543] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840307.305404168] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840307.305411877] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840307.323208145] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840307.323281562] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840307.323287187] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840307.323291354] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840307.352434032] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840307.352466824] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840307.653468867] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840307.653500325] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840307.653506034] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840307.672572190] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840307.672599899] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840307.873433360] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840307.873461818] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840307.873466652] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840307.905526401] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840307.905791904] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840308.307911164] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840308.307946331] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840308.307953789] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840308.322577316] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840308.322658192] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840308.322665317] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840308.322669567] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840308.344186332] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840308.344211499] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840308.447102818] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840308.447123401] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840308.447128526] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840308.472542999] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840308.472571207] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840308.674515971] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840308.674536472] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840308.674559555] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840308.703347146] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840308.703567065] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840309.307267668] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840309.307299669] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840309.307306960] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840309.322672703] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840309.322751204] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840309.322757288] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840309.322761163] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840309.353731359] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840309.353768110] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840309.654434274] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840309.654463191] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840309.654469274] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840309.674837194] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840309.674867111] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788840310.075211978] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788840310.104534032] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840310.104563907] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840310.104569991] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840310.122380967] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840310.123100100] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840310.305138199] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840310.305471952] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.57, 4.22)
+[planner_server-5] [WARN] [1788840310.305606037] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840310.312192106] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840310.312265148] [bt_navigator]: Goal failed
+[WARN] [1788840310.313362284] [candidate_explorer]: Recovery move 'left' failed; checking frontiers before the next direction.
+[INFO] [1788840310.422578169] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840310.427096174] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840310.430324541] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840310.430801754] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 4/8 before checking again.
+[INFO] [1788840310.431049757] [candidate_explorer]: Recovery move 4/8: backward-left, 0.8 m -> (1.41, 3.98)
+[bt_navigator-7] [INFO] [1788840310.431551095] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840310.432571939] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840310.432591731] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840310.432596439] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840310.454966047] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840310.455050589] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840310.455056964] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840310.455060756] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840310.482293914] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840310.482329081] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840310.584144305] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840310.584168222] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840310.584173014] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840310.612564517] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840310.612603517] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840310.817222267] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840310.817245476] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840310.817250809] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840310.843598875] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840310.844050463] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840311.307863072] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840311.308274784] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840311.308369702] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840311.322236971] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840311.322315388] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840311.322321305] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840311.322325347] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840311.352396576] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840311.352421493] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840311.458495053] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840311.458517845] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840311.458522636] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840311.483234351] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840311.483268393] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840311.586167545] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840311.586188171] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840311.586193254] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840311.614622674] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840311.615135763] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840312.307041866] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840312.307076575] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840312.307084158] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840312.323604663] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840312.323709206] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840312.323715831] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840312.323719914] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840312.353605183] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840312.353638141] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840312.654474058] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840312.654500725] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840312.654505683] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840312.672431536] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840312.672461494] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840312.873059870] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840312.873083245] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840312.873088662] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840312.892353362] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840312.892628656] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840313.311316171] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840313.311352172] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840313.311359755] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840313.322424745] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840313.322506413] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840313.322511746] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840313.322515371] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840313.351935218] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840313.351969344] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840313.653622477] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840313.653648894] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840313.653654185] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840313.673197305] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840313.673226930] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840313.773880642] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840313.773898059] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840313.773918393] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840313.804110498] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840313.804397918] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840314.297286495] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840314.297322870] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840314.297329537] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840314.311939522] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840314.312051398] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840314.312057523] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840314.312062774] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840314.343617435] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840314.343654852] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840314.446868840] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840314.446889966] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840314.446894799] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840314.462574087] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840314.462608920] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840314.764342138] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840314.764370221] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840314.764375680] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840314.792103009] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840314.792424429] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840315.305833053] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840315.305869345] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840315.305876929] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840315.321918262] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840315.322008638] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840315.322014721] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840315.322018638] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840315.334444059] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840315.334474226] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840315.635755521] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840315.635776522] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840315.635781730] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840315.652855199] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840315.652884949] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840315.954865461] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840315.954906961] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840315.954913586] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840315.974192037] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840315.974845918] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840316.298186068] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840316.298223485] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.41, 3.98)
+[planner_server-5] [WARN] [1788840316.298231110] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840316.322338944] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840316.322412903] [bt_navigator]: Goal failed
+[WARN] [1788840316.323454747] [candidate_explorer]: Recovery move 'backward-left' failed; checking frontiers before the next direction.
+[INFO] [1788840316.420206169] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840316.424820675] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840316.428065542] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840316.428567631] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 5/8 before checking again.
+[INFO] [1788840316.428799758] [candidate_explorer]: Recovery move 5/8: backward, 0.8 m -> (1.39, 3.41)
+[bt_navigator-7] [INFO] [1788840316.429377806] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840316.430458817] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840316.430479734] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840316.430484692] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840316.451857998] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840316.451944790] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840316.451950665] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840316.451954499] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840316.472294918] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840316.472319627] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840316.772953291] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840316.772979833] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840316.772984833] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840316.791218772] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840316.791248231] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840316.896408823] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840316.896429823] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840316.896434573] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840316.921451917] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840316.921987797] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840317.305403654] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840317.305437613] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840317.305444946] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840317.320069098] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840317.320149057] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840317.320154932] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840317.320158974] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840317.352300058] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840317.352330892] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840317.653912107] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840317.653933357] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840317.653938108] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840317.682425612] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840317.682457195] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840317.985432675] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840317.985454842] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840317.985459759] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840318.009772220] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840318.010441852] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840318.304888035] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840318.304924285] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840318.304931452] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840318.320639740] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840318.320716949] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840318.320723158] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840318.320727241] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840318.340617489] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840318.340648573] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840318.644558021] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840318.644580438] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840318.644585480] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840318.672457103] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840318.672487228] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840318.776597893] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840318.776624810] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840318.776653560] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840318.802391744] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840318.802610579] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840319.304925713] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840319.304957672] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840319.304965130] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840319.320576626] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840319.320656960] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840319.320662710] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840319.320666627] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840319.352635792] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840319.352673709] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840319.455305983] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840319.455328484] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840319.455333484] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840319.479728445] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840319.479763862] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840319.585201374] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840319.585221583] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840319.585226916] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840319.603626107] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840319.604082820] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840320.306914912] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840320.306949829] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840320.306956954] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840320.321306019] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840320.321387645] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840320.321393562] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840320.321397645] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840320.340382301] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840320.340406634] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840320.646522105] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840320.646543731] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840320.646548147] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840320.669964016] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840320.670005808] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788840321.076519405] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788840321.104484445] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840321.104516237] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840321.104521904] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840321.122021419] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840321.122659051] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840321.306808338] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840321.306847047] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.39, 3.41)
+[planner_server-5] [WARN] [1788840321.306854630] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840321.330766962] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840321.331093382] [bt_navigator]: Goal failed
+[WARN] [1788840321.331885099] [candidate_explorer]: Recovery move 'backward' failed; checking frontiers before the next direction.
+[INFO] [1788840321.420681646] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840321.425250152] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840321.428458143] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840321.428969607] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 6/8 before checking again.
+[INFO] [1788840321.429207109] [candidate_explorer]: Recovery move 6/8: backward-right, 0.8 m -> (2.87, 3.33)
+[bt_navigator-7] [INFO] [1788840321.429742115] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840321.430732084] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840321.430757667] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840321.430763167] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840321.450718791] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840321.450797084] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840321.450803292] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840321.450807417] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840321.482634831] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840321.482667706] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840321.585702193] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840321.585721443] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840321.585725860] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840321.612744057] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840321.612779974] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840321.914931029] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840321.914955113] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840321.914960446] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840321.941875892] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840321.942359022] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840322.305077956] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840322.305107998] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840322.305114707] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840322.322448928] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840322.322530096] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840322.322535929] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840322.322539929] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840322.352576700] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840322.352611658] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840322.454329465] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840322.454616009] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840322.454622260] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840322.482104420] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840322.482134879] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840322.584086937] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840322.584108813] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840322.584114604] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840322.611462722] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840322.612014186] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840323.305172218] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840323.305206510] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840323.305213677] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840323.322655358] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840323.322737693] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840323.322743651] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840323.322747609] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840323.342202603] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840323.342229520] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840323.445521426] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840323.445543010] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840323.445547801] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840323.472432747] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840323.472463289] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840323.773412748] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840323.773437457] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840323.773442374] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840323.790277590] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840323.790513176] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840324.303601422] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840324.303636047] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840324.303643047] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840324.310384159] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840324.310485201] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840324.310490618] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840324.310494410] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840324.342436992] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840324.342470742] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840324.543861667] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840324.543886000] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840324.543891042] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840324.571207701] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840324.571242660] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840324.871566404] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840324.871590779] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840324.871596112] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840324.900070533] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840324.900286410] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840325.303199512] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840325.303235595] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840325.303242887] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840325.303632225] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840325.303712517] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840325.303718017] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840325.303721892] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840325.330904258] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840325.330962508] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840325.632456181] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840325.632478765] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840325.632483598] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840325.651738923] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840325.651771965] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840325.760512011] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840325.760537220] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840325.760542262] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840325.780111840] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840325.780329592] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840326.305279378] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840326.305313336] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840326.305320712] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840326.310610183] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840326.310696767] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840326.310702767] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840326.310706726] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840326.341539629] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840326.341578546] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840326.443373604] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840326.443398104] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840326.443403687] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840326.460665117] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840326.460689534] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840326.763118841] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840326.763146258] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840326.763151508] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840326.792181726] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840326.792407979] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840327.305998063] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840327.306029855] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.87, 3.33)
+[planner_server-5] [WARN] [1788840327.306037063] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840327.329853102] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840327.329953687] [bt_navigator]: Goal failed
+[WARN] [1788840327.330963072] [candidate_explorer]: Recovery move 'backward-right' failed; checking frontiers before the next direction.
+[INFO] [1788840327.422016310] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840327.426559107] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840327.429782724] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840327.430285062] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 7/8 before checking again.
+[INFO] [1788840327.430516398] [candidate_explorer]: Recovery move 7/8: right, 0.8 m -> (1.78, 2.96)
+[bt_navigator-7] [INFO] [1788840327.430981778] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840327.431998330] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840327.432022205] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840327.432027289] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840327.453506470] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840327.453578971] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840327.453583846] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840327.453587429] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840327.484395624] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840327.484438375] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840327.685055042] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840327.685077458] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840327.685082334] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840327.703758903] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840327.703790653] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840328.005064157] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840328.005090324] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840328.005095657] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840328.031642641] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840328.032149438] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840328.305447818] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840328.305478944] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840328.305486235] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840328.321312608] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840330.821506117] [behavior_server]: Exceeded time allowance before reaching the DriveOnHeading goal - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840330.821533367] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840330.821539242] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840330.842037122] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840330.842069581] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788840331.243734877] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788840331.262834492] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840331.262866743] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840331.262872201] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840331.282223319] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840331.282259527] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840331.491079655] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840331.491111197] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840331.491116072] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840331.514934402] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840331.515167655] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840332.307266840] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840332.307301549] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840332.307308882] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840332.321600614] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840332.321671115] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840332.321676573] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840332.321680281] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840332.352883855] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840332.352909772] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840332.457070979] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840332.457092854] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840332.457097396] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840332.484634515] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840332.484663349] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840332.585950234] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840332.585985110] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840332.585990735] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840332.612856014] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840332.613424561] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840333.305836378] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840333.305870462] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840333.305877670] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840333.322353091] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840333.322438175] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840333.322447842] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840333.322454175] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840333.353504206] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840333.353539665] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840333.654662084] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840333.654687459] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840333.654692168] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840333.672302517] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840333.672327143] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840333.875342168] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840333.875366501] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840333.875371418] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840333.903478543] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840333.903722963] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840334.298364686] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840334.298677273] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840334.298685773] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840334.311404655] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840334.311485781] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840334.311491531] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840334.311495323] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840334.343305528] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840334.343338653] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840334.645524917] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840334.645547792] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840334.645552917] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840334.673811586] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840334.673850586] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840334.775755353] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840334.775781562] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840334.775786520] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840334.802110168] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840334.802531881] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840335.307274540] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840335.307306499] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (1.78, 2.96)
+[planner_server-5] [WARN] [1788840335.307313624] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840335.331723544] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840335.331830628] [bt_navigator]: Goal failed
+[WARN] [1788840335.332679220] [candidate_explorer]: Recovery move 'right' failed; checking frontiers before the next direction.
+[INFO] [1788840335.421572352] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840335.426202358] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840335.429539851] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788840335.430032815] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 8/8 before checking again.
+[INFO] [1788840335.430271109] [candidate_explorer]: Recovery move 8/8: forward-right, 0.8 m -> (2.77, 4.17)
+[bt_navigator-7] [INFO] [1788840335.430770573] [bt_navigator]: Begin navigating from current location (2.14, 3.68) to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840335.431806292] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840335.431830750] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840335.431836125] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840335.454380943] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840335.454463944] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840335.454469902] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840335.454473944] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840335.484184752] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840335.484216253] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840335.590544232] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840335.590866069] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840335.590872110] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840335.612764338] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840335.612792630] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840335.717544051] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840335.717569176] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840335.717574510] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840335.742664937] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840335.743216818] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840336.305994079] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840336.306364542] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840336.306373458] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840336.321498282] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840336.321587200] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840336.321594408] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840336.321598408] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840336.353679200] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840336.353714033] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840336.655854046] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840336.655879297] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840336.655884130] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840336.672563178] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840336.672595095] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840336.774189650] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840336.774210401] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840336.774215401] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840336.803473705] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840336.803911626] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840337.305533836] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840337.305574878] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840337.305582878] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840337.322473637] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840339.922965062] [behavior_server]: Exceeded time allowance before reaching the DriveOnHeading goal - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840339.923003146] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840339.923009271] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840339.933979968] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840339.934010469] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840340.036516200] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840340.036536700] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840340.036541659] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840340.061485584] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840340.061517835] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840340.262910635] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840340.263265013] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840340.263272805] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840340.291388139] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840340.291877019] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840341.309094584] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840341.309136251] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840341.309143918] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840341.323280481] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840341.323363399] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840341.323368940] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840341.323372482] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840341.352678870] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840341.352715828] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840341.655113844] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840341.655151470] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840341.655156928] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840341.683619849] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840341.683651932] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840341.987047042] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840341.987075542] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840341.987080792] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840342.012004759] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840342.012337971] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840342.305148970] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840342.305183096] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840342.305190346] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840342.312137126] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840342.312229461] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840342.312235544] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840342.312239794] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840342.342480983] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840342.342507650] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788840342.744748161] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788840342.763217770] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840342.763253687] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840342.763259478] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840342.782646513] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840342.782676888] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840342.883245850] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840342.883265767] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840342.883271142] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840342.904414486] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840342.904867158] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840343.306968292] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840343.307008793] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (2.77, 4.17)
+[planner_server-5] [WARN] [1788840343.307016209] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [WARN] [1788840343.333045563] [bt_navigator]: [navigate_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788840343.333640611] [bt_navigator]: Goal failed
+[WARN] [1788840343.334096866] [candidate_explorer]: Recovery move 'forward-right' failed; checking frontiers before the next direction.
+[INFO] [1788840343.334348118] [candidate_explorer]: All recovery directions tried; starting the 10.0s countdown.
+[INFO] [1788840343.421580482] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840343.426230364] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840343.429472648] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840343.429913152] [candidate_explorer]: No usable frontier found. Waiting up to 10.0s for the map to update.
+[INFO] [1788840343.632584466] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840343.637081887] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840343.640524756] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840343.882741147] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840343.887021525] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840343.890424560] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840344.132688493] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840344.136755202] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840344.140054278] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840344.380775486] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840344.385289575] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840344.388857320] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840344.632942522] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840344.637262984] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840344.640596518] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840344.881819649] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840344.886005900] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840344.889321352] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840345.133630847] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840345.137848516] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840345.141105008] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840345.420685287] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840345.425356711] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840345.428604619] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840345.632820199] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840345.637068493] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840345.640386861] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840345.881545115] [candidate_explorer]: Detected 4406 frontier cells
+[INFO] [1788840345.885776409] [candidate_explorer]: Found 82 frontier clusters after filtering
+[WARN] [1788840345.889245195] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788840345.889734242] [candidate_explorer]: No usable frontier found for 10.0s. Exploration complete; returning home.
+[bt_navigator-7] [INFO] [1788840346.098012780] [bt_navigator]: Begin navigating from current location (2.15, 3.67) to (0.02, 0.05)
+[planner_server-5] [WARN] [1788840346.099146959] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788840346.099180417] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (0.02, 0.05)
+[planner_server-5] [WARN] [1788840346.099186126] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840346.121477399] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840346.227684669] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840346.227710002] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840346.227715377] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840346.248346633] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840346.248376175] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840346.452450420] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840346.452481462] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840346.452486795] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840346.478508357] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840346.478541857] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840346.586497854] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840346.586518270] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840346.586522979] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840346.608201621] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840346.608412998] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840347.304916773] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 0.3571 Hz
+[controller_server-3] [INFO] [1788840347.322089994] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [ERROR] [1788840348.074603517] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840348.074659143] [DWBLocalPlanner]: 0.52: BaseObstacle/Trajectory Hits Obstacle.
+[controller_server-3] [ERROR] [1788840348.074668560] [DWBLocalPlanner]: 0.48: Oscillation/Trajectory is oscillating.
+[controller_server-3] [WARN] [1788840348.074735727] [controller_server]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840348.126482098] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840348.126511223] [DWBLocalPlanner]: 0.52: BaseObstacle/Trajectory Hits Obstacle.
+[controller_server-3] [ERROR] [1788840348.126515640] [DWBLocalPlanner]: 0.48: Oscillation/Trajectory is oscillating.
+[controller_server-3] [WARN] [1788840348.126554890] [controller_server]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840348.126574890] [controller_server]: Controller patience exceeded
+[controller_server-3] [WARN] [1788840348.126598099] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840348.141751006] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840348.141830424] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840348.141836424] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840348.141840174] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840348.169145624] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840348.169175666] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840348.470349335] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840348.470371669] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840348.470376669] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840348.498430293] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840348.498466460] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840348.799230125] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840348.799255750] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840348.799261042] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840348.830781036] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840348.831000913] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840349.306323891] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 0.5263 Hz
+[controller_server-3] [INFO] [1788840349.321179753] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840350.372844174] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788840350.675419649] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840350.675472691] [DWBLocalPlanner]: 0.52: BaseObstacle/Trajectory Hits Obstacle.
+[controller_server-3] [ERROR] [1788840350.675478525] [DWBLocalPlanner]: 0.48: Oscillation/Trajectory is oscillating.
+[controller_server-3] [WARN] [1788840350.675522942] [controller_server]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840350.726521721] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840350.726550805] [DWBLocalPlanner]: 0.52: BaseObstacle/Trajectory Hits Obstacle.
+[controller_server-3] [ERROR] [1788840350.726555430] [DWBLocalPlanner]: 0.48: Oscillation/Trajectory is oscillating.
+[controller_server-3] [WARN] [1788840350.726597139] [controller_server]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788840350.726617347] [controller_server]: Controller patience exceeded
+[controller_server-3] [WARN] [1788840350.726647139] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840350.741021497] [behavior_server]: Running backup
+[behavior_server-6] [WARN] [1788840350.741112248] [behavior_server]: Collision Ahead - Exiting DriveOnHeading
+[behavior_server-6] [WARN] [1788840350.741117873] [behavior_server]: backup failed
+[behavior_server-6] [WARN] [1788840350.741121790] [behavior_server]: [backup] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840350.771739191] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840350.771767441] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840350.974398587] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840350.974450712] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840350.974463046] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788840350.998692214] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788840350.998738048] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788840351.299233585] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788840351.299263252] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788840351.299269585] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788840351.328904560] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788840351.329462357] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788840352.305818954] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 0.2564 Hz
+[controller_server-3] [INFO] [1788840352.320472689] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788840353.376064859] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840354.372329662] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840355.421910061] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840356.473161394] [controller_server]: Passing new path to controller.
+[async_slam_toolbox_node-2] WARNING: Logging before InitGoogleLogging() is written to STDERR
+[async_slam_toolbox_node-2] W0908 04:05:56.680914 37701 preprocessor.cc:62] Specified options.num_threads: 50 exceeds maximum available from the threading model Ceres was compiled with: 14.  Bounding to maximum number available.
+[planner_server-5] [INFO] [1788840357.292202816] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 426 X 648 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788840357.470994839] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840358.470865888] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788840358.873011981] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788840358.911102459] [bt_navigator]: Goal succeeded
+[INFO] [1788840358.912084386] [candidate_explorer]: return-home goal finished, success=True
+[sim_node-1] [INFO] [1788840359.105165516] [challenge_sim_node]: SESSION FINISHED — wrote /challenge/results/20260908_040354/report.yaml
+[sim_node-1] collision_count: 2238
+[sim_node-1] coverage_fraction: 0.7442792171291328
+[sim_node-1] distance_to_home_m: 0.13994441096850024
+[sim_node-1] elapsed_time_s: 493.0000000000778
+[sim_node-1] elapsed_wall_time_s: 123.60383661100059
+[sim_node-1] map_output_yaml: /challenge/results/20260908_040354/map.yaml
+[sim_node-1] map_yaml: /challenge/maps/5/room.yaml
+[sim_node-1] min_coverage_required: 0.8
+[sim_node-1] results_path: /challenge/results/20260908_040354/report.yaml
+[sim_node-1] return_tolerance_m: 0.3
+[sim_node-1] seed: 5900003
+[sim_node-1] success: false
+[sim_node-1] time_scale: 4.0
+[sim_node-1] timed_out: false
+[sim_node-1] 
+[INFO] [1788840359.105749522] [candidate_explorer]: Session result: coverage=74.4% distance_to_home=0.14m elapsed_sim=493.0s elapsed_wall=123.6s collisions=2238 success=False report_written_to=/challenge/results/20260908_040354/report.yaml
+
+=== REPORT ===
+collision_count: 2238
+coverage_fraction: 0.7442792171291328
+distance_to_home_m: 0.13994441096850024
+elapsed_time_s: 493.0000000000778
+elapsed_wall_time_s: 123.60383661100059
+map_output_yaml: /challenge/results/20260908_040354/map.yaml
+map_yaml: /challenge/maps/5/room.yaml
+min_coverage_required: 0.8
+results_path: /challenge/results/20260908_040354/report.yaml
+return_tolerance_m: 0.3
+seed: 5900003
+success: false
+time_scale: 4.0
+timed_out: false
+Shutting down...
+[ERROR] [sim_node-1]: process has died [pid 37699, exit code -9, cmd '/challenge/ws/install/challenge_sim/lib/challenge_sim/sim_node --ros-args -r __node:=challenge_sim_node --params-file /tmp/launch_params_i5iievmp'].
+[ERROR] [async_slam_toolbox_node-2]: process has died [pid 37701, exit code -9, cmd '/opt/ros/humble/lib/slam_toolbox/async_slam_toolbox_node --ros-args -r __node:=slam_toolbox --params-file /challenge/ws/install/challenge_sim/share/challenge_sim/config/slam_toolbox_params.yaml --params-file /tmp/launch_params_087xzrx1'].
+[ERROR] [controller_server-3]: process has died [pid 37703, exit code -9, cmd '/opt/ros/humble/lib/nav2_controller/controller_server --ros-args --log-level info --ros-args --params-file /tmp/launch_params_eu2iydq6 -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav'].
+[ERROR] [smoother_server-4]: process has died [pid 37705, exit code -9, cmd '/opt/ros/humble/lib/nav2_smoother/smoother_server --ros-args --log-level info --ros-args -r __node:=smoother_server --params-file /tmp/launch_params_eu2iydq6 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [planner_server-5]: process has died [pid 37707, exit code -9, cmd '/opt/ros/humble/lib/nav2_planner/planner_server --ros-args --log-level info --ros-args -r __node:=planner_server --params-file /tmp/launch_params_eu2iydq6 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [behavior_server-6]: process has died [pid 37709, exit code -9, cmd '/opt/ros/humble/lib/nav2_behaviors/behavior_server --ros-args --log-level info --ros-args -r __node:=behavior_server --params-file /tmp/launch_params_eu2iydq6 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [bt_navigator-7]: process has died [pid 37711, exit code -9, cmd '/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator --ros-args --log-level info --ros-args -r __node:=bt_navigator --params-file /tmp/launch_params_eu2iydq6 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [waypoint_follower-8]: process has died [pid 37713, exit code -9, cmd '/opt/ros/humble/lib/nav2_waypoint_follower/waypoint_follower --ros-args --log-level info --ros-args -r __node:=waypoint_follower --params-file /tmp/launch_params_eu2iydq6 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [velocity_smoother-9]: process has died [pid 37715, exit code -9, cmd '/opt/ros/humble/lib/nav2_velocity_smoother/velocity_smoother --ros-args --log-level info --ros-args -r __node:=velocity_smoother --params-file /tmp/launch_params_eu2iydq6 -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav -r cmd_vel_smoothed:=cmd_vel'].
+/challenge/eval_runner.sh: line 40: 37697 Killed                  ros2 launch challenge_sim challenge.launch.py map_yaml:="$MAP_YAML" seed:="$SEED" time_limit_s:="$TIME_LIMIT" time_scale:="$TIME_SCALE" results_path:="$RESULTS_PATH" rviz:="$RVIZ"

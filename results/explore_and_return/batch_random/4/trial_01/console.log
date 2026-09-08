@@ -1,0 +1,1268 @@
+Launching sim + slam_toolbox + Nav2 (map: /challenge/maps/4/room.yaml, seed: 0, time_scale: 4.0x)...
+Waiting for bringup...
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-09-08-09-19-12-784850-orbstack-63180
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [sim_node-1]: process started with pid [63182]
+[INFO] [async_slam_toolbox_node-2]: process started with pid [63184]
+[INFO] [controller_server-3]: process started with pid [63186]
+[INFO] [smoother_server-4]: process started with pid [63188]
+[INFO] [planner_server-5]: process started with pid [63190]
+[INFO] [behavior_server-6]: process started with pid [63192]
+[INFO] [bt_navigator-7]: process started with pid [63194]
+[INFO] [waypoint_follower-8]: process started with pid [63196]
+[INFO] [velocity_smoother-9]: process started with pid [63198]
+[INFO] [lifecycle_manager-10]: process started with pid [63200]
+[async_slam_toolbox_node-2] [INFO] [1788859152.913348482] [slam_toolbox]: Node using stack size 40000000
+[behavior_server-6] [INFO] [1788859152.923940391] [behavior_server]: 
+[behavior_server-6] 	behavior_server lifecycle node launched. 
+[behavior_server-6] 	Waiting on external lifecycle transitions to activate
+[behavior_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788859152.925645680] [planner_server]: 
+[planner_server-5] 	planner_server lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788859152.926937292] [planner_server]: Creating
+[controller_server-3] [INFO] [1788859152.930679336] [controller_server]: 
+[controller_server-3] 	controller_server lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788859152.934787597] [lifecycle_manager_navigation]: Creating
+[controller_server-3] [INFO] [1788859152.935018144] [controller_server]: Creating controller server
+[smoother_server-4] [INFO] [1788859152.936581346] [smoother_server]: 
+[smoother_server-4] 	smoother_server lifecycle node launched. 
+[smoother_server-4] 	Waiting on external lifecycle transitions to activate
+[smoother_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788859152.938629310] [smoother_server]: Creating smoother server
+[waypoint_follower-8] [INFO] [1788859152.941828841] [waypoint_follower]: 
+[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-8] [INFO] [1788859152.943003243] [waypoint_follower]: Creating
+[velocity_smoother-9] [INFO] [1788859152.942520690] [velocity_smoother]: 
+[velocity_smoother-9] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-9] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788859152.942921575] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[bt_navigator-7] [INFO] [1788859152.945138250] [bt_navigator]: 
+[bt_navigator-7] 	bt_navigator lifecycle node launched. 
+[bt_navigator-7] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788859152.945654554] [bt_navigator]: Creating
+[planner_server-5] [INFO] [1788859152.949605561] [global_costmap.global_costmap]: 
+[planner_server-5] 	global_costmap lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788859152.950272701] [global_costmap.global_costmap]: Creating Costmap
+[controller_server-3] [INFO] [1788859152.960082842] [local_costmap.local_costmap]: 
+[controller_server-3] 	local_costmap lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788859152.960472476] [local_costmap.local_costmap]: Creating Costmap
+[async_slam_toolbox_node-2] [INFO] [1788859152.961953676] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-2] [INFO] [1788859152.962421104] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[lifecycle_manager-10] [INFO] [1788859152.983576837] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788859152.983622130] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-3] [INFO] [1788859153.114618584] [controller_server]: Configuring controller interface
+[controller_server-3] [INFO] [1788859153.114881298] [controller_server]: getting goal checker plugins..
+[controller_server-3] [INFO] [1788859153.115030968] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-3] [INFO] [1788859153.115057427] [local_costmap.local_costmap]: Configuring
+[controller_server-3] [INFO] [1788859153.118869764] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788859153.122093463] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-3] [INFO] [1788859153.125331204] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788859153.125355579] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-3] [INFO] [1788859153.126054553] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-3] [INFO] [1788859153.134261949] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-3] [INFO] [1788859153.135039384] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1788859153.135407392] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-3] [INFO] [1788859153.137011846] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-3] [INFO] [1788859153.137953284] [controller_server]: Setting transform_tolerance to 0.200000
+[sim_node-1] [INFO] [1788859153.138634424] [challenge_sim_node]: Loaded /challenge/maps/4/room.yaml — spawned at world (3.64, 1.60); 26525 reachable free cells. time_scale=4.0x
+[controller_server-3] [INFO] [1788859153.146107470] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[controller_server-3] [INFO] [1788859153.146836987] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859153.146960490] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[controller_server-3] [INFO] [1788859153.147735966] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859153.147836885] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[controller_server-3] [INFO] [1788859153.148132475] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859153.148255936] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[controller_server-3] [INFO] [1788859153.148573860] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859153.148730780] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[controller_server-3] [INFO] [1788859153.148996120] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859153.149087122] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[controller_server-3] [INFO] [1788859153.149220333] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859153.149289460] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[controller_server-3] [INFO] [1788859153.149461797] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788859153.149470464] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-10] [INFO] [1788859153.152809623] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788859153.153147631] [smoother_server]: Configuring smoother server
+[smoother_server-4] [INFO] [1788859153.158814844] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-4] [INFO] [1788859153.159677739] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-10] [INFO] [1788859153.163479951] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-5] [INFO] [1788859153.163742040] [planner_server]: Configuring
+[planner_server-5] [INFO] [1788859153.163765457] [global_costmap.global_costmap]: Configuring
+[planner_server-5] [INFO] [1788859153.167208661] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-5] [INFO] [1788859153.169330293] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-5] [INFO] [1788859153.170133686] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-5] [INFO] [1788859153.170143686] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788859153.170743284] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[planner_server-5] [INFO] [1788859153.173224465] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788859153.173236549] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-5] [INFO] [1788859153.174041234] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-5] [INFO] [1788859153.180291502] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[planner_server-5] [INFO] [1788859153.180310211] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788859153.180722845] [planner_server]: Planner Server has GridBased  planners available.
+[async_slam_toolbox_node-2] [WARN] [1788859153.183170859] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.1 m)
+[async_slam_toolbox_node-2] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-2] Registering sensor: [Custom Described Lidar]
+[lifecycle_manager-10] [INFO] [1788859153.186822901] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788859153.187172617] [behavior_server]: Configuring
+[behavior_server-6] [INFO] [1788859153.191473966] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[behavior_server-6] [INFO] [1788859153.192664660] [behavior_server]: Configuring spin
+[behavior_server-6] [INFO] [1788859153.196320993] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[behavior_server-6] [INFO] [1788859153.196860339] [behavior_server]: Configuring backup
+[behavior_server-6] [INFO] [1788859153.200439962] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[behavior_server-6] [INFO] [1788859153.201339316] [behavior_server]: Configuring drive_on_heading
+[behavior_server-6] [INFO] [1788859153.205986923] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[behavior_server-6] [INFO] [1788859153.207748005] [behavior_server]: Configuring assisted_teleop
+[behavior_server-6] [INFO] [1788859153.212735202] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-6] [INFO] [1788859153.213295256] [behavior_server]: Configuring wait
+[lifecycle_manager-10] [INFO] [1788859153.216912464] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788859153.217291098] [bt_navigator]: Configuring
+[lifecycle_manager-10] [INFO] [1788859153.257567435] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788859153.257997528] [waypoint_follower]: Configuring
+[waypoint_follower-8] [INFO] [1788859153.262847556] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-10] [INFO] [1788859153.264148752] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788859153.264528428] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-10] [INFO] [1788859153.267349701] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-3] [INFO] [1788859153.267613123] [controller_server]: Activating
+[controller_server-3] [INFO] [1788859153.267640207] [local_costmap.local_costmap]: Activating
+[controller_server-3] [INFO] [1788859153.267646916] [local_costmap.local_costmap]: Checking transform
+[controller_server-3] [INFO] [1788859153.267707209] [local_costmap.local_costmap]: start
+[controller_server-3] [INFO] [1788859153.519145916] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859153.625429221] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859153.625466597] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788859153.625694810] [smoother_server]: Activating
+[smoother_server-4] [INFO] [1788859153.625728395] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859153.729631437] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859153.729663479] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-5] [INFO] [1788859153.729829983] [planner_server]: Activating
+[planner_server-5] [INFO] [1788859153.729873067] [global_costmap.global_costmap]: Activating
+[planner_server-5] [INFO] [1788859153.729881526] [global_costmap.global_costmap]: Checking transform
+[planner_server-5] [INFO] [1788859153.729953986] [global_costmap.global_costmap]: start
+[planner_server-5] [INFO] [1788859154.733345844] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788859154.734573539] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859154.839231598] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859154.839266724] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788859154.839467979] [behavior_server]: Activating
+[behavior_server-6] [INFO] [1788859154.839523022] [behavior_server]: Activating spin
+[behavior_server-6] [INFO] [1788859154.839540772] [behavior_server]: Activating backup
+[behavior_server-6] [INFO] [1788859154.839551314] [behavior_server]: Activating drive_on_heading
+[behavior_server-6] [INFO] [1788859154.839556689] [behavior_server]: Activating assisted_teleop
+[behavior_server-6] [INFO] [1788859154.839572648] [behavior_server]: Activating wait
+[behavior_server-6] [INFO] [1788859154.839584481] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859154.943129641] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788859154.943165558] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788859154.943358646] [bt_navigator]: Activating
+[planner_server-5] [INFO] [1788859154.969224946] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 129 X 266 at 0.015000 m/pix
+[bt_navigator-7] [INFO] [1788859154.971111864] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859155.085878404] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-10] [INFO] [1788859155.085910155] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788859155.086113285] [waypoint_follower]: Activating
+[waypoint_follower-8] [INFO] [1788859155.086141577] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859155.202124687] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-10] [INFO] [1788859155.202155063] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788859155.202369360] [velocity_smoother]: Activating
+[velocity_smoother-9] [INFO] [1788859155.202408944] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788859155.308892545] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-10] [INFO] [1788859155.308927421] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788859155.308933379] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+Starting your explorer node...
+Running. Waiting for /challenge/results/20260908_091912/report.yaml to appear (or Ctrl-C to stop)...
+[INFO] [1788859185.168656289] [candidate_explorer]: Got first /map.
+[INFO] [1788859185.410493035] [candidate_explorer]: Detected 242 frontier cells
+[INFO] [1788859185.411011873] [candidate_explorer]: Found 1 frontier clusters after filtering
+[WARN] [1788859185.411250417] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859185.411492920] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788859185.411744047] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (0.80, 0.00)
+[bt_navigator-7] [INFO] [1788859185.412674640] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (0.80, 0.00)
+[planner_server-5] [ERROR] [1788859185.413832443] [planner_server]: worldToMap failed: mx,my: 129,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413889610] [planner_server]: worldToMap failed: mx,my: 130,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413899319] [planner_server]: worldToMap failed: mx,my: 131,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413904569] [planner_server]: worldToMap failed: mx,my: 132,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413908194] [planner_server]: worldToMap failed: mx,my: 133,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413911736] [planner_server]: worldToMap failed: mx,my: 134,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413915069] [planner_server]: worldToMap failed: mx,my: 135,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413918444] [planner_server]: worldToMap failed: mx,my: 136,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413921694] [planner_server]: worldToMap failed: mx,my: 137,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413925069] [planner_server]: worldToMap failed: mx,my: 138,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413928277] [planner_server]: worldToMap failed: mx,my: 139,150, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413932403] [planner_server]: worldToMap failed: mx,my: 129,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413935569] [planner_server]: worldToMap failed: mx,my: 130,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413938903] [planner_server]: worldToMap failed: mx,my: 131,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413942111] [planner_server]: worldToMap failed: mx,my: 132,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413945236] [planner_server]: worldToMap failed: mx,my: 133,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413952236] [planner_server]: worldToMap failed: mx,my: 134,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413957611] [planner_server]: worldToMap failed: mx,my: 135,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413961153] [planner_server]: worldToMap failed: mx,my: 136,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413964444] [planner_server]: worldToMap failed: mx,my: 137,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413967611] [planner_server]: worldToMap failed: mx,my: 138,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413970861] [planner_server]: worldToMap failed: mx,my: 139,151, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413983486] [planner_server]: worldToMap failed: mx,my: 129,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413987070] [planner_server]: worldToMap failed: mx,my: 130,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413990278] [planner_server]: worldToMap failed: mx,my: 131,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413993320] [planner_server]: worldToMap failed: mx,my: 132,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413996486] [planner_server]: worldToMap failed: mx,my: 133,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.413999653] [planner_server]: worldToMap failed: mx,my: 134,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414002820] [planner_server]: worldToMap failed: mx,my: 135,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414005820] [planner_server]: worldToMap failed: mx,my: 136,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414008820] [planner_server]: worldToMap failed: mx,my: 137,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414011778] [planner_server]: worldToMap failed: mx,my: 138,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414014862] [planner_server]: worldToMap failed: mx,my: 139,152, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414018653] [planner_server]: worldToMap failed: mx,my: 129,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414021737] [planner_server]: worldToMap failed: mx,my: 130,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414024778] [planner_server]: worldToMap failed: mx,my: 131,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414027945] [planner_server]: worldToMap failed: mx,my: 132,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414031028] [planner_server]: worldToMap failed: mx,my: 133,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414034029] [planner_server]: worldToMap failed: mx,my: 134,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414037070] [planner_server]: worldToMap failed: mx,my: 135,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414040279] [planner_server]: worldToMap failed: mx,my: 136,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414043362] [planner_server]: worldToMap failed: mx,my: 137,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414046362] [planner_server]: worldToMap failed: mx,my: 138,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414049320] [planner_server]: worldToMap failed: mx,my: 139,153, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414053237] [planner_server]: worldToMap failed: mx,my: 129,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414056279] [planner_server]: worldToMap failed: mx,my: 130,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414059237] [planner_server]: worldToMap failed: mx,my: 131,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414062320] [planner_server]: worldToMap failed: mx,my: 132,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414066987] [planner_server]: worldToMap failed: mx,my: 133,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414075071] [planner_server]: worldToMap failed: mx,my: 134,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414078071] [planner_server]: worldToMap failed: mx,my: 135,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414081321] [planner_server]: worldToMap failed: mx,my: 136,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414084362] [planner_server]: worldToMap failed: mx,my: 137,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414087487] [planner_server]: worldToMap failed: mx,my: 138,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414092154] [planner_server]: worldToMap failed: mx,my: 139,154, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414097612] [planner_server]: worldToMap failed: mx,my: 129,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414100738] [planner_server]: worldToMap failed: mx,my: 130,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414103821] [planner_server]: worldToMap failed: mx,my: 131,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414106821] [planner_server]: worldToMap failed: mx,my: 132,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414109779] [planner_server]: worldToMap failed: mx,my: 133,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414112904] [planner_server]: worldToMap failed: mx,my: 134,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414116113] [planner_server]: worldToMap failed: mx,my: 135,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414119113] [planner_server]: worldToMap failed: mx,my: 136,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414122113] [planner_server]: worldToMap failed: mx,my: 137,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414125196] [planner_server]: worldToMap failed: mx,my: 138,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414128238] [planner_server]: worldToMap failed: mx,my: 139,155, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414132071] [planner_server]: worldToMap failed: mx,my: 129,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414135030] [planner_server]: worldToMap failed: mx,my: 130,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414138363] [planner_server]: worldToMap failed: mx,my: 131,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414141655] [planner_server]: worldToMap failed: mx,my: 132,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414144655] [planner_server]: worldToMap failed: mx,my: 133,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414147696] [planner_server]: worldToMap failed: mx,my: 134,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414150821] [planner_server]: worldToMap failed: mx,my: 135,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414153821] [planner_server]: worldToMap failed: mx,my: 136,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414156780] [planner_server]: worldToMap failed: mx,my: 137,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414159738] [planner_server]: worldToMap failed: mx,my: 138,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414162738] [planner_server]: worldToMap failed: mx,my: 139,156, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414166530] [planner_server]: worldToMap failed: mx,my: 129,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414169988] [planner_server]: worldToMap failed: mx,my: 130,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414172905] [planner_server]: worldToMap failed: mx,my: 131,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414175947] [planner_server]: worldToMap failed: mx,my: 132,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414178905] [planner_server]: worldToMap failed: mx,my: 133,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414181905] [planner_server]: worldToMap failed: mx,my: 134,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414185030] [planner_server]: worldToMap failed: mx,my: 135,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414187988] [planner_server]: worldToMap failed: mx,my: 136,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414190988] [planner_server]: worldToMap failed: mx,my: 137,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414193988] [planner_server]: worldToMap failed: mx,my: 138,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414196988] [planner_server]: worldToMap failed: mx,my: 139,157, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414200905] [planner_server]: worldToMap failed: mx,my: 129,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414203905] [planner_server]: worldToMap failed: mx,my: 130,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414206905] [planner_server]: worldToMap failed: mx,my: 131,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414209864] [planner_server]: worldToMap failed: mx,my: 132,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414213697] [planner_server]: worldToMap failed: mx,my: 133,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414217197] [planner_server]: worldToMap failed: mx,my: 134,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414220197] [planner_server]: worldToMap failed: mx,my: 135,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414223197] [planner_server]: worldToMap failed: mx,my: 136,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414226155] [planner_server]: worldToMap failed: mx,my: 137,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414229197] [planner_server]: worldToMap failed: mx,my: 138,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414232155] [planner_server]: worldToMap failed: mx,my: 139,158, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414235989] [planner_server]: worldToMap failed: mx,my: 129,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414239114] [planner_server]: worldToMap failed: mx,my: 130,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414242697] [planner_server]: worldToMap failed: mx,my: 131,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414261531] [planner_server]: worldToMap failed: mx,my: 132,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414265989] [planner_server]: worldToMap failed: mx,my: 133,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414269031] [planner_server]: worldToMap failed: mx,my: 134,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414272198] [planner_server]: worldToMap failed: mx,my: 135,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414275198] [planner_server]: worldToMap failed: mx,my: 136,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414278156] [planner_server]: worldToMap failed: mx,my: 137,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414281114] [planner_server]: worldToMap failed: mx,my: 138,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414284114] [planner_server]: worldToMap failed: mx,my: 139,159, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414287948] [planner_server]: worldToMap failed: mx,my: 129,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414290906] [planner_server]: worldToMap failed: mx,my: 130,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414293906] [planner_server]: worldToMap failed: mx,my: 131,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414296906] [planner_server]: worldToMap failed: mx,my: 132,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414299906] [planner_server]: worldToMap failed: mx,my: 133,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414302948] [planner_server]: worldToMap failed: mx,my: 134,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414306281] [planner_server]: worldToMap failed: mx,my: 135,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414309281] [planner_server]: worldToMap failed: mx,my: 136,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414315781] [planner_server]: worldToMap failed: mx,my: 137,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414321156] [planner_server]: worldToMap failed: mx,my: 138,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414333615] [planner_server]: worldToMap failed: mx,my: 139,160, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414342573] [planner_server]: worldToMap failed: mx,my: 129,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414345573] [planner_server]: worldToMap failed: mx,my: 130,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414358865] [planner_server]: worldToMap failed: mx,my: 131,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414363198] [planner_server]: worldToMap failed: mx,my: 132,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414366740] [planner_server]: worldToMap failed: mx,my: 133,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414370199] [planner_server]: worldToMap failed: mx,my: 134,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414373407] [planner_server]: worldToMap failed: mx,my: 135,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414376699] [planner_server]: worldToMap failed: mx,my: 136,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414380032] [planner_server]: worldToMap failed: mx,my: 137,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414383074] [planner_server]: worldToMap failed: mx,my: 138,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414392324] [planner_server]: worldToMap failed: mx,my: 139,161, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414398615] [planner_server]: worldToMap failed: mx,my: 129,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414401741] [planner_server]: worldToMap failed: mx,my: 130,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414406282] [planner_server]: worldToMap failed: mx,my: 131,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414409282] [planner_server]: worldToMap failed: mx,my: 132,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414412366] [planner_server]: worldToMap failed: mx,my: 133,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414415366] [planner_server]: worldToMap failed: mx,my: 134,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414418324] [planner_server]: worldToMap failed: mx,my: 135,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414421324] [planner_server]: worldToMap failed: mx,my: 136,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414424324] [planner_server]: worldToMap failed: mx,my: 137,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414427449] [planner_server]: worldToMap failed: mx,my: 138,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414430824] [planner_server]: worldToMap failed: mx,my: 139,162, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414434908] [planner_server]: worldToMap failed: mx,my: 129,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414437991] [planner_server]: worldToMap failed: mx,my: 130,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414440991] [planner_server]: worldToMap failed: mx,my: 131,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414447241] [planner_server]: worldToMap failed: mx,my: 132,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414450283] [planner_server]: worldToMap failed: mx,my: 133,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414453241] [planner_server]: worldToMap failed: mx,my: 134,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414456324] [planner_server]: worldToMap failed: mx,my: 135,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414459324] [planner_server]: worldToMap failed: mx,my: 136,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414462283] [planner_server]: worldToMap failed: mx,my: 137,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414465324] [planner_server]: worldToMap failed: mx,my: 138,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414468283] [planner_server]: worldToMap failed: mx,my: 139,163, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414472116] [planner_server]: worldToMap failed: mx,my: 129,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414475075] [planner_server]: worldToMap failed: mx,my: 130,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414478033] [planner_server]: worldToMap failed: mx,my: 131,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414481450] [planner_server]: worldToMap failed: mx,my: 132,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414491616] [planner_server]: worldToMap failed: mx,my: 133,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414495325] [planner_server]: worldToMap failed: mx,my: 134,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414498408] [planner_server]: worldToMap failed: mx,my: 135,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414501367] [planner_server]: worldToMap failed: mx,my: 136,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414504325] [planner_server]: worldToMap failed: mx,my: 137,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414507367] [planner_server]: worldToMap failed: mx,my: 138,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414510367] [planner_server]: worldToMap failed: mx,my: 139,164, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414514242] [planner_server]: worldToMap failed: mx,my: 129,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414517242] [planner_server]: worldToMap failed: mx,my: 130,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414520200] [planner_server]: worldToMap failed: mx,my: 131,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414523117] [planner_server]: worldToMap failed: mx,my: 132,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414527242] [planner_server]: worldToMap failed: mx,my: 133,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414531617] [planner_server]: worldToMap failed: mx,my: 134,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414546200] [planner_server]: worldToMap failed: mx,my: 135,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414550825] [planner_server]: worldToMap failed: mx,my: 136,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414553825] [planner_server]: worldToMap failed: mx,my: 137,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414556825] [planner_server]: worldToMap failed: mx,my: 138,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414559784] [planner_server]: worldToMap failed: mx,my: 139,165, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414563659] [planner_server]: worldToMap failed: mx,my: 129,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414566659] [planner_server]: worldToMap failed: mx,my: 130,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414569617] [planner_server]: worldToMap failed: mx,my: 131,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414572576] [planner_server]: worldToMap failed: mx,my: 132,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414575534] [planner_server]: worldToMap failed: mx,my: 133,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414578451] [planner_server]: worldToMap failed: mx,my: 134,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414581367] [planner_server]: worldToMap failed: mx,my: 135,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414584326] [planner_server]: worldToMap failed: mx,my: 136,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414587284] [planner_server]: worldToMap failed: mx,my: 137,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414619159] [planner_server]: worldToMap failed: mx,my: 138,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414623701] [planner_server]: worldToMap failed: mx,my: 139,166, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414627701] [planner_server]: worldToMap failed: mx,my: 129,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414630701] [planner_server]: worldToMap failed: mx,my: 130,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414633743] [planner_server]: worldToMap failed: mx,my: 131,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414636743] [planner_server]: worldToMap failed: mx,my: 132,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414639785] [planner_server]: worldToMap failed: mx,my: 133,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414642701] [planner_server]: worldToMap failed: mx,my: 134,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414645618] [planner_server]: worldToMap failed: mx,my: 135,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414648535] [planner_server]: worldToMap failed: mx,my: 136,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414651535] [planner_server]: worldToMap failed: mx,my: 137,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414654451] [planner_server]: worldToMap failed: mx,my: 138,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414657410] [planner_server]: worldToMap failed: mx,my: 139,167, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414664993] [planner_server]: worldToMap failed: mx,my: 129,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414668035] [planner_server]: worldToMap failed: mx,my: 130,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414670952] [planner_server]: worldToMap failed: mx,my: 131,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414675035] [planner_server]: worldToMap failed: mx,my: 132,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414678035] [planner_server]: worldToMap failed: mx,my: 133,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414680993] [planner_server]: worldToMap failed: mx,my: 134,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414684160] [planner_server]: worldToMap failed: mx,my: 135,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414687077] [planner_server]: worldToMap failed: mx,my: 136,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414689993] [planner_server]: worldToMap failed: mx,my: 137,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414701202] [planner_server]: worldToMap failed: mx,my: 138,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414709535] [planner_server]: worldToMap failed: mx,my: 139,168, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414713494] [planner_server]: worldToMap failed: mx,my: 129,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414716452] [planner_server]: worldToMap failed: mx,my: 130,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414719577] [planner_server]: worldToMap failed: mx,my: 131,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414722577] [planner_server]: worldToMap failed: mx,my: 132,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414725619] [planner_server]: worldToMap failed: mx,my: 133,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414728577] [planner_server]: worldToMap failed: mx,my: 134,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414731494] [planner_server]: worldToMap failed: mx,my: 135,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414734452] [planner_server]: worldToMap failed: mx,my: 136,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414737411] [planner_server]: worldToMap failed: mx,my: 137,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414740286] [planner_server]: worldToMap failed: mx,my: 138,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414743202] [planner_server]: worldToMap failed: mx,my: 139,169, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414747202] [planner_server]: worldToMap failed: mx,my: 129,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414750119] [planner_server]: worldToMap failed: mx,my: 130,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414753077] [planner_server]: worldToMap failed: mx,my: 131,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414756036] [planner_server]: worldToMap failed: mx,my: 132,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414759036] [planner_server]: worldToMap failed: mx,my: 133,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414761994] [planner_server]: worldToMap failed: mx,my: 134,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414764952] [planner_server]: worldToMap failed: mx,my: 135,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414767911] [planner_server]: worldToMap failed: mx,my: 136,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414780411] [planner_server]: worldToMap failed: mx,my: 137,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414790036] [planner_server]: worldToMap failed: mx,my: 138,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414793828] [planner_server]: worldToMap failed: mx,my: 139,170, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414797661] [planner_server]: worldToMap failed: mx,my: 129,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414800619] [planner_server]: worldToMap failed: mx,my: 130,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414803495] [planner_server]: worldToMap failed: mx,my: 131,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414806578] [planner_server]: worldToMap failed: mx,my: 132,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414809745] [planner_server]: worldToMap failed: mx,my: 133,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414812995] [planner_server]: worldToMap failed: mx,my: 134,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414816870] [planner_server]: worldToMap failed: mx,my: 135,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414820120] [planner_server]: worldToMap failed: mx,my: 136,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414824078] [planner_server]: worldToMap failed: mx,my: 137,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414827286] [planner_server]: worldToMap failed: mx,my: 138,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414830911] [planner_server]: worldToMap failed: mx,my: 139,171, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414835287] [planner_server]: worldToMap failed: mx,my: 129,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414838995] [planner_server]: worldToMap failed: mx,my: 130,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414844453] [planner_server]: worldToMap failed: mx,my: 131,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414851828] [planner_server]: worldToMap failed: mx,my: 132,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414856328] [planner_server]: worldToMap failed: mx,my: 133,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414861620] [planner_server]: worldToMap failed: mx,my: 134,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414867870] [planner_server]: worldToMap failed: mx,my: 135,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414870829] [planner_server]: worldToMap failed: mx,my: 136,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414873870] [planner_server]: worldToMap failed: mx,my: 137,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414876829] [planner_server]: worldToMap failed: mx,my: 138,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414879870] [planner_server]: worldToMap failed: mx,my: 139,172, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414883745] [planner_server]: worldToMap failed: mx,my: 129,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414886704] [planner_server]: worldToMap failed: mx,my: 130,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414889620] [planner_server]: worldToMap failed: mx,my: 131,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414892537] [planner_server]: worldToMap failed: mx,my: 132,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414895454] [planner_server]: worldToMap failed: mx,my: 133,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414898454] [planner_server]: worldToMap failed: mx,my: 134,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414901371] [planner_server]: worldToMap failed: mx,my: 135,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414904246] [planner_server]: worldToMap failed: mx,my: 136,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414921037] [planner_server]: worldToMap failed: mx,my: 137,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414924371] [planner_server]: worldToMap failed: mx,my: 138,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414927371] [planner_server]: worldToMap failed: mx,my: 139,173, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414931162] [planner_server]: worldToMap failed: mx,my: 129,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414934121] [planner_server]: worldToMap failed: mx,my: 130,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414937079] [planner_server]: worldToMap failed: mx,my: 131,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414940038] [planner_server]: worldToMap failed: mx,my: 132,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414942954] [planner_server]: worldToMap failed: mx,my: 133,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414946079] [planner_server]: worldToMap failed: mx,my: 134,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414949079] [planner_server]: worldToMap failed: mx,my: 135,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414952079] [planner_server]: worldToMap failed: mx,my: 136,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414955079] [planner_server]: worldToMap failed: mx,my: 137,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414958038] [planner_server]: worldToMap failed: mx,my: 138,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414960996] [planner_server]: worldToMap failed: mx,my: 139,174, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414964704] [planner_server]: worldToMap failed: mx,my: 129,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414967621] [planner_server]: worldToMap failed: mx,my: 130,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414970580] [planner_server]: worldToMap failed: mx,my: 131,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414978913] [planner_server]: worldToMap failed: mx,my: 132,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414981996] [planner_server]: worldToMap failed: mx,my: 133,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414984955] [planner_server]: worldToMap failed: mx,my: 134,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414987913] [planner_server]: worldToMap failed: mx,my: 135,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414990955] [planner_server]: worldToMap failed: mx,my: 136,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414993871] [planner_server]: worldToMap failed: mx,my: 137,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.414997663] [planner_server]: worldToMap failed: mx,my: 138,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415001997] [planner_server]: worldToMap failed: mx,my: 139,175, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415005913] [planner_server]: worldToMap failed: mx,my: 129,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415008913] [planner_server]: worldToMap failed: mx,my: 130,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415011997] [planner_server]: worldToMap failed: mx,my: 131,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415014955] [planner_server]: worldToMap failed: mx,my: 132,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415017955] [planner_server]: worldToMap failed: mx,my: 133,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415020913] [planner_server]: worldToMap failed: mx,my: 134,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415023872] [planner_server]: worldToMap failed: mx,my: 135,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415026830] [planner_server]: worldToMap failed: mx,my: 136,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415029830] [planner_server]: worldToMap failed: mx,my: 137,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415032830] [planner_server]: worldToMap failed: mx,my: 138,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415036080] [planner_server]: worldToMap failed: mx,my: 139,176, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415055705] [planner_server]: worldToMap failed: mx,my: 129,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415058997] [planner_server]: worldToMap failed: mx,my: 130,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415061997] [planner_server]: worldToMap failed: mx,my: 131,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415064955] [planner_server]: worldToMap failed: mx,my: 132,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415067914] [planner_server]: worldToMap failed: mx,my: 133,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415070831] [planner_server]: worldToMap failed: mx,my: 134,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415073914] [planner_server]: worldToMap failed: mx,my: 135,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415077789] [planner_server]: worldToMap failed: mx,my: 136,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415080956] [planner_server]: worldToMap failed: mx,my: 137,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415083914] [planner_server]: worldToMap failed: mx,my: 138,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415087081] [planner_server]: worldToMap failed: mx,my: 139,177, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415090914] [planner_server]: worldToMap failed: mx,my: 129,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415093956] [planner_server]: worldToMap failed: mx,my: 130,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415097164] [planner_server]: worldToMap failed: mx,my: 131,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415100164] [planner_server]: worldToMap failed: mx,my: 132,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415103164] [planner_server]: worldToMap failed: mx,my: 133,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415106164] [planner_server]: worldToMap failed: mx,my: 134,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415109123] [planner_server]: worldToMap failed: mx,my: 135,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415112081] [planner_server]: worldToMap failed: mx,my: 136,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415115039] [planner_server]: worldToMap failed: mx,my: 137,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415117956] [planner_server]: worldToMap failed: mx,my: 138,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415120873] [planner_server]: worldToMap failed: mx,my: 139,178, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415124748] [planner_server]: worldToMap failed: mx,my: 129,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415127706] [planner_server]: worldToMap failed: mx,my: 130,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415130706] [planner_server]: worldToMap failed: mx,my: 131,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415134456] [planner_server]: worldToMap failed: mx,my: 132,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415137956] [planner_server]: worldToMap failed: mx,my: 133,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415140956] [planner_server]: worldToMap failed: mx,my: 134,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415143915] [planner_server]: worldToMap failed: mx,my: 135,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415146915] [planner_server]: worldToMap failed: mx,my: 136,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415150415] [planner_server]: worldToMap failed: mx,my: 137,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415159040] [planner_server]: worldToMap failed: mx,my: 138,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415162081] [planner_server]: worldToMap failed: mx,my: 139,179, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415165915] [planner_server]: worldToMap failed: mx,my: 129,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415168832] [planner_server]: worldToMap failed: mx,my: 130,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415171790] [planner_server]: worldToMap failed: mx,my: 131,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415174748] [planner_server]: worldToMap failed: mx,my: 132,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415178123] [planner_server]: worldToMap failed: mx,my: 133,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415181123] [planner_server]: worldToMap failed: mx,my: 134,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415184082] [planner_server]: worldToMap failed: mx,my: 135,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415194498] [planner_server]: worldToMap failed: mx,my: 136,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415197707] [planner_server]: worldToMap failed: mx,my: 137,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415200748] [planner_server]: worldToMap failed: mx,my: 138,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415203665] [planner_server]: worldToMap failed: mx,my: 139,180, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415207415] [planner_server]: worldToMap failed: mx,my: 129,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415210374] [planner_server]: worldToMap failed: mx,my: 130,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415213332] [planner_server]: worldToMap failed: mx,my: 131,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415216290] [planner_server]: worldToMap failed: mx,my: 132,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415219332] [planner_server]: worldToMap failed: mx,my: 133,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415222249] [planner_server]: worldToMap failed: mx,my: 134,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415233540] [planner_server]: worldToMap failed: mx,my: 135,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415236749] [planner_server]: worldToMap failed: mx,my: 136,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415239749] [planner_server]: worldToMap failed: mx,my: 137,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415242749] [planner_server]: worldToMap failed: mx,my: 138,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415245791] [planner_server]: worldToMap failed: mx,my: 139,181, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415249499] [planner_server]: worldToMap failed: mx,my: 129,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415252499] [planner_server]: worldToMap failed: mx,my: 130,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415255416] [planner_server]: worldToMap failed: mx,my: 131,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415258374] [planner_server]: worldToMap failed: mx,my: 132,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415261249] [planner_server]: worldToMap failed: mx,my: 133,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415264166] [planner_server]: worldToMap failed: mx,my: 134,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415266999] [planner_server]: worldToMap failed: mx,my: 135,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415269958] [planner_server]: worldToMap failed: mx,my: 136,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415273624] [planner_server]: worldToMap failed: mx,my: 137,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415277124] [planner_server]: worldToMap failed: mx,my: 138,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415280083] [planner_server]: worldToMap failed: mx,my: 139,182, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415283833] [planner_server]: worldToMap failed: mx,my: 129,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415286749] [planner_server]: worldToMap failed: mx,my: 130,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415289749] [planner_server]: worldToMap failed: mx,my: 131,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415293208] [planner_server]: worldToMap failed: mx,my: 132,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415300791] [planner_server]: worldToMap failed: mx,my: 133,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415303833] [planner_server]: worldToMap failed: mx,my: 134,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415306791] [planner_server]: worldToMap failed: mx,my: 135,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415309750] [planner_server]: worldToMap failed: mx,my: 136,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415312708] [planner_server]: worldToMap failed: mx,my: 137,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415315875] [planner_server]: worldToMap failed: mx,my: 138,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415318791] [planner_server]: worldToMap failed: mx,my: 139,183, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415322583] [planner_server]: worldToMap failed: mx,my: 129,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415325500] [planner_server]: worldToMap failed: mx,my: 130,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415328416] [planner_server]: worldToMap failed: mx,my: 131,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415331333] [planner_server]: worldToMap failed: mx,my: 132,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415334250] [planner_server]: worldToMap failed: mx,my: 133,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415337208] [planner_server]: worldToMap failed: mx,my: 134,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415340125] [planner_server]: worldToMap failed: mx,my: 135,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415351750] [planner_server]: worldToMap failed: mx,my: 136,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415355042] [planner_server]: worldToMap failed: mx,my: 137,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415358083] [planner_server]: worldToMap failed: mx,my: 138,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415361125] [planner_server]: worldToMap failed: mx,my: 139,184, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415364875] [planner_server]: worldToMap failed: mx,my: 129,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415367875] [planner_server]: worldToMap failed: mx,my: 130,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415370875] [planner_server]: worldToMap failed: mx,my: 131,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415373834] [planner_server]: worldToMap failed: mx,my: 132,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415376792] [planner_server]: worldToMap failed: mx,my: 133,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415379792] [planner_server]: worldToMap failed: mx,my: 134,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415382709] [planner_server]: worldToMap failed: mx,my: 135,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415385667] [planner_server]: worldToMap failed: mx,my: 136,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415388667] [planner_server]: worldToMap failed: mx,my: 137,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415391625] [planner_server]: worldToMap failed: mx,my: 138,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415394667] [planner_server]: worldToMap failed: mx,my: 139,185, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415398375] [planner_server]: worldToMap failed: mx,my: 129,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415401375] [planner_server]: worldToMap failed: mx,my: 130,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415404251] [planner_server]: worldToMap failed: mx,my: 131,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415407959] [planner_server]: worldToMap failed: mx,my: 132,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415418459] [planner_server]: worldToMap failed: mx,my: 133,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415422834] [planner_server]: worldToMap failed: mx,my: 134,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415426001] [planner_server]: worldToMap failed: mx,my: 135,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415429042] [planner_server]: worldToMap failed: mx,my: 136,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415432001] [planner_server]: worldToMap failed: mx,my: 137,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415435042] [planner_server]: worldToMap failed: mx,my: 138,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415438001] [planner_server]: worldToMap failed: mx,my: 139,186, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415441793] [planner_server]: worldToMap failed: mx,my: 129,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415444751] [planner_server]: worldToMap failed: mx,my: 130,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415447793] [planner_server]: worldToMap failed: mx,my: 131,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415451251] [planner_server]: worldToMap failed: mx,my: 132,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415454334] [planner_server]: worldToMap failed: mx,my: 133,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415457334] [planner_server]: worldToMap failed: mx,my: 134,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415460376] [planner_server]: worldToMap failed: mx,my: 135,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415463334] [planner_server]: worldToMap failed: mx,my: 136,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415466251] [planner_server]: worldToMap failed: mx,my: 137,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415469209] [planner_server]: worldToMap failed: mx,my: 138,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415472210] [planner_server]: worldToMap failed: mx,my: 139,187, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415476043] [planner_server]: worldToMap failed: mx,my: 129,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415479085] [planner_server]: worldToMap failed: mx,my: 130,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415482043] [planner_server]: worldToMap failed: mx,my: 131,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415485001] [planner_server]: worldToMap failed: mx,my: 132,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415487918] [planner_server]: worldToMap failed: mx,my: 133,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415490918] [planner_server]: worldToMap failed: mx,my: 134,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415503085] [planner_server]: worldToMap failed: mx,my: 135,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415507210] [planner_server]: worldToMap failed: mx,my: 136,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415510210] [planner_server]: worldToMap failed: mx,my: 137,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415513252] [planner_server]: worldToMap failed: mx,my: 138,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415516210] [planner_server]: worldToMap failed: mx,my: 139,188, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415536752] [planner_server]: worldToMap failed: mx,my: 129,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415540044] [planner_server]: worldToMap failed: mx,my: 130,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415544294] [planner_server]: worldToMap failed: mx,my: 131,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415547377] [planner_server]: worldToMap failed: mx,my: 132,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415550460] [planner_server]: worldToMap failed: mx,my: 133,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415553460] [planner_server]: worldToMap failed: mx,my: 134,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415556460] [planner_server]: worldToMap failed: mx,my: 135,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415559335] [planner_server]: worldToMap failed: mx,my: 136,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415563085] [planner_server]: worldToMap failed: mx,my: 137,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415567460] [planner_server]: worldToMap failed: mx,my: 138,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415570461] [planner_server]: worldToMap failed: mx,my: 139,189, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415574252] [planner_server]: worldToMap failed: mx,my: 129,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415577211] [planner_server]: worldToMap failed: mx,my: 130,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415580169] [planner_server]: worldToMap failed: mx,my: 131,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415583127] [planner_server]: worldToMap failed: mx,my: 132,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415586086] [planner_server]: worldToMap failed: mx,my: 133,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415589002] [planner_server]: worldToMap failed: mx,my: 134,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415597086] [planner_server]: worldToMap failed: mx,my: 135,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415600711] [planner_server]: worldToMap failed: mx,my: 136,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415604086] [planner_server]: worldToMap failed: mx,my: 137,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415607003] [planner_server]: worldToMap failed: mx,my: 138,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415610044] [planner_server]: worldToMap failed: mx,my: 139,190, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415615919] [planner_server]: worldToMap failed: mx,my: 129,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415619044] [planner_server]: worldToMap failed: mx,my: 130,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415622086] [planner_server]: worldToMap failed: mx,my: 131,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415625003] [planner_server]: worldToMap failed: mx,my: 132,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415627961] [planner_server]: worldToMap failed: mx,my: 133,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415630919] [planner_server]: worldToMap failed: mx,my: 134,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415633836] [planner_server]: worldToMap failed: mx,my: 135,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415636753] [planner_server]: worldToMap failed: mx,my: 136,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415639711] [planner_server]: worldToMap failed: mx,my: 137,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415642628] [planner_server]: worldToMap failed: mx,my: 138,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415645503] [planner_server]: worldToMap failed: mx,my: 139,191, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415649170] [planner_server]: worldToMap failed: mx,my: 129,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415652086] [planner_server]: worldToMap failed: mx,my: 130,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415655045] [planner_server]: worldToMap failed: mx,my: 131,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415657920] [planner_server]: worldToMap failed: mx,my: 132,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415660795] [planner_server]: worldToMap failed: mx,my: 133,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415663711] [planner_server]: worldToMap failed: mx,my: 134,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415666628] [planner_server]: worldToMap failed: mx,my: 135,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415669545] [planner_server]: worldToMap failed: mx,my: 136,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415672462] [planner_server]: worldToMap failed: mx,my: 137,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415676378] [planner_server]: worldToMap failed: mx,my: 138,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415679420] [planner_server]: worldToMap failed: mx,my: 139,192, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415683128] [planner_server]: worldToMap failed: mx,my: 129,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415686045] [planner_server]: worldToMap failed: mx,my: 130,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415694545] [planner_server]: worldToMap failed: mx,my: 131,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415699128] [planner_server]: worldToMap failed: mx,my: 132,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415702170] [planner_server]: worldToMap failed: mx,my: 133,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415705129] [planner_server]: worldToMap failed: mx,my: 134,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415708087] [planner_server]: worldToMap failed: mx,my: 135,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415711045] [planner_server]: worldToMap failed: mx,my: 136,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415714004] [planner_server]: worldToMap failed: mx,my: 137,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415743796] [planner_server]: worldToMap failed: mx,my: 138,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415747212] [planner_server]: worldToMap failed: mx,my: 139,193, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415751046] [planner_server]: worldToMap failed: mx,my: 129,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415754087] [planner_server]: worldToMap failed: mx,my: 130,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415757421] [planner_server]: worldToMap failed: mx,my: 131,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415760379] [planner_server]: worldToMap failed: mx,my: 132,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415763379] [planner_server]: worldToMap failed: mx,my: 133,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415766296] [planner_server]: worldToMap failed: mx,my: 134,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415770296] [planner_server]: worldToMap failed: mx,my: 135,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415773254] [planner_server]: worldToMap failed: mx,my: 136,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415776213] [planner_server]: worldToMap failed: mx,my: 137,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415779171] [planner_server]: worldToMap failed: mx,my: 138,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415782213] [planner_server]: worldToMap failed: mx,my: 139,194, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415785963] [planner_server]: worldToMap failed: mx,my: 129,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415788879] [planner_server]: worldToMap failed: mx,my: 130,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415791838] [planner_server]: worldToMap failed: mx,my: 131,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415794838] [planner_server]: worldToMap failed: mx,my: 132,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415797796] [planner_server]: worldToMap failed: mx,my: 133,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415800754] [planner_server]: worldToMap failed: mx,my: 134,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415803630] [planner_server]: worldToMap failed: mx,my: 135,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415806630] [planner_server]: worldToMap failed: mx,my: 136,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415809546] [planner_server]: worldToMap failed: mx,my: 137,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415812505] [planner_server]: worldToMap failed: mx,my: 138,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415815421] [planner_server]: worldToMap failed: mx,my: 139,195, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415819255] [planner_server]: worldToMap failed: mx,my: 129,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415822171] [planner_server]: worldToMap failed: mx,my: 130,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415825088] [planner_server]: worldToMap failed: mx,my: 131,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415831713] [planner_server]: worldToMap failed: mx,my: 132,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415834838] [planner_server]: worldToMap failed: mx,my: 133,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415837797] [planner_server]: worldToMap failed: mx,my: 134,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415840755] [planner_server]: worldToMap failed: mx,my: 135,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415854255] [planner_server]: worldToMap failed: mx,my: 136,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415859963] [planner_server]: worldToMap failed: mx,my: 137,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415863047] [planner_server]: worldToMap failed: mx,my: 138,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415866088] [planner_server]: worldToMap failed: mx,my: 139,196, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415870005] [planner_server]: worldToMap failed: mx,my: 129,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415872964] [planner_server]: worldToMap failed: mx,my: 130,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415875922] [planner_server]: worldToMap failed: mx,my: 131,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415878922] [planner_server]: worldToMap failed: mx,my: 132,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415882005] [planner_server]: worldToMap failed: mx,my: 133,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415885047] [planner_server]: worldToMap failed: mx,my: 134,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415888047] [planner_server]: worldToMap failed: mx,my: 135,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415891089] [planner_server]: worldToMap failed: mx,my: 136,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415894214] [planner_server]: worldToMap failed: mx,my: 137,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415897255] [planner_server]: worldToMap failed: mx,my: 138,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415900297] [planner_server]: worldToMap failed: mx,my: 139,197, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415904089] [planner_server]: worldToMap failed: mx,my: 129,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415908672] [planner_server]: worldToMap failed: mx,my: 130,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415911672] [planner_server]: worldToMap failed: mx,my: 131,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415914672] [planner_server]: worldToMap failed: mx,my: 132,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415917631] [planner_server]: worldToMap failed: mx,my: 133,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415920589] [planner_server]: worldToMap failed: mx,my: 134,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415923672] [planner_server]: worldToMap failed: mx,my: 135,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415926631] [planner_server]: worldToMap failed: mx,my: 136,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415929631] [planner_server]: worldToMap failed: mx,my: 137,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415932589] [planner_server]: worldToMap failed: mx,my: 138,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415935547] [planner_server]: worldToMap failed: mx,my: 139,198, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415939298] [planner_server]: worldToMap failed: mx,my: 129,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415942339] [planner_server]: worldToMap failed: mx,my: 130,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415965839] [planner_server]: worldToMap failed: mx,my: 131,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415970589] [planner_server]: worldToMap failed: mx,my: 132,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415980173] [planner_server]: worldToMap failed: mx,my: 133,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415983340] [planner_server]: worldToMap failed: mx,my: 134,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415986423] [planner_server]: worldToMap failed: mx,my: 135,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415989423] [planner_server]: worldToMap failed: mx,my: 136,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415992465] [planner_server]: worldToMap failed: mx,my: 137,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415995465] [planner_server]: worldToMap failed: mx,my: 138,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.415998506] [planner_server]: worldToMap failed: mx,my: 139,199, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416002298] [planner_server]: worldToMap failed: mx,my: 129,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416005215] [planner_server]: worldToMap failed: mx,my: 130,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416015215] [planner_server]: worldToMap failed: mx,my: 131,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416025798] [planner_server]: worldToMap failed: mx,my: 132,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416029090] [planner_server]: worldToMap failed: mx,my: 133,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416032132] [planner_server]: worldToMap failed: mx,my: 134,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416035132] [planner_server]: worldToMap failed: mx,my: 135,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416038090] [planner_server]: worldToMap failed: mx,my: 136,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416041090] [planner_server]: worldToMap failed: mx,my: 137,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416044049] [planner_server]: worldToMap failed: mx,my: 138,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416047007] [planner_server]: worldToMap failed: mx,my: 139,200, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416053090] [planner_server]: worldToMap failed: mx,my: 129,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416056215] [planner_server]: worldToMap failed: mx,my: 130,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416059215] [planner_server]: worldToMap failed: mx,my: 131,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416062340] [planner_server]: worldToMap failed: mx,my: 132,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416065382] [planner_server]: worldToMap failed: mx,my: 133,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416068340] [planner_server]: worldToMap failed: mx,my: 134,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416071757] [planner_server]: worldToMap failed: mx,my: 135,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416080382] [planner_server]: worldToMap failed: mx,my: 136,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416083382] [planner_server]: worldToMap failed: mx,my: 137,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416086382] [planner_server]: worldToMap failed: mx,my: 138,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416095007] [planner_server]: worldToMap failed: mx,my: 139,201, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416099049] [planner_server]: worldToMap failed: mx,my: 129,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416101966] [planner_server]: worldToMap failed: mx,my: 130,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416106133] [planner_server]: worldToMap failed: mx,my: 131,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416109841] [planner_server]: worldToMap failed: mx,my: 132,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416113674] [planner_server]: worldToMap failed: mx,my: 133,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416118883] [planner_server]: worldToMap failed: mx,my: 134,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416123549] [planner_server]: worldToMap failed: mx,my: 135,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416128299] [planner_server]: worldToMap failed: mx,my: 136,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416134174] [planner_server]: worldToMap failed: mx,my: 137,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416146008] [planner_server]: worldToMap failed: mx,my: 138,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416150008] [planner_server]: worldToMap failed: mx,my: 139,202, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416153758] [planner_server]: worldToMap failed: mx,my: 129,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416158841] [planner_server]: worldToMap failed: mx,my: 130,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416163925] [planner_server]: worldToMap failed: mx,my: 131,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416168925] [planner_server]: worldToMap failed: mx,my: 132,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416173675] [planner_server]: worldToMap failed: mx,my: 133,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416178800] [planner_server]: worldToMap failed: mx,my: 134,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416183467] [planner_server]: worldToMap failed: mx,my: 135,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416191717] [planner_server]: worldToMap failed: mx,my: 136,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416198092] [planner_server]: worldToMap failed: mx,my: 137,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416202967] [planner_server]: worldToMap failed: mx,my: 138,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416207967] [planner_server]: worldToMap failed: mx,my: 139,203, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416213217] [planner_server]: worldToMap failed: mx,my: 129,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416218009] [planner_server]: worldToMap failed: mx,my: 130,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416222675] [planner_server]: worldToMap failed: mx,my: 131,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416228050] [planner_server]: worldToMap failed: mx,my: 132,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416232842] [planner_server]: worldToMap failed: mx,my: 133,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416237675] [planner_server]: worldToMap failed: mx,my: 134,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416249009] [planner_server]: worldToMap failed: mx,my: 135,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416253842] [planner_server]: worldToMap failed: mx,my: 136,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416258717] [planner_server]: worldToMap failed: mx,my: 137,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416263801] [planner_server]: worldToMap failed: mx,my: 138,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416269051] [planner_server]: worldToMap failed: mx,my: 139,204, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416295509] [planner_server]: worldToMap failed: mx,my: 129,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416302301] [planner_server]: worldToMap failed: mx,my: 130,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416307343] [planner_server]: worldToMap failed: mx,my: 131,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416311176] [planner_server]: worldToMap failed: mx,my: 132,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416314176] [planner_server]: worldToMap failed: mx,my: 133,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416317135] [planner_server]: worldToMap failed: mx,my: 134,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416320051] [planner_server]: worldToMap failed: mx,my: 135,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416323010] [planner_server]: worldToMap failed: mx,my: 136,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416325968] [planner_server]: worldToMap failed: mx,my: 137,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416333593] [planner_server]: worldToMap failed: mx,my: 138,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416342427] [planner_server]: worldToMap failed: mx,my: 139,205, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416346468] [planner_server]: worldToMap failed: mx,my: 129,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416349468] [planner_server]: worldToMap failed: mx,my: 130,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416352427] [planner_server]: worldToMap failed: mx,my: 131,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416355427] [planner_server]: worldToMap failed: mx,my: 132,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416358385] [planner_server]: worldToMap failed: mx,my: 133,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416361343] [planner_server]: worldToMap failed: mx,my: 134,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416364260] [planner_server]: worldToMap failed: mx,my: 135,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416374469] [planner_server]: worldToMap failed: mx,my: 136,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416377594] [planner_server]: worldToMap failed: mx,my: 137,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416380594] [planner_server]: worldToMap failed: mx,my: 138,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416383594] [planner_server]: worldToMap failed: mx,my: 139,206, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416387385] [planner_server]: worldToMap failed: mx,my: 129,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416391094] [planner_server]: worldToMap failed: mx,my: 130,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416395469] [planner_server]: worldToMap failed: mx,my: 131,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416398469] [planner_server]: worldToMap failed: mx,my: 132,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416401427] [planner_server]: worldToMap failed: mx,my: 133,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416404344] [planner_server]: worldToMap failed: mx,my: 134,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416407302] [planner_server]: worldToMap failed: mx,my: 135,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416410261] [planner_server]: worldToMap failed: mx,my: 136,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416413219] [planner_server]: worldToMap failed: mx,my: 137,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416416136] [planner_server]: worldToMap failed: mx,my: 138,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416419052] [planner_server]: worldToMap failed: mx,my: 139,207, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416422761] [planner_server]: worldToMap failed: mx,my: 129,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416425719] [planner_server]: worldToMap failed: mx,my: 130,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416428594] [planner_server]: worldToMap failed: mx,my: 131,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416431552] [planner_server]: worldToMap failed: mx,my: 132,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416435677] [planner_server]: worldToMap failed: mx,my: 133,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416438678] [planner_server]: worldToMap failed: mx,my: 134,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416441636] [planner_server]: worldToMap failed: mx,my: 135,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416444636] [planner_server]: worldToMap failed: mx,my: 136,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416447553] [planner_server]: worldToMap failed: mx,my: 137,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416450428] [planner_server]: worldToMap failed: mx,my: 138,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416453344] [planner_server]: worldToMap failed: mx,my: 139,208, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416457136] [planner_server]: worldToMap failed: mx,my: 129,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416460094] [planner_server]: worldToMap failed: mx,my: 130,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416463053] [planner_server]: worldToMap failed: mx,my: 131,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416466053] [planner_server]: worldToMap failed: mx,my: 132,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416469011] [planner_server]: worldToMap failed: mx,my: 133,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416471970] [planner_server]: worldToMap failed: mx,my: 134,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416474886] [planner_server]: worldToMap failed: mx,my: 135,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416477845] [planner_server]: worldToMap failed: mx,my: 136,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416480803] [planner_server]: worldToMap failed: mx,my: 137,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416483720] [planner_server]: worldToMap failed: mx,my: 138,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416486636] [planner_server]: worldToMap failed: mx,my: 139,209, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416490261] [planner_server]: worldToMap failed: mx,my: 129,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416493178] [planner_server]: worldToMap failed: mx,my: 130,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416497095] [planner_server]: worldToMap failed: mx,my: 131,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416500095] [planner_server]: worldToMap failed: mx,my: 132,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416503011] [planner_server]: worldToMap failed: mx,my: 133,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416506012] [planner_server]: worldToMap failed: mx,my: 134,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416508970] [planner_server]: worldToMap failed: mx,my: 135,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416517887] [planner_server]: worldToMap failed: mx,my: 136,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416522137] [planner_server]: worldToMap failed: mx,my: 137,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416525387] [planner_server]: worldToMap failed: mx,my: 138,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416528970] [planner_server]: worldToMap failed: mx,my: 139,210, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416533053] [planner_server]: worldToMap failed: mx,my: 129,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416536303] [planner_server]: worldToMap failed: mx,my: 130,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416539554] [planner_server]: worldToMap failed: mx,my: 131,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416543179] [planner_server]: worldToMap failed: mx,my: 132,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416546387] [planner_server]: worldToMap failed: mx,my: 133,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416557220] [planner_server]: worldToMap failed: mx,my: 134,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416565887] [planner_server]: worldToMap failed: mx,my: 135,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416569220] [planner_server]: worldToMap failed: mx,my: 136,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416572179] [planner_server]: worldToMap failed: mx,my: 137,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416575054] [planner_server]: worldToMap failed: mx,my: 138,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416578012] [planner_server]: worldToMap failed: mx,my: 139,211, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416581887] [planner_server]: worldToMap failed: mx,my: 129,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416585262] [planner_server]: worldToMap failed: mx,my: 130,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416588471] [planner_server]: worldToMap failed: mx,my: 131,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416591971] [planner_server]: worldToMap failed: mx,my: 132,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416595179] [planner_server]: worldToMap failed: mx,my: 133,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416598137] [planner_server]: worldToMap failed: mx,my: 134,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416601179] [planner_server]: worldToMap failed: mx,my: 135,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416604137] [planner_server]: worldToMap failed: mx,my: 136,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416607096] [planner_server]: worldToMap failed: mx,my: 137,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416610054] [planner_server]: worldToMap failed: mx,my: 138,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416613096] [planner_server]: worldToMap failed: mx,my: 139,212, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416616888] [planner_server]: worldToMap failed: mx,my: 129,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416619846] [planner_server]: worldToMap failed: mx,my: 130,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416626096] [planner_server]: worldToMap failed: mx,my: 131,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416629096] [planner_server]: worldToMap failed: mx,my: 132,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416632096] [planner_server]: worldToMap failed: mx,my: 133,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416635013] [planner_server]: worldToMap failed: mx,my: 134,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416638054] [planner_server]: worldToMap failed: mx,my: 135,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416641013] [planner_server]: worldToMap failed: mx,my: 136,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416643930] [planner_server]: worldToMap failed: mx,my: 137,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416647055] [planner_server]: worldToMap failed: mx,my: 138,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416650263] [planner_server]: worldToMap failed: mx,my: 139,213, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416654263] [planner_server]: worldToMap failed: mx,my: 129,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416666596] [planner_server]: worldToMap failed: mx,my: 130,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416671888] [planner_server]: worldToMap failed: mx,my: 131,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416675013] [planner_server]: worldToMap failed: mx,my: 132,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416677972] [planner_server]: worldToMap failed: mx,my: 133,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416680930] [planner_server]: worldToMap failed: mx,my: 134,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416683888] [planner_server]: worldToMap failed: mx,my: 135,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416686888] [planner_server]: worldToMap failed: mx,my: 136,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416689763] [planner_server]: worldToMap failed: mx,my: 137,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416692722] [planner_server]: worldToMap failed: mx,my: 138,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416695597] [planner_server]: worldToMap failed: mx,my: 139,214, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416700597] [planner_server]: worldToMap failed: mx,my: 129,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416703555] [planner_server]: worldToMap failed: mx,my: 130,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416706514] [planner_server]: worldToMap failed: mx,my: 131,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416709472] [planner_server]: worldToMap failed: mx,my: 132,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416712430] [planner_server]: worldToMap failed: mx,my: 133,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416715430] [planner_server]: worldToMap failed: mx,my: 134,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416718889] [planner_server]: worldToMap failed: mx,my: 135,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416721805] [planner_server]: worldToMap failed: mx,my: 136,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416724764] [planner_server]: worldToMap failed: mx,my: 137,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416727764] [planner_server]: worldToMap failed: mx,my: 138,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416730680] [planner_server]: worldToMap failed: mx,my: 139,215, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416734514] [planner_server]: worldToMap failed: mx,my: 129,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416737430] [planner_server]: worldToMap failed: mx,my: 130,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416740389] [planner_server]: worldToMap failed: mx,my: 131,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416743306] [planner_server]: worldToMap failed: mx,my: 132,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416746264] [planner_server]: worldToMap failed: mx,my: 133,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416749181] [planner_server]: worldToMap failed: mx,my: 134,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416752181] [planner_server]: worldToMap failed: mx,my: 135,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416755097] [planner_server]: worldToMap failed: mx,my: 136,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416759347] [planner_server]: worldToMap failed: mx,my: 137,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416762347] [planner_server]: worldToMap failed: mx,my: 138,216, size_x,size_y: 129,266
+[planner_server-5] [ERROR] [1788859185.416765347] [planner_server]: worldToMap failed: mx,my: 139,216, size_x,size_y: 129,266
+[controller_server-3] [INFO] [1788859185.434569275] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [WARN] [1788859185.434618442] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-3] [INFO] [1788859186.037983253] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859186.074672411] [bt_navigator]: Goal succeeded
+[INFO] [1788859186.075135790] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788859186.154158120] [candidate_explorer]: Detected 242 frontier cells
+[INFO] [1788859186.154572041] [candidate_explorer]: Found 1 frontier clusters after filtering
+[INFO] [1788859186.154916336] [candidate_explorer]: Selected frontier cluster: size=197, goal=(0.03, -0.31), distance=0.60
+[INFO] [1788859186.155325465] [candidate_explorer]: Checking global path to frontier (0.03, -0.31), distance=0.60m
+[INFO] [1788859186.158062659] [candidate_explorer]: Nav2 path to frontier is 0.60m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788859186.159061836] [candidate_explorer]: Global path accepted. Navigating to frontier (0.03, -0.31)
+[bt_navigator-7] [INFO] [1788859186.159478882] [bt_navigator]: Begin navigating from current location (0.56, -0.04) to (0.03, -0.31)
+[controller_server-3] [INFO] [1788859186.182986116] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859187.233508846] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859187.731449689] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 302 X 270 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859187.790575779] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859187.821463087] [bt_navigator]: Goal succeeded
+[INFO] [1788859187.822116760] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859187.822377429] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859187.919571566] [candidate_explorer]: Detected 73 frontier cells
+[INFO] [1788859187.919911402] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859187.920157738] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859187.920421616] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788859187.920672702] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (-0.55, -0.61)
+[bt_navigator-7] [INFO] [1788859187.921180790] [bt_navigator]: Begin navigating from current location (0.22, -0.40) to (-0.55, -0.61)
+[controller_server-3] [INFO] [1788859187.941733412] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859188.496841700] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859188.533901736] [bt_navigator]: Goal succeeded
+[INFO] [1788859188.534371824] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788859188.658759190] [candidate_explorer]: Detected 73 frontier cells
+[INFO] [1788859188.659185736] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859188.659464989] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859188.659768700] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788859188.660049286] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (-0.68, -1.07)
+[bt_navigator-7] [INFO] [1788859188.660540874] [bt_navigator]: Begin navigating from current location (-0.16, -0.46) to (-0.68, -1.07)
+[controller_server-3] [INFO] [1788859188.682925139] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859189.733587829] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859190.783541137] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788859191.234620095] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788859191.234693138] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788859191.244742446] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788859191.245087116] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788859191.737711573] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 0.5128 Hz
+[controller_server-3] [INFO] [1788859191.750988955] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859192.806442109] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859193.852627796] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788859194.309896441] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788859194.309966234] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788859194.323758288] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788859194.323987290] [behavior_server]: DriveOnHeading: no acceleration or deceleration limits set
+[behavior_server-6] [INFO] [1788859195.826314903] [behavior_server]: backup completed successfully
+[controller_server-3] [INFO] [1788859195.871671813] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859196.921851040] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859197.733763807] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 389 X 270 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859197.875323385] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859197.910814865] [bt_navigator]: Goal succeeded
+[INFO] [1788859197.911442371] [candidate_explorer]: Recovery move 'forward-left' succeeded.
+[INFO] [1788859198.177588026] [candidate_explorer]: Detected 78 frontier cells
+[INFO] [1788859198.177946571] [candidate_explorer]: Found 4 frontier clusters after filtering
+[INFO] [1788859198.178219366] [candidate_explorer]: Selected frontier cluster: size=10, goal=(-1.78, -1.83), distance=1.42
+[INFO] [1788859198.178515327] [candidate_explorer]: Checking global path to frontier (-1.78, -1.83), distance=1.42m
+[INFO] [1788859198.184415886] [candidate_explorer]: Nav2 path to frontier is 1.79m (straight-line=1.42m, detour=1.3x)
+[INFO] [1788859198.186559449] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.78, -1.83)
+[bt_navigator-7] [INFO] [1788859198.187053954] [bt_navigator]: Begin navigating from current location (-0.52, -1.17) to (-1.78, -1.83)
+[controller_server-3] [INFO] [1788859198.210211143] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859199.261560006] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859199.730151181] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 390 X 270 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859200.212765454] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859200.247762761] [bt_navigator]: Goal succeeded
+[INFO] [1788859200.248348726] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859200.248605103] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859200.431218717] [candidate_explorer]: Detected 703 frontier cells
+[INFO] [1788859200.432209643] [candidate_explorer]: Found 13 frontier clusters after filtering
+[INFO] [1788859200.432644398] [candidate_explorer]: Selected frontier cluster: size=306, goal=(-1.44, -1.14), distance=0.60
+[INFO] [1788859200.432934775] [candidate_explorer]: Checking global path to frontier (-1.44, -1.14), distance=0.60m
+[INFO] [1788859200.435927764] [candidate_explorer]: Nav2 path to frontier is 0.68m (straight-line=0.60m, detour=1.1x)
+[INFO] [1788859200.436911273] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.44, -1.14)
+[bt_navigator-7] [INFO] [1788859200.437287944] [bt_navigator]: Begin navigating from current location (-1.78, -1.63) to (-1.44, -1.14)
+[controller_server-3] [INFO] [1788859200.460844137] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859201.511587078] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859201.731566189] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 390 X 270 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859202.063519334] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859202.100623913] [bt_navigator]: Goal succeeded
+[INFO] [1788859202.101081750] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859202.101306503] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859202.186041140] [candidate_explorer]: Detected 706 frontier cells
+[INFO] [1788859202.186886148] [candidate_explorer]: Found 23 frontier clusters after filtering
+[INFO] [1788859202.187522113] [candidate_explorer]: Selected frontier cluster: size=12, goal=(-1.37, -0.52), distance=0.71
+[INFO] [1788859202.187854658] [candidate_explorer]: Checking global path to frontier (-1.37, -0.52), distance=0.71m
+[INFO] [1788859202.191731613] [candidate_explorer]: Nav2 path to frontier is 0.83m (straight-line=0.71m, detour=1.2x)
+[INFO] [1788859202.192813624] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.37, -0.52)
+[bt_navigator-7] [INFO] [1788859202.193379921] [bt_navigator]: Begin navigating from current location (-1.63, -1.17) to (-1.37, -0.52)
+[controller_server-3] [INFO] [1788859202.214350005] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859202.767458023] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859202.805016065] [bt_navigator]: Goal succeeded
+[INFO] [1788859202.805822114] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859202.806076075] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859202.918056109] [candidate_explorer]: Detected 706 frontier cells
+[INFO] [1788859202.918898742] [candidate_explorer]: Found 23 frontier clusters after filtering
+[INFO] [1788859202.919491457] [candidate_explorer]: Selected frontier cluster: size=7, goal=(-1.41, -0.13), distance=0.61
+[INFO] [1788859202.919817835] [candidate_explorer]: Checking global path to frontier (-1.41, -0.13), distance=0.61m
+[INFO] [1788859202.922747281] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788859202.923581497] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.41, -0.13)
+[bt_navigator-7] [INFO] [1788859202.923913209] [bt_navigator]: Begin navigating from current location (-1.39, -0.74) to (-1.41, -0.13)
+[controller_server-3] [INFO] [1788859202.946350933] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859203.399901499] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859203.437099204] [bt_navigator]: Goal succeeded
+[INFO] [1788859203.437801502] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859203.438026713] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859203.689251927] [candidate_explorer]: Detected 642 frontier cells
+[INFO] [1788859203.689914892] [candidate_explorer]: Found 12 frontier clusters after filtering
+[INFO] [1788859203.690487981] [candidate_explorer]: Selected frontier cluster: size=36, goal=(-1.40, 0.24), distance=0.61
+[INFO] [1788859203.690786443] [candidate_explorer]: Checking global path to frontier (-1.40, 0.24), distance=0.61m
+[INFO] [1788859203.693761181] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788859203.694444979] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.40, 0.24)
+[bt_navigator-7] [INFO] [1788859203.694857192] [bt_navigator]: Begin navigating from current location (-1.38, -0.36) to (-1.40, 0.24)
+[controller_server-3] [INFO] [1788859203.717152289] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859204.177105253] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859204.206942550] [bt_navigator]: Goal succeeded
+[INFO] [1788859204.207753892] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859204.208054311] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859204.421553191] [candidate_explorer]: Detected 642 frontier cells
+[INFO] [1788859204.422432325] [candidate_explorer]: Found 12 frontier clusters after filtering
+[INFO] [1788859204.423026331] [candidate_explorer]: Selected frontier cluster: size=480, goal=(-2.54, -1.47), distance=1.91
+[INFO] [1788859204.423325209] [candidate_explorer]: Checking global path to frontier (-2.54, -1.47), distance=1.91m
+[INFO] [1788859204.430368571] [candidate_explorer]: Nav2 path to frontier is 2.44m (straight-line=1.91m, detour=1.3x)
+[INFO] [1788859204.432820804] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.54, -1.47)
+[bt_navigator-7] [INFO] [1788859204.433243683] [bt_navigator]: Begin navigating from current location (-1.37, 0.04) to (-2.54, -1.47)
+[controller_server-3] [INFO] [1788859204.453710970] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859205.506453098] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859206.503984508] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859207.555115660] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859207.608233149] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859207.645421853] [bt_navigator]: Goal succeeded
+[INFO] [1788859207.646635782] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859207.646875534] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859207.687015101] [candidate_explorer]: Detected 107 frontier cells
+[INFO] [1788859207.687365980] [candidate_explorer]: Found 7 frontier clusters after filtering
+[INFO] [1788859207.687678858] [candidate_explorer]: Selected frontier cluster: size=22, goal=(-3.36, -1.48), distance=1.02
+[INFO] [1788859207.687948069] [candidate_explorer]: Checking global path to frontier (-3.36, -1.48), distance=1.02m
+[INFO] [1788859207.692841701] [candidate_explorer]: Nav2 path to frontier is 1.05m (straight-line=1.02m, detour=1.0x)
+[INFO] [1788859207.694025796] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.36, -1.48)
+[bt_navigator-7] [INFO] [1788859207.694491968] [bt_navigator]: Begin navigating from current location (-2.35, -1.51) to (-3.36, -1.48)
+[controller_server-3] [INFO] [1788859207.716330185] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-7] [WARN] [1788859208.728503450] [bt_navigator_navigate_to_pose_rclcpp_node]: Timed out while waiting for action server to acknowledge goal request for compute_path_to_pose
+[bt_navigator-7] [ERROR] [1788859208.752003017] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[behavior_server-6] [INFO] [1788859208.752659607] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788859208.752765150] [behavior_server]: Turning 1.57 for spin behavior.
+[bt_navigator-7] [WARN] [1788859208.752868693] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-3] [INFO] [1788859208.772076593] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-3] [INFO] [1788859208.772126968] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[behavior_server-6] [INFO] [1788859209.353156306] [behavior_server]: spin completed successfully
+[controller_server-3] [INFO] [1788859209.404002855] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788859209.730193609] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 391 X 271 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859210.157256995] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859210.196368760] [bt_navigator]: Goal succeeded
+[INFO] [1788859210.197088809] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788859210.197361395] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788859210.442481090] [candidate_explorer]: Detected 18 frontier cells
+[INFO] [1788859210.442791760] [candidate_explorer]: Found 2 frontier clusters after filtering
+[INFO] [1788859210.443057554] [candidate_explorer]: Selected frontier cluster: size=5, goal=(0.10, -2.23), distance=3.32
+[INFO] [1788859210.443363891] [candidate_explorer]: Checking global path to frontier (0.10, -2.23), distance=3.32m
+[INFO] [1788859210.458317623] [candidate_explorer]: Nav2 path to frontier is 3.95m (straight-line=3.32m, detour=1.2x)
+[WARN] [1788859210.461269236] [candidate_explorer]: Narrow passage detected: 0.48 m
+[WARN] [1788859210.461523697] [candidate_explorer]: Rejecting frontier (0.10, -2.23): global path contains a narrow passage.
+[INFO] [1788859210.670882035] [candidate_explorer]: Detected 18 frontier cells
+[INFO] [1788859210.671226164] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859210.671470083] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859210.671762086] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788859210.672013088] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (-3.94, -1.69)
+[bt_navigator-7] [INFO] [1788859210.672498135] [bt_navigator]: Begin navigating from current location (-3.15, -1.56) to (-3.94, -1.69)
+[controller_server-3] [INFO] [1788859210.694710106] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859211.247126992] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859211.274916436] [bt_navigator]: Goal succeeded
+[INFO] [1788859211.275702152] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788859211.442555859] [candidate_explorer]: Detected 18 frontier cells
+[INFO] [1788859211.442873570] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859211.443104489] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859211.443363867] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788859211.443582119] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (-3.97, -2.28)
+[bt_navigator-7] [INFO] [1788859211.444067207] [bt_navigator]: Begin navigating from current location (-3.52, -1.62) to (-3.97, -2.28)
+[controller_server-3] [INFO] [1788859211.464544828] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859211.917893351] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859211.954255713] [bt_navigator]: Goal succeeded
+[INFO] [1788859211.954998262] [candidate_explorer]: Recovery move 'forward-left' succeeded.
+[INFO] [1788859212.174178032] [candidate_explorer]: Detected 18 frontier cells
+[INFO] [1788859212.174476910] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859212.174703788] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859212.174996249] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 3/8 before checking again.
+[INFO] [1788859212.175246126] [candidate_explorer]: Recovery move 3/8: left, 0.8 m -> (-3.07, -2.23)
+[bt_navigator-7] [INFO] [1788859212.175714339] [bt_navigator]: Begin navigating from current location (-3.62, -1.65) to (-3.07, -2.23)
+[controller_server-3] [INFO] [1788859212.197182554] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859213.249497593] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859213.500750266] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859213.538072639] [bt_navigator]: Goal succeeded
+[INFO] [1788859213.538577394] [candidate_explorer]: Recovery move 'left' succeeded.
+[INFO] [1788859213.690514660] [candidate_explorer]: Detected 14 frontier cells
+[INFO] [1788859213.690802037] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859213.691046748] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859213.691316751] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 4/8 before checking again.
+[INFO] [1788859213.691546336] [candidate_explorer]: Recovery move 4/8: backward-left, 0.8 m -> (-2.89, -1.09)
+[bt_navigator-7] [INFO] [1788859213.692098634] [bt_navigator]: Begin navigating from current location (-3.11, -1.86) to (-2.89, -1.09)
+[controller_server-3] [INFO] [1788859213.712678964] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859214.763886534] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859215.215751000] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859215.252830245] [bt_navigator]: Goal succeeded
+[INFO] [1788859215.253755588] [candidate_explorer]: Recovery move 'backward-left' succeeded.
+[INFO] [1788859215.443173978] [candidate_explorer]: Detected 11 frontier cells
+[INFO] [1788859215.443467606] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859215.443708566] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859215.443989319] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 5/8 before checking again.
+[INFO] [1788859215.444224321] [candidate_explorer]: Recovery move 5/8: backward, 0.8 m -> (-2.89, -2.20)
+[bt_navigator-7] [INFO] [1788859215.444671784] [bt_navigator]: Begin navigating from current location (-2.83, -1.40) to (-2.89, -2.20)
+[controller_server-3] [INFO] [1788859215.466332250] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788859215.730096757] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 391 X 271 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859216.519389089] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859217.121016341] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859217.155957023] [bt_navigator]: Goal succeeded
+[INFO] [1788859217.156455236] [candidate_explorer]: Recovery move 'backward' succeeded.
+[INFO] [1788859217.441421496] [candidate_explorer]: Detected 11 frontier cells
+[INFO] [1788859217.441899542] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859217.442187295] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859217.442504631] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 6/8 before checking again.
+[INFO] [1788859217.442785259] [candidate_explorer]: Recovery move 6/8: backward-right, 0.8 m -> (-3.85, -1.43)
+[bt_navigator-7] [INFO] [1788859217.443370432] [bt_navigator]: Begin navigating from current location (-3.21, -1.92) to (-3.85, -1.43)
+[controller_server-3] [INFO] [1788859217.466174326] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859218.520430093] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859218.918967444] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859218.953895043] [bt_navigator]: Goal succeeded
+[INFO] [1788859218.954723384] [candidate_explorer]: Recovery move 'backward-right' succeeded.
+[INFO] [1788859219.194548652] [candidate_explorer]: Detected 11 frontier cells
+[INFO] [1788859219.194759737] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859219.194949364] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859219.195254617] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 7/8 before checking again.
+[INFO] [1788859219.195502786] [candidate_explorer]: Recovery move 7/8: right, 0.8 m -> (-3.05, -1.04)
+[bt_navigator-7] [INFO] [1788859219.195946957] [bt_navigator]: Begin navigating from current location (-3.64, -1.58) to (-3.05, -1.04)
+[controller_server-3] [INFO] [1788859219.219531276] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859220.277979085] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859220.875739757] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859220.906703899] [bt_navigator]: Goal succeeded
+[INFO] [1788859220.907560408] [candidate_explorer]: Recovery move 'right' succeeded.
+[INFO] [1788859221.193055714] [candidate_explorer]: Detected 11 frontier cells
+[INFO] [1788859221.193257258] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859221.193450301] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788859221.193684054] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 8/8 before checking again.
+[INFO] [1788859221.193891597] [candidate_explorer]: Recovery move 8/8: forward-right, 0.8 m -> (-2.42, -1.42)
+[bt_navigator-7] [INFO] [1788859221.194416144] [bt_navigator]: Begin navigating from current location (-3.19, -1.24) to (-2.42, -1.42)
+[controller_server-3] [INFO] [1788859221.215536563] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [ERROR] [1788859221.419150553] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788859221.419195595] [DWBLocalPlanner]: 1.00: BaseObstacle/Trajectory Hits Obstacle.
+[controller_server-3] [WARN] [1788859221.419291054] [controller_server]: No valid trajectories out of 419! 
+[controller_server-3] [INFO] [1788859222.266011168] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859222.319240199] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859222.355108182] [bt_navigator]: Goal succeeded
+[INFO] [1788859222.356098942] [candidate_explorer]: Recovery move 'forward-right' succeeded.
+[INFO] [1788859222.356378736] [candidate_explorer]: All recovery directions tried; starting the 10.0s countdown.
+[INFO] [1788859222.421211300] [candidate_explorer]: Detected 11 frontier cells
+[INFO] [1788859222.421507303] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859222.421779180] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859222.421994266] [candidate_explorer]: No usable frontier found. Waiting up to 10.0s for the map to update.
+[INFO] [1788859222.674957664] [candidate_explorer]: Detected 11 frontier cells
+[INFO] [1788859222.675287126] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859222.675554962] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859222.921528957] [candidate_explorer]: Detected 11 frontier cells
+[INFO] [1788859222.921809377] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859222.922088796] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859223.195519774] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859223.195840736] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859223.196090322] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859223.421159025] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859223.421478570] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859223.421717656] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859223.673738128] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859223.674017589] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859223.674218800] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859223.921731936] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859223.921954354] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859223.922236566] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859224.172654064] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859224.172993817] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859224.173252945] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859224.423783652] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859224.424085947] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859224.424328241] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859224.672824137] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859224.673115640] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859224.673347142] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859224.922520295] [candidate_explorer]: Detected 12 frontier cells
+[INFO] [1788859224.922920840] [candidate_explorer]: Found 2 frontier clusters after filtering
+[WARN] [1788859224.923223302] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788859224.923504554] [candidate_explorer]: No usable frontier found for 10.0s. Exploration complete; returning home.
+[bt_navigator-7] [INFO] [1788859225.155503077] [bt_navigator]: Begin navigating from current location (-2.64, -1.46) to (-0.04, 0.04)
+[controller_server-3] [INFO] [1788859225.176479745] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788859226.228093902] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859227.276775073] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788859227.731014521] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 391 X 271 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788859228.276938884] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859229.326940067] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788859229.380854980] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788859229.405791395] [bt_navigator]: Goal succeeded
+[INFO] [1788859229.406242316] [candidate_explorer]: return-home goal finished, success=True
+[sim_node-1] [INFO] [1788859229.657895035] [challenge_sim_node]: SESSION FINISHED — wrote /challenge/results/20260908_091912/report.yaml
+[sim_node-1] collision_count: 0
+[sim_node-1] coverage_fraction: 0.994043355325165
+[sim_node-1] distance_to_home_m: 0.15417863259473147
+[sim_node-1] elapsed_time_s: 306.0000000000353
+[sim_node-1] elapsed_wall_time_s: 76.51556007302133
+[sim_node-1] map_output_yaml: /challenge/results/20260908_091912/map.yaml
+[sim_node-1] map_yaml: /challenge/maps/4/room.yaml
+[sim_node-1] min_coverage_required: 0.8
+[sim_node-1] results_path: /challenge/results/20260908_091912/report.yaml
+[sim_node-1] return_tolerance_m: 0.3
+[sim_node-1] seed: 0
+[sim_node-1] success: true
+[sim_node-1] time_scale: 4.0
+[sim_node-1] timed_out: false
+[sim_node-1] 
+[INFO] [1788859229.659057714] [candidate_explorer]: Session result: coverage=99.4% distance_to_home=0.15m elapsed_sim=306.0s elapsed_wall=76.5s collisions=0 success=True report_written_to=/challenge/results/20260908_091912/report.yaml
+
+=== REPORT ===
+collision_count: 0
+coverage_fraction: 0.994043355325165
+distance_to_home_m: 0.15417863259473147
+elapsed_time_s: 306.0000000000353
+elapsed_wall_time_s: 76.51556007302133
+map_output_yaml: /challenge/results/20260908_091912/map.yaml
+map_yaml: /challenge/maps/4/room.yaml
+min_coverage_required: 0.8
+results_path: /challenge/results/20260908_091912/report.yaml
+return_tolerance_m: 0.3
+seed: 0
+success: true
+time_scale: 4.0
+timed_out: false
+Shutting down...
+[ERROR] [sim_node-1]: process has died [pid 63182, exit code -9, cmd '/challenge/ws/install/challenge_sim/lib/challenge_sim/sim_node --ros-args -r __node:=challenge_sim_node --params-file /tmp/launch_params_fff15i9d'].
+[ERROR] [async_slam_toolbox_node-2]: process has died [pid 63184, exit code -9, cmd '/opt/ros/humble/lib/slam_toolbox/async_slam_toolbox_node --ros-args -r __node:=slam_toolbox --params-file /challenge/ws/install/challenge_sim/share/challenge_sim/config/slam_toolbox_params.yaml --params-file /tmp/launch_params_q1q0dqli'].
+[ERROR] [controller_server-3]: process has died [pid 63186, exit code -9, cmd '/opt/ros/humble/lib/nav2_controller/controller_server --ros-args --log-level info --ros-args --params-file /tmp/launch_params_ec1unmd2 -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav'].
+[ERROR] [smoother_server-4]: process has died [pid 63188, exit code -9, cmd '/opt/ros/humble/lib/nav2_smoother/smoother_server --ros-args --log-level info --ros-args -r __node:=smoother_server --params-file /tmp/launch_params_ec1unmd2 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [planner_server-5]: process has died [pid 63190, exit code -9, cmd '/opt/ros/humble/lib/nav2_planner/planner_server --ros-args --log-level info --ros-args -r __node:=planner_server --params-file /tmp/launch_params_ec1unmd2 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [behavior_server-6]: process has died [pid 63192, exit code -9, cmd '/opt/ros/humble/lib/nav2_behaviors/behavior_server --ros-args --log-level info --ros-args -r __node:=behavior_server --params-file /tmp/launch_params_ec1unmd2 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [bt_navigator-7]: process has died [pid 63194, exit code -9, cmd '/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator --ros-args --log-level info --ros-args -r __node:=bt_navigator --params-file /tmp/launch_params_ec1unmd2 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [waypoint_follower-8]: process has died [pid 63196, exit code -9, cmd '/opt/ros/humble/lib/nav2_waypoint_follower/waypoint_follower --ros-args --log-level info --ros-args -r __node:=waypoint_follower --params-file /tmp/launch_params_ec1unmd2 -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [velocity_smoother-9]: process has died [pid 63198, exit code -9, cmd '/opt/ros/humble/lib/nav2_velocity_smoother/velocity_smoother --ros-args --log-level info --ros-args -r __node:=velocity_smoother --params-file /tmp/launch_params_ec1unmd2 -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav -r cmd_vel_smoothed:=cmd_vel'].
+/challenge/eval_runner.sh: line 40: 63180 Killed                  ros2 launch challenge_sim challenge.launch.py map_yaml:="$MAP_YAML" seed:="$SEED" time_limit_s:="$TIME_LIMIT" time_scale:="$TIME_SCALE" results_path:="$RESULTS_PATH" rviz:="$RVIZ"

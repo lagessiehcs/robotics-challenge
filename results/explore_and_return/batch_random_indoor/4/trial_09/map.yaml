@@ -1,0 +1,9 @@
+free_thresh: 0.196
+image: map.pgm
+negate: 0
+occupied_thresh: 0.65
+origin:
+- -4.9220488405725025
+- -0.8805222411289476
+- 0.0
+resolution: 0.014999999664723873

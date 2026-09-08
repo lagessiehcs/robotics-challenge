@@ -53,7 +53,13 @@ class ExplorerNode(Node):
 
         # If frontier clusters exist but have no usable goal, first try
         # small recovery moves before starting the no-frontier countdown.
-        self.recovery_distance = 0.3
+        # A 0.3 m goal falls inside Nav2's 0.25 m goal tolerance, so the
+        # controller can report success after barely moving.  Exploration
+        # recovery must travel far enough to reveal a different laser view.
+        self.recovery_distance = 0.8
+        # Return-home recovery is only for getting unstuck before retrying a
+        # known home goal, so keep it deliberately small.
+        self.return_recovery_distance = 0.3
         self.recovery_directions = [
             ("forward", 0.0),
             ("forward-left", math.pi / 4.0),
@@ -89,6 +95,12 @@ class ExplorerNode(Node):
 
         # Store the active Nav2 goal handle so it can be canceled.
         self._goal_handle = None
+        # A DDS/action-server response can be lost during startup or a heavy
+        # map update.  Do not let that leave _goal_in_progress true forever.
+        self.nav_goal_response_timeout_s = 5.0
+        self._nav_goal_response_deadline_sec = None
+        self._nav_goal_response_callback = None
+        self._nav_goal_request_id = 0
 
         # Minimum distance a frontier goal must have from an obstacle.
         self.obstacle_clearance = 0.5  # metres
@@ -315,6 +327,27 @@ class ExplorerNode(Node):
 
         if self._goal_handle is not None:
             self._goal_handle.cancel_goal_async()
+
+    def _check_nav_goal_response_timeout(self) -> None:
+        """Fail a NavigateToPose request whose goal response never arrives."""
+        deadline = self._nav_goal_response_deadline_sec
+        if deadline is None or self._now_sec() < deadline:
+            return
+
+        callback = self._nav_goal_response_callback
+        self._nav_goal_response_deadline_sec = None
+        self._nav_goal_response_callback = None
+        self._goal_handle = None
+        self._goal_in_progress = False
+        # Invalidate a delayed response before notifying the state machine.
+        self._nav_goal_request_id += 1
+
+        self.get_logger().warn(
+            "NavigateToPose goal response timed out; treating the goal as "
+            "failed so exploration can continue."
+        )
+        if callback is not None:
+            callback(False)
 
     def estimate_information_gain(
         self,
@@ -646,17 +679,41 @@ class ExplorerNode(Node):
             self.get_logger().error(
                 "/navigate_to_pose action server not available"
             )
+            on_done(False)
             return
 
         goal = NavigateToPose.Goal()
         goal.pose = pose
 
         self._goal_in_progress = True
+        self._nav_goal_request_id += 1
+        request_id = self._nav_goal_request_id
+        self._nav_goal_response_deadline_sec = (
+            self._now_sec() + self.nav_goal_response_timeout_s
+        )
+        self._nav_goal_response_callback = on_done
 
         send_future = self.nav_client.send_goal_async(goal)
 
         def _on_goal_response(fut):
-            handle = fut.result()
+            # A response that arrives after the watchdog fired belongs to an
+            # invalidated request and must not revive the old state.
+            if request_id != self._nav_goal_request_id:
+                return
+
+            self._nav_goal_response_deadline_sec = None
+            self._nav_goal_response_callback = None
+
+            try:
+                handle = fut.result()
+            except Exception as exc:
+                self.get_logger().warn(
+                    f"NavigateToPose goal request failed: {exc}"
+                )
+                self._goal_handle = None
+                self._goal_in_progress = False
+                on_done(False)
+                return
 
             if not handle.accepted:
                 self.get_logger().warn("goal rejected")
@@ -679,6 +736,9 @@ class ExplorerNode(Node):
             result_future = handle.get_result_async()
 
             def _on_result(fut2):
+                if request_id != self._nav_goal_request_id:
+                    return
+
                 status = fut2.result().status
 
                 self._goal_handle = None
@@ -1116,6 +1176,61 @@ class ExplorerNode(Node):
 
         self._send_next_recovery_move()
 
+    def _recovery_goal_in_map(
+        self, start_x: float, start_y: float, yaw: float
+    ) -> tuple[float, float] | None:
+        """Return the farthest safe, in-map endpoint for a recovery move.
+
+        A freshly published SLAM map can end exactly at the robot's laser
+        boundary.  Sending an unconditional 0.3 m goal can then put the
+        endpoint outside Nav2's global costmap, producing ``worldToMap
+        failed`` before Nav2 can do any useful recovery.  Work backward from
+        the desired endpoint and only use a non-occupied cell contained in
+        the latest map.  Unknown cells remain valid: Navfn is configured to
+        plan through unknown space for frontier exploration.
+        """
+        if self.latest_map is None:
+            return None
+
+        msg = self.latest_map
+        resolution = msg.info.resolution
+        width = msg.info.width
+        height = msg.info.height
+        origin = msg.info.origin
+
+        # OccupancyGrid origins may be rotated.  Transform world coordinates
+        # into that local grid frame before calculating a cell index.
+        origin_q = origin.orientation
+        origin_yaw = math.atan2(
+            2.0 * (origin_q.w * origin_q.z),
+            1.0 - 2.0 * (origin_q.z * origin_q.z),
+        )
+        cos_origin = math.cos(origin_yaw)
+        sin_origin = math.sin(origin_yaw)
+
+        def is_usable(x: float, y: float) -> bool:
+            dx = x - origin.position.x
+            dy = y - origin.position.y
+            map_x = int((cos_origin * dx + sin_origin * dy) / resolution)
+            map_y = int((-sin_origin * dx + cos_origin * dy) / resolution)
+            if not (0 <= map_x < width and 0 <= map_y < height):
+                return False
+            return msg.data[map_y * width + map_x] <= 20
+
+        # Test the requested endpoint first, then shorten it by one map cell
+        # at a time.  A zero-length fallback is intentionally allowed: it
+        # gives Nav2 a valid in-map pose to rotate at instead of an invalid
+        # off-map translation goal.
+        steps = max(1, math.ceil(self.recovery_distance / resolution))
+        for step in range(steps, -1, -1):
+            distance = min(self.recovery_distance, step * resolution)
+            goal_x = start_x + distance * math.cos(yaw)
+            goal_y = start_y + distance * math.sin(yaw)
+            if is_usable(goal_x, goal_y):
+                return goal_x, goal_y
+
+        return None
+
     def _send_next_recovery_move(self) -> None:
         """Send the next recovery goal."""
         if not self._recovery_in_progress:
@@ -1127,12 +1242,25 @@ class ExplorerNode(Node):
         # not expose a usable frontier, the next attempt uses the next
         # direction after frontier selection has had a chance to run.
         yaw = self._recovery_start_yaw + relative_angle
-        goal_x = self._recovery_start_x + (
-            self.recovery_distance * math.cos(yaw)
+        goal = self._recovery_goal_in_map(
+            self._recovery_start_x, self._recovery_start_y, yaw
         )
-        goal_y = self._recovery_start_y + (
-            self.recovery_distance * math.sin(yaw)
-        )
+
+        if goal is None:
+            self.get_logger().warn(
+                f"Skipping recovery move '{name}': no usable in-map "
+                "endpoint is available yet."
+            )
+            self._recovery_index += 1
+            self._recovery_in_progress = False
+            self._recovery_start_x = None
+            self._recovery_start_y = None
+            self._recovery_start_yaw = None
+            if self._recovery_index >= len(self.recovery_directions):
+                self._recovery_sweep_attempted = True
+            return
+
+        goal_x, goal_y = goal
 
         pose = PoseStamped()
         pose.header.frame_id = "map"
@@ -1144,7 +1272,8 @@ class ExplorerNode(Node):
         self.get_logger().info(
             f"Recovery move {self._recovery_index + 1}/"
             f"{len(self.recovery_directions)}: "
-            f"{name}, 0.3 m -> ({goal_x:.2f}, {goal_y:.2f})"
+            f"{name}, {self.recovery_distance:.1f} m -> "
+            f"({goal_x:.2f}, {goal_y:.2f})"
         )
 
         def _on_done(success: bool) -> None:
@@ -1223,10 +1352,10 @@ class ExplorerNode(Node):
         ]
         yaw = self._return_recovery_start_yaw + relative_angle
         goal_x = self._return_recovery_start_x + (
-            self.recovery_distance * math.cos(yaw)
+            self.return_recovery_distance * math.cos(yaw)
         )
         goal_y = self._return_recovery_start_y + (
-            self.recovery_distance * math.sin(yaw)
+            self.return_recovery_distance * math.sin(yaw)
         )
 
         pose = PoseStamped()
@@ -1238,7 +1367,8 @@ class ExplorerNode(Node):
 
         self.get_logger().info(
             f"Return-home recovery move {self._return_recovery_index + 1}/"
-            f"{len(self.recovery_directions)}: {name}, 0.3 m"
+            f"{len(self.recovery_directions)}: {name}, "
+            f"{self.return_recovery_distance:.1f} m"
         )
 
         def _on_done(success: bool) -> None:
@@ -1278,6 +1408,8 @@ class ExplorerNode(Node):
             return
 
         self._check_for_map_correction()
+
+        self._check_nav_goal_response_timeout()
 
         if self._map_is_settling():
             return
@@ -1420,7 +1552,7 @@ class ExplorerNode(Node):
             # Ignore frontiers that are essentially under the robot.
             # --------------------------------------------------------
 
-            if distance <= 0.45:
+            if distance <= self.min_frontier_goal_distance:
 
                 self.get_logger().info(
                     f"Skipping frontier at "

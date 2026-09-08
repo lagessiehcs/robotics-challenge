@@ -1,0 +1,1030 @@
+Launching sim + slam_toolbox + Nav2 (map: /challenge/maps/1/room.yaml, seed: 1800013, time_scale: 4.0x)...
+Waiting for bringup...
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-09-08-01-40-00-793014-orbstack-4038
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [sim_node-1]: process started with pid [4040]
+[INFO] [async_slam_toolbox_node-2]: process started with pid [4042]
+[INFO] [controller_server-3]: process started with pid [4044]
+[INFO] [smoother_server-4]: process started with pid [4046]
+[INFO] [planner_server-5]: process started with pid [4048]
+[INFO] [behavior_server-6]: process started with pid [4050]
+[INFO] [bt_navigator-7]: process started with pid [4052]
+[INFO] [waypoint_follower-8]: process started with pid [4054]
+[INFO] [velocity_smoother-9]: process started with pid [4056]
+[INFO] [lifecycle_manager-10]: process started with pid [4058]
+[behavior_server-6] [INFO] [1788831600.931203565] [behavior_server]: 
+[behavior_server-6] 	behavior_server lifecycle node launched. 
+[behavior_server-6] 	Waiting on external lifecycle transitions to activate
+[behavior_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[async_slam_toolbox_node-2] [INFO] [1788831600.934617131] [slam_toolbox]: Node using stack size 40000000
+[lifecycle_manager-10] [INFO] [1788831600.940283381] [lifecycle_manager_navigation]: Creating
+[waypoint_follower-8] [INFO] [1788831600.940965886] [waypoint_follower]: 
+[waypoint_follower-8] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-8] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-8] [INFO] [1788831600.941499556] [waypoint_follower]: Creating
+[smoother_server-4] [INFO] [1788831600.942171103] [smoother_server]: 
+[smoother_server-4] 	smoother_server lifecycle node launched. 
+[smoother_server-4] 	Waiting on external lifecycle transitions to activate
+[smoother_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-7] [INFO] [1788831600.942983025] [bt_navigator]: 
+[bt_navigator-7] 	bt_navigator lifecycle node launched. 
+[bt_navigator-7] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-4] [INFO] [1788831600.943204402] [smoother_server]: Creating smoother server
+[bt_navigator-7] [INFO] [1788831600.943435153] [bt_navigator]: Creating
+[controller_server-3] [INFO] [1788831600.945622378] [controller_server]: 
+[controller_server-3] 	controller_server lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-10] [INFO] [1788831600.946064464] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[velocity_smoother-9] [INFO] [1788831600.948078270] [velocity_smoother]: 
+[velocity_smoother-9] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-9] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788831600.950164077] [controller_server]: Creating controller server
+[planner_server-5] [INFO] [1788831600.953311433] [planner_server]: 
+[planner_server-5] 	planner_server lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788831600.954730444] [planner_server]: Creating
+[planner_server-5] [INFO] [1788831600.972254154] [global_costmap.global_costmap]: 
+[planner_server-5] 	global_costmap lifecycle node launched. 
+[planner_server-5] 	Waiting on external lifecycle transitions to activate
+[planner_server-5] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-5] [INFO] [1788831600.972815033] [global_costmap.global_costmap]: Creating Costmap
+[controller_server-3] [INFO] [1788831600.976546060] [local_costmap.local_costmap]: 
+[controller_server-3] 	local_costmap lifecycle node launched. 
+[controller_server-3] 	Waiting on external lifecycle transitions to activate
+[controller_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-3] [INFO] [1788831600.976892146] [local_costmap.local_costmap]: Creating Costmap
+[async_slam_toolbox_node-2] [INFO] [1788831600.976744269] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[async_slam_toolbox_node-2] [INFO] [1788831600.977274190] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[lifecycle_manager-10] [INFO] [1788831601.071732498] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1788831601.071783665] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-3] [INFO] [1788831601.072019959] [controller_server]: Configuring controller interface
+[controller_server-3] [INFO] [1788831601.072315628] [controller_server]: getting goal checker plugins..
+[controller_server-3] [INFO] [1788831601.072405337] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-3] [INFO] [1788831601.072428837] [local_costmap.local_costmap]: Configuring
+[controller_server-3] [INFO] [1788831601.076036613] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788831601.079334678] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-3] [INFO] [1788831601.082870746] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-3] [INFO] [1788831601.082886371] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-3] [INFO] [1788831601.083213707] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-3] [INFO] [1788831601.090704011] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-3] [INFO] [1788831601.091344599] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-3] [INFO] [1788831601.091756435] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[controller_server-3] [INFO] [1788831601.093050278] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-3] [INFO] [1788831601.094169619] [controller_server]: Setting transform_tolerance to 0.200000
+[controller_server-3] [INFO] [1788831601.100607124] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[controller_server-3] [INFO] [1788831601.100967168] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788831601.101057502] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[controller_server-3] [INFO] [1788831601.101456172] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788831601.101557714] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[controller_server-3] [INFO] [1788831601.101726757] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788831601.101818174] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[controller_server-3] [INFO] [1788831601.102118468] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788831601.102217469] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[controller_server-3] [INFO] [1788831601.102520513] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788831601.102626889] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[controller_server-3] [INFO] [1788831601.102940974] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788831601.103064850] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[controller_server-3] [INFO] [1788831601.103212435] [controller_server]: Critic plugin initialized
+[controller_server-3] [INFO] [1788831601.103219893] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-10] [INFO] [1788831601.107247130] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788831601.107397882] [smoother_server]: Configuring smoother server
+[smoother_server-4] [INFO] [1788831601.113184882] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-4] [INFO] [1788831601.113488842] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-10] [INFO] [1788831601.117627872] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-5] [INFO] [1788831601.117805290] [planner_server]: Configuring
+[planner_server-5] [INFO] [1788831601.117832499] [global_costmap.global_costmap]: Configuring
+[planner_server-5] [INFO] [1788831601.120530852] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-5] [INFO] [1788831601.123911251] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-5] [INFO] [1788831601.125057676] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-5] [INFO] [1788831601.125077093] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788831601.126420436] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[planner_server-5] [INFO] [1788831601.130840801] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-5] [INFO] [1788831601.130859093] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-5] [INFO] [1788831601.131831808] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-5] [INFO] [1788831601.139069152] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner/NavfnPlanner
+[planner_server-5] [INFO] [1788831601.139096569] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788831601.139690449] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-10] [INFO] [1788831601.146748500] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788831601.147347129] [behavior_server]: Configuring
+[behavior_server-6] [INFO] [1788831601.154971267] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[behavior_server-6] [INFO] [1788831601.155600189] [behavior_server]: Configuring spin
+[behavior_server-6] [INFO] [1788831601.161597899] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[behavior_server-6] [INFO] [1788831601.163304994] [behavior_server]: Configuring backup
+[behavior_server-6] [INFO] [1788831601.169952501] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[behavior_server-6] [INFO] [1788831601.171412511] [behavior_server]: Configuring drive_on_heading
+[behavior_server-6] [INFO] [1788831601.176301672] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors/AssistedTeleop
+[behavior_server-6] [INFO] [1788831601.179336610] [behavior_server]: Configuring assisted_teleop
+[behavior_server-6] [INFO] [1788831601.187579712] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-6] [INFO] [1788831601.188454676] [behavior_server]: Configuring wait
+[lifecycle_manager-10] [INFO] [1788831601.191875243] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788831601.192254621] [bt_navigator]: Configuring
+[lifecycle_manager-10] [INFO] [1788831601.247658771] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788831601.248124900] [waypoint_follower]: Configuring
+[waypoint_follower-8] [INFO] [1788831601.257466884] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-10] [INFO] [1788831601.258206348] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788831601.258617934] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-10] [INFO] [1788831601.261669206] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-3] [INFO] [1788831601.261767373] [controller_server]: Activating
+[controller_server-3] [INFO] [1788831601.261791749] [local_costmap.local_costmap]: Activating
+[controller_server-3] [INFO] [1788831601.261799124] [local_costmap.local_costmap]: Checking transform
+[controller_server-3] [INFO] [1788831601.261812582] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID "odom" passed to canTransform argument target_frame - frame does not exist
+[sim_node-1] [INFO] [1788831601.486837627] [challenge_sim_node]: Loaded /challenge/maps/1/room.yaml — spawned at world (2.23, -3.05); 149913 reachable free cells. time_scale=4.0x
+[controller_server-3] [INFO] [1788831601.762650289] [local_costmap.local_costmap]: start
+[controller_server-3] [INFO] [1788831601.965297964] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788831602.070359932] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788831602.070388724] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-4] [INFO] [1788831602.070887728] [smoother_server]: Activating
+[smoother_server-4] [INFO] [1788831602.070914978] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788831602.175049773] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788831602.175079315] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-5] [INFO] [1788831602.175632319] [planner_server]: Activating
+[planner_server-5] [INFO] [1788831602.175669028] [global_costmap.global_costmap]: Activating
+[planner_server-5] [INFO] [1788831602.175676486] [global_costmap.global_costmap]: Checking transform
+[planner_server-5] [INFO] [1788831602.175688111] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[async_slam_toolbox_node-2] [INFO] [1788831602.348919406] [slam_toolbox]: Message Filter dropping message: frame 'base_link' at time 2.100 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[async_slam_toolbox_node-2] [WARN] [1788831602.362671923] [slam_toolbox]: minimum laser range setting (0.0 m) exceeds the capabilities of the used Lidar (0.1 m)
+[async_slam_toolbox_node-2] Info: clipped range threshold to be within minimum and maximum range!
+[async_slam_toolbox_node-2] Registering sensor: [Custom Described Lidar]
+[planner_server-5] [INFO] [1788831602.675949023] [global_costmap.global_costmap]: start
+[planner_server-5] [INFO] [1788831602.983687749] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 337 X 305 at 0.015000 m/pix
+[planner_server-5] [INFO] [1788831603.729740647] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[planner_server-5] [INFO] [1788831603.730902364] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788831603.833815651] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788831603.833849859] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-6] [INFO] [1788831603.834054527] [behavior_server]: Activating
+[behavior_server-6] [INFO] [1788831603.834082527] [behavior_server]: Activating spin
+[behavior_server-6] [INFO] [1788831603.834219695] [behavior_server]: Activating backup
+[behavior_server-6] [INFO] [1788831603.834230737] [behavior_server]: Activating drive_on_heading
+[behavior_server-6] [INFO] [1788831603.834236987] [behavior_server]: Activating assisted_teleop
+[behavior_server-6] [INFO] [1788831603.834242612] [behavior_server]: Activating wait
+[behavior_server-6] [INFO] [1788831603.834251112] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788831603.940731507] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-10] [INFO] [1788831603.940779508] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-7] [INFO] [1788831603.941015843] [bt_navigator]: Activating
+[bt_navigator-7] [INFO] [1788831603.969029879] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788831604.082618909] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-10] [INFO] [1788831604.082647159] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-8] [INFO] [1788831604.082853786] [waypoint_follower]: Activating
+[waypoint_follower-8] [INFO] [1788831604.082885911] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788831604.186986748] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-10] [INFO] [1788831604.187009539] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-9] [INFO] [1788831604.187257000] [velocity_smoother]: Activating
+[velocity_smoother-9] [INFO] [1788831604.187300583] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-10] [INFO] [1788831604.300583320] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-10] [INFO] [1788831604.300618403] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1788831604.300633487] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+Starting your explorer node...
+Running. Waiting for /challenge/results/20260908_014000/report.yaml to appear (or Ctrl-C to stop)...
+[INFO] [1788831633.023257536] [candidate_explorer]: Got first /map.
+[WARN] [1788831633.271518708] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788831633.271841211] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788831633.272100254] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (0.80, 0.00)
+[bt_navigator-7] [INFO] [1788831633.273109720] [bt_navigator]: Begin navigating from current location (0.00, 0.00) to (0.80, 0.00)
+[controller_server-3] [INFO] [1788831633.296283971] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [WARN] [1788831633.296362430] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[controller_server-3] [INFO] [1788831633.903509575] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831633.934910385] [bt_navigator]: Goal succeeded
+[INFO] [1788831633.935813475] [candidate_explorer]: Recovery move 'forward' succeeded.
+[WARN] [1788831634.017089689] [candidate_explorer]: No frontier cells detected!
+[WARN] [1788831634.017460066] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788831634.017765777] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (1.14, 0.59)
+[bt_navigator-7] [INFO] [1788831634.018397948] [bt_navigator]: Begin navigating from current location (0.58, 0.02) to (1.14, 0.59)
+[controller_server-3] [INFO] [1788831634.041006028] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831635.092222388] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831635.094234403] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831635.138761767] [bt_navigator]: Goal succeeded
+[INFO] [1788831635.139353271] [candidate_explorer]: Recovery move 'forward-left' succeeded.
+[INFO] [1788831635.287326884] [candidate_explorer]: Detected 935 frontier cells
+[INFO] [1788831635.288368725] [candidate_explorer]: Found 48 frontier clusters after filtering
+[INFO] [1788831635.289038604] [candidate_explorer]: Selected frontier cluster: size=7, goal=(0.47, 1.63), distance=1.39
+[INFO] [1788831635.289395857] [candidate_explorer]: Checking global path to frontier (0.47, 1.63), distance=1.39m
+[INFO] [1788831635.294730187] [candidate_explorer]: Nav2 path to frontier is 1.65m (straight-line=1.39m, detour=1.2x)
+[INFO] [1788831635.296522200] [candidate_explorer]: Global path accepted. Navigating to frontier (0.47, 1.63)
+[bt_navigator-7] [INFO] [1788831635.296967662] [bt_navigator]: Begin navigating from current location (1.10, 0.39) to (0.47, 1.63)
+[controller_server-3] [INFO] [1788831635.317834813] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831635.677745252] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 338 X 434 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831636.369140423] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831637.419220066] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788831637.678056065] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 369 X 438 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831637.870970045] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831637.908855902] [bt_navigator]: Goal succeeded
+[INFO] [1788831637.909415990] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831637.909626158] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831638.048043243] [candidate_explorer]: Detected 4122 frontier cells
+[INFO] [1788831638.057286518] [candidate_explorer]: Found 122 frontier clusters after filtering
+[INFO] [1788831638.059634994] [candidate_explorer]: Selected frontier cluster: size=1861, goal=(0.52, 2.01), distance=0.60
+[INFO] [1788831638.060076414] [candidate_explorer]: Checking global path to frontier (0.52, 2.01), distance=0.60m
+[INFO] [1788831638.063073602] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831638.064020984] [candidate_explorer]: Global path accepted. Navigating to frontier (0.52, 2.01)
+[bt_navigator-7] [INFO] [1788831638.064352903] [bt_navigator]: Begin navigating from current location (0.41, 1.42) to (0.52, 2.01)
+[controller_server-3] [INFO] [1788831638.085328055] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831638.487426924] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831638.524676027] [bt_navigator]: Goal succeeded
+[INFO] [1788831638.525737659] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831638.526061453] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831638.775626135] [candidate_explorer]: Detected 4122 frontier cells
+[INFO] [1788831638.779520705] [candidate_explorer]: Found 122 frontier clusters after filtering
+[INFO] [1788831638.781958847] [candidate_explorer]: Selected frontier cluster: size=1861, goal=(0.64, 2.36), distance=0.60
+[INFO] [1788831638.782577685] [candidate_explorer]: Checking global path to frontier (0.64, 2.36), distance=0.60m
+[INFO] [1788831638.788038433] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831638.789022149] [candidate_explorer]: Global path accepted. Navigating to frontier (0.64, 2.36)
+[bt_navigator-7] [INFO] [1788831638.789455902] [bt_navigator]: Begin navigating from current location (0.42, 1.80) to (0.64, 2.36)
+[controller_server-3] [INFO] [1788831638.810713347] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831639.263606001] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831639.300149890] [bt_navigator]: Goal succeeded
+[INFO] [1788831639.300758728] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831639.300969021] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831639.563510630] [candidate_explorer]: Detected 6199 frontier cells
+[INFO] [1788831639.569124379] [candidate_explorer]: Found 115 frontier clusters after filtering
+[INFO] [1788831639.572548654] [candidate_explorer]: Selected frontier cluster: size=4020, goal=(0.78, 2.73), distance=0.60
+[INFO] [1788831639.573154075] [candidate_explorer]: Checking global path to frontier (0.78, 2.73), distance=0.60m
+[INFO] [1788831639.576192680] [candidate_explorer]: Nav2 path to frontier is 0.67m (straight-line=0.60m, detour=1.1x)
+[INFO] [1788831639.577274938] [candidate_explorer]: Global path accepted. Navigating to frontier (0.78, 2.73)
+[bt_navigator-7] [INFO] [1788831639.577720025] [bt_navigator]: Begin navigating from current location (0.56, 2.18) to (0.78, 2.73)
+[controller_server-3] [INFO] [1788831639.598751927] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831639.678310378] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 623 X 438 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831640.053042340] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831640.088043594] [bt_navigator]: Goal succeeded
+[INFO] [1788831640.088480930] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831640.088745974] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831640.283200340] [candidate_explorer]: Detected 6199 frontier cells
+[INFO] [1788831640.288908214] [candidate_explorer]: Found 115 frontier clusters after filtering
+[INFO] [1788831640.292244989] [candidate_explorer]: Selected frontier cluster: size=4020, goal=(0.36, 3.02), distance=0.60
+[INFO] [1788831640.292856326] [candidate_explorer]: Checking global path to frontier (0.36, 3.02), distance=0.60m
+[INFO] [1788831640.296096475] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831640.296988690] [candidate_explorer]: Global path accepted. Navigating to frontier (0.36, 3.02)
+[bt_navigator-7] [INFO] [1788831640.297350692] [bt_navigator]: Begin navigating from current location (0.71, 2.54) to (0.36, 3.02)
+[controller_server-3] [INFO] [1788831640.319484144] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831641.372728726] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831641.374804866] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831641.418598308] [bt_navigator]: Goal succeeded
+[INFO] [1788831641.419068104] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831641.419327355] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831641.571171205] [candidate_explorer]: Detected 6716 frontier cells
+[INFO] [1788831641.578052338] [candidate_explorer]: Found 121 frontier clusters after filtering
+[INFO] [1788831641.581579947] [candidate_explorer]: Selected frontier cluster: size=2737, goal=(0.04, 3.27), distance=0.61
+[INFO] [1788831641.582233410] [candidate_explorer]: Checking global path to frontier (0.04, 3.27), distance=0.61m
+[INFO] [1788831641.585769019] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788831641.586817693] [candidate_explorer]: Global path accepted. Navigating to frontier (0.04, 3.27)
+[bt_navigator-7] [INFO] [1788831641.587250404] [bt_navigator]: Begin navigating from current location (0.58, 3.00) to (0.04, 3.27)
+[controller_server-3] [INFO] [1788831641.609635983] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831641.676858928] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 643 X 438 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831642.063863688] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831642.097538765] [bt_navigator]: Goal succeeded
+[INFO] [1788831642.097917184] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831642.098153603] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831642.289295611] [candidate_explorer]: Detected 6716 frontier cells
+[INFO] [1788831642.295470572] [candidate_explorer]: Found 121 frontier clusters after filtering
+[INFO] [1788831642.299592977] [candidate_explorer]: Selected frontier cluster: size=2737, goal=(-0.32, 3.03), distance=0.60
+[INFO] [1788831642.300390983] [candidate_explorer]: Checking global path to frontier (-0.32, 3.03), distance=0.60m
+[INFO] [1788831642.304045551] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831642.305050392] [candidate_explorer]: Global path accepted. Navigating to frontier (-0.32, 3.03)
+[bt_navigator-7] [INFO] [1788831642.305433103] [bt_navigator]: Begin navigating from current location (0.25, 3.21) to (-0.32, 3.03)
+[controller_server-3] [INFO] [1788831642.326361796] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831642.830269360] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831642.857063429] [bt_navigator]: Goal succeeded
+[INFO] [1788831642.857764143] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831642.857985603] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831643.078288322] [candidate_explorer]: Detected 7109 frontier cells
+[INFO] [1788831643.084502742] [candidate_explorer]: Found 169 frontier clusters after filtering
+[INFO] [1788831643.088611605] [candidate_explorer]: Selected frontier cluster: size=3130, goal=(-0.77, 3.23), distance=0.60
+[INFO] [1788831643.089265360] [candidate_explorer]: Checking global path to frontier (-0.77, 3.23), distance=0.60m
+[INFO] [1788831643.093067513] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831643.094021478] [candidate_explorer]: Global path accepted. Navigating to frontier (-0.77, 3.23)
+[bt_navigator-7] [INFO] [1788831643.094348980] [bt_navigator]: Begin navigating from current location (-0.17, 3.19) to (-0.77, 3.23)
+[controller_server-3] [INFO] [1788831643.116047804] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831643.620522122] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831643.655513667] [bt_navigator]: Goal succeeded
+[INFO] [1788831643.656023338] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831643.656264631] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[planner_server-5] [INFO] [1788831643.678261582] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 645 X 438 at 0.015000 m/pix
+[INFO] [1788831643.790611645] [candidate_explorer]: Detected 7109 frontier cells
+[INFO] [1788831643.796896024] [candidate_explorer]: Found 169 frontier clusters after filtering
+[INFO] [1788831643.800782510] [candidate_explorer]: Selected frontier cluster: size=3130, goal=(-1.20, 3.17), distance=0.60
+[INFO] [1788831643.801521766] [candidate_explorer]: Checking global path to frontier (-1.20, 3.17), distance=0.60m
+[INFO] [1788831643.805180334] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831643.806126633] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.20, 3.17)
+[bt_navigator-7] [INFO] [1788831643.806491552] [bt_navigator]: Begin navigating from current location (-0.61, 3.12) to (-1.20, 3.17)
+[controller_server-3] [INFO] [1788831643.827689997] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831644.281078862] [controller_server]: Reached the goal!
+[INFO] [1788831644.318301382] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831644.318526883] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[bt_navigator-7] [INFO] [1788831644.318682176] [bt_navigator]: Goal succeeded
+[INFO] [1788831644.541278162] [candidate_explorer]: Detected 7109 frontier cells
+[INFO] [1788831644.547490541] [candidate_explorer]: Found 169 frontier clusters after filtering
+[INFO] [1788831644.551227359] [candidate_explorer]: Selected frontier cluster: size=34, goal=(-1.76, 3.18), distance=0.78
+[INFO] [1788831644.551908073] [candidate_explorer]: Checking global path to frontier (-1.76, 3.18), distance=0.78m
+[INFO] [1788831644.555399306] [candidate_explorer]: Nav2 path to frontier is 0.81m (straight-line=0.78m, detour=1.0x)
+[INFO] [1788831644.556604357] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.76, 3.18)
+[bt_navigator-7] [INFO] [1788831644.556999734] [bt_navigator]: Begin navigating from current location (-0.98, 3.18) to (-1.76, 3.18)
+[controller_server-3] [INFO] [1788831644.577456883] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831645.129157293] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831645.168288534] [bt_navigator]: Goal succeeded
+[INFO] [1788831645.168771746] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831645.169039415] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831645.335606537] [candidate_explorer]: Detected 6908 frontier cells
+[INFO] [1788831645.341700331] [candidate_explorer]: Found 161 frontier clusters after filtering
+[INFO] [1788831645.345304566] [candidate_explorer]: Selected frontier cluster: size=2848, goal=(-2.12, 3.24), distance=0.60
+[INFO] [1788831645.345964404] [candidate_explorer]: Checking global path to frontier (-2.12, 3.24), distance=0.60m
+[INFO] [1788831645.349093135] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831645.350172309] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.12, 3.24)
+[bt_navigator-7] [INFO] [1788831645.350647354] [bt_navigator]: Begin navigating from current location (-1.52, 3.19) to (-2.12, 3.24)
+[controller_server-3] [INFO] [1788831645.371239212] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831645.678140350] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 645 X 439 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831645.825570459] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831645.861811721] [bt_navigator]: Goal succeeded
+[INFO] [1788831645.862576685] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831645.862811228] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831646.045841553] [candidate_explorer]: Detected 6908 frontier cells
+[INFO] [1788831646.052644477] [candidate_explorer]: Found 161 frontier clusters after filtering
+[INFO] [1788831646.056342879] [candidate_explorer]: Selected frontier cluster: size=2848, goal=(-2.49, 3.32), distance=0.60
+[INFO] [1788831646.057066843] [candidate_explorer]: Checking global path to frontier (-2.49, 3.32), distance=0.60m
+[INFO] [1788831646.060393200] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831646.061427833] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.49, 3.32)
+[bt_navigator-7] [INFO] [1788831646.061842211] [bt_navigator]: Begin navigating from current location (-1.91, 3.20) to (-2.49, 3.32)
+[controller_server-3] [INFO] [1788831646.083907329] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831646.537348361] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831646.574560214] [bt_navigator]: Goal succeeded
+[INFO] [1788831646.575520471] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831646.575771806] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831646.794835975] [candidate_explorer]: Detected 6908 frontier cells
+[INFO] [1788831646.800782143] [candidate_explorer]: Found 161 frontier clusters after filtering
+[INFO] [1788831646.804285835] [candidate_explorer]: Selected frontier cluster: size=67, goal=(-2.88, 3.33), distance=0.61
+[INFO] [1788831646.804910631] [candidate_explorer]: Checking global path to frontier (-2.88, 3.33), distance=0.61m
+[INFO] [1788831646.808186238] [candidate_explorer]: Nav2 path to frontier is 0.63m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788831646.809048869] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.88, 3.33)
+[bt_navigator-7] [INFO] [1788831646.809459706] [bt_navigator]: Begin navigating from current location (-2.28, 3.26) to (-2.88, 3.33)
+[controller_server-3] [INFO] [1788831646.831749409] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831647.284612062] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831647.321497287] [bt_navigator]: Goal succeeded
+[INFO] [1788831647.322242959] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831647.322521045] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831647.588094342] [candidate_explorer]: Detected 7047 frontier cells
+[INFO] [1788831647.594096927] [candidate_explorer]: Found 103 frontier clusters after filtering
+[INFO] [1788831647.597578702] [candidate_explorer]: Selected frontier cluster: size=4027, goal=(-3.21, 3.57), distance=0.60
+[INFO] [1788831647.598182540] [candidate_explorer]: Checking global path to frontier (-3.21, 3.57), distance=0.60m
+[INFO] [1788831647.601708607] [candidate_explorer]: Nav2 path to frontier is 0.67m (straight-line=0.60m, detour=1.1x)
+[INFO] [1788831647.602693323] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.21, 3.57)
+[bt_navigator-7] [INFO] [1788831647.603071159] [bt_navigator]: Begin navigating from current location (-2.66, 3.33) to (-3.21, 3.57)
+[controller_server-3] [INFO] [1788831647.623530432] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831647.676781317] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 646 X 439 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831648.126102153] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831648.166908615] [bt_navigator]: Goal succeeded
+[INFO] [1788831648.167349743] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831648.167622704] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831648.298615902] [candidate_explorer]: Detected 7047 frontier cells
+[INFO] [1788831648.304742863] [candidate_explorer]: Found 103 frontier clusters after filtering
+[INFO] [1788831648.308310305] [candidate_explorer]: Selected frontier cluster: size=4027, goal=(-3.58, 3.65), distance=0.60
+[INFO] [1788831648.308912268] [candidate_explorer]: Checking global path to frontier (-3.58, 3.65), distance=0.60m
+[INFO] [1788831648.312226167] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831648.313092173] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.58, 3.65)
+[bt_navigator-7] [INFO] [1788831648.313462634] [bt_navigator]: Begin navigating from current location (-3.02, 3.44) to (-3.58, 3.65)
+[controller_server-3] [INFO] [1788831648.334195076] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831648.739019048] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831648.774086469] [bt_navigator]: Goal succeeded
+[INFO] [1788831648.774852349] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831648.775066892] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831649.089318917] [candidate_explorer]: Detected 5598 frontier cells
+[INFO] [1788831649.094613247] [candidate_explorer]: Found 89 frontier clusters after filtering
+[INFO] [1788831649.097569185] [candidate_explorer]: Selected frontier cluster: size=39, goal=(-3.79, 3.14), distance=0.60
+[INFO] [1788831649.098134439] [candidate_explorer]: Checking global path to frontier (-3.79, 3.14), distance=0.60m
+[INFO] [1788831649.101491922] [candidate_explorer]: Nav2 path to frontier is 0.59m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831649.102468721] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.79, 3.14)
+[bt_navigator-7] [INFO] [1788831649.102896599] [bt_navigator]: Begin navigating from current location (-3.39, 3.59) to (-3.79, 3.14)
+[controller_server-3] [INFO] [1788831649.125684930] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831650.176136534] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831650.478064303] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831650.513372059] [bt_navigator]: Goal succeeded
+[INFO] [1788831650.514086397] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831650.514338024] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831650.803218907] [candidate_explorer]: Detected 5598 frontier cells
+[INFO] [1788831650.808054317] [candidate_explorer]: Found 89 frontier clusters after filtering
+[INFO] [1788831650.810920254] [candidate_explorer]: Selected frontier cluster: size=2970, goal=(-3.82, 2.73), distance=0.60
+[INFO] [1788831650.811490758] [candidate_explorer]: Checking global path to frontier (-3.82, 2.73), distance=0.60m
+[INFO] [1788831650.814862199] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831650.815644622] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.82, 2.73)
+[bt_navigator-7] [INFO] [1788831650.816076958] [bt_navigator]: Begin navigating from current location (-3.88, 3.33) to (-3.82, 2.73)
+[controller_server-3] [INFO] [1788831650.837550030] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831651.339572997] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831651.378962407] [bt_navigator]: Goal succeeded
+[INFO] [1788831651.379778955] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831651.380045582] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831651.591308820] [candidate_explorer]: Detected 4543 frontier cells
+[INFO] [1788831651.595888811] [candidate_explorer]: Found 88 frontier clusters after filtering
+[INFO] [1788831651.598328662] [candidate_explorer]: Selected frontier cluster: size=2084, goal=(-3.62, 2.39), distance=0.61
+[INFO] [1788831651.598813457] [candidate_explorer]: Checking global path to frontier (-3.62, 2.39), distance=0.61m
+[INFO] [1788831651.602491859] [candidate_explorer]: Nav2 path to frontier is 0.66m (straight-line=0.61m, detour=1.1x)
+[INFO] [1788831651.603338198] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.62, 2.39)
+[bt_navigator-7] [INFO] [1788831651.603771826] [bt_navigator]: Begin navigating from current location (-3.93, 2.91) to (-3.62, 2.39)
+[controller_server-3] [INFO] [1788831651.625282566] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831651.677011148] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 647 X 439 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831652.077476630] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831652.107845559] [bt_navigator]: Goal succeeded
+[INFO] [1788831652.108665690] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831652.108940025] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831652.301682795] [candidate_explorer]: Detected 4543 frontier cells
+[INFO] [1788831652.305789658] [candidate_explorer]: Found 88 frontier clusters after filtering
+[INFO] [1788831652.308118342] [candidate_explorer]: Selected frontier cluster: size=2084, goal=(-3.67, 1.97), distance=0.60
+[INFO] [1788831652.308637554] [candidate_explorer]: Checking global path to frontier (-3.67, 1.97), distance=0.60m
+[INFO] [1788831652.311902619] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831652.312704458] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.67, 1.97)
+[bt_navigator-7] [INFO] [1788831652.313189128] [bt_navigator]: Begin navigating from current location (-3.76, 2.57) to (-3.67, 1.97)
+[controller_server-3] [INFO] [1788831652.334047529] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831652.788560819] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831652.825248752] [bt_navigator]: Goal succeeded
+[INFO] [1788831652.826300676] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831652.826550136] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831653.092201767] [candidate_explorer]: Detected 2981 frontier cells
+[INFO] [1788831653.094917412] [candidate_explorer]: Found 85 frontier clusters after filtering
+[INFO] [1788831653.096559299] [candidate_explorer]: Selected frontier cluster: size=580, goal=(-3.25, 1.71), distance=0.61
+[INFO] [1788831653.096997885] [candidate_explorer]: Checking global path to frontier (-3.25, 1.71), distance=0.61m
+[INFO] [1788831653.100405285] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788831653.101223499] [candidate_explorer]: Global path accepted. Navigating to frontier (-3.25, 1.71)
+[bt_navigator-7] [INFO] [1788831653.101649336] [bt_navigator]: Begin navigating from current location (-3.65, 2.17) to (-3.25, 1.71)
+[controller_server-3] [INFO] [1788831653.123558453] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831653.976044790] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831654.012316386] [bt_navigator]: Goal succeeded
+[INFO] [1788831654.013120433] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831654.013384769] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831654.301288436] [candidate_explorer]: Detected 2981 frontier cells
+[INFO] [1788831654.304184749] [candidate_explorer]: Found 85 frontier clusters after filtering
+[INFO] [1788831654.305809344] [candidate_explorer]: Selected frontier cluster: size=580, goal=(-2.87, 1.89), distance=0.60
+[INFO] [1788831654.306262430] [candidate_explorer]: Checking global path to frontier (-2.87, 1.89), distance=0.60m
+[INFO] [1788831654.309664955] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831654.310543670] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.87, 1.89)
+[bt_navigator-7] [INFO] [1788831654.311038007] [bt_navigator]: Begin navigating from current location (-3.46, 1.78) to (-2.87, 1.89)
+[controller_server-3] [INFO] [1788831654.333156917] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831655.285801813] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831655.321190402] [bt_navigator]: Goal succeeded
+[INFO] [1788831655.321926407] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831655.322164326] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831655.591896862] [candidate_explorer]: Detected 2121 frontier cells
+[INFO] [1788831655.595054926] [candidate_explorer]: Found 67 frontier clusters after filtering
+[INFO] [1788831655.596341519] [candidate_explorer]: Selected frontier cluster: size=6, goal=(-2.29, 2.30), distance=0.93
+[INFO] [1788831655.596753063] [candidate_explorer]: Checking global path to frontier (-2.29, 2.30), distance=0.93m
+[INFO] [1788831655.600903718] [candidate_explorer]: Nav2 path to frontier is 0.94m (straight-line=0.93m, detour=1.0x)
+[INFO] [1788831655.602183853] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.29, 2.30)
+[bt_navigator-7] [INFO] [1788831655.602548689] [bt_navigator]: Begin navigating from current location (-3.02, 1.72) to (-2.29, 2.30)
+[controller_server-3] [INFO] [1788831655.622992795] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831656.325127502] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831656.353600500] [bt_navigator]: Goal succeeded
+[INFO] [1788831656.354082379] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831656.354361339] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831656.553207320] [candidate_explorer]: Detected 2121 frontier cells
+[INFO] [1788831656.555218835] [candidate_explorer]: Found 67 frontier clusters after filtering
+[INFO] [1788831656.556528344] [candidate_explorer]: Selected frontier cluster: size=753, goal=(1.51, 2.97), distance=4.04
+[INFO] [1788831656.556905805] [candidate_explorer]: Checking global path to frontier (1.51, 2.97), distance=4.04m
+[INFO] [1788831656.568274471] [candidate_explorer]: Nav2 path to frontier is 4.44m (straight-line=4.04m, detour=1.1x)
+[INFO] [1788831656.573393675] [candidate_explorer]: Global path accepted. Navigating to frontier (1.51, 2.97)
+[bt_navigator-7] [INFO] [1788831656.573866386] [bt_navigator]: Begin navigating from current location (-2.45, 2.14) to (1.51, 2.97)
+[controller_server-3] [INFO] [1788831656.596210548] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831657.647337782] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831658.648220152] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831659.701353900] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831660.350348556] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831660.384601554] [bt_navigator]: Goal succeeded
+[INFO] [1788831660.385618103] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831660.385874480] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831660.591066215] [candidate_explorer]: Detected 1951 frontier cells
+[INFO] [1788831660.593469066] [candidate_explorer]: Found 76 frontier clusters after filtering
+[INFO] [1788831660.594611783] [candidate_explorer]: Selected frontier cluster: size=488, goal=(1.85, 2.75), distance=0.60
+[INFO] [1788831660.595000285] [candidate_explorer]: Checking global path to frontier (1.85, 2.75), distance=0.60m
+[INFO] [1788831660.598422477] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831660.599339275] [candidate_explorer]: Global path accepted. Navigating to frontier (1.85, 2.75)
+[bt_navigator-7] [INFO] [1788831660.599704153] [bt_navigator]: Begin navigating from current location (1.29, 2.97) to (1.85, 2.75)
+[controller_server-3] [INFO] [1788831660.621759729] [controller_server]: Received a goal, begin computing control effort.
+[async_slam_toolbox_node-2] WARNING: Logging before InitGoogleLogging() is written to STDERR
+[async_slam_toolbox_node-2] W0908 01:41:00.694983  4042 preprocessor.cc:62] Specified options.num_threads: 50 exceeds maximum available from the threading model Ceres was compiled with: 14.  Bounding to maximum number available.
+[controller_server-3] [INFO] [1788831661.074629132] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831661.111617150] [bt_navigator]: Goal succeeded
+[INFO] [1788831661.112472614] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831661.112683533] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831661.345312508] [candidate_explorer]: Detected 1763 frontier cells
+[INFO] [1788831661.347590400] [candidate_explorer]: Found 60 frontier clusters after filtering
+[INFO] [1788831661.348829784] [candidate_explorer]: Selected frontier cluster: size=92, goal=(2.65, 2.85), distance=0.97
+[INFO] [1788831661.349270662] [candidate_explorer]: Checking global path to frontier (2.65, 2.85), distance=0.97m
+[INFO] [1788831661.353765236] [candidate_explorer]: Nav2 path to frontier is 1.05m (straight-line=0.97m, detour=1.1x)
+[INFO] [1788831661.355074662] [candidate_explorer]: Global path accepted. Navigating to frontier (2.65, 2.85)
+[bt_navigator-7] [INFO] [1788831661.355461457] [bt_navigator]: Begin navigating from current location (1.68, 2.87) to (2.65, 2.85)
+[controller_server-3] [INFO] [1788831661.376409192] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831661.676849700] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 647 X 441 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831662.179300878] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831662.216780150] [bt_navigator]: Goal succeeded
+[INFO] [1788831662.217587864] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831662.217798740] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831662.303878989] [candidate_explorer]: Detected 1763 frontier cells
+[INFO] [1788831662.306005337] [candidate_explorer]: Found 60 frontier clusters after filtering
+[INFO] [1788831662.307151971] [candidate_explorer]: Selected frontier cluster: size=92, goal=(3.04, 2.79), distance=0.61
+[INFO] [1788831662.307542848] [candidate_explorer]: Checking global path to frontier (3.04, 2.79), distance=0.61m
+[INFO] [1788831662.311019582] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.61m, detour=1.0x)
+[INFO] [1788831662.311934505] [candidate_explorer]: Global path accepted. Navigating to frontier (3.04, 2.79)
+[bt_navigator-7] [INFO] [1788831662.312303466] [bt_navigator]: Begin navigating from current location (2.43, 2.79) to (3.04, 2.79)
+[controller_server-3] [INFO] [1788831662.333151909] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831662.787357113] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831662.823936295] [bt_navigator]: Goal succeeded
+[INFO] [1788831662.825036303] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831662.825228762] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831663.097901945] [candidate_explorer]: Detected 1427 frontier cells
+[INFO] [1788831663.100087169] [candidate_explorer]: Found 51 frontier clusters after filtering
+[INFO] [1788831663.101295052] [candidate_explorer]: Selected frontier cluster: size=415, goal=(3.61, 2.55), distance=0.83
+[INFO] [1788831663.101756972] [candidate_explorer]: Checking global path to frontier (3.61, 2.55), distance=0.83m
+[INFO] [1788831663.106294005] [candidate_explorer]: Nav2 path to frontier is 0.91m (straight-line=0.83m, detour=1.1x)
+[INFO] [1788831663.107348971] [candidate_explorer]: Global path accepted. Navigating to frontier (3.61, 2.55)
+[bt_navigator-7] [INFO] [1788831663.107716141] [bt_navigator]: Begin navigating from current location (2.81, 2.80) to (3.61, 2.55)
+[controller_server-3] [INFO] [1788831663.128808627] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831663.730608774] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831663.758722770] [bt_navigator]: Goal succeeded
+[INFO] [1788831663.759563567] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831663.759820611] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831663.805177981] [candidate_explorer]: Detected 1427 frontier cells
+[INFO] [1788831663.806668867] [candidate_explorer]: Found 51 frontier clusters after filtering
+[INFO] [1788831663.807612582] [candidate_explorer]: Selected frontier cluster: size=415, goal=(3.98, 2.69), distance=0.60
+[INFO] [1788831663.807962293] [candidate_explorer]: Checking global path to frontier (3.98, 2.69), distance=0.60m
+[INFO] [1788831663.811787737] [candidate_explorer]: Nav2 path to frontier is 0.76m (straight-line=0.60m, detour=1.3x)
+[INFO] [1788831663.812806536] [candidate_explorer]: Global path accepted. Navigating to frontier (3.98, 2.69)
+[bt_navigator-7] [INFO] [1788831663.813186539] [bt_navigator]: Begin navigating from current location (3.39, 2.64) to (3.98, 2.69)
+[controller_server-3] [INFO] [1788831663.834217649] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831664.286448673] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831664.324102779] [bt_navigator]: Goal succeeded
+[INFO] [1788831664.324977244] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831664.325193287] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831664.555891790] [candidate_explorer]: Detected 1427 frontier cells
+[INFO] [1788831664.557786762] [candidate_explorer]: Found 51 frontier clusters after filtering
+[INFO] [1788831664.558688435] [candidate_explorer]: Selected frontier cluster: size=415, goal=(4.37, 2.72), distance=0.60
+[INFO] [1788831664.559048521] [candidate_explorer]: Checking global path to frontier (4.37, 2.72), distance=0.60m
+[INFO] [1788831664.562758840] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831664.563707222] [candidate_explorer]: Global path accepted. Navigating to frontier (4.37, 2.72)
+[bt_navigator-7] [INFO] [1788831664.564069183] [bt_navigator]: Begin navigating from current location (3.79, 2.59) to (4.37, 2.72)
+[controller_server-3] [INFO] [1788831664.586081300] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831664.990062808] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831665.024301056] [bt_navigator]: Goal succeeded
+[INFO] [1788831665.025122270] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831665.025354730] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831665.359172230] [candidate_explorer]: Detected 979 frontier cells
+[INFO] [1788831665.361012951] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831665.361734748] [candidate_explorer]: Selected frontier cluster: size=159, goal=(-0.85, -0.04), distance=5.72
+[INFO] [1788831665.362088751] [candidate_explorer]: Checking global path to frontier (-0.85, -0.04), distance=5.72m
+[INFO] [1788831665.382803442] [candidate_explorer]: Nav2 path to frontier is 7.65m (straight-line=5.72m, detour=1.3x)
+[INFO] [1788831665.389802868] [candidate_explorer]: Global path accepted. Navigating to frontier (-0.85, -0.04)
+[bt_navigator-7] [INFO] [1788831665.390308663] [bt_navigator]: Begin navigating from current location (4.19, 2.66) to (-0.85, -0.04)
+[controller_server-3] [INFO] [1788831665.412586825] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [INFO] [1788831665.677721286] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 914 X 477 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831666.462798968] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831667.462905916] [controller_server]: Passing new path to controller.
+[planner_server-5] [INFO] [1788831667.677273259] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 914 X 491 at 0.015000 m/pix
+[controller_server-3] [INFO] [1788831668.515726412] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831669.512894713] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831670.563106149] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831671.562767260] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831672.613061988] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831672.816736587] [controller_server]: Reached the goal!
+[INFO] [1788831672.853631646] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831672.853857981] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[bt_navigator-7] [INFO] [1788831672.854012149] [bt_navigator]: Goal succeeded
+[INFO] [1788831673.125539864] [candidate_explorer]: Detected 3169 frontier cells
+[INFO] [1788831673.128469885] [candidate_explorer]: Found 77 frontier clusters after filtering
+[INFO] [1788831673.130206314] [candidate_explorer]: Selected frontier cluster: size=1497, goal=(-1.40, 0.00), distance=0.76
+[INFO] [1788831673.130600484] [candidate_explorer]: Checking global path to frontier (-1.40, 0.00), distance=0.76m
+[INFO] [1788831673.134967724] [candidate_explorer]: Nav2 path to frontier is 0.79m (straight-line=0.76m, detour=1.0x)
+[INFO] [1788831673.135991731] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.40, 0.00)
+[bt_navigator-7] [INFO] [1788831673.136502027] [bt_navigator]: Begin navigating from current location (-0.65, -0.12) to (-1.40, 0.00)
+[controller_server-3] [INFO] [1788831673.158619145] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831673.762904019] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831673.796795265] [bt_navigator]: Goal succeeded
+[INFO] [1788831673.797210226] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831673.797469519] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831674.066227798] [candidate_explorer]: Detected 3169 frontier cells
+[INFO] [1788831674.069125819] [candidate_explorer]: Found 77 frontier clusters after filtering
+[INFO] [1788831674.070859540] [candidate_explorer]: Selected frontier cluster: size=1497, goal=(-1.82, -0.09), distance=0.60
+[INFO] [1788831674.071349419] [candidate_explorer]: Checking global path to frontier (-1.82, -0.09), distance=0.60m
+[INFO] [1788831674.075474407] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831674.076384163] [candidate_explorer]: Global path accepted. Navigating to frontier (-1.82, -0.09)
+[bt_navigator-7] [INFO] [1788831674.076814292] [bt_navigator]: Begin navigating from current location (-1.22, -0.08) to (-1.82, -0.09)
+[controller_server-3] [INFO] [1788831674.097420441] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831674.549746465] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831674.587078610] [bt_navigator]: Goal succeeded
+[INFO] [1788831674.588065701] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831674.588338411] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831674.817474695] [candidate_explorer]: Detected 3169 frontier cells
+[INFO] [1788831674.820365299] [candidate_explorer]: Found 77 frontier clusters after filtering
+[INFO] [1788831674.821971144] [candidate_explorer]: Selected frontier cluster: size=1497, goal=(-2.18, 0.15), distance=0.60
+[INFO] [1788831674.822446231] [candidate_explorer]: Checking global path to frontier (-2.18, 0.15), distance=0.60m
+[INFO] [1788831674.826563344] [candidate_explorer]: Nav2 path to frontier is 0.62m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831674.827527476] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.18, 0.15)
+[bt_navigator-7] [INFO] [1788831674.827928437] [bt_navigator]: Begin navigating from current location (-1.61, -0.03) to (-2.18, 0.15)
+[controller_server-3] [INFO] [1788831674.849866137] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831675.305086016] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831675.338341673] [bt_navigator]: Goal succeeded
+[INFO] [1788831675.339296555] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831675.339513140] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831675.620624467] [candidate_explorer]: Detected 1796 frontier cells
+[INFO] [1788831675.624065200] [candidate_explorer]: Found 70 frontier clusters after filtering
+[INFO] [1788831675.625034248] [candidate_explorer]: Selected frontier cluster: size=336, goal=(-2.44, 0.44), distance=0.60
+[INFO] [1788831675.625475585] [candidate_explorer]: Checking global path to frontier (-2.44, 0.44), distance=0.60m
+[INFO] [1788831675.629608323] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831675.630513705] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.44, 0.44)
+[bt_navigator-7] [INFO] [1788831675.630891458] [bt_navigator]: Begin navigating from current location (-1.99, 0.03) to (-2.44, 0.44)
+[controller_server-3] [INFO] [1788831675.651756817] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831676.104235926] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831676.132360046] [bt_navigator]: Goal succeeded
+[INFO] [1788831676.133271594] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831676.133512596] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831676.319250399] [candidate_explorer]: Detected 1796 frontier cells
+[INFO] [1788831676.321424581] [candidate_explorer]: Found 70 frontier clusters after filtering
+[INFO] [1788831676.322295254] [candidate_explorer]: Selected frontier cluster: size=11, goal=(-2.41, -0.31), distance=0.60
+[INFO] [1788831676.322779883] [candidate_explorer]: Checking global path to frontier (-2.41, -0.31), distance=0.60m
+[INFO] [1788831676.326927621] [candidate_explorer]: Nav2 path to frontier is 0.61m (straight-line=0.60m, detour=1.0x)
+[INFO] [1788831676.327752460] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.41, -0.31)
+[bt_navigator-7] [INFO] [1788831676.328177922] [bt_navigator]: Begin navigating from current location (-2.30, 0.28) to (-2.41, -0.31)
+[controller_server-3] [INFO] [1788831676.350203123] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831677.402600616] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831677.755170709] [controller_server]: Reached the goal!
+[INFO] [1788831677.792371895] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831677.792599689] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[bt_navigator-7] [INFO] [1788831677.792778148] [bt_navigator]: Goal succeeded
+[INFO] [1788831678.120900232] [candidate_explorer]: Detected 1322 frontier cells
+[INFO] [1788831678.123120790] [candidate_explorer]: Found 61 frontier clusters after filtering
+[INFO] [1788831678.123846878] [candidate_explorer]: Selected frontier cluster: size=8, goal=(-2.56, 0.48), distance=0.61
+[INFO] [1788831678.124201547] [candidate_explorer]: Checking global path to frontier (-2.56, 0.48), distance=0.61m
+[INFO] [1788831678.128403869] [candidate_explorer]: Nav2 path to frontier is 0.66m (straight-line=0.61m, detour=1.1x)
+[INFO] [1788831678.129272417] [candidate_explorer]: Global path accepted. Navigating to frontier (-2.56, 0.48)
+[bt_navigator-7] [INFO] [1788831678.129648753] [bt_navigator]: Begin navigating from current location (-2.51, -0.13) to (-2.56, 0.48)
+[controller_server-3] [INFO] [1788831678.150393779] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831679.201608263] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831679.702419805] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831679.740881541] [bt_navigator]: Goal succeeded
+[INFO] [1788831679.741337336] [candidate_explorer]: Frontier goal finished: success=True
+[INFO] [1788831679.741621172] [candidate_explorer]: Reached frontier. Waiting for the map to expose new frontiers.
+[INFO] [1788831679.872492994] [candidate_explorer]: Detected 1253 frontier cells
+[INFO] [1788831679.874737135] [candidate_explorer]: Found 57 frontier clusters after filtering
+[INFO] [1788831679.875591350] [candidate_explorer]: Selected frontier cluster: size=77, goal=(3.07, 3.89), distance=6.76
+[INFO] [1788831679.875949894] [candidate_explorer]: Checking global path to frontier (3.07, 3.89), distance=6.76m
+[INFO] [1788831679.900144736] [candidate_explorer]: Nav2 path to frontier is 9.10m (straight-line=6.76m, detour=1.3x)
+[INFO] [1788831679.908066835] [candidate_explorer]: Global path accepted. Navigating to frontier (3.07, 3.89)
+[bt_navigator-7] [INFO] [1788831679.908549755] [bt_navigator]: Begin navigating from current location (-2.67, 0.31) to (3.07, 3.89)
+[controller_server-3] [INFO] [1788831679.930992418] [controller_server]: Received a goal, begin computing control effort.
+[async_slam_toolbox_node-2] W0908 01:41:20.370328  4042 preprocessor.cc:62] Specified options.num_threads: 50 exceeds maximum available from the threading model Ceres was compiled with: 14.  Bounding to maximum number available.
+[controller_server-3] [ERROR] [1788831680.382271643] [GoalDistCritic]: None of the points of the global plan were in the local costmap.
+[controller_server-3] [WARN] [1788831680.382329393] [DWBLocalPlanner]: A scoring function failed to prepare
+[controller_server-3] [ERROR] [1788831680.382345560] [PathDistCritic]: None of the 151 first of 151 (151) points of the global plan were in the local costmap and free
+[controller_server-3] [WARN] [1788831680.382362685] [DWBLocalPlanner]: A scoring function failed to prepare
+[controller_server-3] [ERROR] [1788831680.382378727] [PathDistCritic]: None of the 151 first of 151 (151) points of the global plan were in the local costmap and free
+[controller_server-3] [WARN] [1788831680.382385810] [DWBLocalPlanner]: A scoring function failed to prepare
+[controller_server-3] [ERROR] [1788831680.382395602] [GoalDistCritic]: None of the points of the global plan were in the local costmap.
+[controller_server-3] [WARN] [1788831680.382398394] [DWBLocalPlanner]: A scoring function failed to prepare
+[controller_server-3] [ERROR] [1788831680.384126739] [DWBLocalPlanner]: No valid trajectories out of 419! 
+[controller_server-3] [ERROR] [1788831680.384162198] [DWBLocalPlanner]: 1.00:   PathDist/Trajectory Hits Unreachable Area.
+[controller_server-3] [WARN] [1788831680.384404200] [controller_server]: No valid trajectories out of 419! 
+[controller_server-3] [WARN] [1788831680.433089760] [controller_server]: Resulting plan has 0 poses in it.
+[controller_server-3] [ERROR] [1788831680.433134927] [controller_server]: Controller patience exceeded
+[controller_server-3] [WARN] [1788831680.433178969] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788831680.449718672] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788831680.450573429] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[WARN] [1788831680.513003172] [candidate_explorer]: Large map->odom correction detected (translation=1.88m, yaw=3.1deg). Pausing frontier navigation for 3.0s.
+[INFO] [1788831680.513326633] [candidate_explorer]: Canceling frontier goal planned before map correction.
+[bt_navigator-7] [ERROR] [1788831680.544513650] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for compute_path_to_pose in node halt!
+[bt_navigator-7] [INFO] [1788831680.545025029] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[bt_navigator-7] [INFO] [1788831680.545321281] [bt_navigator]: Goal canceled
+[INFO] [1788831680.546143454] [candidate_explorer]: Frontier goal finished: success=False
+[INFO] [1788831680.546348580] [candidate_explorer]: Discarding frontier result after map correction; not blacklisting it.
+[planner_server-5] [WARN] [1788831680.696519376] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 1.0526 Hz
+[INFO] [1788831681.262796975] [candidate_explorer]: Map/costmap stabilization window complete; replanning.
+[INFO] [1788831681.373772736] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831681.376740633] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831681.377377721] [candidate_explorer]: Selected frontier cluster: size=37, goal=(5.52, 2.74), distance=8.70
+[INFO] [1788831681.377738473] [candidate_explorer]: Checking global path to frontier (5.52, 2.74), distance=8.70m
+[INFO] [1788831681.403789787] [candidate_explorer]: Nav2 path to frontier is 10.12m (straight-line=8.70m, detour=1.2x)
+[WARN] [1788831681.411144965] [candidate_explorer]: Narrow passage detected: 0.15 m
+[WARN] [1788831681.411360967] [candidate_explorer]: Rejecting frontier (5.52, 2.74): global path contains a narrow passage.
+[INFO] [1788831681.566934843] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831681.568328103] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831681.568945816] [candidate_explorer]: Selected frontier cluster: size=19, goal=(4.41, 2.62), distance=7.58
+[INFO] [1788831681.569310902] [candidate_explorer]: Checking global path to frontier (4.41, 2.62), distance=7.58m
+[INFO] [1788831681.591822690] [candidate_explorer]: Nav2 path to frontier is 8.87m (straight-line=7.58m, detour=1.2x)
+[WARN] [1788831681.598955991] [candidate_explorer]: Narrow passage detected: 0.15 m
+[WARN] [1788831681.599169326] [candidate_explorer]: Rejecting frontier (4.41, 2.62): global path contains a narrow passage.
+[planner_server-5] [INFO] [1788831681.677102974] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 916 X 518 at 0.015000 m/pix
+[INFO] [1788831681.817942952] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831681.819336378] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831681.819947341] [candidate_explorer]: Selected frontier cluster: size=28, goal=(3.09, 3.76), distance=6.45
+[INFO] [1788831681.820285802] [candidate_explorer]: Checking global path to frontier (3.09, 3.76), distance=6.45m
+[INFO] [1788831681.839712692] [candidate_explorer]: Nav2 path to frontier is 8.00m (straight-line=6.45m, detour=1.2x)
+[INFO] [1788831681.847949502] [candidate_explorer]: Global path accepted. Navigating to frontier (3.09, 3.76)
+[bt_navigator-7] [INFO] [1788831681.848444506] [bt_navigator]: Begin navigating from current location (-3.16, 2.15) to (3.09, 3.76)
+[controller_server-3] [INFO] [1788831681.890728020] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-5] [WARN] [1788831682.892192769] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831682.892235686] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.09, 3.76)
+[planner_server-5] [WARN] [1788831682.892245353] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788831682.929584957] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[behavior_server-6] [INFO] [1788831682.930661339] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788831682.931048467] [behavior_server]: DriveOnHeading: no acceleration or deceleration limits set
+[bt_navigator-7] [WARN] [1788831682.930906508] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-3] [INFO] [1788831682.942311465] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-3] [INFO] [1788831682.942350882] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[behavior_server-6] [INFO] [1788831684.732731134] [behavior_server]: backup completed successfully
+[planner_server-5] [WARN] [1788831684.753515368] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831684.753550243] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.09, 3.76)
+[planner_server-5] [WARN] [1788831684.753556535] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831684.773484221] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788831684.773821598] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788831685.174727292] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788831685.202111407] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831685.202139240] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.09, 3.76)
+[planner_server-5] [WARN] [1788831685.202144240] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831685.223263810] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788831685.223304185] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788831685.624772008] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788831685.652366791] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831685.652395249] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.09, 3.76)
+[planner_server-5] [WARN] [1788831685.652400916] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788831685.671075718] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788831685.671621305] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788831685.694229344] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831685.694576930] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.09, 3.76)
+[planner_server-5] [WARN] [1788831685.694730806] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831685.712058973] [behavior_server]: Running backup
+[WARN] [1788831686.012443356] [candidate_explorer]: Large map->odom correction detected (translation=0.39m, yaw=13.0deg). Pausing frontier navigation for 3.0s.
+[INFO] [1788831686.012657274] [candidate_explorer]: Canceling frontier goal planned before map correction.
+[bt_navigator-7] [ERROR] [1788831686.045531137] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for backup in node halt!
+[bt_navigator-7] [INFO] [1788831686.045587095] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[bt_navigator-7] [INFO] [1788831686.045632887] [bt_navigator]: Goal canceled
+[INFO] [1788831686.046557269] [candidate_explorer]: Frontier goal finished: success=False
+[INFO] [1788831686.046779521] [candidate_explorer]: Discarding frontier result after map correction; not blacklisting it.
+[behavior_server-6] [INFO] [1788831686.112548413] [behavior_server]: Canceling backup
+[behavior_server-6] [INFO] [1788831686.112607372] [behavior_server]: [backup] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1788831686.763467542] [candidate_explorer]: Map/costmap stabilization window complete; replanning.
+[INFO] [1788831686.874458262] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831686.876646736] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831686.877263866] [candidate_explorer]: Selected frontier cluster: size=29, goal=(3.09, 4.12), distance=6.50
+[INFO] [1788831686.877593035] [candidate_explorer]: Checking global path to frontier (3.09, 4.12), distance=6.50m
+[planner_server-5] [WARN] [1788831686.879016337] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831686.879047087] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (3.09, 4.12)
+[planner_server-5] [WARN] [1788831686.879052795] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788831686.880738557] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788831686.880958309] [candidate_explorer]: No global path to frontier (3.09, 4.12). Blacklisting.
+[INFO] [1788831687.125947207] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831687.128194390] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831687.128726394] [candidate_explorer]: Selected frontier cluster: size=10, goal=(6.58, 3.07), distance=9.63
+[INFO] [1788831687.129114897] [candidate_explorer]: Checking global path to frontier (6.58, 3.07), distance=9.63m
+[planner_server-5] [WARN] [1788831687.130477824] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831687.130505407] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (6.58, 3.07)
+[planner_server-5] [WARN] [1788831687.130511740] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788831687.132419129] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788831687.132649298] [candidate_explorer]: No global path to frontier (6.58, 3.07). Blacklisting.
+[INFO] [1788831687.316347086] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831687.317721429] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831687.318215391] [candidate_explorer]: Selected frontier cluster: size=6, goal=(5.98, 3.76), distance=9.16
+[INFO] [1788831687.318545852] [candidate_explorer]: Checking global path to frontier (5.98, 3.76), distance=9.16m
+[planner_server-5] [WARN] [1788831687.319888153] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831687.319914903] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (5.98, 3.76)
+[planner_server-5] [WARN] [1788831687.319920320] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788831687.321717208] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788831687.321942709] [candidate_explorer]: No global path to frontier (5.98, 3.76). Blacklisting.
+[INFO] [1788831687.564119629] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831687.565511889] [candidate_explorer]: Found 47 frontier clusters after filtering
+[INFO] [1788831687.565958934] [candidate_explorer]: Selected frontier cluster: size=7, goal=(7.44, 3.55), distance=10.55
+[INFO] [1788831687.566284520] [candidate_explorer]: Checking global path to frontier (7.44, 3.55), distance=10.55m
+[planner_server-5] [WARN] [1788831687.567660821] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831687.567700780] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (7.44, 3.55)
+[planner_server-5] [WARN] [1788831687.567706572] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1788831687.569392459] [candidate_explorer]: Path computation failed, status=6
+[WARN] [1788831687.569606336] [candidate_explorer]: No global path to frontier (7.44, 3.55). Blacklisting.
+[INFO] [1788831687.815909952] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831687.817285545] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831687.817725965] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831687.818047634] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 1/8 before checking again.
+[INFO] [1788831687.818279177] [candidate_explorer]: Recovery move 1/8: forward, 0.8 m -> (-2.16, 1.85)
+[bt_navigator-7] [INFO] [1788831687.818792181] [bt_navigator]: Begin navigating from current location (-2.95, 1.71) to (-2.16, 1.85)
+[controller_server-3] [INFO] [1788831687.840299962] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831688.493556899] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831688.531761259] [bt_navigator]: Goal succeeded
+[INFO] [1788831688.532792516] [candidate_explorer]: Recovery move 'forward' succeeded.
+[INFO] [1788831688.817383409] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831688.818772753] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831688.819226923] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831688.819566425] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 2/8 before checking again.
+[INFO] [1788831688.819817594] [candidate_explorer]: Recovery move 2/8: forward-left, 0.8 m -> (-1.92, 2.44)
+[bt_navigator-7] [INFO] [1788831688.820297764] [bt_navigator]: Begin navigating from current location (-2.35, 1.77) to (-1.92, 2.44)
+[controller_server-3] [INFO] [1788831688.841548751] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831689.892209856] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831689.894148079] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831689.941769507] [bt_navigator]: Goal succeeded
+[INFO] [1788831689.942984599] [candidate_explorer]: Recovery move 'forward-left' succeeded.
+[INFO] [1788831690.125298585] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831690.127560727] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831690.128025355] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831690.128352941] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 3/8 before checking again.
+[INFO] [1788831690.128576942] [candidate_explorer]: Recovery move 3/8: left, 0.8 m -> (-2.74, 2.43)
+[bt_navigator-7] [INFO] [1788831690.129100779] [bt_navigator]: Begin navigating from current location (-2.12, 1.93) to (-2.74, 2.43)
+[controller_server-3] [INFO] [1788831690.151212523] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831691.201431500] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831692.251480059] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788831692.703458539] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788831692.703533873] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788831692.720915999] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788831692.721140334] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788831693.695678930] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 0.2564 Hz
+[controller_server-3] [INFO] [1788831693.711018374] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831694.762405485] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831695.761993095] [controller_server]: Passing new path to controller.
+[controller_server-3] [ERROR] [1788831696.262305759] [controller_server]: Failed to make progress
+[controller_server-3] [WARN] [1788831696.262367467] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831696.269408102] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788831697.869643269] [behavior_server]: backup completed successfully
+[controller_server-3] [INFO] [1788831697.910358105] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831698.960958376] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831699.960727155] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831699.962783462] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831700.009983095] [bt_navigator]: Goal succeeded
+[INFO] [1788831700.011211020] [candidate_explorer]: Recovery move 'left' succeeded.
+[INFO] [1788831700.124936927] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831700.126957358] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831700.127443404] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831700.127784073] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 4/8 before checking again.
+[INFO] [1788831700.128050450] [candidate_explorer]: Recovery move 4/8: backward-left, 0.8 m -> (-2.91, 1.43)
+[bt_navigator-7] [INFO] [1788831700.128629370] [bt_navigator]: Begin navigating from current location (-2.83, 2.22) to (-2.91, 1.43)
+[controller_server-3] [INFO] [1788831700.151385868] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831701.202259517] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831701.706489250] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831701.740749498] [bt_navigator]: Goal succeeded
+[INFO] [1788831701.741840256] [candidate_explorer]: Recovery move 'backward-left' succeeded.
+[INFO] [1788831701.873580085] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831701.875962269] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831701.876468439] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831701.876794108] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 5/8 before checking again.
+[INFO] [1788831701.877048943] [candidate_explorer]: Recovery move 5/8: backward, 0.8 m -> (-3.11, 2.43)
+[bt_navigator-7] [INFO] [1788831701.877541988] [bt_navigator]: Begin navigating from current location (-3.02, 1.63) to (-3.11, 2.43)
+[controller_server-3] [INFO] [1788831701.899247271] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831702.949477748] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831703.802403463] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831703.837856137] [bt_navigator]: Goal succeeded
+[INFO] [1788831703.838920103] [candidate_explorer]: Recovery move 'backward' succeeded.
+[INFO] [1788831704.125702887] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831704.127800486] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831704.128288781] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831704.128594825] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 6/8 before checking again.
+[INFO] [1788831704.128832785] [candidate_explorer]: Recovery move 6/8: backward-right, 0.8 m -> (-2.69, 1.64)
+[bt_navigator-7] [INFO] [1788831704.129310746] [bt_navigator]: Begin navigating from current location (-3.22, 2.24) to (-2.69, 1.64)
+[controller_server-3] [INFO] [1788831704.150318399] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831705.201720634] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831705.555409236] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831705.591882417] [bt_navigator]: Goal succeeded
+[INFO] [1788831705.593117301] [candidate_explorer]: Recovery move 'backward-right' succeeded.
+[INFO] [1788831705.875466220] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831705.877609360] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831705.878041488] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831705.878360324] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 7/8 before checking again.
+[INFO] [1788831705.878586950] [candidate_explorer]: Recovery move 7/8: right, 0.8 m -> (-3.44, 1.44)
+[bt_navigator-7] [INFO] [1788831705.879124913] [bt_navigator]: Begin navigating from current location (-2.74, 1.83) to (-3.44, 1.44)
+[controller_server-3] [INFO] [1788831705.900377608] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831706.950882046] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831707.555201420] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831707.590803969] [bt_navigator]: Goal succeeded
+[INFO] [1788831707.591862477] [candidate_explorer]: Recovery move 'right' succeeded.
+[INFO] [1788831707.875036110] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831707.877169459] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831707.877591754] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[WARN] [1788831707.877868214] [candidate_explorer]: Frontier clusters exist but have no usable goal. Trying recovery direction 8/8 before checking again.
+[INFO] [1788831707.878115674] [candidate_explorer]: Recovery move 8/8: forward-right, 0.8 m -> (-3.96, 1.71)
+[bt_navigator-7] [INFO] [1788831707.878684595] [bt_navigator]: Begin navigating from current location (-3.25, 1.35) to (-3.96, 1.71)
+[controller_server-3] [INFO] [1788831707.899411662] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831708.953431333] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831709.201823506] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831709.241911380] [bt_navigator]: Goal succeeded
+[INFO] [1788831709.242424800] [candidate_explorer]: Recovery move 'forward-right' succeeded.
+[INFO] [1788831709.242678885] [candidate_explorer]: All recovery directions tried; starting the 10.0s countdown.
+[INFO] [1788831709.374875759] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831709.377061316] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831709.377581028] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831709.377835780] [candidate_explorer]: No usable frontier found. Waiting up to 10.0s for the map to update.
+[INFO] [1788831709.566781773] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831709.568160991] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831709.568604953] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831709.816486997] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831709.817853549] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831709.818307510] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831710.067117811] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831710.068441321] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831710.068920533] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831710.317315122] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831710.318725966] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831710.319162927] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831710.566952804] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831710.568342106] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831710.568821026] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831710.815375853] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831710.821282187] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831710.821795191] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831711.125982726] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831711.128212825] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831711.128726246] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831711.316763274] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831711.318157992] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831711.318614662] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831711.566667541] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831711.568057676] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831711.568469179] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831711.817544023] [candidate_explorer]: Detected 1159 frontier cells
+[INFO] [1788831711.819087201] [candidate_explorer]: Found 47 frontier clusters after filtering
+[WARN] [1788831711.819546163] [candidate_explorer]: Frontier clusters exist, but none have a usable goal point.
+[INFO] [1788831711.819823165] [candidate_explorer]: No usable frontier found for 10.0s. Exploration complete; returning home.
+[bt_navigator-7] [INFO] [1788831712.011904597] [bt_navigator]: Begin navigating from current location (-3.65, 1.53) to (-1.06, 1.54)
+[planner_server-5] [WARN] [1788831712.012879229] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831712.012912729] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.06, 1.54)
+[planner_server-5] [WARN] [1788831712.012918646] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831712.034036382] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788831712.034082008] [behavior_server]: Turning 1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788831712.435066077] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788831712.463225864] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831712.463251239] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.06, 1.54)
+[planner_server-5] [WARN] [1788831712.463257114] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831712.482262668] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788831712.482294377] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [INFO] [1788831712.883120862] [behavior_server]: spin completed successfully
+[planner_server-5] [WARN] [1788831712.904887811] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831712.904913853] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.06, 1.54)
+[planner_server-5] [WARN] [1788831712.904919895] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788831712.923460570] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788831712.923892657] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788831713.686738387] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831713.686773637] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.06, 1.54)
+[planner_server-5] [WARN] [1788831713.686780429] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831713.702795503] [behavior_server]: Running backup
+[behavior_server-6] [INFO] [1788831715.003682753] [behavior_server]: backup completed successfully
+[controller_server-3] [INFO] [1788831715.042521701] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831716.092740303] [controller_server]: Passing new path to controller.
+[planner_server-5] [WARN] [1788831717.074796954] [planner_server]: GridBased: failed to create plan with tolerance 0.50.
+[planner_server-5] [WARN] [1788831717.074834996] [planner_server]: Planning algorithm GridBased failed to generate a valid path to (-1.06, 1.54)
+[planner_server-5] [WARN] [1788831717.074840371] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[bt_navigator-7] [ERROR] [1788831717.116687757] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for follow_path in node halt!
+[behavior_server-6] [INFO] [1788831717.116959967] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788831717.117007051] [behavior_server]: Turning 1.57 for spin behavior.
+[bt_navigator-7] [WARN] [1788831717.117080676] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-3] [INFO] [1788831717.144558125] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-3] [INFO] [1788831717.144590000] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[behavior_server-6] [WARN] [1788831717.420063744] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788831717.420095120] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788831717.420100870] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[behavior_server-6] [INFO] [1788831717.437780081] [behavior_server]: Running spin
+[behavior_server-6] [INFO] [1788831717.437803248] [behavior_server]: Turning -1.57 for spin behavior.
+[behavior_server-6] [WARN] [1788831717.538757062] [behavior_server]: Collision Ahead - Exiting Spin
+[behavior_server-6] [WARN] [1788831717.538779312] [behavior_server]: spin failed
+[behavior_server-6] [WARN] [1788831717.538783562] [behavior_server]: [spin] [ActionServer] Aborting handle.
+[controller_server-3] [INFO] [1788831717.568347110] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-5] [INFO] [1788831717.568851196] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-5] [WARN] [1788831717.715154339] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 1.6667 Hz
+[controller_server-3] [INFO] [1788831717.727810347] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-3] [INFO] [1788831718.779753170] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831719.779124237] [controller_server]: Passing new path to controller.
+[controller_server-3] [INFO] [1788831720.630049730] [controller_server]: Reached the goal!
+[bt_navigator-7] [INFO] [1788831720.668324341] [bt_navigator]: Goal succeeded
+[INFO] [1788831720.669432807] [candidate_explorer]: return-home goal finished, success=True
+[sim_node-1] [INFO] [1788831720.770032619] [challenge_sim_node]: SESSION FINISHED — wrote /challenge/results/20260908_014000/report.yaml
+[INFO] [1788831720.770755624] [candidate_explorer]: Session result: coverage=92.6% distance_to_home=0.20m elapsed_sim=477.0s elapsed_wall=119.3s collisions=0 success=True report_written_to=/challenge/results/20260908_014000/report.yaml
+[sim_node-1] collision_count: 0
+[sim_node-1] coverage_fraction: 0.9261171479458086
+[sim_node-1] distance_to_home_m: 0.19760476958627465
+[sim_node-1] elapsed_time_s: 477.0000000000742
+[sim_node-1] elapsed_wall_time_s: 119.2778099529969
+[sim_node-1] map_output_yaml: /challenge/results/20260908_014000/map.yaml
+[sim_node-1] map_yaml: /challenge/maps/1/room.yaml
+[sim_node-1] min_coverage_required: 0.8
+[sim_node-1] results_path: /challenge/results/20260908_014000/report.yaml
+[sim_node-1] return_tolerance_m: 0.3
+[sim_node-1] seed: 1800013
+[sim_node-1] success: true
+[sim_node-1] time_scale: 4.0
+[sim_node-1] timed_out: false
+[sim_node-1] 
+
+=== REPORT ===
+collision_count: 0
+coverage_fraction: 0.9261171479458086
+distance_to_home_m: 0.19760476958627465
+elapsed_time_s: 477.0000000000742
+elapsed_wall_time_s: 119.2778099529969
+map_output_yaml: /challenge/results/20260908_014000/map.yaml
+map_yaml: /challenge/maps/1/room.yaml
+min_coverage_required: 0.8
+results_path: /challenge/results/20260908_014000/report.yaml
+return_tolerance_m: 0.3
+seed: 1800013
+success: true
+time_scale: 4.0
+timed_out: false
+Shutting down...
+[ERROR] [sim_node-1]: process has died [pid 4040, exit code -9, cmd '/challenge/ws/install/challenge_sim/lib/challenge_sim/sim_node --ros-args -r __node:=challenge_sim_node --params-file /tmp/launch_params_cy6k3u8s'].
+[ERROR] [async_slam_toolbox_node-2]: process has died [pid 4042, exit code -9, cmd '/opt/ros/humble/lib/slam_toolbox/async_slam_toolbox_node --ros-args -r __node:=slam_toolbox --params-file /challenge/ws/install/challenge_sim/share/challenge_sim/config/slam_toolbox_params.yaml --params-file /tmp/launch_params_badwgx61'].
+[ERROR] [controller_server-3]: process has died [pid 4044, exit code -9, cmd '/opt/ros/humble/lib/nav2_controller/controller_server --ros-args --log-level info --ros-args --params-file /tmp/launch_params_j3tozjyi -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav'].
+[ERROR] [smoother_server-4]: process has died [pid 4046, exit code -9, cmd '/opt/ros/humble/lib/nav2_smoother/smoother_server --ros-args --log-level info --ros-args -r __node:=smoother_server --params-file /tmp/launch_params_j3tozjyi -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [planner_server-5]: process has died [pid 4048, exit code -9, cmd '/opt/ros/humble/lib/nav2_planner/planner_server --ros-args --log-level info --ros-args -r __node:=planner_server --params-file /tmp/launch_params_j3tozjyi -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [behavior_server-6]: process has died [pid 4050, exit code -9, cmd '/opt/ros/humble/lib/nav2_behaviors/behavior_server --ros-args --log-level info --ros-args -r __node:=behavior_server --params-file /tmp/launch_params_j3tozjyi -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [bt_navigator-7]: process has died [pid 4052, exit code -9, cmd '/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator --ros-args --log-level info --ros-args -r __node:=bt_navigator --params-file /tmp/launch_params_j3tozjyi -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [waypoint_follower-8]: process has died [pid 4054, exit code -9, cmd '/opt/ros/humble/lib/nav2_waypoint_follower/waypoint_follower --ros-args --log-level info --ros-args -r __node:=waypoint_follower --params-file /tmp/launch_params_j3tozjyi -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [velocity_smoother-9]: process has died [pid 4056, exit code -9, cmd '/opt/ros/humble/lib/nav2_velocity_smoother/velocity_smoother --ros-args --log-level info --ros-args -r __node:=velocity_smoother --params-file /tmp/launch_params_j3tozjyi -r /tf:=tf -r /tf_static:=tf_static -r cmd_vel:=cmd_vel_nav -r cmd_vel_smoothed:=cmd_vel'].
+/challenge/eval_runner.sh: line 40:  4038 Killed                  ros2 launch challenge_sim challenge.launch.py map_yaml:="$MAP_YAML" seed:="$SEED" time_limit_s:="$TIME_LIMIT" time_scale:="$TIME_SCALE" results_path:="$RESULTS_PATH" rviz:="$RVIZ"
